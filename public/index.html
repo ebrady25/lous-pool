@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lou's Pool Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-900: #0c2a1b;
+  --green-800: #14432e;
+  --green-700: #1a5c3d;
+  --green-600: #1e7a4e;
+  --green-500: #22925c;
+  --green-400: #34d07e;
+  --green-300: #6ee7a5;
+  --green-200: #a7f3c9;
+  --green-100: #dcfce7;
+  --gold: #fbbf24;
+  --gold-dim: #92741a;
+  --silver: #c0c7d0;
+  --bronze: #cd7f32;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --bg: #060e09;
+  --card-bg: rgba(14, 40, 25, 0.6);
+  --card-border: rgba(34, 146, 92, 0.15);
+  --row-hover: rgba(34, 146, 92, 0.08);
+  --friend-bg: rgba(251, 191, 36, 0.06);
+  --friend-border: rgba(251, 191, 36, 0.2);
+  --mc-red: #f87171;
+  --mc-bg: rgba(248, 113, 113, 0.06);
+  --r4-teal: #2dd4bf;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--slate-200);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(30, 122, 78, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(34, 146, 92, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root { position: relative; z-index: 1; }
+
+/* ═══════════════════════════════════════════ */
+/* HEADER                                      */
+/* ═══════════════════════════════════════════ */
+.header {
+  padding: 2rem 1.5rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--green-500), var(--green-400));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px rgba(34, 146, 92, 0.3);
+}
+
+.brand h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem;
+  color: var(--green-200);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.refresh-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--green-300);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.refresh-btn:hover { background: rgba(34, 146, 92, 0.15); border-color: var(--green-500); }
+.refresh-btn:active { transform: scale(0.97); }
+.refresh-btn.loading { opacity: 0.6; pointer-events: none; }
+.refresh-btn .spin { display: inline-block; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.event-banner {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.event-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem;
+  color: var(--slate-100);
+}
+
+.event-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--slate-400);
+}
+
+.event-meta span { display: flex; align-items: center; gap: 0.3rem; }
+.meta-label { color: var(--slate-500); }
+
+.status-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-live { background: rgba(239, 68, 68, 0.15); color: var(--red-400); border: 1px solid rgba(239, 68, 68, 0.3); }
+.status-complete { background: rgba(34, 146, 92, 0.15); color: var(--green-400); border: 1px solid rgba(34, 146, 92, 0.3); }
+.status-pre { background: rgba(148, 163, 184, 0.1); color: var(--slate-400); border: 1px solid rgba(148, 163, 184, 0.15); }
+
+.update-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--slate-500);
+  text-align: right;
+  padding: 0.5rem 1.25rem 0;
+}
+
+/* ═══════════════════════════════════════════ */
+/* CONTROLS                                    */
+/* ═══════════════════════════════════════════ */
+.controls {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--slate-200);
+  padding: 0.55rem 0.75rem 0.55rem 2.2rem;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input::placeholder { color: var(--slate-500); }
+.search-box input:focus { border-color: var(--green-500); }
+.search-icon { position: absolute; left: 0.7rem; top: 50%; transform: translateY(-50%); color: var(--slate-500); font-size: 0.85rem; }
+
+.toggle-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--slate-300);
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn:hover { border-color: var(--green-600); }
+.toggle-btn.active { background: rgba(34, 146, 92, 0.15); border-color: var(--green-500); color: var(--green-300); }
+
+.view-tabs {
+  display: flex;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.view-tab {
+  padding: 0.55rem 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--slate-400);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.view-tab:hover { color: var(--slate-200); }
+.view-tab.active { background: rgba(34, 146, 92, 0.12); color: var(--green-300); }
+
+.tab-divider {
+  width: 1px;
+  height: 1.4rem;
+  background: var(--card-border);
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════ */
+/* LIVE TOURNAMENT LEADERBOARD (individual)    */
+/* ═══════════════════════════════════════════ */
+.live-lb-row td {
+  padding: 0.5rem 0.5rem;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(34, 146, 92, 0.06);
+  vertical-align: middle;
+}
+
+.live-lb-row { transition: background 0.15s; }
+.live-lb-row:hover { background: var(--row-hover); }
+
+.live-lb-row.highlight { background: rgba(34, 146, 92, 0.08); }
+.live-lb-row.highlight:hover { background: rgba(34, 146, 92, 0.12); }
+.live-lb-row.mc-row { opacity: 0.55; }
+
+.player-name-cell {
+  font-weight: 500;
+  color: var(--slate-100);
+}
+
+.player-name-cell .fin-pos {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  margin-right: 0.5rem;
+  display: inline-block;
+  min-width: 2rem;
+  text-align: right;
+}
+
+.round-score {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--slate-400);
+}
+
+.thru-cell {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--slate-500);
+}
+
+.today-cell {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.pool-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 0.08rem 0.3rem;
+  border-radius: 3px;
+  margin-left: 0.35rem;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+  background: rgba(34, 146, 92, 0.1);
+  color: var(--green-400);
+  border: 1px solid rgba(34, 146, 92, 0.2);
+}
+
+/* ═══════════════════════════════════════════ */
+/* PROJECTED CUT WIDGET                        */
+/* ═══════════════════════════════════════════ */
+.cut-projection {
+  max-width: 960px;
+  margin: 0.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.cut-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cut-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.cut-label .cut-icon {
+  margin-right: 0.3rem;
+}
+
+.cut-options {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.cut-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.cut-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-100);
+  min-width: 2rem;
+  text-align: right;
+}
+
+.cut-bar-wrap {
+  flex: 1;
+  min-width: 50px;
+  max-width: 100px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cut-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.cut-bar-fill.high { background: var(--green-400); }
+.cut-bar-fill.mid { background: var(--gold); }
+.cut-bar-fill.low { background: var(--red-400); }
+
+.cut-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--slate-400);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════ */
+/* RULE 4 BADGES (Gold / Silver / Bronze)     */
+/* ═══════════════════════════════════════════ */
+.r4-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 0.08rem 0.3rem;
+  border-radius: 3px;
+  margin-left: 0.35rem;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
+.r4-badge.r4-1 {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.r4-badge.r4-2 {
+  background: rgba(192, 199, 208, 0.1);
+  color: var(--silver);
+  border: 1px solid rgba(192, 199, 208, 0.3);
+}
+
+.r4-badge.r4-3 {
+  background: rgba(205, 127, 50, 0.12);
+  color: var(--bronze);
+  border: 1px solid rgba(205, 127, 50, 0.3);
+}
+
+/* ═══════════════════════════════════════════ */
+/* ENHANCED MC STYLING (Pool detail)           */
+/* ═══════════════════════════════════════════ */
+.player-row.mc-player .p-name {
+  color: var(--mc-red);
+}
+
+.mc-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--mc-red);
+  margin-left: 0.35rem;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+.mc-penalty-tag {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--mc-red);
+  opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════════ */
+/* LEADERBOARD TABLE                           */
+/* ═══════════════════════════════════════════ */
+.leaderboard {
+  max-width: 960px;
+  margin: 0.5rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.lb-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lb-table th {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.lb-table th.num { text-align: center; width: 3rem; }
+.lb-table th.score { text-align: right; }
+.lb-table th.season { text-align: right; }
+
+.lb-row {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lb-row:hover { background: var(--row-hover); }
+
+.lb-row td {
+  padding: 0.65rem 0.5rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(34, 146, 92, 0.06);
+  vertical-align: middle;
+}
+
+.lb-row.friend { background: var(--friend-bg); }
+.lb-row.friend td { border-bottom-color: var(--friend-border); }
+.lb-row.friend:hover { background: rgba(251, 191, 36, 0.1); }
+
+.lb-row.is-me { background: rgba(34, 146, 92, 0.1); }
+.lb-row.is-me td { border-bottom-color: rgba(34, 146, 92, 0.25); }
+.lb-row.is-me:hover { background: rgba(34, 146, 92, 0.15); }
+
+.rank-cell {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: var(--slate-400);
+  width: 3rem;
+}
+
+.rank-1 { color: var(--gold); }
+.rank-2 { color: var(--silver); }
+.rank-3 { color: var(--bronze); }
+
+.team-cell { padding-left: 0.25rem !important; }
+
+.team-name {
+  font-weight: 600;
+  color: var(--slate-100);
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+.team-alias {
+  font-size: 0.72rem;
+  color: var(--slate-500);
+  font-style: italic;
+}
+
+.friend-badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(251, 191, 36, 0.12);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.4rem;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
+.me-badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--green-400);
+  background: rgba(34, 146, 92, 0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.4rem;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
+.score-cell {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
+.score-under { color: var(--green-400); }
+.score-over { color: var(--red-400); }
+.score-even { color: var(--slate-300); }
+
+.mc-count {
+  font-size: 0.65rem;
+  color: var(--red-400);
+  opacity: 0.7;
+  margin-left: 0.3rem;
+}
+
+.season-cell {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--slate-400);
+}
+
+.strokes-back {
+  font-size: 0.68rem;
+  color: var(--slate-500);
+  display: block;
+}
+
+/* ═══════════════════════════════════════════ */
+/* EXPANDED TEAM DETAIL                        */
+/* ═══════════════════════════════════════════ */
+.team-detail {
+  background: rgba(14, 40, 25, 0.4);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.team-detail td {
+  padding: 0 !important;
+}
+
+.detail-inner {
+  padding: 0.5rem 1rem 0.75rem 3.5rem;
+}
+
+.player-row {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 2.5rem) 3rem 3.5rem;
+  gap: 0.25rem;
+  padding: 0.3rem 0;
+  font-size: 0.78rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(34, 146, 92, 0.04);
+}
+
+.player-row:last-child { border-bottom: none; }
+
+.player-row .p-name {
+  color: var(--slate-300);
+  font-weight: 500;
+}
+
+.player-row .p-name.mc {
+  color: var(--red-400);
+  opacity: 0.85;
+}
+
+.player-row .p-round {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--slate-400);
+}
+
+.player-row .p-round.replaced {
+  color: var(--slate-500);
+  font-style: italic;
+}
+
+.player-row .p-penalty {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--red-400);
+}
+
+.player-row .p-total {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--slate-300);
+}
+
+.replacement-note {
+  font-size: 0.68rem;
+  color: var(--slate-500);
+  font-style: italic;
+  margin-left: 0.5rem;
+}
+
+.detail-header {
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 2.5rem) 3rem 3.5rem;
+  gap: 0.25rem;
+  padding: 0.25rem 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(34, 146, 92, 0.08);
+  margin-bottom: 0.15rem;
+}
+
+.detail-header span { text-align: center; }
+.detail-header span:first-child { text-align: left; }
+.detail-header span:last-child { text-align: right; }
+
+/* ═══════════════════════════════════════════ */
+/* LOADING / EMPTY STATES                      */
+/* ═══════════════════════════════════════════ */
+.loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--slate-400);
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2.5px solid var(--card-border);
+  border-top-color: var(--green-400);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--slate-500);
+  font-size: 0.9rem;
+}
+
+/* ═══════════════════════════════════════════ */
+/* RESPONSIVE                                  */
+/* ═══════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .header { padding: 1.25rem 1rem 1rem; }
+  .controls { padding: 0.5rem 1rem; }
+  .leaderboard { padding: 0 0.75rem; }
+  .brand h1 { font-size: 1.3rem; }
+  .event-name { font-size: 1rem; }
+  .event-meta { flex-wrap: wrap; gap: 0.5rem; }
+  .lb-table th, .lb-row td { padding: 0.5rem 0.35rem; font-size: 0.78rem; }
+  .score-cell { font-size: 0.82rem; }
+  .detail-inner { padding-left: 2rem; }
+  .player-row { grid-template-columns: 1fr repeat(4, 2rem) 2.5rem 3rem; font-size: 0.72rem; }
+  .detail-header { grid-template-columns: 1fr repeat(4, 2rem) 2.5rem 3rem; }
+
+  .hide-mobile { display: none; }
+}
+
+/* Subtle grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+
+<script type="text/babel">
+const { useState, useEffect, useCallback, useMemo, useRef } = React;
+
+// ═══════════════════════════════════════════
+// Configuration
+// ═══════════════════════════════════════════
+const CONFIG = {
+  // DataGolf API (client-side refresh)
+  DG_API_KEY: "576a75cc2c5275542b9b9d98419b",
+  DG_LIVE_URL: "https://feeds.datagolf.com/preds/live-tournament-stats",
+  DG_INPLAY_URL: "https://feeds.datagolf.com/preds/in-play",
+
+  // Static leaderboard JSON (built by GitHub Action)
+  LEADERBOARD_URL: "data/leaderboard.json",
+
+  // Friend list and "me" identifier
+  MY_TEAM: "Ethan Brady",
+  FRIENDS: [
+    "Eric Southard", "John Hughes", "Matt White",
+    "Aaron White", "Connor White", "Malcolm White",
+    "Great White!"
+  ],
+
+  // Current season context
+  SEASON: {
+    week: 2,
+    event: "WM Phoenix Open",
+    course_par: 71,
+    season_par: 1152,  // After Week 1 (Farmers par 72 * 4 * 4)
+  },
+
+  // Rosters for current week (Ethan's + friends)
+  // Full rosters loaded from rosters.json
+  ROSTERS: {},
+
+  // Missed cut penalty table
+  MC_PENALTY: { 1: 5, 2: 6, 3: 7 },
+  MC_PENALTY_DEFAULT: 8,
+};
+
+// ═══════════════════════════════════════════
+// Helpers
+// ═══════════════════════════════════════════
+function formatScore(toPar) {
+  if (toPar === null || toPar === undefined) return "—";
+  if (toPar === 0) return "E";
+  return toPar > 0 ? `+${toPar}` : `${toPar}`;
+}
+
+function scoreClass(toPar) {
+  if (toPar === null || toPar === undefined) return "";
+  if (toPar < 0) return "score-under";
+  if (toPar > 0) return "score-over";
+  return "score-even";
+}
+
+function isFriend(name) {
+  return CONFIG.FRIENDS.some(f => name.toLowerCase().includes(f.toLowerCase()));
+}
+
+function isMe(name) {
+  return name.toLowerCase().includes(CONFIG.MY_TEAM.toLowerCase());
+}
+
+function timeAgo(isoString) {
+  if (!isoString) return "";
+  const diff = (Date.now() - new Date(isoString).getTime()) / 1000;
+  if (diff < 60) return "just now";
+  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+  return new Date(isoString).toLocaleDateString();
+}
+
+// ═══════════════════════════════════════════
+// Components
+// ═══════════════════════════════════════════
+
+function StatusBadge({ status }) {
+  const labels = {
+    complete: "Final",
+    round4: "R4 Live",
+    round3: "R3 Live",
+    round2: "R2 Live",
+    round1: "R1 Live",
+    pre: "Pre-Tournament",
+  };
+  const classes = {
+    complete: "status-complete",
+    pre: "status-pre",
+  };
+  const cls = classes[status] || "status-live";
+  return <span className={`status-badge ${cls}`}>{labels[status] || status}</span>;
+}
+
+function PlayerDetail({ player }) {
+  const isMC = player.status === "mc";
+  return (
+    <div className={`player-row ${isMC ? "mc-player" : ""}`}>
+      <span className={`p-name ${isMC ? "mc" : ""}`}>
+        {player.name}
+        {isMC && <span className="mc-tag">MC</span>}
+        {isMC && player.penalty > 0 && (
+          <span className="mc-penalty-tag"> +{player.penalty}</span>
+        )}
+        {player.replacement && (
+          <span className="replacement-note">→ {player.replacement}</span>
+        )}
+      </span>
+      <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
+        {player.r1 ?? "–"}
+      </span>
+      <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
+        {player.r2 ?? "–"}
+      </span>
+      <span className={`p-round ${player.replacement ? "replaced" : ""}`}>
+        {player.r3 ?? "–"}
+      </span>
+      <span className={`p-round ${player.replacement ? "replaced" : ""}`}>
+        {player.r4 ?? "–"}
+      </span>
+      <span className="p-penalty">
+        {player.penalty > 0 ? `+${player.penalty}` : ""}
+      </span>
+      <span className="p-total">{player.total ?? "–"}</span>
+    </div>
+  );
+}
+
+function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view }) {
+  const friend = isFriend(team.owner);
+  const me = isMe(team.owner);
+  const rowClass = `lb-row ${me ? "is-me" : friend ? "friend" : ""}`;
+  const rankClass = rank <= 3 ? `rank-${rank}` : "";
+  const toPar = team.team_to_par;
+  const seasonBack = seasonLeader !== null && team.season_pts ? team.season_pts - seasonLeader : null;
+
+  // Primary and secondary columns swap based on view
+  const isSeasonView = view === "season";
+
+  return (
+    <>
+      <tr className={rowClass} onClick={onToggle}>
+        <td className={`rank-cell ${rankClass}`}>{rank}</td>
+        <td className="team-cell">
+          <div className="team-name">
+            {team.alias || team.owner}
+            {me && <span className="me-badge">YOU</span>}
+            {friend && !me && <span className="friend-badge">FRIEND</span>}
+          </div>
+          {team.alias && team.alias !== team.owner && (
+            <div className="team-alias">{team.owner}</div>
+          )}
+        </td>
+        {isSeasonView ? (
+          <>
+            <td className="score-cell">
+              {team.season_pts || "—"}
+              {seasonBack !== null && seasonBack > 0 && (
+                <span className="strokes-back">+{seasonBack}</span>
+              )}
+            </td>
+            <td className="season-cell hide-mobile">
+              <span className={scoreClass(toPar)}>
+                {formatScore(toPar)}
+              </span>
+              {team.mc_count > 0 && (
+                <span className="mc-count">({team.mc_count} MC)</span>
+              )}
+            </td>
+          </>
+        ) : (
+          <>
+            <td className={`score-cell ${scoreClass(toPar)}`}>
+              {formatScore(toPar)}
+              {team.mc_count > 0 && (
+                <span className="mc-count">({team.mc_count} MC)</span>
+              )}
+            </td>
+            <td className="season-cell hide-mobile">
+              {team.season_pts || "—"}
+              {seasonBack !== null && seasonBack > 0 && (
+                <span className="strokes-back">+{seasonBack}</span>
+              )}
+            </td>
+          </>
+        )}
+      </tr>
+      {expanded && (
+        <tr className="team-detail">
+          <td colSpan="4">
+            <div className="detail-inner">
+              <div className="detail-header">
+                <span>Player</span>
+                <span>R1</span>
+                <span>R2</span>
+                <span>R3</span>
+                <span>R4</span>
+                <span>P</span>
+                <span>Tot</span>
+              </div>
+              {(team.players || []).map((p, i) => (
+                <PlayerDetail key={i} player={p} />
+              ))}
+              {team.overuse_penalty > 0 && (
+                <div style={{ fontSize: '0.72rem', color: 'var(--red-400)', padding: '0.3rem 0', textAlign: 'right' }}>
+                  Overuse penalty: +{team.overuse_penalty}
+                </div>
+              )}
+            </div>
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+// ═══════════════════════════════════════════
+// Main App
+// ═══════════════════════════════════════════
+function App() {
+  const [data, setData] = useState(null);
+  const [livePlayerData, setLivePlayerData] = useState(null); // Raw DG player scores
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [error, setError] = useState(null);
+  const [search, setSearch] = useState("");
+  const [expandedTeam, setExpandedTeam] = useState(null);
+  const [friendsOnly, setFriendsOnly] = useState(false);
+  const [view, setView] = useState("live"); // "live" | "weekly" | "season"
+
+  // Load static leaderboard on mount
+  useEffect(() => {
+    loadLeaderboard();
+  }, []);
+
+  async function loadLeaderboard() {
+    try {
+      setLoading(true);
+      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now());
+      if (resp.ok) {
+        const json = await resp.json();
+        setData(json);
+        setError(null);
+      } else {
+        // No static file yet - that's ok on first deploy
+        setData(null);
+      }
+    } catch (err) {
+      console.log("No static leaderboard yet, will use live refresh");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Live refresh from DataGolf API
+  async function handleRefresh() {
+    setRefreshing(true);
+    try {
+      // Fetch both endpoints in parallel
+      const [statsResp, inplayResp] = await Promise.all([
+        fetch(`${CONFIG.DG_LIVE_URL}?file_format=json&key=${CONFIG.DG_API_KEY}`),
+        fetch(`${CONFIG.DG_INPLAY_URL}?file_format=json&key=${CONFIG.DG_API_KEY}`)
+          .catch(() => null), // In-play may not be available pre-tournament
+      ]);
+
+      if (!statsResp.ok) throw new Error(`API error: ${statsResp.status}`);
+      const dgData = await statsResp.json();
+
+      // Process in-play data for cut projections
+      let cutProjections = [];
+      let inplayMap = {};
+      if (inplayResp && inplayResp.ok) {
+        const inplayData = await inplayResp.json();
+        const currentRound = inplayData.info?.current_round || 0;
+
+        // Build lookup for make_cut probabilities
+        (inplayData.data || []).forEach(p => {
+          inplayMap[p.player_name] = {
+            make_cut: p.make_cut,
+            current_score: p.current_score,
+            win: p.win,
+          };
+        });
+
+        // Derive projected cut lines during R1/R2 (before cut is finalized)
+        if (currentRound <= 2) {
+          // Group by current_score, compute avg make_cut per score group
+          const byScore = {};
+          (inplayData.data || []).forEach(p => {
+            const s = p.current_score;
+            if (s === undefined || s === null) return;
+            if (!byScore[s]) byScore[s] = [];
+            byScore[s].push(p.make_cut);
+          });
+
+          // Convert to sorted array (ascending by score = descending by quality)
+          const sorted = Object.entries(byScore)
+            .map(([score, probs]) => ({
+              score: parseInt(score),
+              avg_mc: probs.reduce((a, b) => a + b, 0) / probs.length,
+              count: probs.length,
+            }))
+            .sort((a, b) => a.score - b.score);
+
+          // The cut line IS a specific score. Probability a score is the cut =
+          // P(make cut at this score) - P(make cut at next higher score)
+          // This gives us the probability mass at each score boundary
+          const cutProbs = [];
+          for (let i = 0; i < sorted.length; i++) {
+            const curr = sorted[i];
+            const next = sorted[i + 1];
+            // Only care about the transition zone
+            if (curr.avg_mc < 0.02) continue;
+            if (curr.avg_mc > 0.98 && (!next || next.avg_mc > 0.98)) continue;
+
+            // Probability this score is the cut line ≈ drop in make_cut probability
+            const dropOff = next ? (curr.avg_mc - next.avg_mc) : curr.avg_mc;
+            if (dropOff > 0.03) {
+              cutProbs.push({
+                score: curr.score,
+                probability: Math.min(dropOff, 1),
+                avg_make_cut: curr.avg_mc,
+                count: curr.count,
+              });
+            }
+          }
+
+          // Sort by probability descending, take top 4
+          cutProbs.sort((a, b) => b.probability - a.probability);
+          cutProjections = cutProbs.slice(0, 4);
+        }
+      }
+
+      // Process client-side (simplified version)
+      const processed = clientProcessTournament(dgData);
+      setData(prev => ({
+        ...prev,
+        ...processed,
+        cutProjections,
+        updated_at: new Date().toISOString(),
+      }));
+
+      // Store raw player scores for live tournament leaderboard
+      const livePlayers = (dgData.scores || []).map(p => {
+        const r1 = p.round_1?.score ?? null;
+        const r2 = p.round_2?.score ?? null;
+        const r3 = p.round_3?.score ?? null;
+        const r4 = p.round_4?.score ?? null;
+        const coursePar = p.round_1?.course_par || processed.course_par || 72;
+        const roundsPlayed = [r1, r2, r3, r4].filter(x => x !== null).length;
+        const totalStrokes = [r1, r2, r3, r4].filter(x => x !== null).reduce((a, b) => a + b, 0);
+        const toPar = roundsPlayed > 0 ? totalStrokes - (roundsPlayed * coursePar) : null;
+
+        // Check if this player is a Rule 4 replacement (1st, 2nd, or 3rd by R2 tee time)
+        const r4Index = (processed.replacement_players || []).findIndex(rp =>
+          rp.name === p.player_name
+        );
+        const r4Slot = r4Index >= 0 ? r4Index + 1 : 0; // 0=not R4, 1=1st, 2=2nd, 3=3rd
+
+        return {
+          name: p.player_name,
+          fin_text: p.fin_text || "",
+          r1, r2, r3, r4,
+          total: totalStrokes,
+          to_par: toPar,
+          thru: p.thru || "",
+          today: p.today || "",
+          made_cut: p.round_3 !== null,
+          course_par: coursePar,
+          r4_slot: r4Slot,
+          make_cut_prob: inplayMap[p.player_name]?.make_cut ?? null,
+        };
+      });
+
+      // Sort: by to_par ascending, then by total ascending
+      livePlayers.sort((a, b) => {
+        if (a.to_par === null && b.to_par === null) return 0;
+        if (a.to_par === null) return 1;
+        if (b.to_par === null) return -1;
+        return a.to_par - b.to_par;
+      });
+
+      setLivePlayerData({
+        players: livePlayers,
+        event: dgData.event_name,
+        updated_at: new Date().toISOString(),
+      });
+
+      setError(null);
+    } catch (err) {
+      setError(`Refresh failed: ${err.message}`);
+      console.error(err);
+    } finally {
+      setRefreshing(false);
+    }
+  }
+
+  // Client-side tournament processing (for live refresh)
+  function clientProcessTournament(dgData) {
+    const scores = dgData.scores || [];
+    const eventName = dgData.event_name || "Unknown";
+    const completed = dgData.event_completed;
+
+    // Determine status
+    const hasR4 = scores.some(p => p.round_4 !== null);
+    const hasR3 = scores.some(p => p.round_3 !== null);
+    const hasR2 = scores.some(p => p.round_2 !== null);
+
+    let status = "pre";
+    if (hasR4 && completed) status = "complete";
+    else if (hasR4) status = "round4";
+    else if (hasR3) status = "round3";
+    else if (hasR2) status = "round2";
+    else if (scores.length > 0) status = "round1";
+
+    // Course par
+    let coursePar = 72;
+    if (scores.length > 0 && scores[0].round_1) {
+      coursePar = scores[0].round_1.course_par || 72;
+    }
+
+    // Cut line
+    let cutLine = null;
+    if (hasR3) {
+      const madeCutTotals = scores
+        .filter(p => p.round_3 !== null)
+        .map(p => (p.round_1?.score || 0) + (p.round_2?.score || 0))
+        .filter(t => t > 0);
+      cutLine = Math.max(...madeCutTotals);
+    }
+
+    // Build player lookup
+    const playerMap = {};
+    scores.forEach(p => {
+      const r1 = p.round_1?.score ?? null;
+      const r2 = p.round_2?.score ?? null;
+      const r3 = p.round_3?.score ?? null;
+      const r4 = p.round_4?.score ?? null;
+      const madeCut = p.round_3 !== null;
+      const thru2 = (r1 !== null && r2 !== null) ? r1 + r2 : null;
+      const mcBy = (cutLine && !madeCut && thru2) ? thru2 - cutLine : 0;
+
+      playerMap[p.player_name] = {
+        name: p.player_name,
+        fin_text: p.fin_text,
+        r1, r2, r3, r4,
+        total: [r1, r2, r3, r4].filter(x => x !== null).reduce((a, b) => a + b, 0),
+        made_cut: madeCut,
+        mc_by: mcBy,
+        mc_penalty: mcBy > 0 ? (CONFIG.MC_PENALTY[mcBy] || CONFIG.MC_PENALTY_DEFAULT) : 0,
+        thru: p.thru || "",
+        today: p.today || "",
+      };
+    });
+
+    // Find replacement players
+    let replacements = [];
+    if (cutLine && hasR3) {
+      replacements = scores
+        .filter(p => p.round_3 !== null && (p.round_1?.score || 0) + (p.round_2?.score || 0) === cutLine)
+        .map(p => ({
+          name: p.player_name,
+          r2_teetime: p.round_2?.teetime || "99:99",
+          r3: p.round_3?.score ?? null,
+          r4: p.round_4?.score ?? null,
+        }))
+        .sort((a, b) => a.r2_teetime.localeCompare(b.r2_teetime));
+    }
+
+    return {
+      event: eventName,
+      status,
+      current_round: hasR4 ? 4 : hasR3 ? 3 : hasR2 ? 2 : 1,
+      course_par: coursePar,
+      cut_line: cutLine,
+      replacement_players: replacements.slice(0, 3),
+      team_par: 4 * 4 * coursePar,
+      // Note: teams aren't re-scored client-side (would need rosters)
+      // The live refresh just updates the raw tournament context
+    };
+  }
+
+  // Filter and sort teams (for pool views)
+  const filteredTeams = useMemo(() => {
+    if (view === "live") return []; // Live view uses livePlayerData instead
+    if (!data?.teams) return [];
+    let teams = [...data.teams];
+
+    if (search) {
+      const q = search.toLowerCase();
+      teams = teams.filter(t =>
+        t.owner.toLowerCase().includes(q) ||
+        (t.alias || "").toLowerCase().includes(q)
+      );
+    }
+
+    if (friendsOnly) {
+      teams = teams.filter(t => isFriend(t.owner) || isMe(t.owner));
+    }
+
+    if (view === "season") {
+      teams.sort((a, b) => (a.season_pts || 9999) - (b.season_pts || 9999));
+    }
+
+    return teams;
+  }, [data, search, friendsOnly, view]);
+
+  // Filter live players
+  const filteredLivePlayers = useMemo(() => {
+    if (view !== "live" || !livePlayerData?.players) return [];
+    let players = [...livePlayerData.players];
+
+    if (search) {
+      const q = search.toLowerCase();
+      players = players.filter(p => p.name.toLowerCase().includes(q));
+    }
+
+    return players;
+  }, [livePlayerData, search, view]);
+
+  const seasonLeader = useMemo(() => {
+    if (!data?.teams?.length) return null;
+    return Math.min(...data.teams.map(t => t.season_pts || Infinity));
+  }, [data]);
+
+  if (loading) {
+    return (
+      <div className="loading-state">
+        <div className="loading-spinner" />
+        <div>Loading leaderboard…</div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {/* Header */}
+      <div className="header">
+        <div className="header-top">
+          <div className="brand">
+            <div className="brand-icon">🏌️</div>
+            <div>
+              <h1>Lou's Pool</h1>
+              <div className="brand-sub">Leaderboard</div>
+            </div>
+          </div>
+          <button
+            className={`refresh-btn ${refreshing ? "loading" : ""}`}
+            onClick={handleRefresh}
+          >
+            {refreshing ? (
+              <><span className="spin">↻</span> Refreshing…</>
+            ) : (
+              <>↻ Refresh Scores</>
+            )}
+          </button>
+        </div>
+
+        <div className="event-banner">
+          <div>
+            <div className="event-name">{data?.event || CONFIG.SEASON.event}</div>
+            <div className="event-meta">
+              <span><span className="meta-label">Week</span> {CONFIG.SEASON.week}</span>
+              <span><span className="meta-label">Par</span> {data?.course_par || CONFIG.SEASON.course_par}</span>
+              {data?.cut_line && (
+                <span><span className="meta-label">Cut</span> {data.cut_line}</span>
+              )}
+              <span><span className="meta-label">Teams</span> {data?.total_teams || "—"}</span>
+            </div>
+          </div>
+          <StatusBadge status={data?.status || "pre"} />
+        </div>
+        {data?.updated_at && (
+          <div className="update-time">Updated {timeAgo(data.updated_at)}</div>
+        )}
+      </div>
+
+      {/* Controls */}
+      <div className="controls">
+        <div className="search-box">
+          <span className="search-icon">🔍</span>
+          <input
+            type="text"
+            placeholder={view === "live" ? "Search players…" : "Search teams…"}
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+        </div>
+        {view !== "live" && (
+          <button
+            className={`toggle-btn ${friendsOnly ? "active" : ""}`}
+            onClick={() => setFriendsOnly(!friendsOnly)}
+          >
+            👥 Friends
+          </button>
+        )}
+        <div className="view-tabs">
+          <button
+            className={`view-tab ${view === "live" ? "active" : ""}`}
+            onClick={() => setView("live")}
+          >
+            ⛳ Live
+          </button>
+          <div className="tab-divider" />
+          <button
+            className={`view-tab ${view === "weekly" ? "active" : ""}`}
+            onClick={() => setView("weekly")}
+          >
+            This Week
+          </button>
+          <button
+            className={`view-tab ${view === "season" ? "active" : ""}`}
+            onClick={() => setView("season")}
+          >
+            Season
+          </button>
+        </div>
+      </div>
+
+      {/* Error */}
+      {error && (
+        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 1.5rem' }}>
+          <div style={{
+            background: 'rgba(239, 68, 68, 0.1)',
+            border: '1px solid rgba(239, 68, 68, 0.2)',
+            borderRadius: 8,
+            padding: '0.6rem 1rem',
+            fontSize: '0.8rem',
+            color: 'var(--red-400)',
+          }}>
+            {error}
+          </div>
+        </div>
+      )}
+
+      {/* Projected Cut Widget (Live tab, R1/R2 only) */}
+      {view === "live" && data?.cutProjections?.length > 0 && (
+        <div className="cut-projection">
+          <div className="cut-card">
+            <span className="cut-label"><span className="cut-icon">✂️</span>Projected Cut</span>
+            <div className="cut-options">
+              {data.cutProjections
+                .sort((a, b) => a.score - b.score)
+                .map((cp, i) => {
+                const pct = Math.round((cp.probability || cp.avg_make_cut) * 100);
+                const barClass = pct >= 40 ? "high" : pct >= 20 ? "mid" : "low";
+                return (
+                  <div key={i} className="cut-option">
+                    <span className="cut-score">{formatScore(cp.score)}</span>
+                    <div className="cut-bar-wrap">
+                      <div
+                        className={`cut-bar-fill ${barClass}`}
+                        style={{ width: `${Math.min(pct * 1.5, 100)}%` }}
+                      />
+                    </div>
+                    <span className="cut-pct">{pct}%</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Actual cut line (Live tab, R3+ when cut is known) */}
+      {view === "live" && data?.cut_line && (!data?.cutProjections?.length) && (
+        <div className="cut-projection">
+          <div className="cut-card">
+            <span className="cut-label"><span className="cut-icon">✂️</span>Cut Line</span>
+            <div className="cut-options">
+              <div className="cut-option">
+                <span className="cut-score" style={{ fontSize: '1rem' }}>
+                  {data.cut_line} ({formatScore(data.cut_line - (2 * (data.course_par || 71)))})
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Leaderboard */}
+      <div className="leaderboard">
+        {view === "live" ? (
+          /* ═══ LIVE TOURNAMENT LEADERBOARD ═══ */
+          !livePlayerData?.players?.length ? (
+            <div className="empty-state">
+              No live scores yet. Click <strong>Refresh Scores</strong> to pull the current tournament leaderboard from DataGolf.
+            </div>
+          ) : filteredLivePlayers.length === 0 ? (
+            <div className="empty-state">No players match your search</div>
+          ) : (
+            <table className="lb-table">
+              <thead>
+                <tr>
+                  <th className="num">#</th>
+                  <th>Player</th>
+                  <th className="score hide-mobile">R1</th>
+                  <th className="score hide-mobile">R2</th>
+                  <th className="score hide-mobile">R3</th>
+                  <th className="score hide-mobile">R4</th>
+                  {data?.current_round <= 2 && (
+                    <th className="score" style={{ fontSize: '0.62rem' }}>MC%</th>
+                  )}
+                  <th className="score">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredLivePlayers.map((p, i) => {
+                  const isMC = p.fin_text === "CUT" || (!p.made_cut && p.r2 !== null && data?.cut_line);
+                  // Format name: "Last, First" -> "First Last"
+                  let displayName = p.name;
+                  if (p.name.includes(",")) {
+                    const parts = p.name.split(",");
+                    displayName = `${parts[1].trim()} ${parts[0].trim()}`;
+                  }
+                  // MC% color coding
+                  const mcProb = p.make_cut_prob;
+                  let mcColor = "var(--slate-500)";
+                  let mcBg = "transparent";
+                  if (mcProb !== null) {
+                    if (mcProb >= 0.75) { mcColor = "var(--green-400)"; mcBg = "rgba(52, 208, 126, 0.08)"; }
+                    else if (mcProb >= 0.50) { mcColor = "var(--green-300)"; mcBg = "rgba(110, 231, 165, 0.06)"; }
+                    else if (mcProb >= 0.30) { mcColor = "var(--gold)"; mcBg = "rgba(251, 191, 36, 0.08)"; }
+                    else { mcColor = "var(--mc-red)"; mcBg = "rgba(248, 113, 113, 0.08)"; }
+                  }
+                  return (
+                    <tr key={p.name} className={`live-lb-row ${isMC ? "mc-row" : ""}`}>
+                      <td className={`rank-cell ${i < 3 ? `rank-${i+1}` : ""}`}>
+                        {p.fin_text || i + 1}
+                      </td>
+                      <td className="player-name-cell">
+                        {displayName}
+                        {p.r4_slot > 0 && (
+                          <span className={`r4-badge r4-${p.r4_slot}`}>R4-{p.r4_slot}</span>
+                        )}
+                        {isMC && <span style={{ fontSize: '0.65rem', color: 'var(--mc-red)', marginLeft: '0.4rem', opacity: 0.7 }}>MC</span>}
+                      </td>
+                      <td className="round-score hide-mobile">{p.r1 ?? "–"}</td>
+                      <td className="round-score hide-mobile">{p.r2 ?? "–"}</td>
+                      <td className="round-score hide-mobile">{p.r3 ?? "–"}</td>
+                      <td className="round-score hide-mobile">{p.r4 ?? "–"}</td>
+                      {data?.current_round <= 2 && (
+                        <td className="mc-pct-cell" style={{
+                          textAlign: 'right',
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: '0.75rem',
+                          fontWeight: 500,
+                          color: mcColor,
+                          background: mcBg,
+                        }}>
+                          {mcProb !== null ? `${Math.round(mcProb * 100)}%` : "–"}
+                        </td>
+                      )}
+                      <td className={`score-cell ${scoreClass(p.to_par)}`}>
+                        {formatScore(p.to_par)}
+                        {p.thru && p.thru !== "F" && p.thru !== "" && (
+                          <span style={{ fontSize: '0.65rem', color: 'var(--slate-500)', marginLeft: '0.3rem' }}>
+                            ({p.thru})
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          )
+        ) : (
+          /* ═══ POOL LEADERBOARD (This Week / Season) ═══ */
+          filteredTeams.length === 0 ? (
+            <div className="empty-state">
+              {data?.teams?.length
+                ? "No teams match your search"
+                : "No leaderboard data yet. Click Refresh Scores to pull live data."}
+            </div>
+          ) : (
+            <table className="lb-table">
+              <thead>
+                <tr>
+                  <th className="num">#</th>
+                  <th>Team</th>
+                  <th className="score">
+                    {view === "weekly" ? "This Week" : "Season"}
+                  </th>
+                  <th className="season hide-mobile">
+                    {view === "weekly" ? "Season Total" : "Weekly"}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredTeams.map((team, i) => (
+                  <TeamRow
+                    key={team.owner}
+                    team={team}
+                    rank={view === "season" ? (team.season_rank || i + 1) : (team.weekly_rank || i + 1)}
+                    expanded={expandedTeam === team.owner}
+                    onToggle={() => setExpandedTeam(
+                      expandedTeam === team.owner ? null : team.owner
+                    )}
+                    seasonLeader={seasonLeader}
+                    view={view}
+                  />
+                ))}
+              </tbody>
+            </table>
+          )
+        )}
+      </div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
