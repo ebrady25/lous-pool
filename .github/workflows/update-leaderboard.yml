@@ -3,8 +3,8 @@ name: Update Leaderboard
 on:
   # Scheduled: Every 15 min Thu-Sun during tournament hours (7am-8pm ET)
   schedule:
-    - cron: '*/15 11-23 * * 4-7'  # UTC = ET+5 (roughly 6am-6pm ET)
-    - cron: '*/15 0-1 * * 5-0'    # Late coverage (7-8pm ET on tournament days)
+    - cron: '*/15 11-23 * * 4,5,6,0'
+    - cron: '*/15 0-1 * * 5,6,0,1'
   
   # Manual trigger
   workflow_dispatch:
@@ -59,7 +59,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main  # Get latest after score update
+          ref: main
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
