@@ -399,9 +399,11 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
     """
     season_data = season_data or {}
     scored_teams = []
+    rostered_owners = set()
     
     for team in rosters:
         owner = team["owner"]
+        rostered_owners.add(owner)
         usage = season_data.get(owner, {}).get("usage", {})
         scored = score_team(team, tournament_data, season_usage=usage)
         
@@ -411,6 +413,25 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         scored["prev_pts"] = prev_pts
         
         scored_teams.append(scored)
+    
+    # Include ALL teams from season_data that aren't in this week's rosters
+    # so the season leaderboard always shows everyone
+    for owner, sdata in season_data.items():
+        if owner not in rostered_owners:
+            prev_pts = sdata.get("pts", 0)
+            alias = sdata.get("alias", "")
+            scored_teams.append({
+                "owner": owner,
+                "alias": alias,
+                "players": [],
+                "team_total": None,
+                "team_par": 4 * 4 * tournament_data["course_par"],
+                "team_to_par": None,
+                "overuse_penalty": 0,
+                "mc_count": 0,
+                "season_pts": prev_pts,
+                "prev_pts": prev_pts,
+            })
     
     # Sort by team_to_par (lowest first), then by season total
     scored_teams.sort(key=lambda x: (x["team_to_par"] if x["team_to_par"] is not None else 9999))
