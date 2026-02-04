@@ -215,7 +215,7 @@ def process_tournament(dg_data):
         "cut_line": cut_line,
         "replacement_players": replacement_players,
         "players": players,
-        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "updated_at": datetime.now(tz=__import__("datetime").timezone.utc).isoformat(),
     }
 
 
@@ -503,7 +503,12 @@ def main():
         json.dump(leaderboard, f, indent=2)
     
     print(f"\nLeaderboard: {leaderboard['total_teams']} teams")
-    print(f"Leader: {leaderboard['teams'][0]['owner']} ({leaderboard['teams'][0]['team_to_par']:+d})")
+    leader = leaderboard['teams'][0]
+    leader_score = leader.get('team_to_par')
+    if leader_score is not None:
+        print(f"Leader: {leader['owner']} ({leader_score:+d})")
+    else:
+        print(f"Leader: {leader['owner']} (pre-tournament)")
     print(f"Written to {args.output}")
 
 
