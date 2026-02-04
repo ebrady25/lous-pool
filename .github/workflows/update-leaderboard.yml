@@ -1,26 +1,13 @@
 name: Update Leaderboard
 
 on:
-  # Scheduled: Every 15 min Thu-Sun during tournament hours (7am-8pm ET)
   schedule:
     - cron: '*/15 11-23 * * 4,5,6,0'
     - cron: '*/15 0-1 * * 5,6,0,1'
-  
-  # Manual trigger
   workflow_dispatch:
-
-  # On push to main (deploy updates)
-  push:
-    branches: [main]
-    paths:
-      - 'data/**'
-      - 'public/**'
-      - 'scripts/**'
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   update-scores:
@@ -40,7 +27,7 @@ jobs:
           python scripts/score_engine.py \
             --output public/data/leaderboard.json \
             --rosters data/rosters.json \
-            --season data/season.json
+            --season data/season.json || echo "⚠️ No active tournament - skipping score update"
 
       - name: Commit updated leaderboard
         run: |
@@ -49,26 +36,3 @@ jobs:
           git add public/data/leaderboard.json
           git diff --staged --quiet || git commit -m "🏌️ Update leaderboard $(date -u +%H:%M)"
           git push
-
-  deploy:
-    needs: update-scores
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'public'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
