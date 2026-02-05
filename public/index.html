@@ -1017,9 +1017,33 @@ function App() {
       setLoading(true);
       const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now());
       if (resp.ok) {
-        const json = await resp.json();
-        setData(json);
+        const lb = await resp.json();
+        setData(lb);
         setError(null);
+        
+        // Also populate livePlayerData from live_players array
+        if (lb.live_players && lb.live_players.length > 0) {
+          setLivePlayerData({
+            players: lb.live_players.map(p => ({
+              name: p.name,
+              fin_text: p.position || p.fin_text || "",
+              r1: p.r1,
+              r2: p.r2,
+              r3: p.r3,
+              r4: p.r4,
+              total: p.total,
+              to_par: p.current_score,
+              thru: p.thru || "",
+              today: p.today || "",
+              made_cut: p.made_cut !== false,
+              course_par: lb.course_par || 72,
+              r4_slot: 0,
+              make_cut_prob: null,
+            })),
+            event: lb.event,
+            updated_at: lb.updated_at,
+          });
+        }
       } else {
         // No static file yet - that's ok on first deploy
         setData(null);
@@ -1506,4 +1530,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
+
 
