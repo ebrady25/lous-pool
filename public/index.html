@@ -1040,7 +1040,7 @@ function App() {
               made_cut: p.made_cut !== false,
               course_par: lb.course_par || 72,
               r4_slot: 0,
-              make_cut_prob: null,
+              make_cut_prob: p.make_cut,
             })),
             event: lb.event,
             updated_at: lb.updated_at,
@@ -1100,7 +1100,7 @@ function App() {
             made_cut: p.made_cut !== false,
             course_par: lb.course_par || 72,
             r4_slot: 0,
-            make_cut_prob: null,
+            make_cut_prob: p.make_cut,
           })),
           event: lb.event,
           updated_at: lb.updated_at,
@@ -1535,6 +1535,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
+
 
 
 
