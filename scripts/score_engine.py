@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """
-BirdieBuddy Pool Scoring Engine
-================================
+BirdieBuddy Pool Scoring Engine v2.0
+====================================
 Pulls live/historical scores from DataGolf API, applies Rule 4 replacement
 mechanics and missed-cut penalties, and outputs leaderboard JSON.
+
+FIXES in v2.0:
+- Uses in-play endpoint for live scoring (has today/thru/position)
+- Properly handles live_stats format from live-tournament-stats
+- Combines both endpoints for complete picture
+- Handles in-progress rounds (R1 not complete yet)
 
 Usage:
   python score_engine.py                   # Live tournament
@@ -15,7 +21,7 @@ import json
 import sys
 import os
 import argparse
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 from urllib.error import URLError
 
@@ -39,16 +45,21 @@ OVERUSE_PENALTY = {4: 10, 5: 15, 6: 20}
 def fetch_json(url):
     """Fetch JSON from URL with error handling."""
     try:
-        req = Request(url, headers={"User-Agent": "BirdieBuddy/1.0"})
+        req = Request(url, headers={"User-Agent": "BirdieBuddy/2.0"})
         with urlopen(req, timeout=30) as resp:
             return json.loads(resp.read().decode())
     except URLError as e:
         print(f"API Error: {e}", file=sys.stderr)
         return None
 
-def fetch_live_scores():
-    """Fetch current/most-recent tournament from DataGolf."""
+def fetch_live_stats():
+    """Fetch live-tournament-stats (has positions, SG data)."""
     url = f"{BASE_URL}/preds/live-tournament-stats?file_format=json&key={API_KEY}"
+    return fetch_json(url)
+
+def fetch_inplay():
+    """Fetch in-play data (has today, thru, R1-R4, current_score)."""
+    url = f"{BASE_URL}/preds/in-play?file_format=json&key={API_KEY}"
     return fetch_json(url)
 
 def fetch_historical(event_id):
@@ -61,13 +72,14 @@ def fetch_historical(event_id):
 # ---------------------------------------------------------------------------
 def get_round_score(player, round_num):
     """Extract score for a given round. Returns None if round not played."""
-    rkey = f"round_{round_num}"
-    rd = player.get(rkey)
-    if rd is None:
-        return None
-    if isinstance(rd, dict):
-        return rd.get("score")
-    return rd
+    # Try various key formats
+    for key in [f"round_{round_num}", f"R{round_num}", f"r{round_num}"]:
+        rd = player.get(key)
+        if rd is not None:
+            if isinstance(rd, dict):
+                return rd.get("score")
+            return rd
+    return None
 
 def get_round_par(player, round_num):
     """Extract course par for a round."""
@@ -82,11 +94,16 @@ def get_r2_teetime(player):
     r2 = player.get("round_2")
     if isinstance(r2, dict):
         return r2.get("teetime", "99:99")
-    return "99:99"
+    return player.get("r2_teetime", "99:99")
 
 def player_made_cut(player):
-    """Check if player made the cut (has R3 data)."""
-    r3 = player.get("round_3")
+    """Check if player made the cut (has R3 data or make_cut flag)."""
+    # Check make_cut field from in-play endpoint
+    mc = player.get("make_cut")
+    if mc is not None:
+        return mc > 0.99  # >99% make cut means made it
+    # Fallback: check R3 data
+    r3 = player.get("round_3") or player.get("R3")
     return r3 is not None
 
 def get_total_thru_2(player):
@@ -97,22 +114,90 @@ def get_total_thru_2(player):
         return None
     return r1 + r2
 
-def process_tournament(dg_data):
+def merge_player_data(live_stats, inplay_data):
+    """
+    Merge data from live-tournament-stats and in-play endpoints.
+    Returns combined player data with all available fields.
+    """
+    # Build lookup from in-play (has today/thru/R1-R4)
+    inplay_lookup = {}
+    for p in inplay_data:
+        dg_id = p.get("dg_id")
+        name = p.get("player_name", "")
+        if dg_id:
+            inplay_lookup[dg_id] = p
+        if name:
+            inplay_lookup[name.lower()] = p
+    
+    # Merge with live_stats (has positions/SG data)
+    merged = []
+    for p in live_stats:
+        dg_id = p.get("dg_id")
+        name = p.get("player_name", "")
+        
+        # Find matching in-play data
+        ip = inplay_lookup.get(dg_id) or inplay_lookup.get(name.lower(), {})
+        
+        # Combine all fields
+        combined = {**ip, **p}  # live_stats takes priority for overlapping keys
+        
+        # Add computed fields
+        combined["today"] = ip.get("today", p.get("total", 0))
+        combined["thru"] = ip.get("thru", p.get("thru", 0))
+        combined["current_score"] = ip.get("current_score", p.get("total", 0))
+        combined["position"] = p.get("position", ip.get("current_pos", ""))
+        
+        merged.append(combined)
+    
+    return merged
+
+def process_tournament(live_data, inplay_data=None):
     """
     Process DataGolf tournament data into structured scoring data.
     Returns dict with event info, player scores, cut line, and replacement players.
+    
+    live_data: from fetch_live_stats()
+    inplay_data: from fetch_inplay() (optional but recommended for live scoring)
     """
-    scores = dg_data.get("scores") or dg_data.get("data", [])
-    event_name = dg_data.get("event_name", "Unknown Event")
-    event_completed = dg_data.get("event_completed")
+    # Get event info
+    event_name = live_data.get("event_name", "Unknown Event")
+    event_completed = live_data.get("event_completed")
+    last_updated = live_data.get("last_updated", "")
+    
+    # Get scores - handle different response formats
+    live_stats = live_data.get("live_stats") or live_data.get("scores") or live_data.get("data", [])
+    inplay_scores = []
+    if inplay_data:
+        inplay_scores = inplay_data.get("data") or inplay_data.get("scores", [])
+    
+    # Merge data sources
+    if inplay_scores:
+        scores = merge_player_data(live_stats, inplay_scores)
+    else:
+        scores = live_stats
+    
+    if not scores:
+        return {
+            "event_name": event_name,
+            "event_completed": False,
+            "status": "pre",
+            "current_round": 0,
+            "course_par": 72,
+            "cut_line": None,
+            "replacement_players": [],
+            "players": {},
+            "updated_at": datetime.now(tz=timezone.utc).isoformat(),
+        }
     
     # Determine event status
-    # Check what round data is available
-    has_r3 = any(player_made_cut(p) for p in scores)
-    has_r4 = any(get_round_score(p, 4) is not None for p in scores)
-    has_r2 = any(get_round_score(p, 2) is not None for p in scores)
+    # Check for in-progress or completed rounds
+    has_thru = any(p.get("thru", 0) for p in scores)
     has_r1 = any(get_round_score(p, 1) is not None for p in scores)
+    has_r2 = any(get_round_score(p, 2) is not None for p in scores)
+    has_r3 = any(get_round_score(p, 3) is not None for p in scores)
+    has_r4 = any(get_round_score(p, 4) is not None for p in scores)
     
+    # Determine current round and status
     if has_r4 and event_completed:
         status = "complete"
         current_round = 4
@@ -128,15 +213,19 @@ def process_tournament(dg_data):
     elif has_r1:
         status = "round1"
         current_round = 1
+    elif has_thru:
+        # Round 1 in progress (no R1 complete yet but players on course)
+        status = "round1_live"
+        current_round = 1
     else:
         status = "pre"
         current_round = 0
     
-    # Get course par (from first player's R1)
+    # Get course par
     course_par = 72
     for p in scores:
         cp = get_round_par(p, 1)
-        if cp:
+        if cp and cp != 72:
             course_par = cp
             break
     
@@ -172,7 +261,6 @@ def process_tournament(dg_data):
                             "r4": get_round_score(p, 4),
                         })
             
-            # Sort by R2 tee time ascending
             cut_line_players.sort(key=lambda x: x["r2_teetime"])
             replacement_players = cut_line_players
     
@@ -185,21 +273,36 @@ def process_tournament(dg_data):
         r3 = get_round_score(p, 3)
         r4 = get_round_score(p, 4)
         
+        # For live scoring, use current_score or total
+        today = p.get("today", 0) or 0
+        thru = p.get("thru", 0) or 0
+        current_score = p.get("current_score", p.get("total", 0)) or 0
+        position = p.get("position", p.get("current_pos", ""))
+        
         made_cut = player_made_cut(p)
         total_thru_2 = get_total_thru_2(p)
         mc_by = (total_thru_2 - cut_line) if (cut_line and not made_cut and total_thru_2) else 0
         
+        # Calculate total strokes
+        if r1 is not None:
+            total = sum(x for x in [r1, r2, r3, r4] if x is not None)
+        else:
+            # Use live scoring (relative to par -> strokes)
+            total = current_score + (course_par * thru // 18) if thru else None
+        
         players[name] = {
             "name": name,
             "dg_id": p.get("dg_id"),
+            "position": position,
             "fin_text": p.get("fin_text", ""),
             "r1": r1,
             "r2": r2,
             "r3": r3,
             "r4": r4,
-            "total": sum(x for x in [r1, r2, r3, r4] if x is not None),
-            "thru": p.get("thru", ""),
-            "today": p.get("today", ""),
+            "total": total,
+            "thru": thru,
+            "today": today,
+            "current_score": current_score,
             "made_cut": made_cut,
             "mc_by": mc_by,
             "mc_penalty": mc_penalty(mc_by) if mc_by > 0 else 0,
@@ -215,7 +318,8 @@ def process_tournament(dg_data):
         "cut_line": cut_line,
         "replacement_players": replacement_players,
         "players": players,
-        "updated_at": datetime.now(tz=__import__("datetime").timezone.utc).isoformat(),
+        "last_updated": last_updated,
+        "updated_at": datetime.now(tz=timezone.utc).isoformat(),
     }
 
 
@@ -234,47 +338,38 @@ def build_name_lookup(players_dict):
     """Build flexible name lookup from DataGolf player dict."""
     lookup = {}
     for key, pdata in players_dict.items():
-        # Original key (usually "Last, First")
         norm = normalize_name(key)
         lookup[norm] = pdata
-        # Also index by "first last" format
         parts = key.split(",")
         if len(parts) == 2:
             last = parts[0].strip().lower()
             first = parts[1].strip().lower()
             lookup[f"{first} {last}"] = pdata
-            # Index by full last name (for unique ones)
             lookup[last] = pdata
-            # Handle abbreviated first names: "J." -> matches "Justin"
             if "." not in first:
                 lookup[f"{first[0]}. {last}"] = pdata
     return lookup
 
 def find_player(name, lookup):
     """Find a player in the lookup by name, trying various normalizations."""
-    # Handle WD replacement format: "Max Homa/J. Day" -> try first name
     if "/" in name:
         name = name.split("/")[0].strip()
     
     n = normalize_name(name)
     
-    # Exact match
     if n in lookup:
         return lookup[n]
     
-    # Try removing middle initials, periods, etc.
     clean = n.replace(".", "").replace("  ", " ").strip()
     if clean in lookup:
         return lookup[clean]
     
-    # Try last name only
     parts = n.split()
     if len(parts) >= 2:
         last = parts[-1]
         if last in lookup:
             return lookup[last]
     
-    # Fuzzy: check if all parts of the search name appear in a key
     for key, val in lookup.items():
         if all(part in key for part in n.split()):
             return val
@@ -284,18 +379,7 @@ def find_player(name, lookup):
     return None
 
 def score_team(team, tournament_data, season_usage=None):
-    """
-    Score a single team for the current tournament.
-    
-    team: {
-        "owner": str,
-        "alias": str,
-        "players": ["Player 1", "Player 2", "Player 3", "Player 4"],
-        "alternates": ["Alt 1", "Alt 2"]
-    }
-    
-    Returns scored team dict with per-player breakdowns.
-    """
+    """Score a single team for the current tournament."""
     players_dict = tournament_data["players"]
     lookup = build_name_lookup(players_dict)
     replacement_players = tournament_data["replacement_players"]
@@ -303,15 +387,14 @@ def score_team(team, tournament_data, season_usage=None):
     course_par = tournament_data["course_par"]
     status = tournament_data["status"]
     
-    team_par = 4 * 4 * course_par  # 4 players * 4 rounds * par
+    team_par = 4 * 4 * course_par
     scored_players = []
-    mc_count = 0  # Track MC players for replacement assignment
+    mc_count = 0
     
     for i, player_name in enumerate(team["players"][:4]):
         pdata = find_player(player_name, lookup)
         
         if pdata is None:
-            # Player not found in tournament data - might be WD before starting
             scored_players.append({
                 "name": player_name,
                 "slot": i + 1,
@@ -320,6 +403,10 @@ def score_team(team, tournament_data, season_usage=None):
                 "total": None,
                 "status": "not_found",
                 "replacement": None,
+                "position": "",
+                "thru": 0,
+                "today": 0,
+                "current_score": 0,
             })
             continue
         
@@ -332,20 +419,23 @@ def score_team(team, tournament_data, season_usage=None):
         player_status = "active"
         
         if not pdata["made_cut"] and cut_line is not None:
-            # Missed cut - apply Rule 4
             player_status = "mc"
             penalty = pdata["mc_penalty"]
             mc_count += 1
             
-            # Assign replacement player (by team listing order)
-            rep_idx = mc_count - 1  # 0-indexed
+            rep_idx = mc_count - 1
             if rep_idx < len(replacement_players):
                 rep = replacement_players[rep_idx]
                 r3 = rep["r3"]
                 r4 = rep["r4"]
                 replacement = rep["name"]
         
-        total = sum(x for x in [r1, r2, r3, r4] if x is not None) + penalty
+        # Calculate total
+        if r1 is not None:
+            total = sum(x for x in [r1, r2, r3, r4] if x is not None) + penalty
+        else:
+            # Use live score (to par) - convert to strokes estimate
+            total = pdata.get("current_score", 0)
         
         scored_players.append({
             "name": player_name,
@@ -359,20 +449,29 @@ def score_team(team, tournament_data, season_usage=None):
             "total": total,
             "status": player_status,
             "replacement": replacement,
-            "fin_text": pdata["fin_text"],
-            "today": pdata.get("today", ""),
-            "thru": pdata.get("thru", ""),
+            "position": pdata.get("position", ""),
+            "fin_text": pdata.get("fin_text", ""),
+            "today": pdata.get("today", 0),
+            "thru": pdata.get("thru", 0),
+            "current_score": pdata.get("current_score", 0),
         })
     
     # Overuse penalties
     overuse_penalty = 0
     if season_usage:
         for p in team["players"][:4]:
-            uses = season_usage.get(p, 0) + 1  # +1 for this week
+            uses = season_usage.get(p, 0) + 1
             if uses in OVERUSE_PENALTY:
                 overuse_penalty += OVERUSE_PENALTY[uses]
     
-    team_total = sum(p["total"] for p in scored_players if p["total"] is not None)
+    # Team total - use to-par for live scoring
+    if status in ["round1_live", "round1", "round2"] and not any(p["r1"] for p in scored_players):
+        # Live scoring - sum current_score (relative to par)
+        team_total = sum(p.get("current_score", 0) or 0 for p in scored_players)
+    else:
+        # Standard scoring
+        team_total = sum(p["total"] for p in scored_players if p["total"] is not None)
+    
     team_total += overuse_penalty
     
     return {
@@ -381,22 +480,14 @@ def score_team(team, tournament_data, season_usage=None):
         "players": scored_players,
         "team_total": team_total,
         "team_par": team_par,
-        "team_to_par": team_total - team_par if team_total else None,
+        "team_to_par": team_total,  # During live, team_total IS to_par
         "overuse_penalty": overuse_penalty,
         "mc_count": mc_count,
     }
 
 
 def build_leaderboard(rosters, tournament_data, season_data=None):
-    """
-    Score all teams and build the full leaderboard.
-    
-    rosters: list of team dicts
-    tournament_data: output of process_tournament()
-    season_data: optional dict of {"team_name": {"pts": cumulative, "usage": {...}}}
-    
-    Returns complete leaderboard JSON.
-    """
+    """Score all teams and build the full leaderboard."""
     season_data = season_data or {}
     scored_teams = []
     rostered_owners = set()
@@ -407,15 +498,13 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         usage = season_data.get(owner, {}).get("usage", {})
         scored = score_team(team, tournament_data, season_usage=usage)
         
-        # Add season context
         prev_pts = season_data.get(owner, {}).get("pts", 0)
         scored["season_pts"] = prev_pts + (scored["team_total"] or 0)
         scored["prev_pts"] = prev_pts
         
         scored_teams.append(scored)
     
-    # Include ALL teams from season_data that aren't in this week's rosters
-    # so the season leaderboard always shows everyone
+    # Include ALL teams from season_data
     for owner, sdata in season_data.items():
         if owner not in rostered_owners:
             prev_pts = sdata.get("pts", 0)
@@ -433,21 +522,38 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
                 "prev_pts": prev_pts,
             })
     
-    # Sort by team_to_par (lowest first), then by season total
+    # Sort by team_to_par (lowest first)
     scored_teams.sort(key=lambda x: (x["team_to_par"] if x["team_to_par"] is not None else 9999))
     
-    # Assign ranks
     for i, team in enumerate(scored_teams):
         team["weekly_rank"] = i + 1
     
-    # Season ranks
     season_sorted = sorted(scored_teams, key=lambda x: x["season_pts"])
     for i, team in enumerate(season_sorted):
         team["season_rank"] = i + 1
     
-    # Re-sort by weekly rank for output
     scored_teams.sort(key=lambda x: x["weekly_rank"])
-    leader_total = scored_teams[0]["team_to_par"] if scored_teams else 0
+    
+    # Build live tournament leaderboard (all players sorted by score)
+    live_players = []
+    for name, p in tournament_data["players"].items():
+        live_players.append({
+            "name": name,
+            "position": p.get("position", ""),
+            "thru": p.get("thru", 0),
+            "today": p.get("today", 0),
+            "current_score": p.get("current_score", 0),
+            "total": p.get("total"),
+            "r1": p.get("r1"),
+            "r2": p.get("r2"),
+            "r3": p.get("r3"),
+            "r4": p.get("r4"),
+            "fin_text": p.get("fin_text", ""),
+            "made_cut": p.get("made_cut", True),
+        })
+    
+    # Sort by current_score (to par)
+    live_players.sort(key=lambda x: (x.get("current_score") or 999, x.get("name", "")))
     
     return {
         "event": tournament_data["event_name"],
@@ -460,9 +566,11 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
             for r in tournament_data["replacement_players"][:5]
         ],
         "team_par": 4 * 4 * tournament_data["course_par"],
+        "last_updated": tournament_data.get("last_updated", ""),
         "updated_at": tournament_data["updated_at"],
         "teams": scored_teams,
         "total_teams": len(scored_teams),
+        "live_players": live_players,
     }
 
 
@@ -470,31 +578,37 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
 # CLI Entry Point
 # ---------------------------------------------------------------------------
 def main():
-    parser = argparse.ArgumentParser(description="BirdieBuddy Pool Scoring Engine")
+    parser = argparse.ArgumentParser(description="BirdieBuddy Pool Scoring Engine v2")
     parser.add_argument("--historical", type=int, help="Fetch historical event by ID")
     parser.add_argument("--output", default="data/leaderboard.json", help="Output JSON path")
     parser.add_argument("--rosters", default="data/rosters.json", help="Rosters JSON path")
     parser.add_argument("--season", default="data/season.json", help="Season data JSON path")
     args = parser.parse_args()
     
-    # Fetch tournament data
     if args.historical:
         print(f"Fetching historical event {args.historical}...")
         dg_data = fetch_historical(args.historical)
+        inplay_data = None
     else:
         print("Fetching live tournament data...")
-        dg_data = fetch_live_scores()
+        dg_data = fetch_live_stats()
+        inplay_data = fetch_inplay()
     
     if not dg_data:
         print("Failed to fetch data", file=sys.stderr)
         sys.exit(1)
     
     print(f"Event: {dg_data.get('event_name', 'Unknown')}")
+    print(f"Last updated: {dg_data.get('last_updated', 'N/A')}")
     
-    # Process tournament
-    tournament = process_tournament(dg_data)
-    print(f"Status: {tournament['status']}, Cut: {tournament['cut_line']}")
-    print(f"Replacements: {[r['name'] for r in tournament['replacement_players'][:3]]}")
+    tournament = process_tournament(dg_data, inplay_data)
+    print(f"Status: {tournament['status']}, Round: {tournament['current_round']}")
+    print(f"Players loaded: {len(tournament['players'])}")
+    
+    # Sample player check
+    sample_players = list(tournament['players'].values())[:3]
+    for p in sample_players:
+        print(f"  {p['name']}: pos={p.get('position')}, thru={p.get('thru')}, today={p.get('today')}")
     
     # Load rosters
     rosters_path = args.rosters
@@ -503,22 +617,18 @@ def main():
             rosters = json.load(f)
     else:
         print(f"No rosters file at {rosters_path}. Generating tournament-only output.")
-        # Output just tournament data
         with open(args.output, "w") as f:
             json.dump(tournament, f, indent=2)
         print(f"Wrote tournament data to {args.output}")
         return
     
-    # Load season data
     season_data = {}
     if os.path.exists(args.season):
         with open(args.season) as f:
             season_data = json.load(f)
     
-    # Build leaderboard
     leaderboard = build_leaderboard(rosters, tournament, season_data)
     
-    # Write output
     os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
     with open(args.output, "w") as f:
         json.dump(leaderboard, f, indent=2)
