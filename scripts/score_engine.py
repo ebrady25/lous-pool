@@ -552,8 +552,17 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
             "made_cut": p.get("made_cut", True),
         })
     
-    # Sort by current_score (to par)
-    live_players.sort(key=lambda x: (x.get("current_score") or 999, x.get("name", "")))
+    # Sort by current_score (to par), then by thru (more holes = higher priority), then name
+    # Use 999 only for None, not for 0 (even par)
+    def sort_key(x):
+        score = x.get("current_score")
+        if score is None:
+            score = 999
+        thru = x.get("thru") or 0
+        # Negative thru puts players with more holes completed first among same score
+        return (score, -thru, x.get("name", ""))
+    
+    live_players.sort(key=sort_key)
     
     return {
         "event": tournament_data["event_name"],
