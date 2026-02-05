@@ -430,12 +430,13 @@ def score_team(team, tournament_data, season_usage=None):
                 r4 = rep["r4"]
                 replacement = rep["name"]
         
-        # Calculate total
+        # Calculate total - use current_score (to par) for live scoring
         if r1 is not None:
+            # Round complete - use actual strokes
             total = sum(x for x in [r1, r2, r3, r4] if x is not None) + penalty
         else:
-            # Use live score (to par) - convert to strokes estimate
-            total = pdata.get("current_score", 0)
+            # Live scoring - use current_score (to par)
+            total = pdata.get("current_score", 0) or 0
         
         scored_players.append({
             "name": player_name,
@@ -464,12 +465,13 @@ def score_team(team, tournament_data, season_usage=None):
             if uses in OVERUSE_PENALTY:
                 overuse_penalty += OVERUSE_PENALTY[uses]
     
-    # Team total - use to-par for live scoring
-    if status in ["round1_live", "round1", "round2"] and not any(p["r1"] for p in scored_players):
+    # Team total - ALWAYS use current_score (to-par) during live tournament
+    # current_score is the score relative to par, which is what we want for pool scoring
+    if status in ["round1_live", "round1", "round2", "round3", "round4"]:
         # Live scoring - sum current_score (relative to par)
         team_total = sum(p.get("current_score", 0) or 0 for p in scored_players)
     else:
-        # Standard scoring
+        # Tournament complete - use final strokes if available
         team_total = sum(p["total"] for p in scored_players if p["total"] is not None)
     
     team_total += overuse_penalty
@@ -654,3 +656,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
