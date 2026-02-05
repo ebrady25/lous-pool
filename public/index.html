@@ -1032,139 +1032,52 @@ function App() {
   }
 
   // Live refresh from DataGolf API
+  // Refresh by reloading leaderboard.json (updated by GitHub Actions every 5 min)
   async function handleRefresh() {
     setRefreshing(true);
     try {
-      // Fetch both endpoints in parallel
-      const [statsResp, inplayResp] = await Promise.all([
-        fetch(`${CONFIG.DG_LIVE_URL}?file_format=json&key=${CONFIG.DG_API_KEY}`),
-        fetch(`${CONFIG.DG_INPLAY_URL}?file_format=json&key=${CONFIG.DG_API_KEY}`)
-          .catch(() => null), // In-play may not be available pre-tournament
-      ]);
-
-      if (!statsResp.ok) throw new Error(`API error: ${statsResp.status}`);
-      const dgData = await statsResp.json();
-
-      // Process in-play data for cut projections
-      let cutProjections = [];
-      let inplayMap = {};
-      if (inplayResp && inplayResp.ok) {
-        const inplayData = await inplayResp.json();
-        const currentRound = inplayData.info?.current_round || 0;
-
-        // Build lookup for make_cut probabilities
-        (inplayData.data || []).forEach(p => {
-          inplayMap[p.player_name] = {
-            make_cut: p.make_cut,
-            current_score: p.current_score,
-            win: p.win,
-          };
-        });
-
-        // Derive projected cut lines during R1/R2 (before cut is finalized)
-        if (currentRound <= 2) {
-          // Group by current_score, compute avg make_cut per score group
-          const byScore = {};
-          (inplayData.data || []).forEach(p => {
-            const s = p.current_score;
-            if (s === undefined || s === null) return;
-            if (!byScore[s]) byScore[s] = [];
-            byScore[s].push(p.make_cut);
-          });
-
-          // Convert to sorted array (ascending by score = descending by quality)
-          const sorted = Object.entries(byScore)
-            .map(([score, probs]) => ({
-              score: parseInt(score),
-              avg_mc: probs.reduce((a, b) => a + b, 0) / probs.length,
-              count: probs.length,
-            }))
-            .sort((a, b) => a.score - b.score);
-
-          // The cut line IS a specific score. Probability a score is the cut =
-          // P(make cut at this score) - P(make cut at next higher score)
-          // This gives us the probability mass at each score boundary
-          const cutProbs = [];
-          for (let i = 0; i < sorted.length; i++) {
-            const curr = sorted[i];
-            const next = sorted[i + 1];
-            // Only care about the transition zone
-            if (curr.avg_mc < 0.02) continue;
-            if (curr.avg_mc > 0.98 && (!next || next.avg_mc > 0.98)) continue;
-
-            // Probability this score is the cut line ≈ drop in make_cut probability
-            const dropOff = next ? (curr.avg_mc - next.avg_mc) : curr.avg_mc;
-            if (dropOff > 0.03) {
-              cutProbs.push({
-                score: curr.score,
-                probability: Math.min(dropOff, 1),
-                avg_make_cut: curr.avg_mc,
-                count: curr.count,
-              });
-            }
-          }
-
-          // Sort by probability descending, take top 4
-          cutProbs.sort((a, b) => b.probability - a.probability);
-          cutProjections = cutProbs.slice(0, 4);
-        }
-      }
-
-      // Process client-side (simplified version)
-      const processed = clientProcessTournament(dgData);
+      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now());
+      if (!resp.ok) throw new Error("Failed to fetch leaderboard");
+      const lb = await resp.json();
+      
+      // Update state with leaderboard data
       setData(prev => ({
         ...prev,
-        ...processed,
-        cutProjections,
-        updated_at: new Date().toISOString(),
+        event: lb.event || prev.event,
+        status: lb.status || "pre",
+        current_round: lb.current_round || 0,
+        course_par: lb.course_par || 72,
+        cut_line: lb.cut_line,
+        replacement_players: lb.replacement_players || [],
+        teams: lb.teams || prev.teams,
+        total_teams: lb.total_teams || prev.total_teams,
+        updated_at: lb.updated_at,
       }));
-
-      // Store raw player scores for live tournament leaderboard
-      const livePlayers = (dgData.scores || []).map(p => {
-        const r1 = p.round_1?.score ?? null;
-        const r2 = p.round_2?.score ?? null;
-        const r3 = p.round_3?.score ?? null;
-        const r4 = p.round_4?.score ?? null;
-        const coursePar = p.round_1?.course_par || processed.course_par || 72;
-        const roundsPlayed = [r1, r2, r3, r4].filter(x => x !== null).length;
-        const totalStrokes = [r1, r2, r3, r4].filter(x => x !== null).reduce((a, b) => a + b, 0);
-        const toPar = roundsPlayed > 0 ? totalStrokes - (roundsPlayed * coursePar) : null;
-
-        // Check if this player is a Rule 4 replacement (1st, 2nd, or 3rd by R2 tee time)
-        const r4Index = (processed.replacement_players || []).findIndex(rp =>
-          rp.name === p.player_name
-        );
-        const r4Slot = r4Index >= 0 ? r4Index + 1 : 0; // 0=not R4, 1=1st, 2=2nd, 3=3rd
-
-        return {
-          name: p.player_name,
-          fin_text: p.fin_text || "",
-          r1, r2, r3, r4,
-          total: totalStrokes,
-          to_par: toPar,
-          thru: p.thru || "",
-          today: p.today || "",
-          made_cut: p.round_3 !== null,
-          course_par: coursePar,
-          r4_slot: r4Slot,
-          make_cut_prob: inplayMap[p.player_name]?.make_cut ?? null,
-        };
-      });
-
-      // Sort: by to_par ascending, then by total ascending
-      livePlayers.sort((a, b) => {
-        if (a.to_par === null && b.to_par === null) return 0;
-        if (a.to_par === null) return 1;
-        if (b.to_par === null) return -1;
-        return a.to_par - b.to_par;
-      });
-
-      setLivePlayerData({
-        players: livePlayers,
-        event: dgData.event_name,
-        updated_at: new Date().toISOString(),
-      });
-
+      
+      // Use live_players from leaderboard.json if available
+      if (lb.live_players && lb.live_players.length > 0) {
+        setLivePlayerData({
+          players: lb.live_players.map(p => ({
+            name: p.name,
+            fin_text: p.fin_text || p.position || "",
+            r1: p.r1,
+            r2: p.r2,
+            r3: p.r3,
+            r4: p.r4,
+            total: p.total,
+            to_par: p.current_score,
+            thru: p.thru || "",
+            today: p.today || "",
+            made_cut: p.made_cut !== false,
+            course_par: lb.course_par || 72,
+            r4_slot: 0,
+            make_cut_prob: null,
+          })),
+          event: lb.event,
+          updated_at: lb.updated_at,
+        });
+      }
+      
       setError(null);
     } catch (err) {
       setError(`Refresh failed: ${err.message}`);
@@ -1593,3 +1506,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
+
