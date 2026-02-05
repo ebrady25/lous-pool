@@ -908,7 +908,7 @@ function PlayerDetail({ player }) {
 function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view }) {
   const friend = isFriend(team.owner);
   const me = isMe(team.owner);
-  const rowClass = `lb-row ${me ? "is-me" : friend ? "friend" : ""}`;
+  const rowClass = `lb-row ${me ? "friend" : friend ? "friend" : ""}`;
   const rankClass = rank <= 3 ? `rank-${rank}` : "";
   const toPar = team.team_to_par;
   const seasonBack = seasonLeader !== null && team.season_pts ? team.season_pts - seasonLeader : null;
@@ -923,8 +923,7 @@ function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view }) {
         <td className="team-cell">
           <div className="team-name">
             {team.alias || team.owner}
-            {me && <span className="me-badge">YOU</span>}
-            {friend && !me && <span className="friend-badge">FRIEND</span>}
+            {(me || friend) && <span className="friend-badge">FRIEND</span>}
           </div>
           {team.alias && team.alias !== team.owner && (
             <div className="team-alias">{team.owner}</div>
@@ -1530,5 +1529,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
+
 
 
