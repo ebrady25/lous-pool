@@ -1014,7 +1014,10 @@ function App() {
   async function loadLeaderboard() {
     try {
       setLoading(true);
-      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now());
+      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now(), {
+        cache: 'no-store',
+        headers: { 'Pragma': 'no-cache' }
+      });
       if (resp.ok) {
         const lb = await resp.json();
         setData(lb);
@@ -1059,7 +1062,10 @@ function App() {
   async function handleRefresh() {
     setRefreshing(true);
     try {
-      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now());
+      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now(), {
+        cache: 'no-store',
+        headers: { 'Pragma': 'no-cache' }
+      });
       if (!resp.ok) throw new Error("Failed to fetch leaderboard");
       const lb = await resp.json();
       
@@ -1529,6 +1535,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
+
 
 
 
