@@ -2,8 +2,10 @@ name: Update Leaderboard
 
 on:
   schedule:
-    - cron: '*/15 11-23 * * 4,5,6,0'
-    - cron: '*/15 0-1 * * 5,6,0,1'
+    # Every 5 minutes during tournament hours (Thu-Sun, 11am-11pm UTC = 6am-6pm ET)
+    - cron: '*/5 11-23 * * 4,5,6,0'
+    # Late night coverage
+    - cron: '*/5 0-2 * * 5,6,0,1'
   workflow_dispatch:
 
 permissions:
