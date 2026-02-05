@@ -552,6 +552,7 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
             "r4": p.get("r4"),
             "fin_text": p.get("fin_text", ""),
             "made_cut": p.get("made_cut", True),
+            "make_cut": p.get("make_cut"),  # Cut probability from in-play endpoint
         })
     
     # Sort by current_score (to par), then by thru (more holes = higher priority), then name
@@ -656,4 +657,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
