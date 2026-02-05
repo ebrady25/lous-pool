@@ -304,6 +304,7 @@ def process_tournament(live_data, inplay_data=None):
             "today": today,
             "current_score": current_score,
             "made_cut": made_cut,
+            "make_cut": p.get("make_cut"),  # Cut probability from in-play
             "mc_by": mc_by,
             "mc_penalty": mc_penalty(mc_by) if mc_by > 0 else 0,
             "course_par": course_par,
