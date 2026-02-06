@@ -686,6 +686,17 @@ body::before {
   color: var(--slate-400);
 }
 
+.player-row .p-round .live-score {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.player-row .p-round .thru-small {
+  font-size: 0.6rem;
+  color: var(--slate-500);
+  font-weight: 400;
+}
+
 .player-row .p-round.replaced {
   color: var(--slate-500);
   font-style: italic;
@@ -890,6 +901,22 @@ function StatusBadge({ status }) {
 
 function PlayerDetail({ player }) {
   const isMC = player.status === "mc";
+  
+  // Determine which round is in progress based on which r# is null
+  // and whether they have thru > 0
+  const isLiveR1 = player.r1 === null && player.thru > 0;
+  const isLiveR2 = player.r1 !== null && player.r2 === null && player.thru > 0 && player.thru < 18;
+  const isLiveR3 = player.r2 !== null && player.r3 === null && player.thru > 0 && player.thru < 18;
+  const isLiveR4 = player.r3 !== null && player.r4 === null && player.thru > 0 && player.thru < 18;
+  
+  // Format live score display: score (thru)
+  const formatLive = (score, thru) => {
+    if (score === null || score === undefined) return null;
+    const sign = score > 0 ? "+" : score < 0 ? "" : "E";
+    const display = score === 0 ? "E" : (score > 0 ? `+${score}` : score);
+    return <span className="live-score">{display} <span className="thru-small">({thru})</span></span>;
+  };
+  
   return (
     <div className={`player-row ${isMC ? "mc-player" : ""}`}>
       <span className={`p-name ${isMC ? "mc" : ""}`}>
@@ -903,16 +930,16 @@ function PlayerDetail({ player }) {
         )}
       </span>
       <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
-        {player.r1 ?? "–"}
+        {isLiveR1 ? formatLive(player.today, player.thru) : (player.r1 ?? "–")}
       </span>
       <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
-        {player.r2 ?? "–"}
+        {isLiveR2 ? formatLive(player.today, player.thru) : (player.r2 ?? "–")}
       </span>
       <span className={`p-round ${player.replacement ? "replaced" : ""}`}>
-        {player.r3 ?? "–"}
+        {isLiveR3 ? formatLive(player.today, player.thru) : (player.r3 ?? "–")}
       </span>
       <span className={`p-round ${player.replacement ? "replaced" : ""}`}>
-        {player.r4 ?? "–"}
+        {isLiveR4 ? formatLive(player.today, player.thru) : (player.r4 ?? "–")}
       </span>
       <span className="p-penalty">
         {player.penalty > 0 ? `+${player.penalty}` : ""}
