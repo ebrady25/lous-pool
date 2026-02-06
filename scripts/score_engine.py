@@ -495,22 +495,45 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
     scored_teams = []
     rostered_owners = set()
     
+    # Handle new season.json structure with "teams" key
+    season_teams = season_data.get("teams", season_data)  # Fallback to old format
+    cumulative_par = season_data.get("cumulative_par", 0)
+    
     for team in rosters:
         owner = team["owner"]
         rostered_owners.add(owner)
-        usage = season_data.get(owner, {}).get("usage", {})
+        usage = season_teams.get(owner, {}).get("usage", {})
         scored = score_team(team, tournament_data, season_usage=usage)
         
-        prev_pts = season_data.get(owner, {}).get("pts", 0)
-        scored["season_pts"] = prev_pts + (scored["team_total"] or 0)
-        scored["prev_pts"] = prev_pts
+        # Get previous season total (strokes)
+        prev_total = season_teams.get(owner, {}).get("season_total", 0)
+        prev_to_par = season_teams.get(owner, {}).get("season_to_par", 0)
+        
+        # Season points = previous strokes + current week strokes
+        # During live play, team_total is to-par, so we need to convert
+        course_par = tournament_data.get("course_par", 72)
+        team_par = 4 * 4 * course_par  # 4 players x 4 rounds x course par
+        
+        if scored["team_total"] is not None:
+            # For weekly total in strokes: team_par + to_par_score
+            week_strokes = team_par + scored["team_to_par"]
+            scored["season_pts"] = prev_total + week_strokes
+            scored["season_to_par"] = prev_to_par + scored["team_to_par"]
+            scored["week_strokes"] = week_strokes
+        else:
+            scored["season_pts"] = prev_total
+            scored["season_to_par"] = prev_to_par
+            scored["week_strokes"] = None
+        scored["prev_pts"] = prev_total
+        scored["prev_to_par"] = prev_to_par
         
         scored_teams.append(scored)
     
-    # Include ALL teams from season_data
-    for owner, sdata in season_data.items():
-        if owner not in rostered_owners:
-            prev_pts = sdata.get("pts", 0)
+    # Include ALL teams from season_data that aren't in current rosters
+    for owner, sdata in season_teams.items():
+        if owner not in rostered_owners and isinstance(sdata, dict):
+            prev_total = sdata.get("season_total", 0)
+            prev_to_par = sdata.get("season_to_par", 0)
             alias = sdata.get("alias", "")
             scored_teams.append({
                 "owner": owner,
@@ -519,10 +542,13 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
                 "team_total": None,
                 "team_par": 4 * 4 * tournament_data["course_par"],
                 "team_to_par": None,
+                "week_strokes": None,
                 "overuse_penalty": 0,
                 "mc_count": 0,
-                "season_pts": prev_pts,
-                "prev_pts": prev_pts,
+                "season_pts": prev_total,
+                "season_to_par": prev_to_par,
+                "prev_pts": prev_total,
+                "prev_to_par": prev_to_par,
             })
     
     # Sort by team_to_par (lowest first)
@@ -658,5 +684,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
