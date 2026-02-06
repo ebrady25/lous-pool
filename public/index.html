@@ -689,6 +689,8 @@ body::before {
 .player-row .p-round .live-score {
   color: var(--gold);
   font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .player-row .p-round .thru-small {
@@ -912,9 +914,8 @@ function PlayerDetail({ player }) {
   // Format live score display: score (thru)
   const formatLive = (score, thru) => {
     if (score === null || score === undefined) return null;
-    const sign = score > 0 ? "+" : score < 0 ? "" : "E";
     const display = score === 0 ? "E" : (score > 0 ? `+${score}` : score);
-    return <span className="live-score">{display} <span className="thru-small">({thru})</span></span>;
+    return <span className="live-score" style={{ whiteSpace: 'nowrap' }}>{display}<span className="thru-small">({thru})</span></span>;
   };
   
   return (
