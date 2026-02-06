@@ -1026,6 +1026,13 @@ function App() {
   // Load static leaderboard on mount
   useEffect(() => {
     loadLeaderboard();
+    
+    // Auto-refresh every 2 minutes during active hours
+    const interval = setInterval(() => {
+      loadLeaderboard();
+    }, 2 * 60 * 1000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   async function loadLeaderboard() {
