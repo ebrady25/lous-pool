@@ -598,6 +598,23 @@ body::before {
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
   font-size: 0.88rem;
+  min-width: 70px;
+  position: relative;
+}
+
+.score-value {
+  display: inline-block;
+  min-width: 32px;
+  text-align: right;
+}
+
+.thru-indicator {
+  display: inline-block;
+  width: 28px;
+  text-align: left;
+  font-size: 0.65rem;
+  color: var(--slate-500);
+  margin-left: 0.2rem;
 }
 
 .score-under { color: var(--green-400); }
@@ -1473,12 +1490,10 @@ function App() {
                         </td>
                       )}
                       <td className={`score-cell ${scoreClass(p.to_par)}`}>
-                        {formatScore(p.to_par)}
-                        {p.thru && p.thru !== "F" && p.thru !== "" && (
-                          <span style={{ fontSize: '0.65rem', color: 'var(--slate-500)', marginLeft: '0.3rem' }}>
-                            ({p.thru})
-                          </span>
-                        )}
+                        <span className="score-value">{formatScore(p.to_par)}</span>
+                        <span className="thru-indicator">
+                          {p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : ""}
+                        </span>
                       </td>
                     </tr>
                   );
