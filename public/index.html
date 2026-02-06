@@ -726,6 +726,40 @@ body::before {
   margin-left: 0.5rem;
 }
 
+/* Cut Danger Alert Styles */
+.cut-danger-badge {
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.at-risk-badge {
+  font-size: 0.58rem;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.at-risk-count {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
 .detail-header {
   display: grid;
   grid-template-columns: 1fr repeat(4, 3.5rem) 2.5rem 3rem;
@@ -901,8 +935,14 @@ function StatusBadge({ status }) {
   return <span className={`status-badge ${cls}`}>{labels[status] || status}</span>;
 }
 
-function PlayerDetail({ player, coursePar = 71 }) {
+function PlayerDetail({ player, coursePar = 71, currentRound = 1 }) {
   const isMC = player.status === "mc";
+  const makeCut = player.make_cut;
+  
+  // Cut danger thresholds (only show during R1/R2)
+  const showCutDanger = currentRound <= 2 && makeCut !== null && makeCut !== undefined;
+  const isCutDanger = showCutDanger && makeCut < 0.30;
+  const isAtRisk = showCutDanger && makeCut >= 0.30 && makeCut < 0.50;
   
   // Determine which round is in progress based on which r# is null
   // and whether they have thru > 0
@@ -926,8 +966,15 @@ function PlayerDetail({ player, coursePar = 71 }) {
     return <span style={{ whiteSpace: 'nowrap' }}>{strokes}<span className="thru-small">({toParStr})</span></span>;
   };
   
+  // Cut danger row styling
+  const rowStyle = isCutDanger 
+    ? { background: 'rgba(248, 113, 113, 0.12)', borderLeft: '3px solid #f87171' }
+    : isAtRisk 
+    ? { background: 'rgba(251, 191, 36, 0.08)', borderLeft: '3px solid #fbbf24' }
+    : {};
+  
   return (
-    <div className={`player-row ${isMC ? "mc-player" : ""}`}>
+    <div className={`player-row ${isMC ? "mc-player" : ""}`} style={rowStyle}>
       <span className={`p-name ${isMC ? "mc" : ""}`}>
         {player.name}
         {isMC && <span className="mc-tag">MC</span>}
@@ -937,6 +984,8 @@ function PlayerDetail({ player, coursePar = 71 }) {
         {player.replacement && (
           <span className="replacement-note">→ {player.replacement}</span>
         )}
+        {isCutDanger && <span className="cut-danger-badge">⚠️ CUT DANGER</span>}
+        {isAtRisk && <span className="at-risk-badge">⚠ AT RISK</span>}
       </span>
       <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
         {isLiveR1 ? formatLive(player.today, player.thru) : formatRound(player.r1)}
@@ -958,13 +1007,18 @@ function PlayerDetail({ player, coursePar = 71 }) {
   );
 }
 
-function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar = 71 }) {
+function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar = 71, currentRound = 1 }) {
   const friend = isFriend(team.owner);
   const me = isMe(team.owner);
   const rowClass = `lb-row ${me ? "friend" : friend ? "friend" : ""}`;
   const rankClass = rank <= 3 ? `rank-${rank}` : "";
   const toPar = team.team_to_par;
   const seasonBack = seasonLeader !== null && team.season_pts ? team.season_pts - seasonLeader : null;
+  
+  // Count at-risk players (only during R1/R2)
+  const atRiskCount = currentRound <= 2 
+    ? (team.players || []).filter(p => p.make_cut !== null && p.make_cut !== undefined && p.make_cut < 0.50).length 
+    : 0;
 
   // Primary and secondary columns swap based on view
   const isSeasonView = view === "season";
@@ -977,6 +1031,7 @@ function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar
           <div className="team-name">
             {team.alias || team.owner}
             {(me || friend) && <span className="friend-badge">FRIEND</span>}
+            {atRiskCount > 0 && <span className="at-risk-count">{atRiskCount} AT RISK</span>}
           </div>
           {team.alias && team.alias !== team.owner && (
             <div className="team-alias">{team.owner}</div>
@@ -1030,7 +1085,7 @@ function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar
                 <span>Tot</span>
               </div>
               {(team.players || []).map((p, i) => (
-                <PlayerDetail key={i} player={p} coursePar={coursePar} />
+                <PlayerDetail key={i} player={p} coursePar={coursePar} currentRound={currentRound} />
               ))}
               {team.overuse_penalty > 0 && (
                 <div style={{ fontSize: '0.72rem', color: 'var(--red-400)', padding: '0.3rem 0', textAlign: 'right' }}>
@@ -1591,6 +1646,7 @@ function App() {
                     seasonLeader={seasonLeader}
                     view={view}
                     coursePar={data?.course_par || 71}
+                    currentRound={data?.current_round || 1}
                   />
                 ))}
               </tbody>
