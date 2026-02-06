@@ -1086,9 +1086,15 @@ function App() {
   async function handleRefresh() {
     setRefreshing(true);
     try {
-      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?t=" + Date.now(), {
+      // Force bypass all caches with unique URL and headers
+      const bustCache = Date.now() + "_" + Math.random().toString(36).substr(2, 9);
+      const resp = await fetch(CONFIG.LEADERBOARD_URL + "?_=" + bustCache, {
+        method: 'GET',
         cache: 'no-store',
-        headers: { 'Pragma': 'no-cache' }
+        headers: {
+          'Pragma': 'no-cache',
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+        }
       });
       if (!resp.ok) throw new Error("Failed to fetch leaderboard");
       const lb = await resp.json();
@@ -1291,12 +1297,15 @@ function App() {
           </div>
           <button
             className={`refresh-btn ${refreshing ? "loading" : ""}`}
-            onClick={handleRefresh}
+            onClick={() => {
+              // Force full page reload bypassing cache
+              window.location.href = window.location.pathname + "?_=" + Date.now();
+            }}
           >
             {refreshing ? (
               <><span className="spin">↻</span> Refreshing…</>
             ) : (
-              <>↻ Refresh Scores</>
+              <>↻ Refresh</>
             )}
           </button>
         </div>
