@@ -31,6 +31,22 @@ from urllib.error import URLError
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
+# Course par lookup by event name (DataGolf doesn't always provide this)
+COURSE_PAR = {
+    "WM Phoenix Open": 71,  # TPC Scottsdale
+    "Farmers Insurance Open": 72,  # Torrey Pines
+    "The American Express": 72,
+    "AT&T Pebble Beach Pro-Am": 72,
+    "Genesis Invitational": 71,  # Riviera
+    "The Players Championship": 72,  # TPC Sawgrass
+    "Arnold Palmer Invitational": 72,  # Bay Hill
+    "THE PLAYERS": 72,
+    "Masters Tournament": 72,  # Augusta
+    "PGA Championship": 72,
+    "U.S. Open": 70,  # Varies but often 70
+    "The Open Championship": 72,  # Varies
+}
+
 # Missed-cut penalty schedule: strokes missed -> penalty added
 MC_PENALTY = {1: 5, 2: 6, 3: 7}  # 4+ -> 8
 def mc_penalty(strokes_missed):
@@ -221,13 +237,14 @@ def process_tournament(live_data, inplay_data=None):
         status = "pre"
         current_round = 0
     
-    # Get course par
-    course_par = 72
-    for p in scores:
-        cp = get_round_par(p, 1)
-        if cp and cp != 72:
-            course_par = cp
-            break
+    # Get course par - use lookup table first, then try API data
+    course_par = COURSE_PAR.get(event_name, 72)
+    if course_par == 72:  # Not in lookup, try to get from player data
+        for p in scores:
+            cp = get_round_par(p, 1)
+            if cp and cp != 72:
+                course_par = cp
+                break
     
     # Find cut line (only if R3 data exists)
     cut_line = None
@@ -684,6 +701,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
