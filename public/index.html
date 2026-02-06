@@ -1324,63 +1324,13 @@ function App() {
             </div>
           </div>
           <button
-            className={`refresh-btn ${refreshing ? "loading" : ""}`}
-            onClick={async () => {
-              setRefreshing(true);
-              try {
-                // Aggressive cache bust with random string
-                const bust = Date.now() + '_' + Math.random().toString(36).slice(2);
-                const url = CONFIG.LEADERBOARD_URL + '?v=' + bust;
-                
-                // Fetch with all cache-busting headers
-                const resp = await fetch(url, {
-                  method: 'GET',
-                  cache: 'no-store',
-                  headers: {
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache',
-                    'Expires': '0'
-                  }
-                });
-                
-                if (!resp.ok) throw new Error('Failed');
-                const lb = await resp.json();
-                
-                // Update all state
-                setData(lb);
-                if (lb.live_players?.length > 0) {
-                  setLivePlayerData({
-                    players: lb.live_players.map(p => ({
-                      name: p.name,
-                      fin_text: p.fin_text || p.position || "",
-                      r1: p.r1, r2: p.r2, r3: p.r3, r4: p.r4,
-                      total: p.total,
-                      to_par: p.current_score,
-                      thru: p.thru || "",
-                      today: p.today || "",
-                      made_cut: p.made_cut !== false,
-                      course_par: lb.course_par || 72,
-                      r4_slot: 0,
-                      make_cut_prob: p.make_cut,
-                    })),
-                    event: lb.event,
-                    updated_at: lb.updated_at,
-                  });
-                }
-                setError(null);
-              } catch (err) {
-                // If fetch fails, fall back to hard page reload
-                window.location.href = window.location.pathname + "?_=" + Date.now();
-              } finally {
-                setRefreshing(false);
-              }
+            className="refresh-btn"
+            onClick={() => {
+              // Simple hard reload with cache bust
+              window.location.replace(window.location.pathname + "?t=" + Date.now());
             }}
           >
-            {refreshing ? (
-              <><span className="spin">↻</span> Loading…</>
-            ) : (
-              <>↻ Refresh</>
-            )}
+            ↻ Refresh
           </button>
         </div>
 
