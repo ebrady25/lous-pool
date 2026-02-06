@@ -112,6 +112,14 @@ def get_r2_teetime(player):
         return r2.get("teetime", "99:99")
     return player.get("r2_teetime", "99:99")
 
+def get_r3_teetime(player):
+    """Extract R3 tee time for Rule 4 replacement player ordering.
+    Rule 4 players are ordered by earliest Saturday (R3) tee time."""
+    r3 = player.get("round_3")
+    if isinstance(r3, dict):
+        return r3.get("teetime", "99:99")
+    return player.get("r3_teetime", "99:99")
+
 def player_made_cut(player):
     """Check if player made the cut (has R3 data or make_cut flag)."""
     # Check make_cut field from in-play endpoint
@@ -213,20 +221,23 @@ def process_tournament(live_data, inplay_data=None):
     has_r3 = any(get_round_score(p, 3) is not None for p in scores)
     has_r4 = any(get_round_score(p, 4) is not None for p in scores)
     
+    # Check what round players are currently playing (from in-play endpoint)
+    current_playing_round = max((p.get("round", 0) or 0 for p in scores), default=0)
+    
     # Determine current round and status
     if has_r4 and event_completed:
         status = "complete"
         current_round = 4
-    elif has_r4:
+    elif has_r4 or current_playing_round == 4:
         status = "round4"
         current_round = 4
-    elif has_r3:
+    elif has_r3 or current_playing_round == 3:
         status = "round3"
         current_round = 3
-    elif has_r2:
+    elif has_r2 or current_playing_round == 2:
         status = "round2"
         current_round = 2
-    elif has_r1:
+    elif has_r1 or current_playing_round == 1:
         status = "round1"
         current_round = 1
     elif has_thru:
@@ -261,7 +272,10 @@ def process_tournament(live_data, inplay_data=None):
         if made_cut_totals:
             cut_line = max(made_cut_totals)
         
-        # Find replacement players: made cut, R1+R2 = cut line, sorted by R2 tee time
+        # Find Rule 4 replacement players: 
+        # - Made the cut
+        # - R1+R2 total equals the cut line exactly
+        # - Sorted by earliest R2 (Friday) tee time
         if cut_line:
             cut_line_players = []
             for p in scores:
@@ -278,6 +292,7 @@ def process_tournament(live_data, inplay_data=None):
                             "r4": get_round_score(p, 4),
                         })
             
+            # Sort by R2 tee time (earliest first) - this is the Rule 4 order
             cut_line_players.sort(key=lambda x: x["r2_teetime"])
             replacement_players = cut_line_players
     
