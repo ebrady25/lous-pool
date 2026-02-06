@@ -1436,10 +1436,10 @@ function App() {
                   <th className="score hide-mobile">R2</th>
                   <th className="score hide-mobile">R3</th>
                   <th className="score hide-mobile">R4</th>
+                  <th className="score">Total</th>
                   {data?.current_round <= 2 && (
                     <th className="score" style={{ fontSize: '0.62rem' }}>MC%</th>
                   )}
-                  <th className="score">Total</th>
                 </tr>
               </thead>
               <tbody>
@@ -1477,6 +1477,12 @@ function App() {
                       <td className="round-score hide-mobile">{p.r2 ?? "–"}</td>
                       <td className="round-score hide-mobile">{p.r3 ?? "–"}</td>
                       <td className="round-score hide-mobile">{p.r4 ?? "–"}</td>
+                      <td className={`score-cell ${scoreClass(p.to_par)}`}>
+                        <span className="score-value">{formatScore(p.to_par)}</span>
+                        <span className="thru-indicator">
+                          {p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : ""}
+                        </span>
+                      </td>
                       {data?.current_round <= 2 && (
                         <td className="mc-pct-cell" style={{
                           textAlign: 'right',
@@ -1489,12 +1495,6 @@ function App() {
                           {mcProb !== null ? `${Math.round(mcProb * 100)}%` : "–"}
                         </td>
                       )}
-                      <td className={`score-cell ${scoreClass(p.to_par)}`}>
-                        <span className="score-value">{formatScore(p.to_par)}</span>
-                        <span className="thru-indicator">
-                          {p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : ""}
-                        </span>
-                      </td>
                     </tr>
                   );
                 })}
