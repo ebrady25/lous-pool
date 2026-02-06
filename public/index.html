@@ -901,7 +901,7 @@ function StatusBadge({ status }) {
   return <span className={`status-badge ${cls}`}>{labels[status] || status}</span>;
 }
 
-function PlayerDetail({ player }) {
+function PlayerDetail({ player, coursePar = 71 }) {
   const isMC = player.status === "mc";
   
   // Determine which round is in progress based on which r# is null
@@ -918,6 +918,14 @@ function PlayerDetail({ player }) {
     return <span className="live-score" style={{ whiteSpace: 'nowrap' }}>{display}<span className="thru-small">({thru})</span></span>;
   };
   
+  // Format completed round: strokes (to-par)
+  const formatRound = (strokes) => {
+    if (strokes === null || strokes === undefined) return "–";
+    const toPar = strokes - coursePar;
+    const toParStr = toPar === 0 ? "E" : (toPar > 0 ? `+${toPar}` : toPar);
+    return <span style={{ whiteSpace: 'nowrap' }}>{strokes}<span className="thru-small">({toParStr})</span></span>;
+  };
+  
   return (
     <div className={`player-row ${isMC ? "mc-player" : ""}`}>
       <span className={`p-name ${isMC ? "mc" : ""}`}>
@@ -931,16 +939,16 @@ function PlayerDetail({ player }) {
         )}
       </span>
       <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
-        {isLiveR1 ? formatLive(player.today, player.thru) : (player.r1 ?? "–")}
+        {isLiveR1 ? formatLive(player.today, player.thru) : formatRound(player.r1)}
       </span>
       <span className={`p-round ${isMC && player.r3 ? "replaced" : ""}`}>
-        {isLiveR2 ? formatLive(player.today, player.thru) : (player.r2 ?? "–")}
+        {isLiveR2 ? formatLive(player.today, player.thru) : formatRound(player.r2)}
       </span>
       <span className={`p-round ${player.replacement ? "replaced" : ""}`}>
-        {isLiveR3 ? formatLive(player.today, player.thru) : (player.r3 ?? "–")}
+        {isLiveR3 ? formatLive(player.today, player.thru) : formatRound(player.r3)}
       </span>
       <span className={`p-round ${player.replacement ? "replaced" : ""}`}>
-        {isLiveR4 ? formatLive(player.today, player.thru) : (player.r4 ?? "–")}
+        {isLiveR4 ? formatLive(player.today, player.thru) : formatRound(player.r4)}
       </span>
       <span className="p-penalty">
         {player.penalty > 0 ? `+${player.penalty}` : ""}
@@ -950,7 +958,7 @@ function PlayerDetail({ player }) {
   );
 }
 
-function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view }) {
+function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar = 71 }) {
   const friend = isFriend(team.owner);
   const me = isMe(team.owner);
   const rowClass = `lb-row ${me ? "friend" : friend ? "friend" : ""}`;
@@ -1022,7 +1030,7 @@ function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view }) {
                 <span>Tot</span>
               </div>
               {(team.players || []).map((p, i) => (
-                <PlayerDetail key={i} player={p} />
+                <PlayerDetail key={i} player={p} coursePar={coursePar} />
               ))}
               {team.overuse_penalty > 0 && (
                 <div style={{ fontSize: '0.72rem', color: 'var(--red-400)', padding: '0.3rem 0', textAlign: 'right' }}>
@@ -1582,6 +1590,7 @@ function App() {
                     )}
                     seasonLeader={seasonLeader}
                     view={view}
+                    coursePar={data?.course_par || 71}
                   />
                 ))}
               </tbody>
