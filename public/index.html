@@ -1501,7 +1501,14 @@ function App() {
                   <th className="num">#</th>
                   <th>Team</th>
                   <th className="score">
-                    {view === "weekly" ? "This Week" : "Season"}
+                    {view === "weekly" ? "This Week" : (
+                      <span>
+                        Season
+                        <span style={{ display: 'block', fontSize: '0.55rem', fontWeight: 400, opacity: 0.6 }}>
+                          (+behind leader)
+                        </span>
+                      </span>
+                    )}
                   </th>
                   <th className="season hide-mobile">
                     {view === "weekly" ? "Season Total" : "Weekly"}
@@ -1535,6 +1542,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
 </body>
 </html>
+
 
 
 
