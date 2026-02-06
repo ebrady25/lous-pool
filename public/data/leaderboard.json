@@ -6,8 +6,8 @@
   "cut_line": null,
   "replacement_players": [],
   "team_par": 1152,
-  "last_updated": "2026-02-06 15:08:43 UTC",
-  "updated_at": "2026-02-06T15:13:14.900420+00:00",
+  "last_updated": "2026-02-06 15:18:40 UTC",
+  "updated_at": "2026-02-06T15:20:17.912117+00:00",
   "teams": [
     {
       "owner": "Bill Wood",
@@ -43,7 +43,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -79,7 +79,7 @@
           "total": 65,
           "status": "active",
           "replacement": null,
-          "position": "T2",
+          "position": "3",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -190,96 +190,6 @@
       "season_rank": 11
     },
     {
-      "owner": "Chuck Allen",
-      "alias": "",
-      "players": [
-        {
-          "name": "Jake Knapp",
-          "dg_name": "Knapp, Jake",
-          "slot": 1,
-          "r1": 67,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 67,
-          "status": "active",
-          "replacement": null,
-          "position": "T7",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -4
-        },
-        {
-          "name": "Daniel Berger",
-          "dg_name": "Berger, Daniel",
-          "slot": 2,
-          "r1": 67,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 67,
-          "status": "active",
-          "replacement": null,
-          "position": "T7",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -4
-        },
-        {
-          "name": "Keith Mitchell",
-          "dg_name": "Mitchell, Keith",
-          "slot": 3,
-          "r1": 68,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 68,
-          "status": "active",
-          "replacement": null,
-          "position": "T7",
-          "fin_text": "",
-          "today": -1,
-          "thru": 1,
-          "current_score": -4
-        },
-        {
-          "name": "Sahith Theegala",
-          "dg_name": "Theegala, Sahith",
-          "slot": 4,
-          "r1": 70,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 70,
-          "status": "active",
-          "replacement": null,
-          "position": "T39",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -1
-        }
-      ],
-      "team_total": -13,
-      "team_par": 1152,
-      "team_to_par": -13,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_pts": 2269,
-      "season_to_par": -35,
-      "week_strokes": 1139,
-      "prev_pts": 1130,
-      "prev_to_par": -22,
-      "weekly_rank": 3,
-      "season_rank": 22
-    },
-    {
       "owner": "Bill Tatu",
       "alias": "",
       "players": [
@@ -295,7 +205,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -366,7 +276,7 @@
       "week_strokes": 1140,
       "prev_pts": 1132,
       "prev_to_par": -20,
-      "weekly_rank": 4,
+      "weekly_rank": 3,
       "season_rank": 31
     },
     {
@@ -403,7 +313,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -439,7 +349,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -456,7 +366,7 @@
       "week_strokes": 1140,
       "prev_pts": 1127,
       "prev_to_par": -25,
-      "weekly_rank": 5,
+      "weekly_rank": 4,
       "season_rank": 19
     },
     {
@@ -546,8 +456,98 @@
       "week_strokes": 1140,
       "prev_pts": 1112,
       "prev_to_par": -40,
-      "weekly_rank": 6,
+      "weekly_rank": 5,
       "season_rank": 4
+    },
+    {
+      "owner": "Chuck Allen",
+      "alias": "",
+      "players": [
+        {
+          "name": "Jake Knapp",
+          "dg_name": "Knapp, Jake",
+          "slot": 1,
+          "r1": 67,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 67,
+          "status": "active",
+          "replacement": null,
+          "position": "T7",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -4
+        },
+        {
+          "name": "Daniel Berger",
+          "dg_name": "Berger, Daniel",
+          "slot": 2,
+          "r1": 67,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 67,
+          "status": "active",
+          "replacement": null,
+          "position": "T7",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -4
+        },
+        {
+          "name": "Keith Mitchell",
+          "dg_name": "Mitchell, Keith",
+          "slot": 3,
+          "r1": 68,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 68,
+          "status": "active",
+          "replacement": null,
+          "position": "T14",
+          "fin_text": "",
+          "today": 0,
+          "thru": 2,
+          "current_score": -3
+        },
+        {
+          "name": "Sahith Theegala",
+          "dg_name": "Theegala, Sahith",
+          "slot": 4,
+          "r1": 70,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 70,
+          "status": "active",
+          "replacement": null,
+          "position": "T39",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -1
+        }
+      ],
+      "team_total": -12,
+      "team_par": 1152,
+      "team_to_par": -12,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_pts": 2270,
+      "season_to_par": -34,
+      "week_strokes": 1140,
+      "prev_pts": 1130,
+      "prev_to_par": -22,
+      "weekly_rank": 6,
+      "season_rank": 24
     },
     {
       "owner": "Patrick Shine",
@@ -799,7 +799,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -1069,7 +1069,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -1375,7 +1375,7 @@
           "total": 72,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": -1,
           "thru": 1,
@@ -1429,7 +1429,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -1465,7 +1465,7 @@
           "total": 72,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": -1,
           "thru": 1,
@@ -1483,7 +1483,7 @@
           "total": 65,
           "status": "active",
           "replacement": null,
-          "position": "T2",
+          "position": "3",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -1501,7 +1501,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -1555,7 +1555,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -1735,7 +1735,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -1789,7 +1789,7 @@
           "total": 65,
           "status": "active",
           "replacement": null,
-          "position": "T2",
+          "position": "3",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -2005,7 +2005,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -2023,7 +2023,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -2095,7 +2095,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -2383,7 +2383,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -2473,7 +2473,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -2923,7 +2923,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -2959,10 +2959,10 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
-          "thru": 1,
+          "thru": 2,
           "current_score": -2
         }
       ],
@@ -3049,7 +3049,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3175,7 +3175,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3193,7 +3193,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -3337,7 +3337,7 @@
       "prev_pts": 1130,
       "prev_to_par": -22,
       "weekly_rank": 37,
-      "season_rank": 43
+      "season_rank": 42
     },
     {
       "owner": "The Wolf Pack",
@@ -3463,7 +3463,7 @@
           "total": 72,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": -1,
           "thru": 1,
@@ -3499,7 +3499,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3607,7 +3607,7 @@
       "prev_pts": 1122,
       "prev_to_par": -30,
       "weekly_rank": 40,
-      "season_rank": 23
+      "season_rank": 22
     },
     {
       "owner": "Don Gleason",
@@ -3643,7 +3643,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3661,7 +3661,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3679,7 +3679,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -3805,7 +3805,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3823,7 +3823,7 @@
           "total": 65,
           "status": "active",
           "replacement": null,
-          "position": "T2",
+          "position": "3",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3841,7 +3841,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -3895,7 +3895,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3949,7 +3949,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -4111,7 +4111,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -4129,7 +4129,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -4240,96 +4240,6 @@
       "season_rank": 10
     },
     {
-      "owner": "Gabe Palen",
-      "alias": "",
-      "players": [
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 1,
-          "r1": 73,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 73,
-          "status": "active",
-          "replacement": null,
-          "position": "T89",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": 2
-        },
-        {
-          "name": "Si Woo Kim",
-          "dg_name": "Kim, Si Woo",
-          "slot": 2,
-          "r1": 73,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 73,
-          "status": "active",
-          "replacement": null,
-          "position": "T89",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": 2
-        },
-        {
-          "name": "Keith Mitchell",
-          "dg_name": "Mitchell, Keith",
-          "slot": 3,
-          "r1": 68,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 68,
-          "status": "active",
-          "replacement": null,
-          "position": "T7",
-          "fin_text": "",
-          "today": -1,
-          "thru": 1,
-          "current_score": -4
-        },
-        {
-          "name": "Jake Knapp",
-          "dg_name": "Knapp, Jake",
-          "slot": 4,
-          "r1": 67,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 67,
-          "status": "active",
-          "replacement": null,
-          "position": "T7",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -4
-        }
-      ],
-      "team_total": -4,
-      "team_par": 1152,
-      "team_to_par": -4,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_pts": 2275,
-      "season_to_par": -29,
-      "week_strokes": 1148,
-      "prev_pts": 1127,
-      "prev_to_par": -25,
-      "weekly_rank": 48,
-      "season_rank": 40
-    },
-    {
       "owner": "Barry Gonsior",
       "alias": "",
       "players": [
@@ -4416,8 +4326,8 @@
       "week_strokes": 1148,
       "prev_pts": 1121,
       "prev_to_par": -31,
-      "weekly_rank": 49,
-      "season_rank": 24
+      "weekly_rank": 48,
+      "season_rank": 23
     },
     {
       "owner": "The Hammer",
@@ -4506,7 +4416,7 @@
       "week_strokes": 1149,
       "prev_pts": 1130,
       "prev_to_par": -22,
-      "weekly_rank": 50,
+      "weekly_rank": 49,
       "season_rank": 51
     },
     {
@@ -4596,7 +4506,7 @@
       "week_strokes": 1149,
       "prev_pts": 1125,
       "prev_to_par": -27,
-      "weekly_rank": 51,
+      "weekly_rank": 50,
       "season_rank": 38
     },
     {
@@ -4669,7 +4579,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -4686,7 +4596,7 @@
       "week_strokes": 1149,
       "prev_pts": 1139,
       "prev_to_par": -13,
-      "weekly_rank": 52,
+      "weekly_rank": 51,
       "season_rank": 64
     },
     {
@@ -4776,8 +4686,8 @@
       "week_strokes": 1149,
       "prev_pts": 1127,
       "prev_to_par": -25,
-      "weekly_rank": 53,
-      "season_rank": 44
+      "weekly_rank": 52,
+      "season_rank": 43
     },
     {
       "owner": "Jason Goss",
@@ -4866,7 +4776,7 @@
       "week_strokes": 1149,
       "prev_pts": 1132,
       "prev_to_par": -20,
-      "weekly_rank": 54,
+      "weekly_rank": 53,
       "season_rank": 54
     },
     {
@@ -4956,7 +4866,7 @@
       "week_strokes": 1149,
       "prev_pts": 1137,
       "prev_to_par": -15,
-      "weekly_rank": 55,
+      "weekly_rank": 54,
       "season_rank": 61
     },
     {
@@ -4993,7 +4903,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5046,7 +4956,7 @@
       "week_strokes": 1149,
       "prev_pts": 1107,
       "prev_to_par": -45,
-      "weekly_rank": 56,
+      "weekly_rank": 55,
       "season_rank": 6
     },
     {
@@ -5119,7 +5029,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5136,8 +5046,98 @@
       "week_strokes": 1149,
       "prev_pts": 1126,
       "prev_to_par": -26,
+      "weekly_rank": 56,
+      "season_rank": 40
+    },
+    {
+      "owner": "Gabe Palen",
+      "alias": "",
+      "players": [
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 1,
+          "r1": 73,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 73,
+          "status": "active",
+          "replacement": null,
+          "position": "T89",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": 2
+        },
+        {
+          "name": "Si Woo Kim",
+          "dg_name": "Kim, Si Woo",
+          "slot": 2,
+          "r1": 73,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 73,
+          "status": "active",
+          "replacement": null,
+          "position": "T89",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": 2
+        },
+        {
+          "name": "Keith Mitchell",
+          "dg_name": "Mitchell, Keith",
+          "slot": 3,
+          "r1": 68,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 68,
+          "status": "active",
+          "replacement": null,
+          "position": "T14",
+          "fin_text": "",
+          "today": 0,
+          "thru": 2,
+          "current_score": -3
+        },
+        {
+          "name": "Jake Knapp",
+          "dg_name": "Knapp, Jake",
+          "slot": 4,
+          "r1": 67,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 67,
+          "status": "active",
+          "replacement": null,
+          "position": "T7",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -4
+        }
+      ],
+      "team_total": -3,
+      "team_par": 1152,
+      "team_to_par": -3,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_pts": 2276,
+      "season_to_par": -28,
+      "week_strokes": 1149,
+      "prev_pts": 1127,
+      "prev_to_par": -25,
       "weekly_rank": 57,
-      "season_rank": 41
+      "season_rank": 44
     },
     {
       "owner": "The Scottish Lion",
@@ -5281,7 +5281,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5299,7 +5299,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5425,7 +5425,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5623,7 +5623,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5695,7 +5695,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5749,7 +5749,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5821,7 +5821,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5929,7 +5929,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5965,7 +5965,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -5983,7 +5983,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6001,7 +6001,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6091,7 +6091,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6109,7 +6109,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6217,7 +6217,7 @@
       "prev_pts": 1124,
       "prev_to_par": -28,
       "weekly_rank": 69,
-      "season_rank": 42
+      "season_rank": 41
     },
     {
       "owner": "Joe Mooney",
@@ -6253,7 +6253,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6289,7 +6289,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6505,7 +6505,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6559,7 +6559,7 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T28",
+          "position": "T27",
           "fin_text": "",
           "today": 0,
           "thru": 1,
@@ -6811,7 +6811,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -6919,7 +6919,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7099,7 +7099,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7189,7 +7189,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7243,7 +7243,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7351,7 +7351,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7459,7 +7459,7 @@
           "total": 72,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": -1,
           "thru": 1,
@@ -7531,7 +7531,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7639,7 +7639,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7819,7 +7819,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7873,7 +7873,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7981,7 +7981,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7999,7 +7999,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8053,7 +8053,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8089,7 +8089,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8143,7 +8143,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8269,7 +8269,7 @@
           "total": 72,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": -1,
           "thru": 1,
@@ -8431,7 +8431,7 @@
           "total": 72,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": -1,
           "thru": 1,
@@ -8521,7 +8521,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8593,7 +8593,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8773,7 +8773,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8863,7 +8863,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8899,7 +8899,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8989,7 +8989,7 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T58",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -9025,11 +9025,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": true,
-      "make_cut": 0.99776
+      "make_cut": 0.99808
     },
     {
       "name": "Stevens, Sam",
-      "position": "T2",
+      "position": "2",
       "thru": 2,
       "today": -2,
       "current_score": -7,
@@ -9040,11 +9040,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": true,
-      "make_cut": 0.99788
+      "make_cut": 0.9978
     },
     {
       "name": "Fitzpatrick, Matt",
-      "position": "T2",
+      "position": "3",
       "thru": 0,
       "today": 0,
       "current_score": -6,
@@ -9055,7 +9055,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": true,
-      "make_cut": 0.99252
+      "make_cut": 0.99132
     },
     {
       "name": "Coody, Pierceson",
@@ -9070,7 +9070,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.97924
+      "make_cut": 0.97876
     },
     {
       "name": "Hojgaard, Nicolai",
@@ -9085,7 +9085,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.97808
+      "make_cut": 0.97752
     },
     {
       "name": "Thorbjornsen, Michael",
@@ -9100,7 +9100,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.97976
+      "make_cut": 0.97932
     },
     {
       "name": "Neergaard-Petersen, Rasmus",
@@ -9115,22 +9115,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.96644
-    },
-    {
-      "name": "Mitchell, Keith",
-      "position": "T7",
-      "thru": 1,
-      "today": -1,
-      "current_score": -4,
-      "total": 68,
-      "r1": 68,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": false,
-      "make_cut": 0.96484
+      "make_cut": 0.96948
     },
     {
       "name": "Berger, Daniel",
@@ -9145,7 +9130,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.96036
+      "make_cut": 0.95936
     },
     {
       "name": "Knapp, Jake",
@@ -9160,7 +9145,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.9624
+      "make_cut": 0.96172
     },
     {
       "name": "McGreevy, Max",
@@ -9175,7 +9160,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.9612
+      "make_cut": 0.9614
     },
     {
       "name": "McNealy, Maverick",
@@ -9190,7 +9175,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.97452
+      "make_cut": 0.97332
     },
     {
       "name": "Roy, Kevin",
@@ -9205,11 +9190,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.92172
+      "make_cut": 0.92084
     },
     {
       "name": "Lamprecht, Christo",
-      "position": "T14",
+      "position": "T7",
       "thru": 16,
       "today": -3,
       "current_score": -3,
@@ -9220,22 +9205,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.811
-    },
-    {
-      "name": "Parry, John",
-      "position": "T14",
-      "thru": 16,
-      "today": -3,
-      "current_score": -3,
-      "total": 61,
-      "r1": null,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": false,
-      "make_cut": 0.91344
+      "make_cut": 0.80648
     },
     {
       "name": "Saddier, Adrien",
@@ -9250,7 +9220,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.86956
+      "make_cut": 0.86364
     },
     {
       "name": "Shipley, Neal",
@@ -9265,7 +9235,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.86684
+      "make_cut": 0.86224
     },
     {
       "name": "Phillips, Chandler",
@@ -9280,7 +9250,22 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.91816
+      "make_cut": 0.9186
+    },
+    {
+      "name": "Mitchell, Keith",
+      "position": "T14",
+      "thru": 2,
+      "today": 0,
+      "current_score": -3,
+      "total": 68,
+      "r1": 68,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": false,
+      "make_cut": 0.94048
     },
     {
       "name": "Matsuyama, Hideki",
@@ -9295,7 +9280,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.95116
+      "make_cut": 0.95276
     },
     {
       "name": "Bauchou, Zach",
@@ -9310,7 +9295,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.86964
+      "make_cut": 0.8686
     },
     {
       "name": "Bhatia, Akshay",
@@ -9325,7 +9310,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.91704
+      "make_cut": 0.91688
     },
     {
       "name": "Campbell, Brian",
@@ -9340,7 +9325,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.81044
+      "make_cut": 0.80752
     },
     {
       "name": "Hirata, Kensei",
@@ -9355,7 +9340,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.831
+      "make_cut": 0.82872
     },
     {
       "name": "Hisatsune, Ryo",
@@ -9370,7 +9355,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.89488
+      "make_cut": 0.89452
     },
     {
       "name": "Hojgaard, Rasmus",
@@ -9385,7 +9370,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.92296
+      "make_cut": 0.92092
     },
     {
       "name": "Hughes, Mackenzie",
@@ -9400,7 +9385,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.87816
+      "make_cut": 0.87868
     },
     {
       "name": "VanDerLaan, John",
@@ -9415,11 +9400,26 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.84816
+      "make_cut": 0.84628
+    },
+    {
+      "name": "Parry, John",
+      "position": "T27",
+      "thru": 17,
+      "today": -2,
+      "current_score": -2,
+      "total": 66,
+      "r1": null,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": false,
+      "make_cut": 0.85124
     },
     {
       "name": "Hoey, Rico",
-      "position": "T28",
+      "position": "T27",
       "thru": 3,
       "today": -2,
       "current_score": -2,
@@ -9430,12 +9430,12 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.83064
+      "make_cut": 0.83276
     },
     {
       "name": "Homa, Max",
-      "position": "T28",
-      "thru": 1,
+      "position": "T27",
+      "thru": 2,
       "today": 0,
       "current_score": -2,
       "total": 69,
@@ -9445,11 +9445,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.85548
+      "make_cut": 0.87016
     },
     {
       "name": "Hovland, Viktor",
-      "position": "T28",
+      "position": "T27",
       "thru": 1,
       "today": 0,
       "current_score": -2,
@@ -9460,11 +9460,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.89564
+      "make_cut": 0.89336
     },
     {
       "name": "Ewart, A.J.",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9475,11 +9475,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.73856
+      "make_cut": 0.73824
     },
     {
       "name": "Fox, Ryan",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9490,11 +9490,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.78724
+      "make_cut": 0.78644
     },
     {
       "name": "Hubbard, Mark",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9505,11 +9505,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.78852
+      "make_cut": 0.78644
     },
     {
       "name": "Keefer, Johnny",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9520,11 +9520,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.86064
+      "make_cut": 0.85828
     },
     {
       "name": "Kirk, Chris",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9535,11 +9535,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.824
+      "make_cut": 0.82044
     },
     {
       "name": "Kitayama, Kurt",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9550,11 +9550,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.86668
+      "make_cut": 0.8664
     },
     {
       "name": "Thompson, Davis",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9565,11 +9565,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.87112
+      "make_cut": 0.8698
     },
     {
       "name": "Woodland, Gary",
-      "position": "T28",
+      "position": "T27",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -9580,7 +9580,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.80976
+      "make_cut": 0.81128
     },
     {
       "name": "Dumont De Chassart, Adrien",
@@ -9595,7 +9595,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.75632
+      "make_cut": 0.74864
     },
     {
       "name": "Kang, Jeffrey",
@@ -9610,7 +9610,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.54484
+      "make_cut": 0.53796
     },
     {
       "name": "Li, Haotong",
@@ -9625,7 +9625,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.7836
+      "make_cut": 0.77828
     },
     {
       "name": "Campos, Rafael",
@@ -9640,7 +9640,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.58896
+      "make_cut": 0.60388
     },
     {
       "name": "Grillo, Emiliano",
@@ -9655,7 +9655,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.69564
+      "make_cut": 0.70424
     },
     {
       "name": "Kanaya, Takumi",
@@ -9670,11 +9670,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.69504
+      "make_cut": 0.69932
     },
     {
       "name": "Ramey, Chad",
-      "position": "T57",
+      "position": "T39",
       "thru": 2,
       "today": -1,
       "current_score": -1,
@@ -9685,7 +9685,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.71324
+      "make_cut": 0.71744
     },
     {
       "name": "Reitan, Kristoffer",
@@ -9700,7 +9700,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.76564
+      "make_cut": 0.77216
     },
     {
       "name": "Jaeger, Stephan",
@@ -9715,7 +9715,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.75396
+      "make_cut": 0.74944
     },
     {
       "name": "Brennan, Michael",
@@ -9730,7 +9730,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.7168
+      "make_cut": 0.71572
     },
     {
       "name": "Cauley, Bud",
@@ -9745,7 +9745,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.71604
+      "make_cut": 0.71504
     },
     {
       "name": "English, Harris",
@@ -9760,7 +9760,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.84524
+      "make_cut": 0.84408
     },
     {
       "name": "Highsmith, Joe",
@@ -9775,7 +9775,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.52312
+      "make_cut": 0.52048
     },
     {
       "name": "Lebioda, Hank",
@@ -9790,7 +9790,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.64132
+      "make_cut": 0.63868
     },
     {
       "name": "Smith, Jordan",
@@ -9805,7 +9805,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.75116
+      "make_cut": 0.74904
     },
     {
       "name": "Spieth, Jordan",
@@ -9820,7 +9820,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.77032
+      "make_cut": 0.76748
     },
     {
       "name": "Theegala, Sahith",
@@ -9835,7 +9835,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.76912
+      "make_cut": 0.76384
     },
     {
       "name": "Valimaki, Sami",
@@ -9850,7 +9850,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.7528
+      "make_cut": 0.75152
     },
     {
       "name": "Young, Cameron",
@@ -9865,11 +9865,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.854
+      "make_cut": 0.85564
     },
     {
       "name": "Smotherman, Austin",
-      "position": "T57",
+      "position": "T58",
       "thru": 17,
       "today": 0,
       "current_score": 0,
@@ -9880,11 +9880,26 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.5692
+      "make_cut": 0.56628
+    },
+    {
+      "name": "Dahmen, Joel",
+      "position": "T58",
+      "thru": 2,
+      "today": 0,
+      "current_score": 0,
+      "total": 71,
+      "r1": 71,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": false,
+      "make_cut": 0.6416
     },
     {
       "name": "Kim, S.H.",
-      "position": "T57",
+      "position": "T58",
       "thru": 2,
       "today": 1,
       "current_score": 0,
@@ -9895,11 +9910,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.59856
+      "make_cut": 0.60952
     },
     {
       "name": "Meissner, Mac",
-      "position": "T57",
+      "position": "T58",
       "thru": 2,
       "today": 0,
       "current_score": 0,
@@ -9910,26 +9925,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.6372
-    },
-    {
-      "name": "Dahmen, Joel",
-      "position": "T57",
-      "thru": 1,
-      "today": 0,
-      "current_score": 0,
-      "total": 71,
-      "r1": 71,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": false,
-      "make_cut": 0.6184
+      "make_cut": 0.64436
     },
     {
       "name": "Morikawa, Collin",
-      "position": "T57",
+      "position": "T58",
       "thru": 1,
       "today": -1,
       "current_score": 0,
@@ -9940,11 +9940,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.6824
+      "make_cut": 0.68116
     },
     {
       "name": "Bezuidenhout, Christiaan",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -9959,7 +9959,7 @@
     },
     {
       "name": "Bridgeman, Jacob",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -9970,11 +9970,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.60124
+      "make_cut": 0.59688
     },
     {
       "name": "Fowler, Rickie",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -9985,7 +9985,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.71904
+      "make_cut": 0.71448
     },
     {
       "name": "Gonzalez, Emilio",
@@ -10004,7 +10004,7 @@
     },
     {
       "name": "Greyserman, Max",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10015,11 +10015,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.5964
+      "make_cut": 0.59288
     },
     {
       "name": "Griffin, Ben",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10030,11 +10030,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.73156
+      "make_cut": 0.73044
     },
     {
       "name": "Hoge, Tom",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10045,11 +10045,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.49576
+      "make_cut": 0.49496
     },
     {
       "name": "Kim, Michael",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10060,11 +10060,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.60328
+      "make_cut": 0.60264
     },
     {
       "name": "Lee, Min Woo",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10075,11 +10075,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.6938
+      "make_cut": 0.68744
     },
     {
       "name": "Lee, S.T.",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10090,11 +10090,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.41212
+      "make_cut": 0.41276
     },
     {
       "name": "Penge, Marco",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10105,11 +10105,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.60208
+      "make_cut": 0.59932
     },
     {
       "name": "Schauffele, Xander",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10120,11 +10120,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.79108
+      "make_cut": 0.79068
     },
     {
       "name": "Straka, Sepp",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10135,11 +10135,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.6178
+      "make_cut": 0.61536
     },
     {
       "name": "Taylor, Nick",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10150,11 +10150,11 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.65572
+      "make_cut": 0.654
     },
     {
       "name": "Van Rooyen, Erik",
-      "position": "T57",
+      "position": "T58",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10165,7 +10165,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.51116
+      "make_cut": 0.51108
     },
     {
       "name": "Conners, Corey",
@@ -10180,7 +10180,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.52112
+      "make_cut": 0.53712
     },
     {
       "name": "Kim, Tom",
@@ -10195,7 +10195,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.45532
+      "make_cut": 0.46552
     },
     {
       "name": "Burns, Sam",
@@ -10210,7 +10210,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.58504
+      "make_cut": 0.58548
     },
     {
       "name": "Cole, Eric",
@@ -10225,7 +10225,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.40312
+      "make_cut": 0.40672
     },
     {
       "name": "Davis, Cam",
@@ -10240,7 +10240,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.2984
+      "make_cut": 0.29988
     },
     {
       "name": "Dou, Zecheng",
@@ -10255,7 +10255,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.35844
+      "make_cut": 0.3624
     },
     {
       "name": "Hall, Harry",
@@ -10270,7 +10270,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.57712
+      "make_cut": 0.57476
     },
     {
       "name": "Kizzire, Patton",
@@ -10285,7 +10285,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.31404
+      "make_cut": 0.3206
     },
     {
       "name": "Nakajima, Keita",
@@ -10300,7 +10300,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.36504
+      "make_cut": 0.36624
     },
     {
       "name": "Rodgers, Patrick",
@@ -10315,7 +10315,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.493
+      "make_cut": 0.4928
     },
     {
       "name": "Simpson, Webb",
@@ -10330,7 +10330,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.37696
+      "make_cut": 0.37976
     },
     {
       "name": "Whaley, Vince",
@@ -10345,7 +10345,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.40044
+      "make_cut": 0.40228
     },
     {
       "name": "Olesen, Thorbjorn",
@@ -10360,7 +10360,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.33476
+      "make_cut": 0.34564
     },
     {
       "name": "Riley, Davis",
@@ -10375,7 +10375,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.22524
+      "make_cut": 0.22696
     },
     {
       "name": "Brown, Dan",
@@ -10390,7 +10390,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.2506
+      "make_cut": 0.25604
     },
     {
       "name": "Clark, Wyndham",
@@ -10405,7 +10405,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.33688
+      "make_cut": 0.33804
     },
     {
       "name": "Echavarria, Nico",
@@ -10420,7 +10420,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.29332
+      "make_cut": 0.29616
     },
     {
       "name": "Finau, Tony",
@@ -10435,7 +10435,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.24556
+      "make_cut": 0.2452
     },
     {
       "name": "Hoffman, Charley",
@@ -10450,7 +10450,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.18836
+      "make_cut": 0.18996
     },
     {
       "name": "Kim, Si Woo",
@@ -10465,7 +10465,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.5154
+      "make_cut": 0.51752
     },
     {
       "name": "Malnati, Peter",
@@ -10480,7 +10480,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.1436
+      "make_cut": 0.147
     },
     {
       "name": "Potgieter, Aldrich",
@@ -10495,7 +10495,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.25148
+      "make_cut": 0.251
     },
     {
       "name": "Rozo, Marcelo",
@@ -10510,7 +10510,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.1364
+      "make_cut": 0.13916
     },
     {
       "name": "Scheffler, Scottie",
@@ -10525,7 +10525,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.6878
+      "make_cut": 0.68368
     },
     {
       "name": "Schenk, Adam",
@@ -10540,7 +10540,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.18608
+      "make_cut": 0.18828
     },
     {
       "name": "Vilips, Karl",
@@ -10555,7 +10555,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.19916
+      "make_cut": 0.20376
     },
     {
       "name": "Walker, Danny",
@@ -10570,7 +10570,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.15288
+      "make_cut": 0.1572
     },
     {
       "name": "Tosti, Alejandro",
@@ -10585,12 +10585,12 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.10764
+      "make_cut": 0.10824
     },
     {
       "name": "Pavon, Matthieu",
       "position": "T104",
-      "thru": 1,
+      "thru": 2,
       "today": 1,
       "current_score": 3,
       "total": 73,
@@ -10600,7 +10600,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.11068
+      "make_cut": 0.10812
     },
     {
       "name": "Poston, J.T.",
@@ -10615,7 +10615,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.23424
+      "make_cut": 0.23432
     },
     {
       "name": "Blanchet, Chandler",
@@ -10630,7 +10630,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.13808
+      "make_cut": 0.13868
     },
     {
       "name": "Chatfield, Davis",
@@ -10645,7 +10645,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.08048
+      "make_cut": 0.08368
     },
     {
       "name": "Eckroat, Austin",
@@ -10660,7 +10660,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.169
+      "make_cut": 0.17152
     },
     {
       "name": "Garnett, Brice",
@@ -10675,7 +10675,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.09056
+      "make_cut": 0.0936
     },
     {
       "name": "Harman, Brian",
@@ -10690,7 +10690,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.163
+      "make_cut": 0.16684
     },
     {
       "name": "McCarty, Matt",
@@ -10705,7 +10705,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.25628
+      "make_cut": 0.2614
     },
     {
       "name": "Nyholm, Pontus",
@@ -10720,7 +10720,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.08384
+      "make_cut": 0.0864
     },
     {
       "name": "Smalley, Alex",
@@ -10735,7 +10735,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.15092
+      "make_cut": 0.15372
     },
     {
       "name": "Yellamaraju, Sudarshan",
@@ -10750,7 +10750,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.1314
+      "make_cut": 0.135
     },
     {
       "name": "Horschel, Billy",
@@ -10765,7 +10765,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.07652
+      "make_cut": 0.07724
     },
     {
       "name": "Koepka, Brooks",
@@ -10780,7 +10780,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.10056
+      "make_cut": 0.10188
     },
     {
       "name": "Higgo, Garrick",
@@ -10795,7 +10795,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.06708
+      "make_cut": 0.06988
     },
     {
       "name": "Mouw, William",
@@ -10810,7 +10810,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.02856
+      "make_cut": 0.02996
     },
     {
       "name": "Novak, Andrew",
@@ -10825,7 +10825,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.05692
+      "make_cut": 0.05944
     },
     {
       "name": "Schmid, Matti",
@@ -10840,7 +10840,7 @@
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.01556
+      "make_cut": 0.01448
     },
     {
       "name": "Avant, Thomas",
