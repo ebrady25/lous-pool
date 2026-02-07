@@ -495,6 +495,20 @@ def score_team(team, tournament_data, season_usage=None):
                 r3 = rep["r3"]
                 r4 = rep["r4"]
                 replacement = rep["name"]
+                
+                # For live scoring: MC player's score = their R1+R2 (to par) + replacement's R3+ live score
+                # Get replacement player's live data
+                rep_name_dg = rep["name"]
+                rep_data = players_dict.get(rep_name_dg, {})
+                rep_today = rep_data.get("today", 0) or 0  # Replacement's live round score
+                rep_thru = rep_data.get("thru", 0) or 0
+                
+                # MC player's current_score should be:
+                # Their R1+R2 (to par) + replacement's today score
+                mc_r1r2_to_par = (pdata["r1"] - course_par) + (pdata["r2"] - course_par) if pdata["r1"] and pdata["r2"] else 0
+                pdata["current_score"] = mc_r1r2_to_par + rep_today
+                pdata["today"] = rep_today  # Show replacement's today score
+                pdata["thru"] = rep_thru
         
         # Calculate total - use current_score (to par) for live scoring
         if r1 is not None:
