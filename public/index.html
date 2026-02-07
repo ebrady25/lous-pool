@@ -1479,22 +1479,6 @@ function App() {
         </div>
       )}
 
-      {/* Actual cut line (Live tab, R3+ when cut is known) */}
-      {view === "live" && data?.cut_line && (!data?.cutProjections?.length) && (
-        <div className="cut-projection">
-          <div className="cut-card">
-            <span className="cut-label"><span className="cut-icon">✂️</span>Cut Line</span>
-            <div className="cut-options">
-              <div className="cut-option">
-                <span className="cut-score" style={{ fontSize: '1rem' }}>
-                  {data.cut_line} ({formatScore(data.cut_line - (2 * (data.course_par || 71)))})
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Leaderboard */}
       <div className="leaderboard">
         {view === "live" ? (
