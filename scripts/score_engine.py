@@ -307,6 +307,26 @@ def process_tournament(live_data, inplay_data=None):
             # Sort by R2 tee time (earliest first) - this is the Rule 4 order
             cut_line_players.sort(key=lambda x: x["r2_teetime"])
             replacement_players = cut_line_players
+            
+            # HARDCODED OVERRIDE: When tee times aren't available (all "99:99"),
+            # use commissioner-confirmed Rule 4 order for specific tournaments
+            RULE4_OVERRIDES = {
+                "WM Phoenix Open": ["Kim, S.H.", "Poston, J.T.", "Morikawa, Collin"],
+            }
+            if event_name in RULE4_OVERRIDES:
+                override_order = RULE4_OVERRIDES[event_name]
+                # Reorder cut_line_players based on override
+                ordered = []
+                for name in override_order:
+                    for p in cut_line_players:
+                        if p["name"] == name:
+                            ordered.append(p)
+                            break
+                # Add any remaining players not in override
+                for p in cut_line_players:
+                    if p not in ordered:
+                        ordered.append(p)
+                replacement_players = ordered
     
     # Build player lookup
     players = {}
