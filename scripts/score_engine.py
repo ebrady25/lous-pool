@@ -346,6 +346,7 @@ def process_tournament(live_data, inplay_data=None):
             "current_score": current_score,
             "made_cut": made_cut,
             "make_cut": p.get("make_cut"),  # Cut probability from in-play
+            "top_10": p.get("top_10"),  # Top 10 probability from in-play
             "mc_by": mc_by,
             "mc_penalty": mc_penalty(mc_by) if mc_by > 0 else 0,
             "course_par": course_par,
@@ -625,6 +626,7 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
             "fin_text": p.get("fin_text", ""),
             "made_cut": p.get("made_cut", True),
             "make_cut": p.get("make_cut"),  # Cut probability from in-play endpoint
+            "top_10": p.get("top_10"),  # Top 10 probability from in-play endpoint
         })
     
     # Sort by current_score (to par), then by thru (more holes = higher priority), then name
