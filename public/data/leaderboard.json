@@ -32,8 +32,8 @@
     }
   ],
   "team_par": 1136,
-  "last_updated": "2026-02-07 15:18:45 UTC",
-  "updated_at": "2026-02-07T15:20:13.929358+00:00",
+  "last_updated": "2026-02-07 15:28:46 UTC",
+  "updated_at": "2026-02-07T15:30:14.096430+00:00",
   "teams": [
     {
       "owner": "Pete & Linda",
@@ -3492,7 +3492,7 @@
           "total": 140,
           "status": "active",
           "replacement": null,
-          "position": "T52",
+          "position": "T51",
           "fin_text": "",
           "today": -2,
           "thru": 18,
@@ -3774,7 +3774,7 @@
           "total": 140,
           "status": "active",
           "replacement": null,
-          "position": "T52",
+          "position": "T51",
           "fin_text": "",
           "today": 0,
           "thru": 18,
@@ -3943,7 +3943,7 @@
           "total": 140,
           "status": "active",
           "replacement": null,
-          "position": "T52",
+          "position": "T51",
           "fin_text": "",
           "today": -3,
           "thru": 18,
@@ -8887,7 +8887,7 @@
           "total": 147,
           "status": "mc",
           "replacement": "Kim, S.H.",
-          "position": "T73",
+          "position": "T74",
           "fin_text": "",
           "today": 0,
           "thru": 18,
@@ -10189,23 +10189,8 @@
       "make_cut": 1.0
     },
     {
-      "name": "Nakajima, Keita",
-      "position": "T37",
-      "thru": 17,
-      "today": -4,
-      "current_score": -3,
-      "total": 72,
-      "r1": 72,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 0.9998
-    },
-    {
       "name": "Davis, Cam",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": -3,
       "current_score": -2,
@@ -10220,7 +10205,7 @@
     },
     {
       "name": "Highsmith, Joe",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": -1,
       "current_score": -2,
@@ -10235,7 +10220,7 @@
     },
     {
       "name": "Hoey, Rico",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -10250,7 +10235,7 @@
     },
     {
       "name": "Kitayama, Kurt",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": 0,
       "current_score": -2,
@@ -10265,7 +10250,7 @@
     },
     {
       "name": "Lamprecht, Christo",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": 2,
       "current_score": -2,
@@ -10279,8 +10264,23 @@
       "make_cut": 1.0
     },
     {
+      "name": "Nakajima, Keita",
+      "position": "T51",
+      "thru": 18,
+      "today": -3,
+      "current_score": -2,
+      "total": 140,
+      "r1": 72,
+      "r2": 68,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0
+    },
+    {
       "name": "Rodgers, Patrick",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": -3,
       "current_score": -2,
@@ -10295,7 +10295,7 @@
     },
     {
       "name": "Smith, Jordan",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": -1,
       "current_score": -2,
@@ -10310,7 +10310,7 @@
     },
     {
       "name": "Straka, Sepp",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -10325,7 +10325,7 @@
     },
     {
       "name": "VanDerLaan, John",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": 1,
       "current_score": -2,
@@ -10340,7 +10340,7 @@
     },
     {
       "name": "Woodland, Gary",
-      "position": "T52",
+      "position": "T51",
       "thru": 18,
       "today": 0,
       "current_score": -2,
@@ -10377,6 +10377,21 @@
       "total": 141,
       "r1": 73,
       "r2": 68,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0
+    },
+    {
+      "name": "Hirata, Kensei",
+      "position": "T62",
+      "thru": 18,
+      "today": 2,
+      "current_score": -1,
+      "total": 141,
+      "r1": 68,
+      "r2": 73,
       "r3": null,
       "r4": null,
       "fin_text": "",
@@ -10504,23 +10519,23 @@
       "make_cut": 1.0
     },
     {
-      "name": "Hirata, Kensei",
+      "name": "Lee, S.T.",
       "position": "T62",
       "thru": 17,
-      "today": 2,
+      "today": -1,
       "current_score": -1,
-      "total": 68,
-      "r1": 68,
+      "total": 71,
+      "r1": 71,
       "r2": null,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": false,
-      "make_cut": 0.7774
+      "make_cut": 0.81376
     },
     {
       "name": "Dahmen, Joel",
-      "position": "T73",
+      "position": "T74",
       "thru": 18,
       "today": 0,
       "current_score": 0,
@@ -10535,7 +10550,7 @@
     },
     {
       "name": "Dumont De Chassart, Adrien",
-      "position": "T73",
+      "position": "T74",
       "thru": 18,
       "today": 1,
       "current_score": 0,
@@ -10550,7 +10565,7 @@
     },
     {
       "name": "Greyserman, Max",
-      "position": "T73",
+      "position": "T74",
       "thru": 18,
       "today": 0,
       "current_score": 0,
@@ -10565,7 +10580,7 @@
     },
     {
       "name": "Grillo, Emiliano",
-      "position": "T73",
+      "position": "T74",
       "thru": 18,
       "today": 1,
       "current_score": 0,
@@ -10580,7 +10595,7 @@
     },
     {
       "name": "Olesen, Thorbjorn",
-      "position": "T73",
+      "position": "T74",
       "thru": 18,
       "today": -1,
       "current_score": 0,
@@ -10592,21 +10607,6 @@
       "fin_text": "",
       "made_cut": false,
       "make_cut": 0.0
-    },
-    {
-      "name": "Lee, S.T.",
-      "position": "T73",
-      "thru": 16,
-      "today": 0,
-      "current_score": 0,
-      "total": 71,
-      "r1": 71,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": false,
-      "make_cut": 0.43656
     },
     {
       "name": "Gonzalez, Emilio",
