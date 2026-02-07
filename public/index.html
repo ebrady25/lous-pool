@@ -1143,6 +1143,7 @@ function App() {
               course_par: lb.course_par || 72,
               r4_slot: 0,
               make_cut_prob: p.make_cut,
+              top_10_prob: p.top_10,
             })),
             event: lb.event,
             updated_at: lb.updated_at,
@@ -1209,6 +1210,7 @@ function App() {
             course_par: lb.course_par || 72,
             r4_slot: 0,
             make_cut_prob: p.make_cut,
+            top_10_prob: p.top_10,
           })),
           event: lb.event,
           updated_at: lb.updated_at,
@@ -1510,8 +1512,8 @@ function App() {
                   <th className="score hide-mobile">R3</th>
                   <th className="score hide-mobile">R4</th>
                   <th className="score">Total</th>
-                  {data?.current_round <= 2 && (
-                    <th className="score" style={{ fontSize: '0.62rem' }}>MC%</th>
+                  {data?.current_round >= 3 && (
+                    <th className="score" style={{ fontSize: '0.62rem' }}>T10%</th>
                   )}
                 </tr>
               </thead>
@@ -1524,15 +1526,15 @@ function App() {
                     const parts = p.name.split(",");
                     displayName = `${parts[1].trim()} ${parts[0].trim()}`;
                   }
-                  // MC% color coding
-                  const mcProb = p.make_cut_prob;
-                  let mcColor = "var(--slate-500)";
-                  let mcBg = "transparent";
-                  if (mcProb !== null) {
-                    if (mcProb >= 0.75) { mcColor = "var(--green-400)"; mcBg = "rgba(52, 208, 126, 0.08)"; }
-                    else if (mcProb >= 0.50) { mcColor = "var(--green-300)"; mcBg = "rgba(110, 231, 165, 0.06)"; }
-                    else if (mcProb >= 0.30) { mcColor = "var(--gold)"; mcBg = "rgba(251, 191, 36, 0.08)"; }
-                    else { mcColor = "var(--mc-red)"; mcBg = "rgba(248, 113, 113, 0.08)"; }
+                  // Top 10% color coding (for R3+)
+                  const t10Prob = p.top_10_prob;
+                  let t10Color = "var(--slate-500)";
+                  let t10Bg = "transparent";
+                  if (t10Prob !== null && t10Prob !== undefined) {
+                    if (t10Prob >= 0.50) { t10Color = "var(--green-400)"; t10Bg = "rgba(52, 208, 126, 0.08)"; }
+                    else if (t10Prob >= 0.25) { t10Color = "var(--green-300)"; t10Bg = "rgba(110, 231, 165, 0.06)"; }
+                    else if (t10Prob >= 0.10) { t10Color = "var(--gold)"; t10Bg = "rgba(251, 191, 36, 0.08)"; }
+                    else { t10Color = "var(--slate-500)"; t10Bg = "transparent"; }
                   }
                   return (
                     <tr key={p.name} className={`live-lb-row ${isMC ? "mc-row" : ""}`}>
@@ -1556,16 +1558,16 @@ function App() {
                           {p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : ""}
                         </span>
                       </td>
-                      {data?.current_round <= 2 && (
+                      {data?.current_round >= 3 && (
                         <td className="mc-pct-cell" style={{
                           textAlign: 'right',
                           fontFamily: "'JetBrains Mono', monospace",
                           fontSize: '0.75rem',
                           fontWeight: 500,
-                          color: mcColor,
-                          background: mcBg,
+                          color: t10Color,
+                          background: t10Bg,
                         }}>
-                          {mcProb !== null ? `${Math.round(mcProb * 100)}%` : "–"}
+                          {t10Prob !== null && t10Prob !== undefined ? `${Math.round(t10Prob * 100)}%` : "–"}
                         </td>
                       )}
                     </tr>
