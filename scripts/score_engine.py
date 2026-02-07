@@ -257,14 +257,23 @@ def process_tournament(live_data, inplay_data=None):
                 course_par = cp
                 break
     
-    # Find cut line (only if R3 data exists)
+    # Find cut line
+    # Can detect after R2 is complete using make_cut probability from DataGolf
+    # or after R3 has started by checking who has R3 scores
     cut_line = None
     replacement_players = []
     
-    if has_r3:
+    # Check if cut has been made (either R3 started or make_cut probabilities are definitive)
+    definite_made = [p for p in scores if p.get("make_cut", 0.5) > 0.99]
+    definite_missed = [p for p in scores if p.get("make_cut", 0.5) < 0.01 and get_round_score(p, 1) is not None]
+    cut_is_made = has_r3 or (len(definite_made) > 0 and len(definite_missed) > 0)
+    
+    if cut_is_made:
         made_cut_totals = []
         for p in scores:
-            if player_made_cut(p):
+            # Player made cut if: has R3 data OR make_cut > 99%
+            made = player_made_cut(p) or p.get("make_cut", 0) > 0.99
+            if made:
                 t2 = get_total_thru_2(p)
                 if t2 is not None:
                     made_cut_totals.append(t2)
