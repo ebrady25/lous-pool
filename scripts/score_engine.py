@@ -510,11 +510,14 @@ def score_team(team, tournament_data, season_usage=None):
     
     # Team total - ALWAYS use current_score (to-par) during live tournament
     # current_score is the score relative to par, which is what we want for pool scoring
+    # Also add MC penalties
+    mc_penalties = sum(p.get("penalty", 0) or 0 for p in scored_players)
+    
     if status in ["round1_live", "round1", "round2", "round3", "round4"]:
-        # Live scoring - sum current_score (relative to par)
-        team_total = sum(p.get("current_score", 0) or 0 for p in scored_players)
+        # Live scoring - sum current_score (relative to par) + MC penalties
+        team_total = sum(p.get("current_score", 0) or 0 for p in scored_players) + mc_penalties
     else:
-        # Tournament complete - use final strokes if available
+        # Tournament complete - use final strokes if available (penalties already in total)
         team_total = sum(p["total"] for p in scored_players if p["total"] is not None)
     
     team_total += overuse_penalty
