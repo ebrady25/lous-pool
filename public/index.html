@@ -1512,10 +1512,13 @@ function App() {
                   <th className="score hide-mobile">R3</th>
                   <th className="score hide-mobile">R4</th>
                   <th className="score">Total</th>
-                  {data?.current_round >= 3 && (
+                  {data?.current_round >= 1 && (
                     <th className="score" style={{ fontSize: '0.7rem' }}>
-                      {data?.current_round === 4 ? "R4" : "R3"}
+                      {data?.current_round === 1 ? "R1" : data?.current_round === 2 ? "R2" : data?.current_round === 4 ? "R4" : "R3"}
                     </th>
+                  )}
+                  {data?.current_round <= 2 && (
+                    <th className="score" style={{ fontSize: '0.62rem' }}>MC%</th>
                   )}
                   {data?.current_round >= 3 && (
                     <th className="score" style={{ fontSize: '0.62rem' }}>T10%</th>
@@ -1530,6 +1533,16 @@ function App() {
                   if (p.name.includes(",")) {
                     const parts = p.name.split(",");
                     displayName = `${parts[1].trim()} ${parts[0].trim()}`;
+                  }
+                  // MC% color coding (for R1/R2)
+                  const mcProb = p.make_cut_prob;
+                  let mcColor = "var(--slate-500)";
+                  let mcBg = "transparent";
+                  if (mcProb !== null && mcProb !== undefined) {
+                    if (mcProb >= 0.75) { mcColor = "var(--green-400)"; mcBg = "rgba(52, 208, 126, 0.08)"; }
+                    else if (mcProb >= 0.50) { mcColor = "var(--green-300)"; mcBg = "rgba(110, 231, 165, 0.06)"; }
+                    else if (mcProb >= 0.30) { mcColor = "var(--gold)"; mcBg = "rgba(251, 191, 36, 0.08)"; }
+                    else { mcColor = "var(--mc-red)"; mcBg = "rgba(248, 113, 113, 0.08)"; }
                   }
                   // Top 10% color coding (for R3+)
                   const t10Prob = p.top_10_prob;
@@ -1568,7 +1581,7 @@ function App() {
                       }}>
                         <span className="score-value">{formatScore(p.to_par)}</span>
                       </td>
-                      {data?.current_round >= 3 && (
+                      {data?.current_round >= 1 && (
                         <td className="round-score" style={{ 
                           fontFamily: "'JetBrains Mono', monospace",
                           fontSize: '0.75rem',
@@ -1576,6 +1589,18 @@ function App() {
                         }}>
                           <span className={scoreClass(todayScore)}>{todayDisplay}</span>
                           <span className="thru-small">{thruDisplay}</span>
+                        </td>
+                      )}
+                      {data?.current_round <= 2 && (
+                        <td className="mc-pct-cell" style={{
+                          textAlign: 'right',
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: '0.75rem',
+                          fontWeight: 500,
+                          color: mcColor,
+                          background: mcBg,
+                        }}>
+                          {mcProb !== null && mcProb !== undefined ? `${Math.round(mcProb * 100)}%` : "–"}
                         </td>
                       )}
                       {data?.current_round >= 3 && (
