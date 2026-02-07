@@ -143,7 +143,7 @@ def merge_player_data(live_stats, inplay_data):
     Merge data from live-tournament-stats and in-play endpoints.
     Returns combined player data with all available fields.
     """
-    # Build lookup from in-play (has today/thru/R1-R4)
+    # Build lookup from in-play (has today/thru/R1-R4/round)
     inplay_lookup = {}
     for p in inplay_data:
         dg_id = p.get("dg_id")
@@ -162,14 +162,17 @@ def merge_player_data(live_stats, inplay_data):
         # Find matching in-play data
         ip = inplay_lookup.get(dg_id) or inplay_lookup.get(name.lower(), {})
         
-        # Combine all fields
-        combined = {**ip, **p}  # live_stats takes priority for overlapping keys
+        # Combine all fields - live_stats takes priority except for key in-play fields
+        combined = {**ip, **p}
         
-        # Add computed fields
+        # Preserve key fields from in-play that might get overwritten
+        combined["round"] = ip.get("round") or p.get("round", 0)
         combined["today"] = ip.get("today", p.get("total", 0))
         combined["thru"] = ip.get("thru", p.get("thru", 0))
         combined["current_score"] = ip.get("current_score", p.get("total", 0))
         combined["position"] = p.get("position", ip.get("current_pos", ""))
+        combined["top_10"] = ip.get("top_10", p.get("top_10"))
+        combined["make_cut"] = ip.get("make_cut", p.get("make_cut"))
         
         merged.append(combined)
     
