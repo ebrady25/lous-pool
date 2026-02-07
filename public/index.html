@@ -1382,9 +1382,6 @@ function App() {
             <div className="event-meta">
               <span><span className="meta-label">Week</span> {CONFIG.SEASON.week}</span>
               <span><span className="meta-label">Par</span> {data?.course_par || CONFIG.SEASON.course_par}</span>
-              {data?.cut_line && (
-                <span><span className="meta-label">Cut</span> {data.cut_line}</span>
-              )}
               <span><span className="meta-label">Teams</span> {data?.total_teams || "—"}</span>
             </div>
           </div>
