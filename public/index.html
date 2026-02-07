@@ -453,6 +453,21 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════ */
+/* LIVE PLAYER EXPANSION ROW                   */
+/* ═══════════════════════════════════════════ */
+.live-lb-row:hover {
+  background: rgba(34, 146, 92, 0.04);
+}
+
+.live-lb-row.expanded {
+  background: rgba(34, 146, 92, 0.06);
+}
+
+.player-detail-row td {
+  padding: 0.25rem 0.5rem 0.25rem 2.5rem !important;
+}
+
+/* ═══════════════════════════════════════════ */
 /* ENHANCED MC STYLING (Pool detail)           */
 /* ═══════════════════════════════════════════ */
 .player-row.mc-player .p-name {
@@ -1084,6 +1099,7 @@ function App() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [expandedTeam, setExpandedTeam] = useState(null);
+  const [expandedPlayer, setExpandedPlayer] = useState(null); // For live leaderboard player expansion
   const [friendsOnly, setFriendsOnly] = useState(false);
   const [view, setView] = useState("live"); // "live" | "weekly" | "season"
 
@@ -1560,64 +1576,97 @@ function App() {
                   const todayScore = p.today;
                   const todayDisplay = todayScore === 0 ? "E" : (todayScore > 0 ? `+${todayScore}` : todayScore);
                   const thruDisplay = p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : "";
+                  const isExpanded = expandedPlayer === p.name;
+                  const coursePar = data?.course_par || 71;
+                  
+                  // Format round score with to-par
+                  const formatRoundScore = (strokes) => {
+                    if (strokes === null || strokes === undefined) return "–";
+                    const toPar = strokes - coursePar;
+                    const toParStr = toPar === 0 ? "E" : (toPar > 0 ? `+${toPar}` : toPar);
+                    return `${strokes} (${toParStr})`;
+                  };
                   
                   return (
-                    <tr key={p.name} className={`live-lb-row ${isMC ? "mc-row" : ""}`}>
-                      <td className={`rank-cell ${i < 3 ? `rank-${i+1}` : ""}`}>
-                        {p.fin_text || i + 1}
-                      </td>
-                      <td className="player-name-cell">
-                        {displayName}
-                        {p.alt_slot > 0 && (
-                          <span className="alt-badge">🔄 Alt-{p.alt_slot}</span>
+                    <React.Fragment key={p.name}>
+                      <tr 
+                        className={`live-lb-row ${isMC ? "mc-row" : ""} ${isExpanded ? "expanded" : ""}`}
+                        onClick={() => setExpandedPlayer(isExpanded ? null : p.name)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <td className={`rank-cell ${i < 3 ? `rank-${i+1}` : ""}`}>
+                          {p.fin_text || i + 1}
+                        </td>
+                        <td className="player-name-cell">
+                          {displayName}
+                          {p.alt_slot > 0 && (
+                            <span className="alt-badge">🔄 Alt-{p.alt_slot}</span>
+                          )}
+                          {isMC && <span style={{ fontSize: '0.65rem', color: 'var(--mc-red)', marginLeft: '0.4rem', opacity: 0.7 }}>MC</span>}
+                        </td>
+                        <td className="round-score hide-mobile">{p.r1 ?? "–"}</td>
+                        <td className="round-score hide-mobile">{p.r2 ?? "–"}</td>
+                        <td className="round-score hide-mobile">{p.r3 ?? "–"}</td>
+                        <td className="round-score hide-mobile">{p.r4 ?? "–"}</td>
+                        <td className={`score-cell ${scoreClass(p.to_par)}`} style={{
+                          background: 'rgba(34, 146, 92, 0.08)',
+                          fontWeight: 600
+                        }}>
+                          <span className="score-value">{formatScore(p.to_par)}</span>
+                        </td>
+                        {data?.current_round >= 1 && (
+                          <td className="round-score" style={{ 
+                            fontFamily: "'JetBrains Mono', monospace",
+                            fontSize: '0.75rem',
+                            textAlign: 'center'
+                          }}>
+                            <span className={scoreClass(todayScore)}>{todayDisplay}</span>
+                            <span className="thru-small">{thruDisplay}</span>
+                          </td>
                         )}
-                        {isMC && <span style={{ fontSize: '0.65rem', color: 'var(--mc-red)', marginLeft: '0.4rem', opacity: 0.7 }}>MC</span>}
-                      </td>
-                      <td className="round-score hide-mobile">{p.r1 ?? "–"}</td>
-                      <td className="round-score hide-mobile">{p.r2 ?? "–"}</td>
-                      <td className="round-score hide-mobile">{p.r3 ?? "–"}</td>
-                      <td className="round-score hide-mobile">{p.r4 ?? "–"}</td>
-                      <td className={`score-cell ${scoreClass(p.to_par)}`} style={{
-                        background: 'rgba(34, 146, 92, 0.08)',
-                        fontWeight: 600
-                      }}>
-                        <span className="score-value">{formatScore(p.to_par)}</span>
-                      </td>
-                      {data?.current_round >= 1 && (
-                        <td className="round-score" style={{ 
-                          fontFamily: "'JetBrains Mono', monospace",
-                          fontSize: '0.75rem',
-                          textAlign: 'center'
-                        }}>
-                          <span className={scoreClass(todayScore)}>{todayDisplay}</span>
-                          <span className="thru-small">{thruDisplay}</span>
-                        </td>
+                        {data?.current_round <= 2 && (
+                          <td className="mc-pct-cell" style={{
+                            textAlign: 'right',
+                            fontFamily: "'JetBrains Mono', monospace",
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                            color: mcColor,
+                            background: mcBg,
+                          }}>
+                            {mcProb !== null && mcProb !== undefined ? `${Math.round(mcProb * 100)}%` : "–"}
+                          </td>
+                        )}
+                        {data?.current_round >= 3 && (
+                          <td className="mc-pct-cell" style={{
+                            textAlign: 'right',
+                            fontFamily: "'JetBrains Mono', monospace",
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                            color: t10Color,
+                            background: t10Bg,
+                          }}>
+                            {t10Prob !== null && t10Prob !== undefined ? `${Math.round(t10Prob * 100)}%` : "–"}
+                          </td>
+                        )}
+                      </tr>
+                      {isExpanded && (
+                        <tr className="player-detail-row">
+                          <td colSpan="10" style={{
+                            padding: '0.3rem 0.5rem 0.3rem 2.5rem',
+                            fontSize: '0.7rem',
+                            fontFamily: "'JetBrains Mono', monospace",
+                            background: 'rgba(34, 146, 92, 0.04)',
+                            borderBottom: '1px solid rgba(34, 146, 92, 0.1)',
+                            color: 'var(--slate-400)'
+                          }}>
+                            <span style={{ marginRight: '1rem' }}>R1: <span className={scoreClass(p.r1 ? p.r1 - coursePar : null)}>{formatRoundScore(p.r1)}</span></span>
+                            <span style={{ marginRight: '1rem' }}>R2: <span className={scoreClass(p.r2 ? p.r2 - coursePar : null)}>{formatRoundScore(p.r2)}</span></span>
+                            <span style={{ marginRight: '1rem' }}>R3: <span className={scoreClass(p.r3 ? p.r3 - coursePar : null)}>{formatRoundScore(p.r3)}</span></span>
+                            <span>R4: <span className={scoreClass(p.r4 ? p.r4 - coursePar : null)}>{formatRoundScore(p.r4)}</span></span>
+                          </td>
+                        </tr>
                       )}
-                      {data?.current_round <= 2 && (
-                        <td className="mc-pct-cell" style={{
-                          textAlign: 'right',
-                          fontFamily: "'JetBrains Mono', monospace",
-                          fontSize: '0.75rem',
-                          fontWeight: 500,
-                          color: mcColor,
-                          background: mcBg,
-                        }}>
-                          {mcProb !== null && mcProb !== undefined ? `${Math.round(mcProb * 100)}%` : "–"}
-                        </td>
-                      )}
-                      {data?.current_round >= 3 && (
-                        <td className="mc-pct-cell" style={{
-                          textAlign: 'right',
-                          fontFamily: "'JetBrains Mono', monospace",
-                          fontSize: '0.75rem',
-                          fontWeight: 500,
-                          color: t10Color,
-                          background: t10Bg,
-                        }}>
-                          {t10Prob !== null && t10Prob !== undefined ? `${Math.round(t10Prob * 100)}%` : "–"}
-                        </td>
-                      )}
-                    </tr>
+                    </React.Fragment>
                   );
                 })}
               </tbody>
