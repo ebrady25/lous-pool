@@ -1513,6 +1513,11 @@ function App() {
                   <th className="score hide-mobile">R4</th>
                   <th className="score">Total</th>
                   {data?.current_round >= 3 && (
+                    <th className="score" style={{ fontSize: '0.7rem' }}>
+                      {data?.current_round === 4 ? "R4" : "R3"}
+                    </th>
+                  )}
+                  {data?.current_round >= 3 && (
                     <th className="score" style={{ fontSize: '0.62rem' }}>T10%</th>
                   )}
                 </tr>
@@ -1536,6 +1541,11 @@ function App() {
                     else if (t10Prob >= 0.10) { t10Color = "var(--gold)"; t10Bg = "rgba(251, 191, 36, 0.08)"; }
                     else { t10Color = "var(--slate-500)"; t10Bg = "transparent"; }
                   }
+                  // Format today's round score
+                  const todayScore = p.today;
+                  const todayDisplay = todayScore === 0 ? "E" : (todayScore > 0 ? `+${todayScore}` : todayScore);
+                  const thruDisplay = p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : "";
+                  
                   return (
                     <tr key={p.name} className={`live-lb-row ${isMC ? "mc-row" : ""}`}>
                       <td className={`rank-cell ${i < 3 ? `rank-${i+1}` : ""}`}>
@@ -1554,10 +1564,17 @@ function App() {
                       <td className="round-score hide-mobile">{p.r4 ?? "–"}</td>
                       <td className={`score-cell ${scoreClass(p.to_par)}`}>
                         <span className="score-value">{formatScore(p.to_par)}</span>
-                        <span className="thru-indicator">
-                          {p.thru && p.thru !== "F" && p.thru !== "" && p.thru !== 18 ? `(${p.thru})` : ""}
-                        </span>
                       </td>
+                      {data?.current_round >= 3 && (
+                        <td className="round-score" style={{ 
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontSize: '0.75rem',
+                          textAlign: 'center'
+                        }}>
+                          <span className={scoreClass(todayScore)}>{todayDisplay}</span>
+                          <span className="thru-small">{thruDisplay}</span>
+                        </td>
+                      )}
                       {data?.current_round >= 3 && (
                         <td className="mc-pct-cell" style={{
                           textAlign: 'right',
