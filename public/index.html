@@ -202,14 +202,19 @@ body::before {
   margin: 0 auto;
   padding: 0.75rem 1.5rem;
   display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls-left {
+  display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap;
   align-items: center;
 }
 
 .search-box {
-  flex: 1;
-  min-width: 180px;
+  width: 160px;
   position: relative;
 }
 
@@ -809,7 +814,10 @@ body::before {
 /* ═══════════════════════════════════════════ */
 @media (max-width: 640px) {
   .header { padding: 1.25rem 1rem 1rem; }
-  .controls { padding: 0.5rem 1rem; }
+  .controls { padding: 0.5rem 1rem; flex-wrap: wrap; }
+  .controls-left { flex-wrap: wrap; }
+  .search-box { width: 120px; }
+  .search-box input { font-size: 0.75rem; padding: 0.5rem 0.6rem 0.5rem 2rem; }
   .leaderboard { padding: 0 0.75rem; }
   .brand h1 { font-size: 1.3rem; }
   .event-name { font-size: 1rem; }
@@ -1394,43 +1402,45 @@ function App() {
 
       {/* Controls */}
       <div className="controls">
+        <div className="controls-left">
+          <div className="view-tabs">
+            <button
+              className={`view-tab ${view === "live" ? "active" : ""}`}
+              onClick={() => setView("live")}
+            >
+              ⛳ Live
+            </button>
+            <div className="tab-divider" />
+            <button
+              className={`view-tab ${view === "weekly" ? "active" : ""}`}
+              onClick={() => setView("weekly")}
+            >
+              This Week
+            </button>
+            <button
+              className={`view-tab ${view === "season" ? "active" : ""}`}
+              onClick={() => setView("season")}
+            >
+              Season
+            </button>
+          </div>
+          {view !== "live" && (
+            <button
+              className={`toggle-btn ${friendsOnly ? "active" : ""}`}
+              onClick={() => setFriendsOnly(!friendsOnly)}
+            >
+              👥 Friends
+            </button>
+          )}
+        </div>
         <div className="search-box">
           <span className="search-icon">🔍</span>
           <input
             type="text"
-            placeholder={view === "live" ? "Search players…" : "Search teams…"}
+            placeholder="Search…"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
-        </div>
-        {view !== "live" && (
-          <button
-            className={`toggle-btn ${friendsOnly ? "active" : ""}`}
-            onClick={() => setFriendsOnly(!friendsOnly)}
-          >
-            👥 Friends
-          </button>
-        )}
-        <div className="view-tabs">
-          <button
-            className={`view-tab ${view === "live" ? "active" : ""}`}
-            onClick={() => setView("live")}
-          >
-            ⛳ Live
-          </button>
-          <div className="tab-divider" />
-          <button
-            className={`view-tab ${view === "weekly" ? "active" : ""}`}
-            onClick={() => setView("weekly")}
-          >
-            This Week
-          </button>
-          <button
-            className={`view-tab ${view === "season" ? "active" : ""}`}
-            onClick={() => setView("season")}
-          >
-            Season
-          </button>
         </div>
       </div>
 
