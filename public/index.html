@@ -1562,7 +1562,10 @@ function App() {
                       <td className="round-score hide-mobile">{p.r2 ?? "–"}</td>
                       <td className="round-score hide-mobile">{p.r3 ?? "–"}</td>
                       <td className="round-score hide-mobile">{p.r4 ?? "–"}</td>
-                      <td className={`score-cell ${scoreClass(p.to_par)}`}>
+                      <td className={`score-cell ${scoreClass(p.to_par)}`} style={{
+                        background: 'rgba(34, 146, 92, 0.08)',
+                        fontWeight: 600
+                      }}>
                         <span className="score-value">{formatScore(p.to_par)}</span>
                       </td>
                       {data?.current_round >= 3 && (
