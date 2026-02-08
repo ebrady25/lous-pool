@@ -32,8 +32,8 @@
     }
   ],
   "team_par": 1136,
-  "last_updated": "2026-02-08 16:28:43 UTC",
-  "updated_at": "2026-02-08T16:30:13.019722+00:00",
+  "last_updated": "2026-02-08 16:38:43 UTC",
+  "updated_at": "2026-02-08T16:40:16.482737+00:00",
   "teams": [
     {
       "owner": "Pete & Linda",
@@ -976,100 +976,6 @@
       "season_rank": 78
     },
     {
-      "owner": "Rob Kerr",
-      "alias": "",
-      "players": [
-        {
-          "name": "Hideki Matsuyama",
-          "dg_name": "Matsuyama, Hideki",
-          "slot": 1,
-          "r1": 68,
-          "r2": 64,
-          "r3": 68,
-          "r4": null,
-          "penalty": 0,
-          "total": 200,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -13,
-          "make_cut": 1.0
-        },
-        {
-          "name": "Wyndham Clark",
-          "dg_name": "Clark, Wyndham",
-          "slot": 2,
-          "r1": 73,
-          "r2": 68,
-          "r3": 68,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T43",
-          "fin_text": "",
-          "today": 0,
-          "thru": 1,
-          "current_score": -4,
-          "make_cut": 1.0
-        },
-        {
-          "name": "Maverick McNealy",
-          "dg_name": "McNealy, Maverick",
-          "slot": 3,
-          "r1": 67,
-          "r2": 69,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 201,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -12,
-          "make_cut": 1.0
-        },
-        {
-          "name": "Si Woo Kim",
-          "dg_name": "Kim, Si Woo",
-          "slot": 4,
-          "r1": 73,
-          "r2": 62,
-          "r3": 66,
-          "r4": null,
-          "penalty": 0,
-          "total": 201,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -12,
-          "make_cut": 1.0
-        }
-      ],
-      "team_total": -41,
-      "team_par": 1136,
-      "team_to_par": -41,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_pts": 2222,
-      "season_to_par": -66,
-      "week_strokes": 1095,
-      "prev_pts": 1127,
-      "prev_to_par": -25,
-      "weekly_rank": 11,
-      "season_rank": 16
-    },
-    {
       "owner": "Aaron White",
       "alias": "",
       "players": [
@@ -1160,7 +1066,7 @@
       "week_strokes": 1095,
       "prev_pts": 1164,
       "prev_to_par": 12,
-      "weekly_rank": 12,
+      "weekly_rank": 11,
       "season_rank": 70
     },
     {
@@ -1254,8 +1160,102 @@
       "week_strokes": 1096,
       "prev_pts": 1107,
       "prev_to_par": -45,
-      "weekly_rank": 13,
+      "weekly_rank": 12,
       "season_rank": 2
+    },
+    {
+      "owner": "Rob Kerr",
+      "alias": "",
+      "players": [
+        {
+          "name": "Hideki Matsuyama",
+          "dg_name": "Matsuyama, Hideki",
+          "slot": 1,
+          "r1": 68,
+          "r2": 64,
+          "r3": 68,
+          "r4": null,
+          "penalty": 0,
+          "total": 200,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -13,
+          "make_cut": 1.0
+        },
+        {
+          "name": "Wyndham Clark",
+          "dg_name": "Clark, Wyndham",
+          "slot": 2,
+          "r1": 73,
+          "r2": 68,
+          "r3": 68,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T43",
+          "fin_text": "",
+          "today": 1,
+          "thru": 2,
+          "current_score": -3,
+          "make_cut": 1.0
+        },
+        {
+          "name": "Maverick McNealy",
+          "dg_name": "McNealy, Maverick",
+          "slot": 3,
+          "r1": 67,
+          "r2": 69,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 201,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -12,
+          "make_cut": 1.0
+        },
+        {
+          "name": "Si Woo Kim",
+          "dg_name": "Kim, Si Woo",
+          "slot": 4,
+          "r1": 73,
+          "r2": 62,
+          "r3": 66,
+          "r4": null,
+          "penalty": 0,
+          "total": 201,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -12,
+          "make_cut": 1.0
+        }
+      ],
+      "team_total": -40,
+      "team_par": 1136,
+      "team_to_par": -40,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_pts": 2223,
+      "season_to_par": -65,
+      "week_strokes": 1096,
+      "prev_pts": 1127,
+      "prev_to_par": -25,
+      "weekly_rank": 13,
+      "season_rank": 19
     },
     {
       "owner": "Matt White",
@@ -2007,7 +2007,7 @@
       "prev_pts": 1140,
       "prev_to_par": -12,
       "weekly_rank": 21,
-      "season_rank": 39
+      "season_rank": 40
     },
     {
       "owner": "Quentin Bubb",
@@ -2101,7 +2101,7 @@
       "prev_pts": 1124,
       "prev_to_par": -28,
       "weekly_rank": 22,
-      "season_rank": 17
+      "season_rank": 16
     },
     {
       "owner": "Andy Kapusta",
@@ -2289,7 +2289,7 @@
       "prev_pts": 1130,
       "prev_to_par": -22,
       "weekly_rank": 24,
-      "season_rank": 23
+      "season_rank": 24
     },
     {
       "owner": "John Cleary",
@@ -2649,7 +2649,7 @@
           "position": "T27",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -5,
           "make_cut": 1.0
         }
@@ -3022,7 +3022,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -3041,7 +3041,7 @@
       "prev_pts": 1120,
       "prev_to_par": -32,
       "weekly_rank": 32,
-      "season_rank": 18
+      "season_rank": 17
     },
     {
       "owner": "Brett Armstrong",
@@ -3852,7 +3852,7 @@
           "position": "T43",
           "fin_text": "",
           "today": 1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -3,
           "make_cut": 1.0
         },
@@ -3868,26 +3868,26 @@
           "total": 209,
           "status": "active",
           "replacement": null,
-          "position": "T37",
+          "position": "T27",
           "fin_text": "",
-          "today": 0,
-          "thru": 2,
-          "current_score": -4,
+          "today": -1,
+          "thru": 3,
+          "current_score": -5,
           "make_cut": 1.0
         }
       ],
-      "team_total": -30,
+      "team_total": -31,
       "team_par": 1136,
-      "team_to_par": -30,
+      "team_to_par": -31,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_pts": 2228,
-      "season_to_par": -60,
-      "week_strokes": 1106,
+      "season_pts": 2227,
+      "season_to_par": -61,
+      "week_strokes": 1105,
       "prev_pts": 1122,
       "prev_to_par": -30,
       "weekly_rank": 41,
-      "season_rank": 24
+      "season_rank": 23
     },
     {
       "owner": "Big Mac",
@@ -4018,11 +4018,11 @@
           "total": 209,
           "status": "active",
           "replacement": null,
-          "position": "T37",
+          "position": "T27",
           "fin_text": "",
-          "today": 0,
-          "thru": 2,
-          "current_score": -4,
+          "today": -1,
+          "thru": 3,
+          "current_score": -5,
           "make_cut": 1.0
         },
         {
@@ -4064,18 +4064,18 @@
           "make_cut": 1.0
         }
       ],
-      "team_total": -28,
+      "team_total": -29,
       "team_par": 1136,
-      "team_to_par": -28,
+      "team_to_par": -29,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_pts": 2238,
-      "season_to_par": -50,
-      "week_strokes": 1108,
+      "season_pts": 2237,
+      "season_to_par": -51,
+      "week_strokes": 1107,
       "prev_pts": 1130,
       "prev_to_par": -22,
       "weekly_rank": 43,
-      "season_rank": 40
+      "season_rank": 38
     },
     {
       "owner": "Malcolm White",
@@ -4093,7 +4093,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -4357,7 +4357,7 @@
       "prev_pts": 1112,
       "prev_to_par": -40,
       "weekly_rank": 46,
-      "season_rank": 19
+      "season_rank": 18
     },
     {
       "owner": "Gerry Kirchofer",
@@ -4451,7 +4451,7 @@
       "prev_pts": 1127,
       "prev_to_par": -25,
       "weekly_rank": 47,
-      "season_rank": 38
+      "season_rank": 39
     },
     {
       "owner": "John Stadler",
@@ -4604,7 +4604,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -4961,7 +4961,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -5074,7 +5074,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -5187,7 +5187,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -5240,7 +5240,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -5356,7 +5356,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -5469,7 +5469,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         }
@@ -5525,7 +5525,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -5657,7 +5657,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -5751,7 +5751,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -5920,7 +5920,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -6014,7 +6014,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -6089,7 +6089,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -6202,7 +6202,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -6315,7 +6315,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -6390,7 +6390,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -6465,7 +6465,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -6597,7 +6597,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         }
@@ -6672,7 +6672,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -6785,7 +6785,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         }
@@ -6860,7 +6860,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -6935,7 +6935,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -6973,7 +6973,7 @@
           "position": "T27",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -5,
           "make_cut": 1.0
         }
@@ -7010,7 +7010,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -7142,7 +7142,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -7158,7 +7158,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -7217,7 +7217,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -7349,7 +7349,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -7424,7 +7424,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -7537,7 +7537,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -7631,7 +7631,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -7725,7 +7725,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -7819,7 +7819,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -7856,7 +7856,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -8007,7 +8007,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -8044,7 +8044,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -8101,7 +8101,7 @@
           "position": "T27",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -5,
           "make_cut": 1.0
         }
@@ -8195,7 +8195,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         }
@@ -8229,7 +8229,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8289,7 +8289,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -8326,7 +8326,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -8458,7 +8458,7 @@
           "position": "T27",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -5,
           "make_cut": 1.0
         },
@@ -8477,7 +8477,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -8552,7 +8552,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -8568,7 +8568,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8665,7 +8665,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         }
@@ -8737,7 +8737,7 @@
           "total": 212,
           "status": "active",
           "replacement": null,
-          "position": "T63",
+          "position": "T62",
           "fin_text": "",
           "today": 0,
           "thru": 0,
@@ -8759,7 +8759,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         }
@@ -8834,7 +8834,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -8890,7 +8890,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 0,
           "make_cut": 0.0
         },
@@ -9022,7 +9022,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -9097,7 +9097,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -9172,7 +9172,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 2,
           "make_cut": 0.0
         },
@@ -9229,7 +9229,7 @@
           "position": "T27",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -5,
           "make_cut": 1.0
         }
@@ -9304,7 +9304,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 5,
           "make_cut": 0.0
         },
@@ -9379,7 +9379,7 @@
           "position": "CUT",
           "fin_text": "",
           "today": 0,
-          "thru": 2,
+          "thru": 3,
           "current_score": 3,
           "make_cut": 0.0
         },
@@ -9452,7 +9452,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.89156
+      "top_10": 0.8892
     },
     {
       "name": "Hisatsune, Ryo",
@@ -9468,7 +9468,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.72948
+      "top_10": 0.72696
     },
     {
       "name": "Hojgaard, Nicolai",
@@ -9484,7 +9484,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.79616
+      "top_10": 0.79444
     },
     {
       "name": "Kim, Si Woo",
@@ -9500,7 +9500,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.86188
+      "top_10": 0.85932
     },
     {
       "name": "McNealy, Maverick",
@@ -9516,7 +9516,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.82188
+      "top_10": 0.81988
     },
     {
       "name": "Bhatia, Akshay",
@@ -9532,7 +9532,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.62108
+      "top_10": 0.61736
     },
     {
       "name": "Fitzpatrick, Matt",
@@ -9548,7 +9548,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.72824
+      "top_10": 0.72696
     },
     {
       "name": "Knapp, Jake",
@@ -9564,7 +9564,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.72028
+      "top_10": 0.71796
     },
     {
       "name": "Thorbjornsen, Michael",
@@ -9580,7 +9580,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.70556
+      "top_10": 0.7028
     },
     {
       "name": "Parry, John",
@@ -9596,7 +9596,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.47228
+      "top_10": 0.46968
     },
     {
       "name": "Coody, Pierceson",
@@ -9612,7 +9612,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.40064
+      "top_10": 0.39872
     },
     {
       "name": "Gotterup, Chris",
@@ -9628,7 +9628,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.42572
+      "top_10": 0.42488
     },
     {
       "name": "Hojgaard, Rasmus",
@@ -9644,7 +9644,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.41712
+      "top_10": 0.4152
     },
     {
       "name": "Hovland, Viktor",
@@ -9660,7 +9660,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.39
+      "top_10": 0.39088
     },
     {
       "name": "Lee, Min Woo",
@@ -9676,7 +9676,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.42048
+      "top_10": 0.4216
     },
     {
       "name": "Jaeger, Stephan",
@@ -9692,7 +9692,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.21204
+      "top_10": 0.21252
     },
     {
       "name": "Roy, Kevin",
@@ -9708,7 +9708,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.16684
+      "top_10": 0.16676
     },
     {
       "name": "Scheffler, Scottie",
@@ -9724,7 +9724,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.56096
+      "top_10": 0.561
     },
     {
       "name": "Theegala, Sahith",
@@ -9740,7 +9740,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.23292
+      "top_10": 0.237
     },
     {
       "name": "Brennan, Michael",
@@ -9756,7 +9756,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.12836
+      "top_10": 0.129
     },
     {
       "name": "Hughes, Mackenzie",
@@ -9772,7 +9772,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0878
+      "top_10": 0.0884
     },
     {
       "name": "Stevens, Sam",
@@ -9788,7 +9788,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.06396
+      "top_10": 0.0626
     },
     {
       "name": "Bridgeman, Jacob",
@@ -9804,7 +9804,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.05396
+      "top_10": 0.05176
     },
     {
       "name": "Campbell, Brian",
@@ -9820,7 +9820,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.01324
+      "top_10": 0.01352
     },
     {
       "name": "Griffin, Ben",
@@ -9836,7 +9836,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.09644
+      "top_10": 0.09728
     },
     {
       "name": "Straka, Sepp",
@@ -9852,7 +9852,39 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.06388
+      "top_10": 0.06636
+    },
+    {
+      "name": "Berger, Daniel",
+      "position": "T27",
+      "thru": 3,
+      "today": -1,
+      "current_score": -5,
+      "total": 209,
+      "r1": 67,
+      "r2": 71,
+      "r3": 71,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.01048
+    },
+    {
+      "name": "Ewart, A.J.",
+      "position": "T27",
+      "thru": 3,
+      "today": -1,
+      "current_score": -5,
+      "total": 209,
+      "r1": 69,
+      "r2": 68,
+      "r3": 72,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.00448
     },
     {
       "name": "Neergaard-Petersen, Rasmus",
@@ -9868,12 +9900,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.02284
+      "top_10": 0.02332
     },
     {
       "name": "Smalley, Alex",
       "position": "T27",
-      "thru": 1,
+      "thru": 2,
       "today": -1,
       "current_score": -5,
       "total": 209,
@@ -9884,11 +9916,59 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.02044
+      "top_10": 0.02212
+    },
+    {
+      "name": "Fowler, Rickie",
+      "position": "T27",
+      "thru": 1,
+      "today": 0,
+      "current_score": -5,
+      "total": 208,
+      "r1": 71,
+      "r2": 68,
+      "r3": 69,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.03576
+    },
+    {
+      "name": "Fox, Ryan",
+      "position": "T27",
+      "thru": 1,
+      "today": 0,
+      "current_score": -5,
+      "total": 208,
+      "r1": 69,
+      "r2": 69,
+      "r3": 70,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.01408
+    },
+    {
+      "name": "McGreevy, Max",
+      "position": "T27",
+      "thru": 1,
+      "today": 0,
+      "current_score": -5,
+      "total": 208,
+      "r1": 67,
+      "r2": 72,
+      "r3": 69,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.02524
     },
     {
       "name": "Smith, Jordan",
-      "position": "T27",
+      "position": "T38",
       "thru": 1,
       "today": 0,
       "current_score": -5,
@@ -9900,7 +9980,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.01776
+      "top_10": 0.01792
     },
     {
       "name": "Yellamaraju, Sudarshan",
@@ -9916,55 +9996,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.01276
-    },
-    {
-      "name": "Fowler, Rickie",
-      "position": "T27",
-      "thru": 0,
-      "today": 0,
-      "current_score": -5,
-      "total": 208,
-      "r1": 71,
-      "r2": 68,
-      "r3": 69,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.04136
-    },
-    {
-      "name": "Fox, Ryan",
-      "position": "T27",
-      "thru": 0,
-      "today": 0,
-      "current_score": -5,
-      "total": 208,
-      "r1": 69,
-      "r2": 69,
-      "r3": 70,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.01616
-    },
-    {
-      "name": "McGreevy, Max",
-      "position": "T27",
-      "thru": 0,
-      "today": 0,
-      "current_score": -5,
-      "total": 208,
-      "r1": 67,
-      "r2": 72,
-      "r3": 69,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.02944
+      "top_10": 0.01328
     },
     {
       "name": "Meissner, Mac",
@@ -9980,7 +10012,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.02376
+      "top_10": 0.02452
     },
     {
       "name": "Mitchell, Keith",
@@ -9996,7 +10028,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0338
+      "top_10": 0.03464
     },
     {
       "name": "Young, Cameron",
@@ -10012,60 +10044,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.06244
-    },
-    {
-      "name": "Berger, Daniel",
-      "position": "T37",
-      "thru": 2,
-      "today": 0,
-      "current_score": -4,
-      "total": 209,
-      "r1": 67,
-      "r2": 71,
-      "r3": 71,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.0074
-    },
-    {
-      "name": "English, Harris",
-      "position": "T37",
-      "thru": 2,
-      "today": 0,
-      "current_score": -4,
-      "total": 209,
-      "r1": 70,
-      "r2": 69,
-      "r3": 70,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.01404
-    },
-    {
-      "name": "Ewart, A.J.",
-      "position": "T37",
-      "thru": 2,
-      "today": 0,
-      "current_score": -4,
-      "total": 209,
-      "r1": 69,
-      "r2": 68,
-      "r3": 72,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.00312
+      "top_10": 0.06388
     },
     {
       "name": "Kim, S.H.",
-      "position": "T37",
-      "thru": 2,
+      "position": "T38",
+      "thru": 3,
       "today": 0,
       "current_score": -4,
       "total": 209,
@@ -10076,12 +10060,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00764
+      "top_10": 0.00744
     },
     {
       "name": "Bauchou, Zach",
-      "position": "T37",
-      "thru": 1,
+      "position": "T38",
+      "thru": 2,
       "today": 0,
       "current_score": -4,
       "total": 209,
@@ -10092,28 +10076,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00228
-    },
-    {
-      "name": "Clark, Wyndham",
-      "position": "T43",
-      "thru": 1,
-      "today": 0,
-      "current_score": -4,
-      "total": 209,
-      "r1": 73,
-      "r2": 68,
-      "r3": 68,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.01128
+      "top_10": 0.0038
     },
     {
       "name": "Kim, Michael",
-      "position": "T37",
-      "thru": 1,
+      "position": "T38",
+      "thru": 2,
       "today": 1,
       "current_score": -4,
       "total": 208,
@@ -10124,28 +10092,44 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00492
+      "top_10": 0.00536
     },
     {
-      "name": "Lamprecht, Christo",
-      "position": "T43",
-      "thru": 2,
-      "today": 1,
-      "current_score": -3,
-      "total": 209,
-      "r1": 67,
-      "r2": 73,
-      "r3": 69,
+      "name": "Thompson, Davis",
+      "position": "T38",
+      "thru": 1,
+      "today": -1,
+      "current_score": -4,
+      "total": 210,
+      "r1": 69,
+      "r2": 68,
+      "r3": 73,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00092
+      "top_10": 0.01032
+    },
+    {
+      "name": "English, Harris",
+      "position": "T43",
+      "thru": 3,
+      "today": 1,
+      "current_score": -3,
+      "total": 209,
+      "r1": 70,
+      "r2": 69,
+      "r3": 70,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.0016
     },
     {
       "name": "Rodgers, Patrick",
       "position": "T43",
-      "thru": 2,
+      "thru": 3,
       "today": 1,
       "current_score": -3,
       "total": 209,
@@ -10156,7 +10140,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00292
+      "top_10": 0.00304
+    },
+    {
+      "name": "Clark, Wyndham",
+      "position": "T43",
+      "thru": 2,
+      "today": 1,
+      "current_score": -3,
+      "total": 209,
+      "r1": 73,
+      "r2": 68,
+      "r3": 68,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.0038
     },
     {
       "name": "Dou, Zecheng",
@@ -10172,7 +10172,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00128
+      "top_10": 0.00092
+    },
+    {
+      "name": "Hoey, Rico",
+      "position": "T43",
+      "thru": 1,
+      "today": 0,
+      "current_score": -3,
+      "total": 210,
+      "r1": 71,
+      "r2": 69,
+      "r3": 70,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.00312
     },
     {
       "name": "Kim, Tom",
@@ -10188,7 +10204,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00164
+      "top_10": 0.00176
+    },
+    {
+      "name": "Ramey, Chad",
+      "position": "T43",
+      "thru": 1,
+      "today": 0,
+      "current_score": -3,
+      "total": 210,
+      "r1": 71,
+      "r2": 67,
+      "r3": 72,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.00092
     },
     {
       "name": "Taylor, Nick",
@@ -10220,7 +10252,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00232
+      "top_10": 0.0028
     },
     {
       "name": "Highsmith, Joe",
@@ -10236,23 +10268,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00096
-    },
-    {
-      "name": "Hoey, Rico",
-      "position": "T43",
-      "thru": 0,
-      "today": 0,
-      "current_score": -3,
-      "total": 210,
-      "r1": 71,
-      "r2": 69,
-      "r3": 70,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.00336
+      "top_10": 0.00088
     },
     {
       "name": "Keefer, Johnny",
@@ -10268,7 +10284,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00348
+      "top_10": 0.00412
     },
     {
       "name": "Kitayama, Kurt",
@@ -10284,7 +10300,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00332
+      "top_10": 0.0042
     },
     {
       "name": "Phillips, Chandler",
@@ -10300,39 +10316,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00116
-    },
-    {
-      "name": "Ramey, Chad",
-      "position": "T43",
-      "thru": 0,
-      "today": 0,
-      "current_score": -3,
-      "total": 210,
-      "r1": 71,
-      "r2": 67,
-      "r3": 72,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.0014
-    },
-    {
-      "name": "Thompson, Davis",
-      "position": "T43",
-      "thru": 0,
-      "today": 0,
-      "current_score": -3,
-      "total": 210,
-      "r1": 69,
-      "r2": 68,
-      "r3": 73,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.00388
+      "top_10": 0.00148
     },
     {
       "name": "VanDerLaan, John",
@@ -10348,11 +10332,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00164
+      "top_10": 0.002
     },
     {
       "name": "Davis, Cam",
-      "position": "T58",
+      "position": "T57",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -10364,11 +10348,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00024
+      "top_10": 0.00028
     },
     {
       "name": "Hirata, Kensei",
-      "position": "T58",
+      "position": "T57",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -10380,11 +10364,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00016
+      "top_10": 0.00024
     },
     {
       "name": "Nakajima, Keita",
-      "position": "T58",
+      "position": "T57",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -10396,11 +10380,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00036
+      "top_10": 0.00048
     },
     {
       "name": "Poston, J.T.",
-      "position": "T58",
+      "position": "T57",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -10416,7 +10400,7 @@
     },
     {
       "name": "Valimaki, Sami",
-      "position": "T58",
+      "position": "T57",
       "thru": 0,
       "today": 0,
       "current_score": -2,
@@ -10428,11 +10412,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00048
+      "top_10": 0.00072
     },
     {
       "name": "Homa, Max",
-      "position": "T63",
+      "position": "T62",
       "thru": 0,
       "today": 0,
       "current_score": -1,
@@ -10444,11 +10428,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00028
+      "top_10": 0.0002
     },
     {
       "name": "Kanaya, Takumi",
-      "position": "T63",
+      "position": "T62",
       "thru": 0,
       "today": 0,
       "current_score": -1,
@@ -10460,11 +10444,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0002
+      "top_10": 0.00016
     },
     {
       "name": "Lebioda, Hank",
-      "position": "T63",
+      "position": "T62",
       "thru": 0,
       "today": 0,
       "current_score": -1,
@@ -10480,7 +10464,7 @@
     },
     {
       "name": "Lee, S.T.",
-      "position": "T63",
+      "position": "T62",
       "thru": 0,
       "today": 0,
       "current_score": -1,
@@ -10492,11 +10476,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 4e-05
+      "top_10": 8e-05
     },
     {
       "name": "Morikawa, Collin",
-      "position": "T63",
+      "position": "T62",
       "thru": 0,
       "today": 0,
       "current_score": -1,
@@ -10508,11 +10492,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00024
+      "top_10": 0.0002
     },
     {
       "name": "Reitan, Kristoffer",
-      "position": "T63",
+      "position": "T62",
       "thru": 0,
       "today": 0,
       "current_score": -1,
@@ -10524,12 +10508,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00024
+      "top_10": 0.00032
     },
     {
       "name": "Greyserman, Max",
       "position": "CUT",
-      "thru": 2,
+      "thru": 3,
       "today": 0,
       "current_score": 0,
       "total": 142,
@@ -10540,6 +10524,22 @@
       "fin_text": "",
       "made_cut": false,
       "make_cut": 0.0,
+      "top_10": 0.0
+    },
+    {
+      "name": "Lamprecht, Christo",
+      "position": "T68",
+      "thru": 3,
+      "today": 4,
+      "current_score": 0,
+      "total": 209,
+      "r1": 67,
+      "r2": 73,
+      "r3": 69,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
       "top_10": 0.0
     },
     {
@@ -10624,7 +10624,7 @@
     },
     {
       "name": "Saddier, Adrien",
-      "position": "T69",
+      "position": "T68",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10636,11 +10636,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 4e-05
+      "top_10": 0.0
     },
     {
       "name": "Woodland, Gary",
-      "position": "T69",
+      "position": "T68",
       "thru": 0,
       "today": 0,
       "current_score": 0,
@@ -10652,7 +10652,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 8e-05
+      "top_10": 4e-05
     },
     {
       "name": "Bezuidenhout, Christiaan",
@@ -10764,7 +10764,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00016
+      "top_10": 4e-05
     },
     {
       "name": "Vilips, Karl",
@@ -10801,7 +10801,7 @@
     {
       "name": "Conners, Corey",
       "position": "CUT",
-      "thru": 2,
+      "thru": 3,
       "today": 0,
       "current_score": 2,
       "total": 144,
@@ -10961,7 +10961,7 @@
     {
       "name": "Li, Haotong",
       "position": "CUT",
-      "thru": 2,
+      "thru": 3,
       "today": 0,
       "current_score": 3,
       "total": 145,
@@ -10977,7 +10977,7 @@
     {
       "name": "Spieth, Jordan",
       "position": "CUT",
-      "thru": 2,
+      "thru": 3,
       "today": 0,
       "current_score": 3,
       "total": 145,
@@ -11201,7 +11201,7 @@
     {
       "name": "Burns, Sam",
       "position": "CUT",
-      "thru": 2,
+      "thru": 3,
       "today": 0,
       "current_score": 5,
       "total": 147,
