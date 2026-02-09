@@ -545,6 +545,23 @@ body::before {
 .lb-row.is-me td { border-bottom-color: rgba(34, 146, 92, 0.25); }
 .lb-row.is-me:hover { background: rgba(34, 146, 92, 0.15); }
 
+.lb-row.week-winner { background: linear-gradient(90deg, rgba(251, 191, 36, 0.12) 0%, rgba(251, 191, 36, 0.06) 100%); }
+.lb-row.week-winner td { border-bottom-color: rgba(251, 191, 36, 0.3); }
+.lb-row.week-winner:hover { background: linear-gradient(90deg, rgba(251, 191, 36, 0.18) 0%, rgba(251, 191, 36, 0.1) 100%); }
+
+.winner-badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(251, 191, 36, 0.2);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.4rem;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
 .rank-cell {
   text-align: center;
   font-family: 'JetBrains Mono', monospace;
@@ -1001,10 +1018,10 @@ function PlayerDetail({ player, coursePar = 71, currentRound = 1 }) {
   );
 }
 
-function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar = 71, currentRound = 1 }) {
+function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar = 71, currentRound = 1, weekWinner = false }) {
   const friend = isFriend(team.owner);
   const me = isMe(team.owner);
-  const rowClass = `lb-row ${me ? "friend" : friend ? "friend" : ""}`;
+  const rowClass = `lb-row ${me ? "friend" : friend ? "friend" : ""} ${weekWinner ? "week-winner" : ""}`;
   const rankClass = rank <= 3 ? `rank-${rank}` : "";
   const toPar = team.team_to_par;
   const seasonBack = seasonLeader !== null && team.season_pts ? team.season_pts - seasonLeader : null;
@@ -1019,7 +1036,8 @@ function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar
         <td className="team-cell">
           <div className="team-name">
             {team.alias || team.owner}
-            {(me || friend) && <span className="friend-badge">FRIEND</span>}
+            {weekWinner && <span className="winner-badge">🏆 WINNER</span>}
+            {!weekWinner && (me || friend) && <span className="friend-badge">FRIEND</span>}
           </div>
           {team.alias && team.alias !== team.owner && (
             <div className="team-alias">{team.owner}</div>
@@ -1715,6 +1733,7 @@ function App() {
                     view={view}
                     coursePar={data?.course_par || 71}
                     currentRound={data?.current_round || 1}
+                    weekWinner={team.owner === "Coach Len"}
                   />
                 ))}
               </tbody>
