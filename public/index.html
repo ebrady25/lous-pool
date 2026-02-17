@@ -892,8 +892,8 @@ const CONFIG = {
 
   // Current season context
   SEASON: {
-    week: 2,
-    event: "WM Phoenix Open",
+    week: 3,
+    event: "Genesis Invitational",
     course_par: 71,
     season_par: 1152,  // After Week 1 (Farmers par 72 * 4 * 4)
   },
@@ -1733,7 +1733,7 @@ function App() {
                     view={view}
                     coursePar={data?.course_par || 71}
                     currentRound={data?.current_round || 1}
-                    weekWinner={team.owner === "Chris Wysocki"}
+                    weekWinner={false}
                   />
                 ))}
               </tbody>
