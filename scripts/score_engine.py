@@ -642,13 +642,14 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         
         # For teams that have started and have actual scores, update season live
         if has_live_scores or any_player_with_score:
-            # Live season calculation using to-par
+            # Live season calculation using to-par for rankings
             # season_to_par = prev_to_par + current_week_to_par
             scored["season_to_par"] = prev_to_par + (scored["team_to_par"] or 0)
-            # For season_pts (strokes), estimate based on to-par
-            # This will be accurate once all rounds complete
-            scored["season_pts"] = prev_total + team_par + (scored["team_to_par"] or 0)
-            scored["week_strokes"] = team_par + (scored["team_to_par"] or 0)
+            # For season_pts (strokes): keep as prev_pts during live play
+            # We can't calculate accurate strokes until round is complete
+            # The UI should use season_to_par for live rankings
+            scored["season_pts"] = prev_total
+            scored["week_strokes"] = None  # Can't calculate mid-round
         else:
             # No scores yet - show previous season totals
             scored["season_pts"] = prev_total
