@@ -28,6 +28,10 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
+# FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
+# Update this when DataGolf is slow to switch events
+FORCE_EVENT_NAME = "Genesis Invitational"
+FORCE_COURSE_PAR = 71  # Riviera
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -188,6 +192,11 @@ def process_tournament(live_data, inplay_data=None):
     """
     # Get event info
     event_name = live_data.get("event_name", "Unknown Event")
+    
+    # Apply forced event override if set
+    if FORCE_EVENT_NAME:
+        event_name = FORCE_EVENT_NAME
+    
     event_completed = live_data.get("event_completed")
     last_updated = live_data.get("last_updated", "")
     
@@ -251,14 +260,17 @@ def process_tournament(live_data, inplay_data=None):
         status = "pre"
         current_round = 0
     
-    # Get course par - use lookup table first, then try API data
-    course_par = COURSE_PAR.get(event_name, 72)
-    if course_par == 72:  # Not in lookup, try to get from player data
-        for p in scores:
-            cp = get_round_par(p, 1)
-            if cp and cp != 72:
-                course_par = cp
-                break
+    # Get course par - use forced override, then lookup table, then API data
+    if FORCE_COURSE_PAR:
+        course_par = FORCE_COURSE_PAR
+    else:
+        course_par = COURSE_PAR.get(event_name, 72)
+        if course_par == 72:  # Not in lookup, try to get from player data
+            for p in scores:
+                cp = get_round_par(p, 1)
+                if cp and cp != 72:
+                    course_par = cp
+                    break
     
     # Find cut line
     # Can detect after R2 is complete using make_cut probability from DataGolf
