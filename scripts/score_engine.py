@@ -629,13 +629,21 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         course_par = tournament_data.get("course_par", 72)
         team_par = 4 * 4 * course_par  # 4 players x 4 rounds x course par
         
-        if scored["team_total"] is not None:
+        # Check if any player on this team has actually started
+        any_player_started = any(
+            (p.get("thru") or 0) > 0 or 
+            (p.get("r1") is not None and p.get("r1") > 0)
+            for p in scored.get("players", [])
+        )
+        
+        if any_player_started and scored["team_total"] is not None:
             # For weekly total in strokes: team_par + to_par_score
             week_strokes = team_par + scored["team_to_par"]
             scored["season_pts"] = prev_total + week_strokes
             scored["season_to_par"] = prev_to_par + scored["team_to_par"]
             scored["week_strokes"] = week_strokes
         else:
+            # Team hasn't started - keep previous season totals
             scored["season_pts"] = prev_total
             scored["season_to_par"] = prev_to_par
             scored["week_strokes"] = None
