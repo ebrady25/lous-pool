@@ -741,7 +741,18 @@ def main():
     rosters_path = args.rosters
     if os.path.exists(rosters_path):
         with open(rosters_path) as f:
-            rosters = json.load(f)
+            rosters_raw = json.load(f)
+        # Support both dict {owner: {starters, alternates}} and list [{owner, players, alternates}]
+        if isinstance(rosters_raw, dict):
+            rosters = []
+            for owner, data in rosters_raw.items():
+                rosters.append({
+                    "owner": owner,
+                    "players": data.get("starters", []),
+                    "alternates": data.get("alternates", [])
+                })
+        else:
+            rosters = rosters_raw
     else:
         print(f"No rosters file at {rosters_path}. Generating tournament-only output.")
         with open(args.output, "w") as f:
