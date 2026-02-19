@@ -644,27 +644,9 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         
         scored_teams.append(scored)
     
-    # Include ALL teams from season_data that aren't in current rosters
-    for owner, sdata in season_teams.items():
-        if owner not in rostered_owners and isinstance(sdata, dict):
-            prev_total = sdata.get("season_total", 0)
-            prev_to_par = sdata.get("season_to_par", 0)
-            alias = sdata.get("alias", "")
-            scored_teams.append({
-                "owner": owner,
-                "alias": alias,
-                "players": [],
-                "team_total": None,
-                "team_par": 4 * 4 * tournament_data["course_par"],
-                "team_to_par": None,
-                "week_strokes": None,
-                "overuse_penalty": 0,
-                "mc_count": 0,
-                "season_pts": prev_total,
-                "season_to_par": prev_to_par,
-                "prev_pts": prev_total,
-                "prev_to_par": prev_to_par,
-            })
+    # NOTE: We intentionally do NOT add teams from season_data that aren't in current rosters.
+    # This was causing bugs where old teams (like Jeff W Chamberlain) would reappear.
+    # Only teams in the current week's rosters.json should be included.
     
     # Sort by team_to_par (lowest first)
     scored_teams.sort(key=lambda x: (x["team_to_par"] if x["team_to_par"] is not None else 9999))
@@ -788,10 +770,26 @@ def main():
         print(f"Wrote tournament data to {args.output}")
         return
     
+    # Load previous season data from EXISTING leaderboard.json (not season.json)
+    # Our import script sets the correct season totals there
     season_data = {}
-    if os.path.exists(args.season):
-        with open(args.season) as f:
-            season_data = json.load(f)
+    existing_lb_path = args.output  # Same file we're writing to
+    if os.path.exists(existing_lb_path):
+        try:
+            with open(existing_lb_path) as f:
+                existing_lb = json.load(f)
+                # Build season_data from existing leaderboard teams
+                for team in existing_lb.get("teams", []):
+                    owner = team.get("owner")
+                    if owner:
+                        season_data[owner] = {
+                            "season_total": team.get("prev_pts", 0),
+                            "season_to_par": team.get("prev_to_par", 0),
+                            "alias": team.get("alias", ""),
+                            "usage": {}
+                        }
+        except:
+            pass  # If can't read, start fresh
     
     leaderboard = build_leaderboard(rosters, tournament, season_data)
     
