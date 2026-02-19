@@ -559,20 +559,36 @@ def score_team(team, tournament_data, season_usage=None):
                 overuse_penalty += OVERUSE_PENALTY[uses]
     
     # Team total calculation
-    # FIX v2.1: For MC players, current_score from DataGolf is their PERSONAL score,
-    # not including Rule 4 replacement rounds. We must calculate from stored R1-R4 + penalty.
+    # During live play, use current_score (to-par) from DataGolf for active players
+    # For MC players, calculate from stored R1-R4 + penalty (current_score doesn't include Rule 4)
     
-    # Calculate to-par from actual round scores (which include Rule 4 replacements for MC)
-    team_strokes = 0
-    for p in scored_players:
-        r1 = p.get("r1") or 0
-        r2 = p.get("r2") or 0
-        r3 = p.get("r3") or 0
-        r4 = p.get("r4") or 0
-        pen = p.get("penalty") or 0
-        team_strokes += r1 + r2 + r3 + r4 + pen
+    # Check if any player has started (thru > 0 or has round scores)
+    any_started = any(
+        (p.get("thru") or 0) > 0 or 
+        (p.get("r1") is not None and p.get("r1") > 0)
+        for p in scored_players
+    )
     
-    team_total = team_strokes - team_par  # Convert to relative-to-par
+    if any_started:
+        # Live scoring - use current_score for active players, calculate for MC
+        team_total = 0
+        for p in scored_players:
+            if p.get("status") == "mc":
+                # MC player - calculate from rounds + penalty
+                r1 = p.get("r1") or 0
+                r2 = p.get("r2") or 0
+                r3 = p.get("r3") or 0
+                r4 = p.get("r4") or 0
+                pen = p.get("penalty") or 0
+                # Convert strokes to to-par for this player
+                player_par = 4 * course_par
+                team_total += (r1 + r2 + r3 + r4 + pen) - player_par
+            else:
+                # Active player - use current_score (already to-par)
+                team_total += p.get("current_score") or 0
+    else:
+        # No one started yet - team is at even par (0)
+        team_total = 0
     
     team_total += overuse_penalty
     
