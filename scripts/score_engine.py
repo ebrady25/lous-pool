@@ -624,33 +624,37 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         prev_total = season_teams.get(owner, {}).get("season_total", 0)
         prev_to_par = season_teams.get(owner, {}).get("season_to_par", 0)
         
-        # Season points = previous strokes + current week strokes
-        # During live play, team_total is to-par, so we need to convert
+        # Season points calculation
+        # During live play, use to-par for accurate tracking
+        # Only convert to strokes when we have complete round data
         course_par = tournament_data.get("course_par", 72)
         team_par = 4 * 4 * course_par  # 4 players x 4 rounds x course par
         
-        # Check if tournament is complete (all 4 rounds done)
-        event_completed = tournament_data.get("event_completed", False)
+        # Check if team has any actual scoring data
+        # (not just thru > 0, but actual current_score from players)
+        has_live_scores = scored["team_to_par"] is not None and scored["team_to_par"] != 0
         
-        # Check if team has complete round data (all 4 rounds with scores)
-        has_complete_data = all(
-            p.get("r1") is not None and p.get("r2") is not None and 
-            p.get("r3") is not None and p.get("r4") is not None
+        # Also check if any player has started with actual score data
+        any_player_with_score = any(
+            p.get("current_score") is not None and p.get("current_score") != 0
             for p in scored.get("players", [])
         )
         
-        if event_completed or has_complete_data:
-            # Tournament complete - calculate final season total
-            week_strokes = team_par + scored["team_to_par"]
-            scored["season_pts"] = prev_total + week_strokes
-            scored["season_to_par"] = prev_to_par + scored["team_to_par"]
-            scored["week_strokes"] = week_strokes
+        # For teams that have started and have actual scores, update season live
+        if has_live_scores or any_player_with_score:
+            # Live season calculation using to-par
+            # season_to_par = prev_to_par + current_week_to_par
+            scored["season_to_par"] = prev_to_par + (scored["team_to_par"] or 0)
+            # For season_pts (strokes), estimate based on to-par
+            # This will be accurate once all rounds complete
+            scored["season_pts"] = prev_total + team_par + (scored["team_to_par"] or 0)
+            scored["week_strokes"] = team_par + (scored["team_to_par"] or 0)
         else:
-            # Tournament in progress - show previous season totals
-            # (We can't accurately calculate partial-round strokes)
+            # No scores yet - show previous season totals
             scored["season_pts"] = prev_total
             scored["season_to_par"] = prev_to_par
             scored["week_strokes"] = None
+        
         scored["prev_pts"] = prev_total
         scored["prev_to_par"] = prev_to_par
         
