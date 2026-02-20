@@ -273,13 +273,25 @@ def process_tournament(live_data, inplay_data=None):
                     break
     
     # Find cut line
-    # ONLY detect cut after R3 has actually started (has_r3 = True)
-    # This prevents false MC detection during R1/R2
+    # Detect cut when R2 is fully complete OR R3 has started
+    # R2 complete = all players have R2 scores AND no one is mid-round in R2
     cut_line = None
     replacement_players = []
     
-    # Only process cut when R3 has started - probabilities during R2 are unreliable
-    cut_is_made = has_r3
+    # Check if R2 is fully complete
+    players_with_r1 = [p for p in scores if get_round_score(p, 1) is not None]
+    players_with_r2 = [p for p in scores if get_round_score(p, 2) is not None]
+    
+    # R2 is complete if: we have R2 scores AND count matches R1 count (everyone finished R2)
+    # Also check no one is mid-round (thru < 18 in current round 2)
+    r2_complete = (
+        len(players_with_r2) > 0 and 
+        len(players_with_r2) >= len(players_with_r1) * 0.95 and  # At least 95% have R2
+        current_round >= 2 and
+        not any(p.get("thru", 18) < 18 and p.get("round") == 2 for p in scores)
+    )
+    
+    cut_is_made = has_r3 or r2_complete
     
     if cut_is_made:
         made_cut_totals = []
