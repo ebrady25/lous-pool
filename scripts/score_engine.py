@@ -526,12 +526,21 @@ def score_team(team, tournament_data, season_usage=None):
                 rep_today = rep_data.get("today", 0) or 0  # Replacement's live round score
                 rep_thru = rep_data.get("thru", 0) or 0
                 
-                # MC player's current_score should be:
-                # Their R1+R2 (to par) + replacement's today score
+                # MC player's current_score should be their actual tournament score:
+                # R1+R2 (to par) - penalty is only added at team level
                 mc_r1r2_to_par = (pdata["r1"] - course_par) + (pdata["r2"] - course_par) if pdata["r1"] and pdata["r2"] else 0
-                pdata["current_score"] = mc_r1r2_to_par + rep_today
-                pdata["today"] = rep_today  # Show replacement's today score
-                pdata["thru"] = rep_thru
+                
+                # Before R3 starts, just show R1+R2 to par (their actual tournament score)
+                # Once R3 starts, add replacement's today score for live tracking
+                if rep_thru > 0:
+                    pdata["current_score"] = mc_r1r2_to_par + rep_today
+                    pdata["today"] = rep_today
+                    pdata["thru"] = rep_thru
+                else:
+                    # R3 hasn't started - show their actual tournament score
+                    pdata["current_score"] = mc_r1r2_to_par
+                    pdata["today"] = 0
+                    pdata["thru"] = 18  # They finished R2
         
         # Calculate total - use current_score (to par) for live scoring
         if r1 is not None:
@@ -586,19 +595,46 @@ def score_team(team, tournament_data, season_usage=None):
         team_total = 0
         for p in scored_players:
             if p.get("status") == "mc":
-                # MC player - calculate from rounds + penalty
+                # MC player - calculate from their R1+R2 + replacement's R3/R4 + penalty
                 r1 = p.get("r1") or 0
                 r2 = p.get("r2") or 0
-                r3 = p.get("r3") or 0
-                r4 = p.get("r4") or 0
                 pen = p.get("penalty") or 0
                 
-                # Count how many rounds have scores to calculate correct par
-                rounds_played = sum(1 for r in [r1, r2, r3, r4] if r > 0)
-                player_par = rounds_played * course_par
+                # Get replacement player's data
+                rep_name = p.get("replacement")
+                rep_r3 = 0
+                rep_r4 = 0
+                rep_today = 0
                 
-                # To-par = strokes - par
-                team_total += (r1 + r2 + r3 + r4 + pen) - player_par
+                if rep_name:
+                    # Look up replacement in players_dict
+                    rep_data = None
+                    for key, val in players_dict.items():
+                        if rep_name in key or key in rep_name:
+                            rep_data = val
+                            break
+                    
+                    if rep_data:
+                        rep_r3 = rep_data.get("r3") or 0
+                        rep_r4 = rep_data.get("r4") or 0
+                        # If R3 not complete, use today score for live tracking
+                        if not rep_r3:
+                            rep_today = rep_data.get("today") or 0
+                
+                # Calculate to-par
+                # R1 + R2 to par (MC player)
+                mc_to_par = (r1 - course_par) + (r2 - course_par) if r1 and r2 else 0
+                
+                # R3 + R4 to par (replacement) - if rounds complete, use actual; otherwise use today
+                if rep_r3 and rep_r4:
+                    rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
+                elif rep_r3:
+                    rep_to_par = (rep_r3 - course_par) + rep_today
+                else:
+                    rep_to_par = rep_today  # R3 in progress
+                
+                # Total = MC's R1+R2 + replacement's R3/R4 + penalty
+                team_total += mc_to_par + rep_to_par + pen
             else:
                 # Active player - use current_score (already to-par)
                 team_total += p.get("current_score") or 0
