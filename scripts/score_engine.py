@@ -590,8 +590,12 @@ def score_team(team, tournament_data, season_usage=None):
                 r3 = p.get("r3") or 0
                 r4 = p.get("r4") or 0
                 pen = p.get("penalty") or 0
-                # Convert strokes to to-par for this player
-                player_par = 4 * course_par
+                
+                # Count how many rounds have scores to calculate correct par
+                rounds_played = sum(1 for r in [r1, r2, r3, r4] if r > 0)
+                player_par = rounds_played * course_par
+                
+                # To-par = strokes - par
                 team_total += (r1 + r2 + r3 + r4 + pen) - player_par
             else:
                 # Active player - use current_score (already to-par)
