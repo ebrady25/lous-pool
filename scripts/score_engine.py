@@ -273,8 +273,7 @@ def process_tournament(live_data, inplay_data=None):
                     break
     
     # Find cut line
-    # Detect cut when R2 is fully complete OR R3 has started
-    # R2 complete = all players have R2 scores AND no one is mid-round in R2
+    # Detect cut when R2 is fully complete OR R3 has started (players in round 3)
     cut_line = None
     replacement_players = []
     
@@ -291,7 +290,9 @@ def process_tournament(live_data, inplay_data=None):
         not any(p.get("thru", 18) < 18 and p.get("round") == 2 for p in scores)
     )
     
-    cut_is_made = has_r3 or r2_complete
+    # Cut is made if R3 has started (either has scores OR players are in round 3)
+    r3_started = has_r3 or current_playing_round >= 3
+    cut_is_made = r3_started or r2_complete
     
     if cut_is_made:
         made_cut_totals = []
