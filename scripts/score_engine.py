@@ -558,6 +558,7 @@ def score_team(team, tournament_data, season_usage=None):
             "thru": pdata.get("thru", 0),
             "current_score": pdata.get("current_score", 0),
             "make_cut": pdata.get("make_cut"),  # Cut probability for danger alerts
+            "top_10": pdata.get("top_10"),  # Top 10 probability for elevated events
         })
     
     # Overuse penalties
