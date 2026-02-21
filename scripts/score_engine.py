@@ -515,6 +515,7 @@ def score_team(team, tournament_data, season_usage=None):
             mc_count += 1
             
             # MC player's current_score should be their actual tournament score (R1+R2 to par)
+            # The replacement's score is only used in team total calculation, NOT for individual display
             mc_r1r2_to_par = (pdata["r1"] - course_par) + (pdata["r2"] - course_par) if pdata["r1"] and pdata["r2"] else 0
             pdata["current_score"] = mc_r1r2_to_par
             pdata["today"] = 0
@@ -526,19 +527,8 @@ def score_team(team, tournament_data, season_usage=None):
                 r3 = rep["r3"]
                 r4 = rep["r4"]
                 replacement = rep["name"]
-                
-                # Get replacement player's live data
-                rep_name_dg = rep["name"]
-                rep_data = players_dict.get(rep_name_dg, {})
-                rep_round = rep_data.get("round", 2) or 2
-                rep_today = rep_data.get("today", 0) or 0
-                rep_thru = rep_data.get("thru", 0) or 0
-                
-                # Only add replacement's score if they're in R3 or R4
-                if rep_round >= 3:
-                    pdata["current_score"] = mc_r1r2_to_par + rep_today
-                    pdata["today"] = rep_today
-                    pdata["thru"] = rep_thru
+                # Note: We store the replacement name but do NOT modify current_score
+                # The replacement's contribution is calculated in team total only
         
         # Calculate total - use current_score (to par) for live scoring
         if r1 is not None:
