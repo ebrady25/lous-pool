@@ -390,6 +390,7 @@ def process_tournament(live_data, inplay_data=None):
             "total": total,
             "thru": thru,
             "today": today,
+            "round": p.get("round", 0),  # Current round player is in
             "current_score": current_score,
             "made_cut": made_cut,
             "make_cut": p.get("make_cut"),  # Cut probability from in-play
