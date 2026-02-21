@@ -512,6 +512,12 @@ def score_team(team, tournament_data, season_usage=None):
             penalty = pdata["mc_penalty"]
             mc_count += 1
             
+            # MC player's current_score should be their actual tournament score (R1+R2 to par)
+            mc_r1r2_to_par = (pdata["r1"] - course_par) + (pdata["r2"] - course_par) if pdata["r1"] and pdata["r2"] else 0
+            pdata["current_score"] = mc_r1r2_to_par
+            pdata["today"] = 0
+            pdata["thru"] = 18  # They finished R2
+            
             rep_idx = mc_count - 1
             if rep_idx < len(replacement_players):
                 rep = replacement_players[rep_idx]
@@ -519,28 +525,18 @@ def score_team(team, tournament_data, season_usage=None):
                 r4 = rep["r4"]
                 replacement = rep["name"]
                 
-                # For live scoring: MC player's score = their R1+R2 (to par) + replacement's R3+ live score
                 # Get replacement player's live data
                 rep_name_dg = rep["name"]
                 rep_data = players_dict.get(rep_name_dg, {})
-                rep_today = rep_data.get("today", 0) or 0  # Replacement's live round score
+                rep_round = rep_data.get("round", 2) or 2
+                rep_today = rep_data.get("today", 0) or 0
                 rep_thru = rep_data.get("thru", 0) or 0
                 
-                # MC player's current_score should be their actual tournament score:
-                # R1+R2 (to par) - penalty is only added at team level
-                mc_r1r2_to_par = (pdata["r1"] - course_par) + (pdata["r2"] - course_par) if pdata["r1"] and pdata["r2"] else 0
-                
-                # Before R3 starts, just show R1+R2 to par (their actual tournament score)
-                # Once R3 starts, add replacement's today score for live tracking
-                if rep_thru > 0:
+                # Only add replacement's score if they're in R3 or R4
+                if rep_round >= 3:
                     pdata["current_score"] = mc_r1r2_to_par + rep_today
                     pdata["today"] = rep_today
                     pdata["thru"] = rep_thru
-                else:
-                    # R3 hasn't started - show their actual tournament score
-                    pdata["current_score"] = mc_r1r2_to_par
-                    pdata["today"] = 0
-                    pdata["thru"] = 18  # They finished R2
         
         # Calculate total - use current_score (to par) for live scoring
         if r1 is not None:
