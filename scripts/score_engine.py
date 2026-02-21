@@ -334,6 +334,7 @@ def process_tournament(live_data, inplay_data=None):
             # use commissioner-confirmed Rule 4 order for specific tournaments
             RULE4_OVERRIDES = {
                 "WM Phoenix Open": ["Kim, S.H.", "Poston, J.T.", "Morikawa, Collin"],
+                "Genesis Invitational": ["Stevens, Sam", "Harman, Brian", "Hisatsune, Ryo", "Cantlay, Patrick", "MacIntyre, Robert"],
             }
             if event_name in RULE4_OVERRIDES:
                 override_order = RULE4_OVERRIDES[event_name]
