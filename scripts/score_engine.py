@@ -605,9 +605,8 @@ def score_team(team, tournament_data, season_usage=None):
                     if rep_data:
                         rep_r3 = rep_data.get("r3") or 0
                         rep_r4 = rep_data.get("r4") or 0
-                        # If R3 not complete, use today score for live tracking
-                        if not rep_r3:
-                            rep_today = rep_data.get("today") or 0
+                        # Always get today score for live R3 or R4 tracking
+                        rep_today = rep_data.get("today") or 0
                 
                 # Calculate to-par
                 # R1 + R2 to par (MC player)
