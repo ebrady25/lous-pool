@@ -2,11 +2,15 @@ name: Update Leaderboard
 
 on:
   schedule:
-    # Every 5 minutes during tournament hours (Thu-Sun, 11am-11pm UTC = 6am-6pm ET)
-    - cron: '*/5 11-23 * * 4,5,6,0'
+    # Every 10 minutes during tournament hours (Thu-Sun, 11am-23pm UTC = 6am-6pm ET)
+    - cron: '*/10 11-23 * * 4,5,6,0'
     # Late night coverage
-    - cron: '*/5 0-2 * * 5,6,0,1'
+    - cron: '*/10 0-2 * * 5,6,0,1'
   workflow_dispatch:
+
+concurrency:
+  group: leaderboard-update
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -55,4 +59,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
