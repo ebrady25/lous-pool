@@ -30,7 +30,7 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
 # Update this when DataGolf is slow to switch events
-FORCE_EVENT_NAME = "Arnold Palmer Invitational presented by Mastercard"
+FORCE_EVENT_NAME = "Arnold Palmer Invitational"
 FORCE_COURSE_PAR = 72  # Bay Hill
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
