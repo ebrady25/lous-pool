@@ -338,6 +338,66 @@ def process_tournament(live_data, inplay_data=None):
                 "Genesis Invitational": ["Stevens, Sam", "Hisatsune, Ryo", "Harman, Brian", "Cantlay, Patrick", "MacIntyre, Robert"],
                 "Arnold Palmer Invitational": ["Glover, Lucas", "Pendrith, Taylor"],
             }
+            
+            # WD OVERRIDES: Players who withdrew mid-tournament
+            # Format: {event: {wd_player: {r1, r2, replacement, use_rule4}}}
+            # - r1, r2: The WD player's completed round scores
+            # - replacement: The alternate who fills R3+R4 (or None if no valid alternate)
+            # - use_rule4: If True, use Rule 4 player for R3+R4 (no penalty for WD)
+            WD_OVERRIDES = {
+                "Arnold Palmer Invitational": {
+                    "McIlroy, Rory": {"r1": 72, "r2": 68, "replacements": {
+                        "Lou Boss": "Hovland, Viktor",
+                        "The A-Team": "Spieth, Jordan",
+                        "Nick Prybella": "Fitzpatrick, Matt",
+                        "The Hammer": "Lowry, Shane",
+                        "Brett Armstrong": "Fitzpatrick, Matt",
+                        "John Stadler": "Conners, Corey",
+                        "Brian Little": "Scheffler, Scottie",
+                        "The Roman Goddess": "English, Harris",
+                        "Coach Len": "Schauffele, Xander",
+                        "Brian Belcer": "Scott, Adam",
+                        "Kelly Murray": "Fitzpatrick, Matt",
+                        "Dr. J & Mr. T": "Lowry, Shane",
+                        "Brendan Ball": "Young, Cameron",
+                        "The Minister & The Wet Dog": "Morikawa, Collin",
+                        "Dave Staples": "Kim, Michael",
+                        "Tom \"TV\" Vanner": "Spieth, Jordan",
+                        "\"BC\"": "Morikawa, Collin",
+                        "Jim Templeton": "Morikawa, Collin",
+                        "Rob Kerr": "Schauffele, Xander",
+                        "Dino": "Fleetwood, Tommy",
+                        "Greg Witter": "Scott, Adam",
+                        "Bubs Regan": "Rose, Justin",
+                        "Eric Swartzmeyer": "Scheffler, Scottie",
+                        "Rob Motrynczuk": "Kim, Si Woo",
+                        "Nicholas Gacos": "Fleetwood, Tommy",
+                        "Carl Janish": "Scott, Adam",
+                        "Dominic Montaldi": "Hisatsune, Ryo",
+                        "Matt Donohue": "Conners, Corey",
+                        "Nate Marini": "Morikawa, Collin",
+                        "Tom Stadler": "Matsuyama, Hideki",
+                        "Quentin Bubb": "Fleetwood, Tommy",
+                        "Andy Kapusta": "Schauffele, Xander",
+                        "Chuck Allen": "Young, Cameron",
+                        "Ethan Brady": "Henley, Russell",
+                        "Connor White": "Bradley, Keegan",
+                        "Eric Southard": "Morikawa, Collin",
+                        "Fran Snyder": "Thomas, Justin",
+                        # Rule 4 cases (no valid alternate)
+                        "B. Reid": "RULE4",
+                        "Brendan Cohen": "RULE4",
+                        "Vince Montaldi": "RULE4",
+                    }},
+                },
+            }
+            
+            # Store WD overrides in tournament data for use in score_team
+            if event_name in WD_OVERRIDES:
+                wd_data = WD_OVERRIDES[event_name]
+            else:
+                wd_data = {}
+            
             if event_name in RULE4_OVERRIDES:
                 override_order = RULE4_OVERRIDES[event_name]
                 # Reorder cut_line_players based on override
@@ -410,6 +470,7 @@ def process_tournament(live_data, inplay_data=None):
         "cut_line": cut_line,
         "replacement_players": replacement_players,
         "players": players,
+        "wd_overrides": wd_data if 'wd_data' in dir() else {},
         "last_updated": last_updated,
         "updated_at": datetime.now(tz=timezone.utc).isoformat(),
     }
@@ -478,15 +539,50 @@ def score_team(team, tournament_data, season_usage=None):
     cut_line = tournament_data["cut_line"]
     course_par = tournament_data["course_par"]
     status = tournament_data["status"]
+    wd_overrides = tournament_data.get("wd_overrides", {})
     
     team_par = 4 * 4 * course_par
     scored_players = []
     mc_count = 0
+    wd_count = 0  # Track WD players for Rule 4 assignment
+    team_owner = team.get("owner", "")
     
     for i, player_name in enumerate(team["players"][:4]):
         pdata = find_player(player_name, lookup)
         
-        if pdata is None:
+        # Check if this player slot should use WD override
+        wd_info = None
+        for wd_player, wd_data in wd_overrides.items():
+            if wd_player in player_name or player_name in wd_player:
+                # This roster slot originally had a WD player
+                replacements = wd_data.get("replacements", {})
+                if team_owner in replacements:
+                    wd_info = {
+                        "wd_player": wd_player,
+                        "r1": wd_data["r1"],
+                        "r2": wd_data["r2"],
+                        "replacement": replacements[team_owner],
+                    }
+                    break
+        
+        # Also check if current player_name is an alternate for a WD player
+        if wd_info is None:
+            for wd_player, wd_data in wd_overrides.items():
+                replacements = wd_data.get("replacements", {})
+                if team_owner in replacements:
+                    rep_name = replacements[team_owner]
+                    # Check if current player is the replacement
+                    if rep_name != "RULE4" and (rep_name in player_name or player_name in rep_name or 
+                        normalize_name(player_name) == normalize_name(rep_name)):
+                        wd_info = {
+                            "wd_player": wd_player,
+                            "r1": wd_data["r1"],
+                            "r2": wd_data["r2"],
+                            "replacement": rep_name,
+                        }
+                        break
+        
+        if pdata is None and wd_info is None:
             scored_players.append({
                 "name": player_name,
                 "slot": i + 1,
@@ -501,6 +597,85 @@ def score_team(team, tournament_data, season_usage=None):
                 "current_score": 0,
             })
             continue
+        
+        # Handle WD player replacement
+        if wd_info:
+            wd_r1 = wd_info["r1"]
+            wd_r2 = wd_info["r2"]
+            rep_name = wd_info["replacement"]
+            wd_player = wd_info["wd_player"]
+            
+            # Calculate WD player's R1+R2 to par
+            wd_to_par = (wd_r1 - course_par) + (wd_r2 - course_par)
+            
+            if rep_name == "RULE4":
+                # Use Rule 4 player for R3+R4, no penalty for WD
+                wd_count += 1
+                rep_idx = wd_count - 1
+                if rep_idx < len(replacement_players):
+                    rep = replacement_players[rep_idx]
+                    rep_data = find_player(rep["name"], lookup)
+                    if rep_data:
+                        rep_r3 = rep_data.get("r3") or 0
+                        rep_r4 = rep_data.get("r4") or 0
+                        rep_today = rep_data.get("today") or 0
+                        rep_thru = rep_data.get("thru") or 0
+                        
+                        if rep_r3 and rep_r4:
+                            rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
+                        elif rep_r3:
+                            rep_to_par = (rep_r3 - course_par) + rep_today
+                        else:
+                            rep_to_par = rep_today
+                        
+                        current_score = wd_to_par + rep_to_par
+                        scored_players.append({
+                            "name": player_name,
+                            "dg_name": wd_player,
+                            "slot": i + 1,
+                            "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
+                            "penalty": 0,  # No penalty for WD with Rule 4
+                            "total": wd_r1 + wd_r2 + (rep_r3 or 0) + (rep_r4 or 0),
+                            "status": "wd_rule4",
+                            "replacement": rep["name"],
+                            "position": "WD",
+                            "thru": rep_thru,
+                            "today": rep_today,
+                            "current_score": current_score,
+                        })
+                        continue
+            else:
+                # Use alternate for R3+R4
+                rep_data = find_player(rep_name, lookup)
+                if rep_data:
+                    rep_r3 = rep_data.get("r3") or 0
+                    rep_r4 = rep_data.get("r4") or 0
+                    rep_today = rep_data.get("today") or 0
+                    rep_thru = rep_data.get("thru") or 0
+                    
+                    if rep_r3 and rep_r4:
+                        rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
+                    elif rep_r3:
+                        rep_to_par = (rep_r3 - course_par) + rep_today
+                    else:
+                        rep_to_par = rep_today
+                    
+                    current_score = wd_to_par + rep_to_par
+                    scored_players.append({
+                        "name": player_name,
+                        "dg_name": wd_player,
+                        "slot": i + 1,
+                        "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
+                        "penalty": 0,  # No penalty for WD with alternate
+                        "total": wd_r1 + wd_r2 + (rep_r3 or 0) + (rep_r4 or 0),
+                        "status": "wd_alt",
+                        "replacement": rep_name,
+                        "position": "WD",
+                        "thru": rep_thru,
+                        "today": rep_today,
+                        "current_score": current_score,
+                    })
+                    continue
         
         r1 = pdata["r1"]
         r2 = pdata["r2"]
@@ -623,6 +798,9 @@ def score_team(team, tournament_data, season_usage=None):
                 
                 # Total = MC's R1+R2 + replacement's R3/R4 + penalty
                 team_total += mc_to_par + rep_to_par + pen
+            elif p.get("status") in ["wd_alt", "wd_rule4"]:
+                # WD player - current_score already calculated correctly (WD R1+R2 + rep R3+R4)
+                team_total += p.get("current_score") or 0
             else:
                 # Active player - use current_score (already to-par)
                 team_total += p.get("current_score") or 0
