@@ -552,8 +552,11 @@ def score_team(team, tournament_data, season_usage=None):
         
         # Check if this player slot should use WD override
         wd_info = None
+        normalized_player = normalize_name(player_name)
         for wd_player, wd_data in wd_overrides.items():
-            if wd_player in player_name or player_name in wd_player:
+            normalized_wd = normalize_name(wd_player)
+            # Check if names match (handles "Rory McIlroy" vs "McIlroy, Rory")
+            if normalized_player == normalized_wd or wd_player in player_name or player_name in wd_player:
                 # This roster slot originally had a WD player
                 replacements = wd_data.get("replacements", {})
                 if team_owner in replacements:
