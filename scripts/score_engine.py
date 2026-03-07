@@ -632,8 +632,15 @@ def score_team(team, tournament_data, season_usage=None):
                             rep_to_par = rep_today
                         
                         current_score = wd_to_par + rep_to_par
+                        
+                        # Convert WD player name from "Last, First" to "First Last" for display
+                        wd_display_name = wd_player
+                        if ", " in wd_player:
+                            parts = wd_player.split(", ")
+                            wd_display_name = f"{parts[1]} {parts[0]}"
+                        
                         scored_players.append({
-                            "name": player_name,
+                            "name": wd_display_name,  # Show WD player name (Rory McIlroy)
                             "dg_name": wd_player,
                             "slot": i + 1,
                             "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
@@ -664,15 +671,22 @@ def score_team(team, tournament_data, season_usage=None):
                         rep_to_par = rep_today
                     
                     current_score = wd_to_par + rep_to_par
+                    
+                    # Convert WD player name from "Last, First" to "First Last" for display
+                    wd_display_name = wd_player
+                    if ", " in wd_player:
+                        parts = wd_player.split(", ")
+                        wd_display_name = f"{parts[1]} {parts[0]}"
+                    
                     scored_players.append({
-                        "name": player_name,
+                        "name": wd_display_name,  # Show WD player name (Rory McIlroy)
                         "dg_name": wd_player,
                         "slot": i + 1,
                         "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
                         "penalty": 0,  # No penalty for WD with alternate
                         "total": wd_r1 + wd_r2 + (rep_r3 or 0) + (rep_r4 or 0),
                         "status": "wd_alt",
-                        "replacement": rep_name,
+                        "replacement": rep_name,  # Show alternate name (Henley, Russell)
                         "position": "WD",
                         "thru": rep_thru,
                         "today": rep_today,
