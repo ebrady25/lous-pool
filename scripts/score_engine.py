@@ -336,6 +336,7 @@ def process_tournament(live_data, inplay_data=None):
             RULE4_OVERRIDES = {
                 "WM Phoenix Open": ["Kim, S.H.", "Poston, J.T.", "Morikawa, Collin"],
                 "Genesis Invitational": ["Stevens, Sam", "Hisatsune, Ryo", "Harman, Brian", "Cantlay, Patrick", "MacIntyre, Robert"],
+                "Arnold Palmer Invitational": ["Glover, Lucas", "Pendrith, Taylor"],
             }
             if event_name in RULE4_OVERRIDES:
                 override_order = RULE4_OVERRIDES[event_name]
