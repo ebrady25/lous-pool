@@ -603,6 +603,19 @@ body::before {
   vertical-align: middle;
 }
 
+.investigation-badge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.4rem;
+  letter-spacing: 0.03em;
+  vertical-align: middle;
+}
+
 .me-badge {
   display: inline-block;
   font-size: 0.58rem;
@@ -1038,6 +1051,7 @@ function TeamRow({ team, rank, expanded, onToggle, seasonLeader, view, coursePar
             {team.alias || team.owner}
             {weekWinner && <span className="winner-badge">🏆 WINNER</span>}
             {!weekWinner && (me || friend) && <span className="friend-badge">FRIEND</span>}
+            {team.investigation && <span className="investigation-badge">{team.investigation}</span>}
           </div>
           {team.alias && team.alias !== team.owner && (
             <div className="team-alias">{team.owner}</div>
