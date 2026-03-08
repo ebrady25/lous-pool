@@ -381,7 +381,7 @@ def process_tournament(live_data, inplay_data=None):
                         "Andy Kapusta": "Schauffele, Xander",
                         "Chuck Allen": "Young, Cameron",
                         "Ethan Brady": "Henley, Russell",
-                        "Connor White": "Bradley, Keegan",
+                        "Connor White": "Bridgeman, Jacob",  # Alt1 Bradley MC, using Alt2
                         "Eric Southard": "Morikawa, Collin",
                         "Fran Snyder": "Thomas, Justin",
                         # Rule 4 cases (no valid alternate)
