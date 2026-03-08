@@ -900,6 +900,13 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         usage = season_teams.get(owner, {}).get("usage", {})
         scored = score_team(team, tournament_data, season_usage=usage)
         
+        # Add investigation tags for specific teams (joke/tracking)
+        INVESTIGATION_TAGS = {
+            "Connor White": "Under Investigation 🚩",
+        }
+        if owner in INVESTIGATION_TAGS:
+            scored["investigation"] = INVESTIGATION_TAGS[owner]
+        
         # Get previous season total (strokes)
         prev_total = season_teams.get(owner, {}).get("season_total", 0)
         prev_to_par = season_teams.get(owner, {}).get("season_to_par", 0)
