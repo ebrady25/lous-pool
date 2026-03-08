@@ -350,7 +350,7 @@ def process_tournament(live_data, inplay_data=None):
                         "Lou Boss": "Hovland, Viktor",
                         "The A-Team": "Spieth, Jordan",
                         "Nick Prybella": "Fitzpatrick, Matt",
-                        "The Hammer": "Lowry, Shane",
+                        "The Hammer": "RULE4",  # Alt1 Lowry MC
                         "Brett Armstrong": "Fitzpatrick, Matt",
                         "John Stadler": "Conners, Corey",
                         "Brian Little": "Scheffler, Scottie",
@@ -358,7 +358,7 @@ def process_tournament(live_data, inplay_data=None):
                         "Coach Len": "Schauffele, Xander",
                         "Brian Belcer": "Scott, Adam",
                         "Kelly Murray": "Fitzpatrick, Matt",
-                        "Dr. J & Mr. T": "Lowry, Shane",
+                        "Dr. J & Mr. T": "RULE4",  # Alt1 Lowry MC
                         "Brendan Ball": "Young, Cameron",
                         "The Minister & The Wet Dog": "Morikawa, Collin",
                         "Dave Staples": "Kim, Michael",
@@ -368,7 +368,7 @@ def process_tournament(live_data, inplay_data=None):
                         "Rob Kerr": "Schauffele, Xander",
                         "Dino": "Fleetwood, Tommy",
                         "Greg Witter": "Scott, Adam",
-                        "Bubs Regan": "Rose, Justin",
+                        "Bubs Regan": "RULE4",  # Alt1 Rose MC
                         "Eric Swartzmeyer": "Scheffler, Scottie",
                         "Rob Motrynczuk": "Kim, Si Woo",
                         "Nicholas Gacos": "Fleetwood, Tommy",
@@ -378,12 +378,12 @@ def process_tournament(live_data, inplay_data=None):
                         "Nate Marini": "Morikawa, Collin",
                         "Tom Stadler": "Matsuyama, Hideki",
                         "Quentin Bubb": "Fleetwood, Tommy",
-                        "Andy Kapusta": "Schauffele, Xander",
+                        "Andy Kapusta": "Scheffler, Scottie",  # Scottie is Alt1
                         "Chuck Allen": "Young, Cameron",
                         "Ethan Brady": "Henley, Russell",
-                        "Connor White": "Bridgeman, Jacob",  # Alt1 Bradley MC, using Alt2
+                        "Connor White": "RULE4",  # Alt1 Bradley MC, use Rule 4 no penalty
                         "Eric Southard": "Morikawa, Collin",
-                        "Fran Snyder": "Thomas, Justin",
+                        "Fran Snyder": "RULE4",  # Alt1 Thomas MC
                         # Rule 4 cases (no valid alternate)
                         "B. Reid": "RULE4",
                         "Brendan Cohen": "RULE4",
@@ -654,6 +654,51 @@ def score_team(team, tournament_data, season_usage=None):
                             "current_score": current_score,
                         })
                         continue
+            elif rep_name.startswith("RULE4_MC_"):
+                # WD player's alternate also missed cut - Rule 4 + MC penalty
+                # Format: "RULE4_MC_7" means +7 penalty (MC by 3 strokes)
+                penalty = int(rep_name.split("_")[-1])
+                wd_count += 1
+                rep_idx = wd_count - 1
+                if rep_idx < len(replacement_players):
+                    rep = replacement_players[rep_idx]
+                    rep_data = find_player(rep["name"], lookup)
+                    if rep_data:
+                        rep_r3 = rep_data.get("r3") or 0
+                        rep_r4 = rep_data.get("r4") or 0
+                        rep_today = rep_data.get("today") or 0
+                        rep_thru = rep_data.get("thru") or 0
+                        
+                        if rep_r3 and rep_r4:
+                            rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
+                        elif rep_r3:
+                            rep_to_par = (rep_r3 - course_par) + rep_today
+                        else:
+                            rep_to_par = rep_today
+                        
+                        current_score = wd_to_par + rep_to_par + penalty
+                        
+                        # Convert WD player name from "Last, First" to "First Last" for display
+                        wd_display_name = wd_player
+                        if ", " in wd_player:
+                            parts = wd_player.split(", ")
+                            wd_display_name = f"{parts[1]} {parts[0]}"
+                        
+                        scored_players.append({
+                            "name": wd_display_name,
+                            "dg_name": wd_player,
+                            "slot": i + 1,
+                            "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
+                            "penalty": penalty,  # MC penalty from alternate
+                            "total": wd_r1 + wd_r2 + (rep_r3 or 0) + (rep_r4 or 0) + penalty,
+                            "status": "wd_alt_mc",
+                            "replacement": rep["name"],
+                            "position": "WD",
+                            "thru": rep_thru,
+                            "today": rep_today,
+                            "current_score": current_score,
+                        })
+                        continue
             else:
                 # Use alternate for R3+R4
                 rep_data = find_player(rep_name, lookup)
@@ -815,8 +860,8 @@ def score_team(team, tournament_data, season_usage=None):
                 
                 # Total = MC's R1+R2 + replacement's R3/R4 + penalty
                 team_total += mc_to_par + rep_to_par + pen
-            elif p.get("status") in ["wd_alt", "wd_rule4"]:
-                # WD player - current_score already calculated correctly (WD R1+R2 + rep R3+R4)
+            elif p.get("status") in ["wd_alt", "wd_rule4", "wd_alt_mc"]:
+                # WD player - current_score already calculated correctly (WD R1+R2 + rep R3+R4 + any penalty)
                 team_total += p.get("current_score") or 0
             else:
                 # Active player - use current_score (already to-par)
