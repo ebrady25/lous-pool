@@ -1156,24 +1156,15 @@ def main():
         print(f"Wrote tournament data to {args.output}")
         return
     
-    # Load previous season data from EXISTING leaderboard.json (not season.json)
-    # Our import script sets the correct season totals there
+    # Load previous season data from season.json
     season_data = {}
-    existing_lb_path = args.output  # Same file we're writing to
-    if os.path.exists(existing_lb_path):
+    season_json_path = args.season  # Use the --season argument (default: data/season.json)
+    if os.path.exists(season_json_path):
         try:
-            with open(existing_lb_path) as f:
-                existing_lb = json.load(f)
-                # Build season_data from existing leaderboard teams
-                for team in existing_lb.get("teams", []):
-                    owner = team.get("owner")
-                    if owner:
-                        season_data[owner] = {
-                            "season_total": team.get("prev_pts", 0),
-                            "season_to_par": team.get("prev_to_par", 0),
-                            "alias": team.get("alias", ""),
-                            "usage": {}
-                        }
+            with open(season_json_path) as f:
+                season_file = json.load(f)
+                # season.json has structure: {"cumulative_par": X, "teams": {owner: {season_total, season_to_par, ...}}}
+                season_data = season_file
         except:
             pass  # If can't read, start fresh
     
