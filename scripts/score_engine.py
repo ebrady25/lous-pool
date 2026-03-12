@@ -1015,14 +1015,15 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
             # season_to_par = prev_to_par + current_week_to_par
             scored["season_to_par"] = prev_to_par + (scored["team_to_par"] or 0)
             # season_pts = prev_pts + estimated_week_strokes
-            # estimated_week_strokes = team_par + team_to_par (e.g., 1136 + (-8) = 1128)
+            # estimated_week_strokes = team_par + team_to_par (e.g., 1152 + (-8) = 1144)
             week_strokes_estimate = team_par + (scored["team_to_par"] or 0)
             scored["season_pts"] = prev_total + week_strokes_estimate
             scored["week_strokes"] = week_strokes_estimate
         else:
-            # No scores yet - show previous season totals
-            scored["season_pts"] = prev_total
-            scored["season_to_par"] = prev_to_par
+            # No scores yet - show projected season totals (assuming even par for the week)
+            # This prevents teams that haven't started from appearing ahead of those who have
+            scored["season_pts"] = prev_total + team_par  # Assume even par until they start
+            scored["season_to_par"] = prev_to_par  # To-par stays the same until they have scores
             scored["week_strokes"] = None
         
         scored["prev_pts"] = prev_total
