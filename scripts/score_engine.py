@@ -346,7 +346,7 @@ def process_tournament(live_data, inplay_data=None):
             # - use_rule4: If True, use Rule 4 player for R3+R4 (no penalty for WD)
             WD_OVERRIDES = {
                 "THE PLAYERS Championship": {
-                    "Morikawa, Collin": {"r1": None, "r2": None, "replacements": {
+                    "Morikawa, Collin": {"r1": 4, "r2": None, "thru": 1, "replacements": {
                         "Lou Boss": "Hovland, Viktor",
                         "Mark Dowling": "Bridgeman, Jacob",
                         "Rusty Hurst": "Matsuyama, Hideki",
@@ -634,8 +634,15 @@ def score_team(team, tournament_data, season_usage=None):
             rep_name = wd_info["replacement"]
             wd_player = wd_info["wd_player"]
             
-            # Calculate WD player's R1+R2 to par
-            wd_to_par = (wd_r1 - course_par) + (wd_r2 - course_par)
+            # Check if this is a pre-tournament WD (r1 is None or partial)
+            # In this case, alternate takes ALL rounds
+            is_pre_tournament_wd = wd_r1 is None
+            
+            # Calculate WD player's R1+R2 to par (0 if pre-tournament WD)
+            if is_pre_tournament_wd:
+                wd_to_par = 0
+            else:
+                wd_to_par = ((wd_r1 or 0) - course_par) + ((wd_r2 or 0) - course_par)
             
             if rep_name == "RULE4":
                 # Use Rule 4 player for R3+R4, no penalty for WD
@@ -716,7 +723,7 @@ def score_team(team, tournament_data, season_usage=None):
                             "slot": i + 1,
                             "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
                             "penalty": penalty,  # MC penalty from alternate
-                            "total": wd_r1 + wd_r2 + (rep_r3 or 0) + (rep_r4 or 0) + penalty,
+                            "total": (wd_r1 or 0) + (wd_r2 or 0) + (rep_r3 or 0) + (rep_r4 or 0) + penalty,
                             "status": "wd_alt_mc",
                             "replacement": rep["name"],
                             "position": "WD",
@@ -726,44 +733,92 @@ def score_team(team, tournament_data, season_usage=None):
                         })
                         continue
             else:
-                # Use alternate for R3+R4
+                # Use alternate for remaining rounds
+                # For pre-tournament WD: alternate takes ALL 4 rounds
+                # For mid-tournament WD: alternate takes R3+R4 only
                 rep_data = find_player(rep_name, lookup)
                 if rep_data:
-                    rep_r3 = rep_data.get("r3") or 0
-                    rep_r4 = rep_data.get("r4") or 0
-                    rep_today = rep_data.get("today") or 0
-                    rep_thru = rep_data.get("thru") or 0
-                    
-                    if rep_r3 and rep_r4:
-                        rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
-                    elif rep_r3:
-                        rep_to_par = (rep_r3 - course_par) + rep_today
+                    # For pre-tournament WD, use alternate's R1+R2 as well
+                    if is_pre_tournament_wd:
+                        rep_r1 = rep_data.get("r1") or 0
+                        rep_r2 = rep_data.get("r2") or 0
+                        rep_r3 = rep_data.get("r3") or 0
+                        rep_r4 = rep_data.get("r4") or 0
+                        rep_today = rep_data.get("today") or 0
+                        rep_thru = rep_data.get("thru") or 0
+                        
+                        # Calculate to-par based on what's available
+                        if rep_r1 and rep_r2 and rep_r3 and rep_r4:
+                            rep_to_par = (rep_r1 - course_par) + (rep_r2 - course_par) + (rep_r3 - course_par) + (rep_r4 - course_par)
+                        elif rep_r1 and rep_r2 and rep_r3:
+                            rep_to_par = (rep_r1 - course_par) + (rep_r2 - course_par) + (rep_r3 - course_par) + rep_today
+                        elif rep_r1 and rep_r2:
+                            rep_to_par = (rep_r1 - course_par) + (rep_r2 - course_par) + rep_today
+                        elif rep_r1:
+                            rep_to_par = (rep_r1 - course_par) + rep_today
+                        else:
+                            rep_to_par = rep_today
+                        
+                        current_score = rep_to_par  # Alternate's full score
+                        
+                        # Convert WD player name from "Last, First" to "First Last" for display
+                        wd_display_name = wd_player
+                        if ", " in wd_player:
+                            parts = wd_player.split(", ")
+                            wd_display_name = f"{parts[1]} {parts[0]}"
+                        
+                        scored_players.append({
+                            "name": wd_display_name,  # Show WD player name (Collin Morikawa)
+                            "dg_name": wd_player,
+                            "slot": i + 1,
+                            "r1": rep_r1 or None, "r2": rep_r2 or None, "r3": rep_r3 or None, "r4": rep_r4 or None,
+                            "penalty": 0,  # No penalty for pre-tournament WD
+                            "total": (rep_r1 or 0) + (rep_r2 or 0) + (rep_r3 or 0) + (rep_r4 or 0),
+                            "status": "wd_alt",
+                            "replacement": rep_name,  # Show alternate name
+                            "position": "WD",
+                            "thru": rep_thru,
+                            "today": rep_today,
+                            "current_score": current_score,
+                        })
+                        continue
                     else:
-                        rep_to_par = rep_today
-                    
-                    current_score = wd_to_par + rep_to_par
-                    
-                    # Convert WD player name from "Last, First" to "First Last" for display
-                    wd_display_name = wd_player
-                    if ", " in wd_player:
-                        parts = wd_player.split(", ")
-                        wd_display_name = f"{parts[1]} {parts[0]}"
-                    
-                    scored_players.append({
-                        "name": wd_display_name,  # Show WD player name (Rory McIlroy)
-                        "dg_name": wd_player,
-                        "slot": i + 1,
-                        "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
-                        "penalty": 0,  # No penalty for WD with alternate
-                        "total": wd_r1 + wd_r2 + (rep_r3 or 0) + (rep_r4 or 0),
-                        "status": "wd_alt",
-                        "replacement": rep_name,  # Show alternate name (Henley, Russell)
-                        "position": "WD",
-                        "thru": rep_thru,
-                        "today": rep_today,
-                        "current_score": current_score,
-                    })
-                    continue
+                        # Mid-tournament WD: alternate takes R3+R4 only
+                        rep_r3 = rep_data.get("r3") or 0
+                        rep_r4 = rep_data.get("r4") or 0
+                        rep_today = rep_data.get("today") or 0
+                        rep_thru = rep_data.get("thru") or 0
+                        
+                        if rep_r3 and rep_r4:
+                            rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
+                        elif rep_r3:
+                            rep_to_par = (rep_r3 - course_par) + rep_today
+                        else:
+                            rep_to_par = rep_today
+                        
+                        current_score = wd_to_par + rep_to_par
+                        
+                        # Convert WD player name from "Last, First" to "First Last" for display
+                        wd_display_name = wd_player
+                        if ", " in wd_player:
+                            parts = wd_player.split(", ")
+                            wd_display_name = f"{parts[1]} {parts[0]}"
+                        
+                        scored_players.append({
+                            "name": wd_display_name,  # Show WD player name (Rory McIlroy)
+                            "dg_name": wd_player,
+                            "slot": i + 1,
+                            "r1": wd_r1, "r2": wd_r2, "r3": rep_r3 or None, "r4": rep_r4 or None,
+                            "penalty": 0,  # No penalty for WD with alternate
+                            "total": (wd_r1 or 0) + (wd_r2 or 0) + (rep_r3 or 0) + (rep_r4 or 0),
+                            "status": "wd_alt",
+                            "replacement": rep_name,  # Show alternate name (Henley, Russell)
+                            "position": "WD",
+                            "thru": rep_thru,
+                            "today": rep_today,
+                            "current_score": current_score,
+                        })
+                        continue
         
         r1 = pdata["r1"]
         r2 = pdata["r2"]
