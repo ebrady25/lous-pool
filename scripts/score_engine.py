@@ -294,6 +294,91 @@ def process_tournament(live_data, inplay_data=None):
     r3_started = has_r3 or current_playing_round >= 3
     cut_is_made = r3_started or r2_complete
     
+    # WD OVERRIDES: Players who withdrew mid-tournament
+    # Must be defined OUTSIDE cut_is_made block so WDs before cut are handled
+    # Format: {event: {wd_player: {r1, r2, replacement, use_rule4}}}
+    # - r1, r2: The WD player's completed round scores (None if WD before starting)
+    # - replacement: The alternate who fills remaining rounds
+    WD_OVERRIDES = {
+        "THE PLAYERS Championship": {
+            "Morikawa, Collin": {"r1": None, "r2": None, "thru": 1, "replacements": {
+                "Lou Boss": "Hovland, Viktor",
+                "Mark Dowling": "Bridgeman, Jacob",
+                "Rusty Hurst": "Matsuyama, Hideki",
+                "The A-Team": "Scheffler, Scottie",
+                "The Wolf Pack": "Matsuyama, Hideki",
+                "The Scottish Lion": "Gotterup, Chris",
+                "Pat Devine": "Kim, Si Woo",
+                "The Hammer": "Berger, Daniel",
+                "Mary Beth Scimia": "Theegala, Sahith",
+                "Brett Armstrong": "Straka, Sepp",
+                "John Stadler": "Theegala, Sahith",
+                "B. Reid": "Knapp, Jake",
+                "Bob Fabian": "Straka, Sepp",
+                "Brian Little": "Scheffler, Scottie",
+                "The Roman Goddess": "Berger, Daniel",
+                "Coach Len": "Theegala, Sahith",
+                "Jack Gawronski": "Scott, Adam",
+                "Brian Belcer": "Fowler, Rickie",
+                "Buzz Biddle": "Conners, Corey",
+                "Kelly Murray": "McIlroy, Rory",
+                "Dr. J & Mr. T": "Matsuyama, Hideki",
+                "Brendan Ball": "Aberg, Ludvig",
+                "The Minister & The Wet Dog": "Fowler, Rickie",
+                "Rob Mignoli": "McIlroy, Rory",
+                "Joe Kapa": "Hoge, Tom",
+                "Joe Mooney": "Straka, Sepp",
+                "Zackie Robison": "Aberg, Ludvig",
+                "Brandon Ambrose": "McNealy, Maverick",
+                "Peter Motrynczuk": "Fleetwood, Tommy",
+                "Justin Gentzke": "Young, Cameron",
+                "Kevin F'n Cleary": "Bhatia, Akshay",
+                "John Cleary": "Scott, Adam",
+                "Jim Templeton": "Henley, Russell",
+                "Rob Kerr": "Schauffele, Xander",
+                "Dino": "Kim, Si Woo",
+                "Greg Witter": "Knapp, Jake",
+                "Bill Tatu": "Young, Cameron",
+                "Walt Lemiski": "Young, Cameron",
+                "Jaime Witter": "Scheffler, Scottie",
+                "Nick Montaldi": "Fitzpatrick, Matt",
+                "Kevin Gallivan": "Hovland, Viktor",
+                "Bubs Regan": "Kim, Si Woo",
+                "Pete & Linda": "Bhatia, Akshay",
+                "Brendan Cohen": "Scheffler, Scottie",
+                "Rob Motrynczuk": "Conners, Corey",
+                "Gerry Kirchofer": "Schauffele, Xander",
+                "Frank Delsignore": "Straka, Sepp",
+                "Jason Goss": "Aberg, Ludvig",
+                "Dominic Montaldi": "Lee, Min Woo",
+                "Billy Coppola": "Young, Cameron",
+                "Matt Donohue": "Berger, Daniel",
+                "Chris Wysocki": "Kim, Si Woo",
+                "Nate Marini": "Scheffler, Scottie",
+                "Bill Moore": "McIlroy, Rory",
+                "JP Morgan": "Scheffler, Scottie",
+                "Will Lawhon": "Berger, Daniel",
+                "Tom Stadler": "Young, Cameron",
+                "Quentin Bubb": "Kim, Si Woo",
+                "Maxwell Smart": "Greyserman, Max",
+                "Andy Kapusta": "McIlroy, Rory",
+                "Vince Montaldi": "Straka, Sepp",
+                "Chuck Allen": "Homa, Max",
+                "Ethan Brady": "McIlroy, Rory",
+                "Matt White": "Henley, Russell",
+                "Eric Southard": "Bhatia, Akshay",
+                "Don Gleason": "Theegala, Sahith",
+                "Gabe Palen": "Schauffele, Xander",
+            }},
+        },
+    }
+    
+    # Store WD overrides for use in score_team
+    if event_name in WD_OVERRIDES:
+        wd_data = WD_OVERRIDES[event_name]
+    else:
+        wd_data = {}
+    
     if cut_is_made:
         made_cut_totals = []
         for p in scores:
@@ -339,90 +424,6 @@ def process_tournament(live_data, inplay_data=None):
                 "Arnold Palmer Invitational": ["Glover, Lucas", "Pendrith, Taylor"],
             }
             
-            # WD OVERRIDES: Players who withdrew mid-tournament
-            # Format: {event: {wd_player: {r1, r2, replacement, use_rule4}}}
-            # - r1, r2: The WD player's completed round scores
-            # - replacement: The alternate who fills R3+R4 (or None if no valid alternate)
-            # - use_rule4: If True, use Rule 4 player for R3+R4 (no penalty for WD)
-            WD_OVERRIDES = {
-                "THE PLAYERS Championship": {
-                    "Morikawa, Collin": {"r1": 4, "r2": None, "thru": 1, "replacements": {
-                        "Lou Boss": "Hovland, Viktor",
-                        "Mark Dowling": "Bridgeman, Jacob",
-                        "Rusty Hurst": "Matsuyama, Hideki",
-                        "The A-Team": "Scheffler, Scottie",
-                        "The Wolf Pack": "Matsuyama, Hideki",
-                        "The Scottish Lion": "Gotterup, Chris",
-                        "Pat Devine": "Kim, Si Woo",
-                        "The Hammer": "Berger, Daniel",
-                        "Mary Beth Scimia": "Theegala, Sahith",
-                        "Brett Armstrong": "Straka, Sepp",
-                        "John Stadler": "Theegala, Sahith",
-                        "B. Reid": "Knapp, Jake",
-                        "Bob Fabian": "Straka, Sepp",
-                        "Brian Little": "Scheffler, Scottie",
-                        "The Roman Goddess": "Berger, Daniel",
-                        "Coach Len": "Theegala, Sahith",
-                        "Jack Gawronski": "Scott, Adam",
-                        "Brian Belcer": "Fowler, Rickie",
-                        "Buzz Biddle": "Conners, Corey",
-                        "Kelly Murray": "McIlroy, Rory",
-                        "Dr. J & Mr. T": "Matsuyama, Hideki",
-                        "Brendan Ball": "Aberg, Ludvig",
-                        "The Minister & The Wet Dog": "Fowler, Rickie",
-                        "Rob Mignoli": "McIlroy, Rory",
-                        "Joe Kapa": "Hoge, Tom",
-                        "Joe Mooney": "Straka, Sepp",
-                        "Zackie Robison": "Aberg, Ludvig",
-                        "Brandon Ambrose": "McNealy, Maverick",
-                        "Peter Motrynczuk": "Fleetwood, Tommy",
-                        "Justin Gentzke": "Young, Cameron",
-                        "Kevin F'n Cleary": "Bhatia, Akshay",
-                        "John Cleary": "Scott, Adam",
-                        "Jim Templeton": "Henley, Russell",
-                        "Rob Kerr": "Schauffele, Xander",
-                        "Dino": "Kim, Si Woo",
-                        "Greg Witter": "Knapp, Jake",
-                        "Bill Tatu": "Young, Cameron",
-                        "Walt Lemiski": "Young, Cameron",
-                        "Jaime Witter": "Scheffler, Scottie",
-                        "Nick Montaldi": "Fitzpatrick, Matt",
-                        "Kevin Gallivan": "Hovland, Viktor",
-                        "Bubs Regan": "Kim, Si Woo",
-                        "Pete & Linda": "Bhatia, Akshay",
-                        "Brendan Cohen": "Scheffler, Scottie",
-                        "Rob Motrynczuk": "Conners, Corey",
-                        "Gerry Kirchofer": "Schauffele, Xander",
-                        "Frank Delsignore": "Straka, Sepp",
-                        "Jason Goss": "Aberg, Ludvig",
-                        "Dominic Montaldi": "Lee, Min Woo",
-                        "Billy Coppola": "Young, Cameron",
-                        "Matt Donohue": "Berger, Daniel",
-                        "Chris Wysocki": "Kim, Si Woo",
-                        "Nate Marini": "Scheffler, Scottie",
-                        "Bill Moore": "McIlroy, Rory",
-                        "JP Morgan": "Scheffler, Scottie",
-                        "Will Lawhon": "Berger, Daniel",
-                        "Tom Stadler": "Young, Cameron",
-                        "Quentin Bubb": "Kim, Si Woo",
-                        "Maxwell Smart": "Greyserman, Max",
-                        "Andy Kapusta": "McIlroy, Rory",
-                        "Vince Montaldi": "Straka, Sepp",
-                        "Chuck Allen": "Homa, Max",
-                        "Ethan Brady": "McIlroy, Rory",
-                        "Matt White": "Henley, Russell",
-                        "Eric Southard": "Bhatia, Akshay",
-                        "Don Gleason": "Theegala, Sahith",
-                        "Gabe Palen": "Schauffele, Xander",
-                    }},
-                },
-            }
-            
-            # Store WD overrides in tournament data for use in score_team
-            if event_name in WD_OVERRIDES:
-                wd_data = WD_OVERRIDES[event_name]
-            else:
-                wd_data = {}
             
             if event_name in RULE4_OVERRIDES:
                 override_order = RULE4_OVERRIDES[event_name]
