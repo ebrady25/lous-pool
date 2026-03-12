@@ -30,8 +30,8 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
 # Update this when DataGolf is slow to switch events
-FORCE_EVENT_NAME = "Arnold Palmer Invitational"
-FORCE_COURSE_PAR = 72  # Bay Hill
+FORCE_EVENT_NAME = "THE PLAYERS Championship"
+FORCE_COURSE_PAR = 72  # TPC Sawgrass
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -345,51 +345,8 @@ def process_tournament(live_data, inplay_data=None):
             # - replacement: The alternate who fills R3+R4 (or None if no valid alternate)
             # - use_rule4: If True, use Rule 4 player for R3+R4 (no penalty for WD)
             WD_OVERRIDES = {
-                "Arnold Palmer Invitational": {
-                    "McIlroy, Rory": {"r1": 72, "r2": 68, "replacements": {
-                        "Lou Boss": "Hovland, Viktor",
-                        "The A-Team": "Spieth, Jordan",
-                        "Nick Prybella": "Fitzpatrick, Matt",
-                        "The Hammer": "RULE4",  # Alt1 Lowry MC
-                        "Brett Armstrong": "Fitzpatrick, Matt",
-                        "John Stadler": "Conners, Corey",
-                        "Brian Little": "Scheffler, Scottie",
-                        "The Roman Goddess": "English, Harris",
-                        "Coach Len": "Schauffele, Xander",
-                        "Brian Belcer": "Scott, Adam",
-                        "Kelly Murray": "Fitzpatrick, Matt",
-                        "Dr. J & Mr. T": "RULE4",  # Alt1 Lowry MC
-                        "Brendan Ball": "Young, Cameron",
-                        "The Minister & The Wet Dog": "Morikawa, Collin",
-                        "Dave Staples": "Kim, Michael",
-                        "Tom \"TV\" Vanner": "Spieth, Jordan",
-                        "\"BC\"": "Morikawa, Collin",
-                        "Jim Templeton": "Morikawa, Collin",
-                        "Rob Kerr": "Schauffele, Xander",
-                        "Dino": "Fleetwood, Tommy",
-                        "Greg Witter": "Scott, Adam",
-                        "Bubs Regan": "RULE4",  # Alt1 Rose MC
-                        "Eric Swartzmeyer": "Scheffler, Scottie",
-                        "Rob Motrynczuk": "Kim, Si Woo",
-                        "Nicholas Gacos": "Fleetwood, Tommy",
-                        "Carl Janish": "Scott, Adam",
-                        "Dominic Montaldi": "Hisatsune, Ryo",
-                        "Matt Donohue": "Conners, Corey",
-                        "Nate Marini": "Morikawa, Collin",
-                        "Tom Stadler": "Matsuyama, Hideki",
-                        "Quentin Bubb": "Fleetwood, Tommy",
-                        "Andy Kapusta": "Scheffler, Scottie",  # Scottie is Alt1
-                        "Chuck Allen": "Young, Cameron",
-                        "Ethan Brady": "Henley, Russell",
-                        "Connor White": "RULE4",  # Alt1 Bradley MC, use Rule 4 no penalty
-                        "Eric Southard": "Morikawa, Collin",
-                        "Fran Snyder": "RULE4",  # Alt1 Thomas MC
-                        # Rule 4 cases (no valid alternate)
-                        "B. Reid": "RULE4",
-                        "Brendan Cohen": "RULE4",
-                        "Vince Montaldi": "RULE4",
-                    }},
-                },
+                # Week 5 - THE PLAYERS Championship
+                # Add any WD situations here as they occur
             }
             
             # Store WD overrides in tournament data for use in score_team
@@ -902,7 +859,7 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
         
         # Add investigation tags for specific teams (joke/tracking)
         INVESTIGATION_TAGS = {
-            "Connor White": "Under Investigation 🚩",
+            # Add any teams under investigation here
         }
         if owner in INVESTIGATION_TAGS:
             scored["investigation"] = INVESTIGATION_TAGS[owner]
