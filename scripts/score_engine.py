@@ -747,20 +747,11 @@ def score_team(team, tournament_data, season_usage=None):
                         rep_r4 = rep_data.get("r4") or 0
                         rep_today = rep_data.get("today") or 0
                         rep_thru = rep_data.get("thru") or 0
+                        rep_current_score = rep_data.get("current_score") or 0
                         
-                        # Calculate to-par based on what's available
-                        if rep_r1 and rep_r2 and rep_r3 and rep_r4:
-                            rep_to_par = (rep_r1 - course_par) + (rep_r2 - course_par) + (rep_r3 - course_par) + (rep_r4 - course_par)
-                        elif rep_r1 and rep_r2 and rep_r3:
-                            rep_to_par = (rep_r1 - course_par) + (rep_r2 - course_par) + (rep_r3 - course_par) + rep_today
-                        elif rep_r1 and rep_r2:
-                            rep_to_par = (rep_r1 - course_par) + (rep_r2 - course_par) + rep_today
-                        elif rep_r1:
-                            rep_to_par = (rep_r1 - course_par) + rep_today
-                        else:
-                            rep_to_par = rep_today
-                        
-                        current_score = rep_to_par  # Alternate's full score
+                        # Use current_score directly - it's already the to-par score
+                        # This avoids double-counting when R1 is complete but R2 hasn't started
+                        current_score = rep_current_score
                         
                         # Convert WD player name from "Last, First" to "First Last" for display
                         wd_display_name = wd_player
