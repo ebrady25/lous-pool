@@ -30,8 +30,8 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
 # Update this when DataGolf is slow to switch events
-FORCE_EVENT_NAME = "THE PLAYERS Championship"
-FORCE_COURSE_PAR = 72  # TPC Sawgrass
+FORCE_EVENT_NAME = "Texas Children's Houston Open"
+FORCE_COURSE_PAR = 72  # Memorial Park Golf Course
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -300,77 +300,7 @@ def process_tournament(live_data, inplay_data=None):
     # - r1, r2: The WD player's completed round scores (None if WD before starting)
     # - replacement: The alternate who fills remaining rounds
     WD_OVERRIDES = {
-        "THE PLAYERS Championship": {
-            "Morikawa, Collin": {"r1": None, "r2": None, "thru": 1, "replacements": {
-                "Lou Boss": "Hovland, Viktor",
-                "Mark Dowling": "Bridgeman, Jacob",
-                "Rusty Hurst": "Matsuyama, Hideki",
-                "The A-Team": "Scheffler, Scottie",
-                "The Wolf Pack": "Matsuyama, Hideki",
-                "The Scottish Lion": "Gotterup, Chris",
-                "Pat Devine": "Kim, Si Woo",
-                "The Hammer": "Berger, Daniel",
-                "Mary Beth Scimia": "Theegala, Sahith",
-                "Brett Armstrong": "Straka, Sepp",
-                "John Stadler": "Theegala, Sahith",
-                "B. Reid": "Knapp, Jake",
-                "Bob Fabian": "Straka, Sepp",
-                "Brian Little": "Scheffler, Scottie",
-                "The Roman Goddess": "Berger, Daniel",
-                "Coach Len": "Theegala, Sahith",
-                "Jack Gawronski": "Scott, Adam",
-                "Brian Belcer": "Fowler, Rickie",
-                "Buzz Biddle": "Conners, Corey",
-                "Kelly Murray": "McIlroy, Rory",
-                "Dr. J & Mr. T": "Matsuyama, Hideki",
-                "Brendan Ball": "Aberg, Ludvig",
-                "The Minister & The Wet Dog": "Fowler, Rickie",
-                "Rob Mignoli": "McIlroy, Rory",
-                "Joe Kapa": "Hoge, Tom",
-                "Joe Mooney": "Straka, Sepp",
-                "Zackie Robison": "Aberg, Ludvig",
-                "Brandon Ambrose": "McNealy, Maverick",
-                "Peter Motrynczuk": "Fleetwood, Tommy",
-                "Justin Gentzke": "Young, Cameron",
-                "Kevin F'n Cleary": "Bhatia, Akshay",
-                "John Cleary": "Scott, Adam",
-                "Jim Templeton": "Henley, Russell",
-                "Rob Kerr": "Schauffele, Xander",
-                "Dino": "Kim, Si Woo",
-                "Greg Witter": "Knapp, Jake",
-                "Bill Tatu": "Young, Cameron",
-                "Walt Lemiski": "Young, Cameron",
-                "Jaime Witter": "Scheffler, Scottie",
-                "Nick Montaldi": "Fitzpatrick, Matt",
-                "Kevin Gallivan": "Hovland, Viktor",
-                "Bubs Regan": "Kim, Si Woo",
-                "Pete & Linda": "Bhatia, Akshay",
-                "Brendan Cohen": "Scheffler, Scottie",
-                "Rob Motrynczuk": "Conners, Corey",
-                "Gerry Kirchofer": "Schauffele, Xander",
-                "Frank Delsignore": "Straka, Sepp",
-                "Jason Goss": "Aberg, Ludvig",
-                "Dominic Montaldi": "Lee, Min Woo",
-                "Billy Coppola": "Young, Cameron",
-                "Matt Donohue": "Berger, Daniel",
-                "Chris Wysocki": "Kim, Si Woo",
-                "Nate Marini": "Scheffler, Scottie",
-                "Bill Moore": "McIlroy, Rory",
-                "JP Morgan": "Scheffler, Scottie",
-                "Will Lawhon": "Berger, Daniel",
-                "Tom Stadler": "Young, Cameron",
-                "Quentin Bubb": "Kim, Si Woo",
-                "Maxwell Smart": "Greyserman, Max",
-                "Andy Kapusta": "McIlroy, Rory",
-                "Vince Montaldi": "Straka, Sepp",
-                "Chuck Allen": "Homa, Max",
-                "Ethan Brady": "McIlroy, Rory",
-                "Matt White": "Henley, Russell",
-                "Eric Southard": "Bhatia, Akshay",
-                "Don Gleason": "Theegala, Sahith",
-                "Gabe Palen": "Schauffele, Xander",
-            }},
-        },
+        # Week 6 - Houston Open: No WDs yet
     }
     
     # Store WD overrides for use in score_team
