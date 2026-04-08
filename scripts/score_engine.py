@@ -30,8 +30,8 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
 # Update this when DataGolf is slow to switch events
-FORCE_EVENT_NAME = "Texas Children's Houston Open"
-FORCE_COURSE_PAR = 70  # Memorial Park Golf Course
+FORCE_EVENT_NAME = "Masters Tournament"
+FORCE_COURSE_PAR = 72  # Augusta National
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -300,7 +300,7 @@ def process_tournament(live_data, inplay_data=None):
     # - r1, r2: The WD player's completed round scores (None if WD before starting)
     # - replacement: The alternate who fills remaining rounds
     WD_OVERRIDES = {
-        # Week 6 - Houston Open: No WDs yet
+        # Week 7 - Masters: No WDs yet
     }
     
     # Store WD overrides for use in score_team
@@ -587,11 +587,14 @@ def score_team(team, tournament_data, season_usage=None):
                         rep_r4 = rep_data.get("r4") or 0
                         rep_today = rep_data.get("today") or 0
                         rep_thru = rep_data.get("thru") or 0
+                        rep_round = rep_data.get("round") or 3
                         
                         if rep_r3 and rep_r4:
                             rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
-                        elif rep_r3:
+                        elif rep_r3 and rep_round == 4:
                             rep_to_par = (rep_r3 - course_par) + rep_today
+                        elif rep_r3:
+                            rep_to_par = (rep_r3 - course_par)
                         else:
                             rep_to_par = rep_today
                         
@@ -632,11 +635,14 @@ def score_team(team, tournament_data, season_usage=None):
                         rep_r4 = rep_data.get("r4") or 0
                         rep_today = rep_data.get("today") or 0
                         rep_thru = rep_data.get("thru") or 0
+                        rep_round = rep_data.get("round") or 3
                         
                         if rep_r3 and rep_r4:
                             rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
-                        elif rep_r3:
+                        elif rep_r3 and rep_round == 4:
                             rep_to_par = (rep_r3 - course_par) + rep_today
+                        elif rep_r3:
+                            rep_to_par = (rep_r3 - course_par)
                         else:
                             rep_to_par = rep_today
                         
@@ -710,11 +716,14 @@ def score_team(team, tournament_data, season_usage=None):
                         rep_r4 = rep_data.get("r4") or 0
                         rep_today = rep_data.get("today") or 0
                         rep_thru = rep_data.get("thru") or 0
+                        rep_round = rep_data.get("round") or 3
                         
                         if rep_r3 and rep_r4:
                             rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
-                        elif rep_r3:
+                        elif rep_r3 and rep_round == 4:
                             rep_to_par = (rep_r3 - course_par) + rep_today
+                        elif rep_r3:
+                            rep_to_par = (rep_r3 - course_par)
                         else:
                             rep_to_par = rep_today
                         
@@ -854,10 +863,15 @@ def score_team(team, tournament_data, season_usage=None):
                 mc_to_par = (r1 - course_par) + (r2 - course_par) if r1 and r2 else 0
                 
                 # R3 + R4 to par (replacement) - if rounds complete, use actual; otherwise use today
+                # Check rep_round to avoid double-counting R3 when R4 hasn't started
+                rep_round = rep_data.get("round") or 3 if rep_data else 3
+                
                 if rep_r3 and rep_r4:
                     rep_to_par = (rep_r3 - course_par) + (rep_r4 - course_par)
-                elif rep_r3:
+                elif rep_r3 and rep_round == 4:
                     rep_to_par = (rep_r3 - course_par) + rep_today
+                elif rep_r3:
+                    rep_to_par = (rep_r3 - course_par)
                 else:
                     rep_to_par = rep_today  # R3 in progress
                 
