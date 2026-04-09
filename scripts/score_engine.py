@@ -313,7 +313,8 @@ def process_tournament(live_data, inplay_data=None):
         made_cut_totals = []
         for p in scores:
             # Player made cut if: has R3 data OR make_cut > 99%
-            made = player_made_cut(p) or p.get("make_cut", 0) > 0.99
+            make_cut_prob = p.get("make_cut") or 0
+            made = player_made_cut(p) or make_cut_prob > 0.99
             if made:
                 t2 = get_total_thru_2(p)
                 if t2 is not None:
@@ -1052,6 +1053,22 @@ def main():
         print("Fetching live tournament data...")
         dg_data = fetch_live_stats()
         inplay_data = fetch_inplay()
+        
+        # If FORCE_EVENT_NAME is set and live-tournament-stats has wrong event,
+        # but in-play has the right players, use in-play as primary
+        if FORCE_EVENT_NAME and dg_data and inplay_data:
+            dg_event = dg_data.get('event_name', '')
+            if FORCE_EVENT_NAME not in dg_event and dg_event not in FORCE_EVENT_NAME:
+                # Check if in-play has reasonable data (Masters has ~90 players)
+                inplay_players = inplay_data.get('data', [])
+                if len(inplay_players) > 50 and len(inplay_players) < 160:
+                    print(f"Note: live-tournament-stats has '{dg_event}', using in-play data for {FORCE_EVENT_NAME}")
+                    # Build a minimal dg_data from in-play
+                    dg_data = {
+                        'event_name': FORCE_EVENT_NAME,
+                        'last_updated': inplay_data.get('last_updated') or 'N/A',
+                        'live_stats': inplay_players  # Use in-play players as live_stats
+                    }
     
     if not dg_data:
         print("Failed to fetch data", file=sys.stderr)
