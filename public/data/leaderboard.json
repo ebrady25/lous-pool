@@ -32,8 +32,8 @@
     }
   ],
   "team_par": 1152,
-  "last_updated": "2026-04-12 21:18:44 UTC",
-  "updated_at": "2026-04-12T21:20:15.124914+00:00",
+  "last_updated": "2026-04-12 21:28:43 UTC",
+  "updated_at": "2026-04-12T21:30:14.577828+00:00",
   "teams": [
     {
       "owner": "Bubs Regan",
@@ -57,7 +57,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Rory McIlroy",
@@ -73,11 +73,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Ludvig Aberg",
@@ -114,24 +114,24 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         }
       ],
-      "team_total": -33,
+      "team_total": -34,
       "team_par": 1152,
-      "team_to_par": -33,
+      "team_to_par": -34,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_to_par": -213,
-      "season_pts": 7819,
-      "week_strokes": 1119,
+      "season_to_par": -214,
+      "season_pts": 7818,
+      "week_strokes": 1118,
       "prev_pts": 6700,
       "prev_to_par": -180,
       "weekly_rank": 1,
-      "season_rank": 14
+      "season_rank": 13
     },
     {
       "owner": "Matt Donohue",
@@ -155,7 +155,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Collin Morikawa",
@@ -172,10 +172,10 @@
           "position": "T6",
           "fin_text": "",
           "today": -4,
-          "thru": 16,
+          "thru": 17,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.96836
+          "top_10": 0.9996
         },
         {
           "name": "Justin Rose",
@@ -192,10 +192,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Patrick Reed",
@@ -215,7 +215,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         }
       ],
       "team_total": -33,
@@ -229,7 +229,105 @@
       "prev_pts": 6699,
       "prev_to_par": -181,
       "weekly_rank": 2,
-      "season_rank": 13
+      "season_rank": 14
+    },
+    {
+      "owner": "Rob Motrynczuk",
+      "alias": "",
+      "players": [
+        {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 1,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 2,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Ludvig Aberg",
+          "dg_name": "Aberg, Ludvig",
+          "slot": 3,
+          "r1": 74,
+          "r2": 70,
+          "r3": 69,
+          "r4": 72,
+          "penalty": 0,
+          "total": 285,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": -3,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Patrick Reed",
+          "dg_name": "Reed, Patrick",
+          "slot": 4,
+          "r1": 69,
+          "r2": 69,
+          "r3": 72,
+          "r4": null,
+          "penalty": 0,
+          "total": 210,
+          "status": "active",
+          "replacement": null,
+          "position": "T13",
+          "fin_text": "",
+          "today": 1,
+          "thru": 16,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.00788
+        }
+      ],
+      "team_total": -28,
+      "team_par": 1152,
+      "team_to_par": -28,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -171,
+      "season_pts": 7861,
+      "week_strokes": 1124,
+      "prev_pts": 6737,
+      "prev_to_par": -143,
+      "weekly_rank": 3,
+      "season_rank": 54
     },
     {
       "owner": "Jay Reid",
@@ -253,7 +351,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jordan Spieth",
@@ -290,10 +388,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Ludvig Aberg",
@@ -326,204 +424,8 @@
       "week_strokes": 1125,
       "prev_pts": 6673,
       "prev_to_par": -207,
-      "weekly_rank": 3,
-      "season_rank": 6
-    },
-    {
-      "owner": "Rob Motrynczuk",
-      "alias": "",
-      "players": [
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 1,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 2,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Ludvig Aberg",
-          "dg_name": "Aberg, Ludvig",
-          "slot": 3,
-          "r1": 74,
-          "r2": 70,
-          "r3": 69,
-          "r4": 72,
-          "penalty": 0,
-          "total": 285,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": -3,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Patrick Reed",
-          "dg_name": "Reed, Patrick",
-          "slot": 4,
-          "r1": 69,
-          "r2": 69,
-          "r3": 72,
-          "r4": null,
-          "penalty": 0,
-          "total": 210,
-          "status": "active",
-          "replacement": null,
-          "position": "T13",
-          "fin_text": "",
-          "today": 1,
-          "thru": 16,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.0116
-        }
-      ],
-      "team_total": -27,
-      "team_par": 1152,
-      "team_to_par": -27,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -170,
-      "season_pts": 7862,
-      "week_strokes": 1125,
-      "prev_pts": 6737,
-      "prev_to_par": -143,
       "weekly_rank": 4,
-      "season_rank": 55
-    },
-    {
-      "owner": "Bob Fabian",
-      "alias": "",
-      "players": [
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 1,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Ludvig Aberg",
-          "dg_name": "Aberg, Ludvig",
-          "slot": 2,
-          "r1": 74,
-          "r2": 70,
-          "r3": 69,
-          "r4": 72,
-          "penalty": 0,
-          "total": 285,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": -3,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Matt Fitzpatrick",
-          "dg_name": "Fitzpatrick, Matt",
-          "slot": 3,
-          "r1": 74,
-          "r2": 69,
-          "r3": 70,
-          "r4": 71,
-          "penalty": 0,
-          "total": 284,
-          "status": "active",
-          "replacement": null,
-          "position": "T18",
-          "fin_text": "",
-          "today": -1,
-          "thru": 18,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 4,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        }
-      ],
-      "team_total": -24,
-      "team_par": 1152,
-      "team_to_par": -24,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -236,
-      "season_pts": 7796,
-      "week_strokes": 1128,
-      "prev_pts": 6668,
-      "prev_to_par": -212,
-      "weekly_rank": 5,
-      "season_rank": 5
+      "season_rank": 6
     },
     {
       "owner": "Greg Witter",
@@ -547,7 +449,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Rory McIlroy",
@@ -563,11 +465,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Tommy Fleetwood",
@@ -610,18 +512,116 @@
           "top_10": 0.00052
         }
       ],
+      "team_total": -25,
+      "team_par": 1152,
+      "team_to_par": -25,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -174,
+      "season_pts": 7858,
+      "week_strokes": 1127,
+      "prev_pts": 6731,
+      "prev_to_par": -149,
+      "weekly_rank": 5,
+      "season_rank": 49
+    },
+    {
+      "owner": "Bob Fabian",
+      "alias": "",
+      "players": [
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 1,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Ludvig Aberg",
+          "dg_name": "Aberg, Ludvig",
+          "slot": 2,
+          "r1": 74,
+          "r2": 70,
+          "r3": 69,
+          "r4": 72,
+          "penalty": 0,
+          "total": 285,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": -3,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Matt Fitzpatrick",
+          "dg_name": "Fitzpatrick, Matt",
+          "slot": 3,
+          "r1": 74,
+          "r2": 69,
+          "r3": 70,
+          "r4": 71,
+          "penalty": 0,
+          "total": 284,
+          "status": "active",
+          "replacement": null,
+          "position": "T18",
+          "fin_text": "",
+          "today": -1,
+          "thru": 18,
+          "current_score": -4,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 4,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        }
+      ],
       "team_total": -24,
       "team_par": 1152,
       "team_to_par": -24,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_to_par": -173,
-      "season_pts": 7859,
+      "season_to_par": -236,
+      "season_pts": 7796,
       "week_strokes": 1128,
-      "prev_pts": 6731,
-      "prev_to_par": -149,
+      "prev_pts": 6668,
+      "prev_to_par": -212,
       "weekly_rank": 6,
-      "season_rank": 50
+      "season_rank": 5
     },
     {
       "owner": "Matt White",
@@ -645,7 +645,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Matt Fitzpatrick",
@@ -705,7 +705,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -24,
@@ -719,203 +719,7 @@
       "prev_pts": 6716,
       "prev_to_par": -164,
       "weekly_rank": 7,
-      "season_rank": 35
-    },
-    {
-      "owner": "Zackie Robison",
-      "alias": "",
-      "players": [
-        {
-          "name": "Collin Morikawa",
-          "dg_name": "Morikawa, Collin",
-          "slot": 1,
-          "r1": 74,
-          "r2": 69,
-          "r3": 68,
-          "r4": null,
-          "penalty": 0,
-          "total": 211,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -4,
-          "thru": 16,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.96836
-        },
-        {
-          "name": "Matt Fitzpatrick",
-          "dg_name": "Fitzpatrick, Matt",
-          "slot": 2,
-          "r1": 74,
-          "r2": 69,
-          "r3": 70,
-          "r4": 71,
-          "penalty": 0,
-          "total": 284,
-          "status": "active",
-          "replacement": null,
-          "position": "T18",
-          "fin_text": "",
-          "today": -1,
-          "thru": 18,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Tommy Fleetwood",
-          "dg_name": "Fleetwood, Tommy",
-          "slot": 3,
-          "r1": 71,
-          "r2": 68,
-          "r3": 73,
-          "r4": 76,
-          "penalty": 0,
-          "total": 288,
-          "status": "active",
-          "replacement": null,
-          "position": "T33",
-          "fin_text": "",
-          "today": 4,
-          "thru": 18,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Cameron Young",
-          "dg_name": "Young, Cameron",
-          "slot": 4,
-          "r1": 73,
-          "r2": 67,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 1,
-          "thru": 11,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.97932
-        }
-      ],
-      "team_total": -23,
-      "team_par": 1152,
-      "team_to_par": -23,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -243,
-      "season_pts": 7789,
-      "week_strokes": 1129,
-      "prev_pts": 6660,
-      "prev_to_par": -220,
-      "weekly_rank": 8,
-      "season_rank": 3
-    },
-    {
-      "owner": "Dominic Montaldi",
-      "alias": "",
-      "players": [
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 1,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        },
-        {
-          "name": "Patrick Reed",
-          "dg_name": "Reed, Patrick",
-          "slot": 2,
-          "r1": 69,
-          "r2": 69,
-          "r3": 72,
-          "r4": null,
-          "penalty": 0,
-          "total": 210,
-          "status": "active",
-          "replacement": null,
-          "position": "T13",
-          "fin_text": "",
-          "today": 1,
-          "thru": 16,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.0116
-        },
-        {
-          "name": "Justin Rose",
-          "dg_name": "Rose, Justin",
-          "slot": 3,
-          "r1": 70,
-          "r2": 69,
-          "r3": 69,
-          "r4": null,
-          "penalty": 0,
-          "total": 208,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": -2,
-          "thru": 12,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.98788
-        },
-        {
-          "name": "Tommy Fleetwood",
-          "dg_name": "Fleetwood, Tommy",
-          "slot": 4,
-          "r1": 71,
-          "r2": 68,
-          "r3": 73,
-          "r4": 76,
-          "penalty": 0,
-          "total": 288,
-          "status": "active",
-          "replacement": null,
-          "position": "T33",
-          "fin_text": "",
-          "today": 4,
-          "thru": 18,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -23,
-      "team_par": 1152,
-      "team_to_par": -23,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -230,
-      "season_pts": 7802,
-      "week_strokes": 1129,
-      "prev_pts": 6673,
-      "prev_to_par": -207,
-      "weekly_rank": 9,
-      "season_rank": 8
+      "season_rank": 36
     },
     {
       "owner": "Barry Gonsior",
@@ -955,11 +759,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Xander Schauffele",
@@ -979,7 +783,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Jordan Spieth",
@@ -1002,18 +806,214 @@
           "top_10": 0.00052
         }
       ],
+      "team_total": -24,
+      "team_par": 1152,
+      "team_to_par": -24,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -218,
+      "season_pts": 7814,
+      "week_strokes": 1128,
+      "prev_pts": 6686,
+      "prev_to_par": -194,
+      "weekly_rank": 8,
+      "season_rank": 11
+    },
+    {
+      "owner": "Zackie Robison",
+      "alias": "",
+      "players": [
+        {
+          "name": "Collin Morikawa",
+          "dg_name": "Morikawa, Collin",
+          "slot": 1,
+          "r1": 74,
+          "r2": 69,
+          "r3": 68,
+          "r4": null,
+          "penalty": 0,
+          "total": 211,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -4,
+          "thru": 17,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.9996
+        },
+        {
+          "name": "Matt Fitzpatrick",
+          "dg_name": "Fitzpatrick, Matt",
+          "slot": 2,
+          "r1": 74,
+          "r2": 69,
+          "r3": 70,
+          "r4": 71,
+          "penalty": 0,
+          "total": 284,
+          "status": "active",
+          "replacement": null,
+          "position": "T18",
+          "fin_text": "",
+          "today": -1,
+          "thru": 18,
+          "current_score": -4,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Tommy Fleetwood",
+          "dg_name": "Fleetwood, Tommy",
+          "slot": 3,
+          "r1": 71,
+          "r2": 68,
+          "r3": 73,
+          "r4": 76,
+          "penalty": 0,
+          "total": 288,
+          "status": "active",
+          "replacement": null,
+          "position": "T33",
+          "fin_text": "",
+          "today": 4,
+          "thru": 18,
+          "current_score": 0,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Cameron Young",
+          "dg_name": "Young, Cameron",
+          "slot": 4,
+          "r1": 73,
+          "r2": 67,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 1,
+          "thru": 12,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.99092
+        }
+      ],
       "team_total": -23,
       "team_par": 1152,
       "team_to_par": -23,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_to_par": -217,
-      "season_pts": 7815,
+      "season_to_par": -243,
+      "season_pts": 7789,
       "week_strokes": 1129,
-      "prev_pts": 6686,
-      "prev_to_par": -194,
+      "prev_pts": 6660,
+      "prev_to_par": -220,
+      "weekly_rank": 9,
+      "season_rank": 3
+    },
+    {
+      "owner": "Dominic Montaldi",
+      "alias": "",
+      "players": [
+        {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 1,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        },
+        {
+          "name": "Patrick Reed",
+          "dg_name": "Reed, Patrick",
+          "slot": 2,
+          "r1": 69,
+          "r2": 69,
+          "r3": 72,
+          "r4": null,
+          "penalty": 0,
+          "total": 210,
+          "status": "active",
+          "replacement": null,
+          "position": "T13",
+          "fin_text": "",
+          "today": 1,
+          "thru": 16,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.00788
+        },
+        {
+          "name": "Justin Rose",
+          "dg_name": "Rose, Justin",
+          "slot": 3,
+          "r1": 70,
+          "r2": 69,
+          "r3": 69,
+          "r4": null,
+          "penalty": 0,
+          "total": 208,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.98908
+        },
+        {
+          "name": "Tommy Fleetwood",
+          "dg_name": "Fleetwood, Tommy",
+          "slot": 4,
+          "r1": 71,
+          "r2": 68,
+          "r3": 73,
+          "r4": 76,
+          "penalty": 0,
+          "total": 288,
+          "status": "active",
+          "replacement": null,
+          "position": "T33",
+          "fin_text": "",
+          "today": 4,
+          "thru": 18,
+          "current_score": 0,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -23,
+      "team_par": 1152,
+      "team_to_par": -23,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -230,
+      "season_pts": 7802,
+      "week_strokes": 1129,
+      "prev_pts": 6673,
+      "prev_to_par": -207,
       "weekly_rank": 10,
-      "season_rank": 11
+      "season_rank": 8
     },
     {
       "owner": "The A-Team",
@@ -1057,7 +1057,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -1094,10 +1094,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         }
       ],
       "team_total": -22,
@@ -1155,7 +1155,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Cameron Young",
@@ -1172,10 +1172,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Justin Thomas",
@@ -1233,7 +1233,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Cameron Young",
@@ -1250,10 +1250,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Matt Fitzpatrick",
@@ -1310,6 +1310,104 @@
       "season_rank": 51
     },
     {
+      "owner": "Dave Staples",
+      "alias": "",
+      "players": [
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 1,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 2,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 3,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 4,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        }
+      ],
+      "team_total": -22,
+      "team_par": 1152,
+      "team_to_par": -22,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -182,
+      "season_pts": 7850,
+      "week_strokes": 1130,
+      "prev_pts": 6720,
+      "prev_to_par": -160,
+      "weekly_rank": 14,
+      "season_rank": 43
+    },
+    {
       "owner": "Brandon Ambrose",
       "alias": "",
       "players": [
@@ -1328,10 +1426,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Matt Fitzpatrick",
@@ -1391,7 +1489,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -22,
@@ -1404,498 +1502,8 @@
       "week_strokes": 1130,
       "prev_pts": 6647,
       "prev_to_par": -233,
-      "weekly_rank": 14,
-      "season_rank": 1
-    },
-    {
-      "owner": "Chris Wysocki",
-      "alias": "",
-      "players": [
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 1,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 2,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Matt Fitzpatrick",
-          "dg_name": "Fitzpatrick, Matt",
-          "slot": 3,
-          "r1": 74,
-          "r2": 69,
-          "r3": 70,
-          "r4": 71,
-          "penalty": 0,
-          "total": 284,
-          "status": "active",
-          "replacement": null,
-          "position": "T18",
-          "fin_text": "",
-          "today": -1,
-          "thru": 18,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Cameron Young",
-          "dg_name": "Young, Cameron",
-          "slot": 4,
-          "r1": 73,
-          "r2": 67,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 1,
-          "thru": 11,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.97932
-        }
-      ],
-      "team_total": -22,
-      "team_par": 1152,
-      "team_to_par": -22,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -132,
-      "season_pts": 7900,
-      "week_strokes": 1130,
-      "prev_pts": 6770,
-      "prev_to_par": -110,
       "weekly_rank": 15,
-      "season_rank": 82
-    },
-    {
-      "owner": "Ethan Brady",
-      "alias": "",
-      "players": [
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 1,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        },
-        {
-          "name": "Cameron Young",
-          "dg_name": "Young, Cameron",
-          "slot": 2,
-          "r1": 73,
-          "r2": 67,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 1,
-          "thru": 11,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.97932
-        },
-        {
-          "name": "Patrick Reed",
-          "dg_name": "Reed, Patrick",
-          "slot": 3,
-          "r1": 69,
-          "r2": 69,
-          "r3": 72,
-          "r4": null,
-          "penalty": 0,
-          "total": 210,
-          "status": "active",
-          "replacement": null,
-          "position": "T13",
-          "fin_text": "",
-          "today": 1,
-          "thru": 16,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.0116
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 4,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -22,
-      "team_par": 1152,
-      "team_to_par": -22,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -154,
-      "season_pts": 7878,
-      "week_strokes": 1130,
-      "prev_pts": 6748,
-      "prev_to_par": -132,
-      "weekly_rank": 16,
-      "season_rank": 70
-    },
-    {
-      "owner": "Great White!",
-      "alias": "",
-      "players": [
-        {
-          "name": "Justin Rose",
-          "dg_name": "Rose, Justin",
-          "slot": 1,
-          "r1": 70,
-          "r2": 69,
-          "r3": 69,
-          "r4": null,
-          "penalty": 0,
-          "total": 208,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": -2,
-          "thru": 12,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.98788
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 2,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 3,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        },
-        {
-          "name": "Patrick Reed",
-          "dg_name": "Reed, Patrick",
-          "slot": 4,
-          "r1": 69,
-          "r2": 69,
-          "r3": 72,
-          "r4": null,
-          "penalty": 0,
-          "total": 210,
-          "status": "active",
-          "replacement": null,
-          "position": "T13",
-          "fin_text": "",
-          "today": 1,
-          "thru": 16,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.0116
-        }
-      ],
-      "team_total": -22,
-      "team_par": 1152,
-      "team_to_par": -22,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -176,
-      "season_pts": 7856,
-      "week_strokes": 1130,
-      "prev_pts": 6726,
-      "prev_to_par": -154,
-      "weekly_rank": 17,
-      "season_rank": 46
-    },
-    {
-      "owner": "Dave Staples",
-      "alias": "",
-      "players": [
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 1,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 2,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 3,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 4,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        }
-      ],
-      "team_total": -21,
-      "team_par": 1152,
-      "team_to_par": -21,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -181,
-      "season_pts": 7851,
-      "week_strokes": 1131,
-      "prev_pts": 6720,
-      "prev_to_par": -160,
-      "weekly_rank": 18,
-      "season_rank": 45
-    },
-    {
-      "owner": "Tom Archer",
-      "alias": "",
-      "players": [
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 1,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Ludvig Aberg",
-          "dg_name": "Aberg, Ludvig",
-          "slot": 2,
-          "r1": 74,
-          "r2": 70,
-          "r3": 69,
-          "r4": 72,
-          "penalty": 0,
-          "total": 285,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": -3,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Cameron Young",
-          "dg_name": "Young, Cameron",
-          "slot": 3,
-          "r1": 73,
-          "r2": 67,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 1,
-          "thru": 11,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.97932
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 4,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -21,
-      "team_par": 1152,
-      "team_to_par": -21,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -212,
-      "season_pts": 7820,
-      "week_strokes": 1131,
-      "prev_pts": 6689,
-      "prev_to_par": -191,
-      "weekly_rank": 19,
-      "season_rank": 16
+      "season_rank": 1
     },
     {
       "owner": "Carl Janish",
@@ -1955,11 +1563,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Xander Schauffele",
@@ -1979,7 +1587,399 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
+        }
+      ],
+      "team_total": -22,
+      "team_par": 1152,
+      "team_to_par": -22,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -177,
+      "season_pts": 7855,
+      "week_strokes": 1130,
+      "prev_pts": 6725,
+      "prev_to_par": -155,
+      "weekly_rank": 16,
+      "season_rank": 46
+    },
+    {
+      "owner": "Chris Wysocki",
+      "alias": "",
+      "players": [
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 1,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 2,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Matt Fitzpatrick",
+          "dg_name": "Fitzpatrick, Matt",
+          "slot": 3,
+          "r1": 74,
+          "r2": 69,
+          "r3": 70,
+          "r4": 71,
+          "penalty": 0,
+          "total": 284,
+          "status": "active",
+          "replacement": null,
+          "position": "T18",
+          "fin_text": "",
+          "today": -1,
+          "thru": 18,
+          "current_score": -4,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Cameron Young",
+          "dg_name": "Young, Cameron",
+          "slot": 4,
+          "r1": 73,
+          "r2": 67,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 1,
+          "thru": 12,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.99092
+        }
+      ],
+      "team_total": -22,
+      "team_par": 1152,
+      "team_to_par": -22,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -132,
+      "season_pts": 7900,
+      "week_strokes": 1130,
+      "prev_pts": 6770,
+      "prev_to_par": -110,
+      "weekly_rank": 17,
+      "season_rank": 82
+    },
+    {
+      "owner": "Ethan Brady",
+      "alias": "",
+      "players": [
+        {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 1,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        },
+        {
+          "name": "Cameron Young",
+          "dg_name": "Young, Cameron",
+          "slot": 2,
+          "r1": 73,
+          "r2": 67,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 1,
+          "thru": 12,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.99092
+        },
+        {
+          "name": "Patrick Reed",
+          "dg_name": "Reed, Patrick",
+          "slot": 3,
+          "r1": 69,
+          "r2": 69,
+          "r3": 72,
+          "r4": null,
+          "penalty": 0,
+          "total": 210,
+          "status": "active",
+          "replacement": null,
+          "position": "T13",
+          "fin_text": "",
+          "today": 1,
+          "thru": 16,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.00788
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 4,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -22,
+      "team_par": 1152,
+      "team_to_par": -22,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -154,
+      "season_pts": 7878,
+      "week_strokes": 1130,
+      "prev_pts": 6748,
+      "prev_to_par": -132,
+      "weekly_rank": 18,
+      "season_rank": 70
+    },
+    {
+      "owner": "Great White!",
+      "alias": "",
+      "players": [
+        {
+          "name": "Justin Rose",
+          "dg_name": "Rose, Justin",
+          "slot": 1,
+          "r1": 70,
+          "r2": 69,
+          "r3": 69,
+          "r4": null,
+          "penalty": 0,
+          "total": 208,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.98908
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 2,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 3,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        },
+        {
+          "name": "Patrick Reed",
+          "dg_name": "Reed, Patrick",
+          "slot": 4,
+          "r1": 69,
+          "r2": 69,
+          "r3": 72,
+          "r4": null,
+          "penalty": 0,
+          "total": 210,
+          "status": "active",
+          "replacement": null,
+          "position": "T13",
+          "fin_text": "",
+          "today": 1,
+          "thru": 16,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.00788
+        }
+      ],
+      "team_total": -22,
+      "team_par": 1152,
+      "team_to_par": -22,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -176,
+      "season_pts": 7856,
+      "week_strokes": 1130,
+      "prev_pts": 6726,
+      "prev_to_par": -154,
+      "weekly_rank": 19,
+      "season_rank": 47
+    },
+    {
+      "owner": "Tom Archer",
+      "alias": "",
+      "players": [
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 1,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Ludvig Aberg",
+          "dg_name": "Aberg, Ludvig",
+          "slot": 2,
+          "r1": 74,
+          "r2": 70,
+          "r3": 69,
+          "r4": 72,
+          "penalty": 0,
+          "total": 285,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": -3,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Cameron Young",
+          "dg_name": "Young, Cameron",
+          "slot": 3,
+          "r1": 73,
+          "r2": 67,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 1,
+          "thru": 12,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.99092
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 4,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
         }
       ],
       "team_total": -21,
@@ -1987,13 +1987,13 @@
       "team_to_par": -21,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_to_par": -176,
-      "season_pts": 7856,
+      "season_to_par": -212,
+      "season_pts": 7820,
       "week_strokes": 1131,
-      "prev_pts": 6725,
-      "prev_to_par": -155,
+      "prev_pts": 6689,
+      "prev_to_par": -191,
       "weekly_rank": 20,
-      "season_rank": 47
+      "season_rank": 16
     },
     {
       "owner": "Gerry Kirchofer",
@@ -2017,7 +2017,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Cameron Young",
@@ -2034,10 +2034,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Jon Rahm",
@@ -2091,7 +2091,7 @@
       "prev_pts": 6714,
       "prev_to_par": -166,
       "weekly_rank": 21,
-      "season_rank": 38
+      "season_rank": 39
     },
     {
       "owner": "The Wolf Pack",
@@ -2112,10 +2112,10 @@
           "position": "T6",
           "fin_text": "",
           "today": -4,
-          "thru": 16,
+          "thru": 17,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.96836
+          "top_10": 0.9996
         },
         {
           "name": "Jon Rahm",
@@ -2155,7 +2155,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Ludvig Aberg",
@@ -2233,7 +2233,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Xander Schauffele",
@@ -2253,7 +2253,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Matt Fitzpatrick",
@@ -2287,7 +2287,7 @@
       "prev_pts": 6712,
       "prev_to_par": -168,
       "weekly_rank": 23,
-      "season_rank": 36
+      "season_rank": 37
     },
     {
       "owner": "The Minister & The Wet Dog",
@@ -2311,7 +2311,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -2348,10 +2348,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Xander Schauffele",
@@ -2371,7 +2371,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -20,
@@ -2385,7 +2385,105 @@
       "prev_pts": 6729,
       "prev_to_par": -151,
       "weekly_rank": 24,
-      "season_rank": 53
+      "season_rank": 55
+    },
+    {
+      "owner": "John Hughes",
+      "alias": "",
+      "players": [
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 1,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 2,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Justin Rose",
+          "dg_name": "Rose, Justin",
+          "slot": 3,
+          "r1": 70,
+          "r2": 69,
+          "r3": 69,
+          "r4": null,
+          "penalty": 0,
+          "total": 208,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.98908
+        },
+        {
+          "name": "Hideki Matsuyama",
+          "dg_name": "Matsuyama, Hideki",
+          "slot": 4,
+          "r1": 72,
+          "r2": 70,
+          "r3": 72,
+          "r4": 69,
+          "penalty": 0,
+          "total": 283,
+          "status": "active",
+          "replacement": null,
+          "position": "T13",
+          "fin_text": "",
+          "today": -3,
+          "thru": 18,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.00052
+        }
+      ],
+      "team_total": -20,
+      "team_par": 1152,
+      "team_to_par": -20,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -158,
+      "season_pts": 7874,
+      "week_strokes": 1132,
+      "prev_pts": 6742,
+      "prev_to_par": -138,
+      "weekly_rank": 25,
+      "season_rank": 64
     },
     {
       "owner": "Pete & Linda",
@@ -2409,7 +2507,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Xander Schauffele",
@@ -2429,7 +2527,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Jon Rahm",
@@ -2482,106 +2580,8 @@
       "week_strokes": 1133,
       "prev_pts": 6695,
       "prev_to_par": -185,
-      "weekly_rank": 25,
-      "season_rank": 25
-    },
-    {
-      "owner": "John Hughes",
-      "alias": "",
-      "players": [
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 1,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 2,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Justin Rose",
-          "dg_name": "Rose, Justin",
-          "slot": 3,
-          "r1": 70,
-          "r2": 69,
-          "r3": 69,
-          "r4": null,
-          "penalty": 0,
-          "total": 208,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": -2,
-          "thru": 12,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.98788
-        },
-        {
-          "name": "Hideki Matsuyama",
-          "dg_name": "Matsuyama, Hideki",
-          "slot": 4,
-          "r1": 72,
-          "r2": 70,
-          "r3": 72,
-          "r4": 69,
-          "penalty": 0,
-          "total": 283,
-          "status": "active",
-          "replacement": null,
-          "position": "T13",
-          "fin_text": "",
-          "today": -3,
-          "thru": 18,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.00052
-        }
-      ],
-      "team_total": -19,
-      "team_par": 1152,
-      "team_to_par": -19,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -157,
-      "season_pts": 7875,
-      "week_strokes": 1133,
-      "prev_pts": 6742,
-      "prev_to_par": -138,
       "weekly_rank": 26,
-      "season_rank": 67
+      "season_rank": 25
     },
     {
       "owner": "Big Dog Mallon",
@@ -2605,7 +2605,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Rory McIlroy",
@@ -2621,11 +2621,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Matt Fitzpatrick",
@@ -2668,18 +2668,18 @@
           "top_10": 0.0
         }
       ],
-      "team_total": -17,
+      "team_total": -18,
       "team_par": 1152,
-      "team_to_par": -17,
+      "team_to_par": -18,
       "overuse_penalty": 0,
       "mc_count": 1,
-      "season_to_par": -188,
-      "season_pts": 7844,
-      "week_strokes": 1135,
+      "season_to_par": -189,
+      "season_pts": 7843,
+      "week_strokes": 1134,
       "prev_pts": 6709,
       "prev_to_par": -171,
       "weekly_rank": 27,
-      "season_rank": 37
+      "season_rank": 35
     },
     {
       "owner": "Brendan Cohen",
@@ -2703,7 +2703,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -2739,11 +2739,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Matt Fitzpatrick",
@@ -2766,18 +2766,18 @@
           "top_10": 0.0
         }
       ],
-      "team_total": -17,
+      "team_total": -18,
       "team_par": 1152,
-      "team_to_par": -17,
+      "team_to_par": -18,
       "overuse_penalty": 0,
       "mc_count": 1,
-      "season_to_par": -157,
-      "season_pts": 7875,
-      "week_strokes": 1135,
+      "season_to_par": -158,
+      "season_pts": 7874,
+      "week_strokes": 1134,
       "prev_pts": 6740,
       "prev_to_par": -140,
       "weekly_rank": 28,
-      "season_rank": 68
+      "season_rank": 65
     },
     {
       "owner": "John Stadler",
@@ -2801,7 +2801,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Matt Fitzpatrick",
@@ -2838,10 +2838,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Bryson DeChambeau",
@@ -2899,7 +2899,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -2973,7 +2973,7 @@
       "prev_pts": 6738,
       "prev_to_par": -142,
       "weekly_rank": 30,
-      "season_rank": 64
+      "season_rank": 66
     },
     {
       "owner": "Pat Devine",
@@ -2993,11 +2993,11 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
+          "top_10": 0.99892
         },
         {
           "name": "Bryson DeChambeau",
@@ -3034,10 +3034,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Tommy Fleetwood",
@@ -3060,14 +3060,14 @@
           "top_10": 0.0
         }
       ],
-      "team_total": -14,
+      "team_total": -15,
       "team_par": 1152,
-      "team_to_par": -14,
+      "team_to_par": -15,
       "overuse_penalty": 0,
       "mc_count": 1,
-      "season_to_par": -170,
-      "season_pts": 7862,
-      "week_strokes": 1138,
+      "season_to_par": -171,
+      "season_pts": 7861,
+      "week_strokes": 1137,
       "prev_pts": 6724,
       "prev_to_par": -156,
       "weekly_rank": 31,
@@ -3112,10 +3112,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Justin Rose",
@@ -3132,10 +3132,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Harris English",
@@ -3190,10 +3190,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Chris Gotterup",
@@ -3267,7 +3267,7 @@
       "prev_pts": 6707,
       "prev_to_par": -173,
       "weekly_rank": 33,
-      "season_rank": 39
+      "season_rank": 40
     },
     {
       "owner": "Kevin F'n Cleary",
@@ -3311,7 +3311,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Scottie Scheffler",
@@ -3331,7 +3331,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -3426,10 +3426,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Max Homa",
@@ -3449,7 +3449,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -14,
@@ -3487,7 +3487,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Scottie Scheffler",
@@ -3507,7 +3507,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -3564,6 +3564,104 @@
       "season_rank": 96
     },
     {
+      "owner": "Patrick Shine",
+      "alias": "",
+      "players": [
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 1,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 2,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 3,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 4,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -13,
+      "team_par": 1152,
+      "team_to_par": -13,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -208,
+      "season_pts": 7824,
+      "week_strokes": 1139,
+      "prev_pts": 6685,
+      "prev_to_par": -195,
+      "weekly_rank": 37,
+      "season_rank": 21
+    },
+    {
       "owner": "Randy Witter",
       "alias": "",
       "players": [
@@ -3585,7 +3683,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Tommy Fleetwood",
@@ -3645,7 +3743,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         }
       ],
       "team_total": -13,
@@ -3658,8 +3756,204 @@
       "week_strokes": 1139,
       "prev_pts": 6796,
       "prev_to_par": -84,
-      "weekly_rank": 37,
+      "weekly_rank": 38,
       "season_rank": 100
+    },
+    {
+      "owner": "Don Gleason",
+      "alias": "",
+      "players": [
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 1,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 2,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 3,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 4,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -13,
+      "team_par": 1152,
+      "team_to_par": -13,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -245,
+      "season_pts": 7787,
+      "week_strokes": 1139,
+      "prev_pts": 6648,
+      "prev_to_par": -232,
+      "weekly_rank": 39,
+      "season_rank": 2
+    },
+    {
+      "owner": "Gabe Palen",
+      "alias": "",
+      "players": [
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 1,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 2,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Jacob Bridgeman",
+          "dg_name": "Bridgeman, Jacob",
+          "slot": 3,
+          "r1": 71,
+          "r2": 74,
+          "r3": 69,
+          "r4": 76,
+          "penalty": 0,
+          "total": 290,
+          "status": "active",
+          "replacement": null,
+          "position": "T41",
+          "fin_text": "",
+          "today": 4,
+          "thru": 18,
+          "current_score": 2,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Cameron Young",
+          "dg_name": "Young, Cameron",
+          "slot": 4,
+          "r1": 73,
+          "r2": 67,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "T2",
+          "fin_text": "",
+          "today": 1,
+          "thru": 12,
+          "current_score": -10,
+          "make_cut": 1.0,
+          "top_10": 0.99092
+        }
+      ],
+      "team_total": -13,
+      "team_par": 1152,
+      "team_to_par": -13,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -207,
+      "season_pts": 7825,
+      "week_strokes": 1139,
+      "prev_pts": 6686,
+      "prev_to_par": -194,
+      "weekly_rank": 40,
+      "season_rank": 23
     },
     {
       "owner": "Nick Prybella",
@@ -3720,10 +4014,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Cameron Young",
@@ -3740,10 +4034,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         }
       ],
       "team_total": -12,
@@ -3756,17 +4050,37 @@
       "week_strokes": 1140,
       "prev_pts": 6717,
       "prev_to_par": -163,
-      "weekly_rank": 38,
+      "weekly_rank": 41,
       "season_rank": 48
     },
     {
-      "owner": "Patrick Shine",
+      "owner": "Bill Wood",
       "alias": "",
       "players": [
         {
+          "name": "Xander Schauffele",
+          "dg_name": "Schauffele, Xander",
+          "slot": 1,
+          "r1": 70,
+          "r2": 72,
+          "r3": 70,
+          "r4": 68,
+          "penalty": 0,
+          "total": 280,
+          "status": "active",
+          "replacement": null,
+          "position": "T8",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": -8,
+          "make_cut": 1.0,
+          "top_10": 1.0
+        },
+        {
           "name": "Rory McIlroy",
           "dg_name": "McIlroy, Rory",
-          "slot": 1,
+          "slot": 2,
           "r1": 67,
           "r2": 65,
           "r3": 73,
@@ -3777,56 +4091,16 @@
           "replacement": null,
           "position": "1",
           "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 2,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 3,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
+          "top_10": 0.99892
         },
         {
           "name": "Bryson DeChambeau",
           "dg_name": "DeChambeau, Bryson",
-          "slot": 4,
+          "slot": 3,
           "r1": 76,
           "r2": 74,
           "r3": 69,
@@ -3842,6 +4116,26 @@
           "current_score": 6,
           "make_cut": 0.0,
           "top_10": 0.0
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 4,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
         }
       ],
       "team_total": -12,
@@ -3849,13 +4143,13 @@
       "team_to_par": -12,
       "overuse_penalty": 0,
       "mc_count": 1,
-      "season_to_par": -207,
-      "season_pts": 7825,
+      "season_to_par": -242,
+      "season_pts": 7790,
       "week_strokes": 1140,
-      "prev_pts": 6685,
-      "prev_to_par": -195,
-      "weekly_rank": 39,
-      "season_rank": 22
+      "prev_pts": 6650,
+      "prev_to_par": -230,
+      "weekly_rank": 42,
+      "season_rank": 4
     },
     {
       "owner": "Brian Belcer",
@@ -3879,7 +4173,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Tommy Fleetwood",
@@ -3919,7 +4213,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Jon Rahm",
@@ -3952,8 +4246,8 @@
       "week_strokes": 1140,
       "prev_pts": 6710,
       "prev_to_par": -170,
-      "weekly_rank": 40,
-      "season_rank": 43
+      "weekly_rank": 43,
+      "season_rank": 44
     },
     {
       "owner": "Jaime Witter",
@@ -3997,7 +4291,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Jordan Spieth",
@@ -4050,8 +4344,8 @@
       "week_strokes": 1140,
       "prev_pts": 6685,
       "prev_to_par": -195,
-      "weekly_rank": 41,
-      "season_rank": 23
+      "weekly_rank": 44,
+      "season_rank": 24
     },
     {
       "owner": "Tom Stadler",
@@ -4092,10 +4386,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Matt Fitzpatrick",
@@ -4135,7 +4429,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         }
       ],
       "team_total": -12,
@@ -4148,302 +4442,8 @@
       "week_strokes": 1140,
       "prev_pts": 6679,
       "prev_to_par": -201,
-      "weekly_rank": 42,
-      "season_rank": 15
-    },
-    {
-      "owner": "Don Gleason",
-      "alias": "",
-      "players": [
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 1,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 2,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 3,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 4,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -12,
-      "team_par": 1152,
-      "team_to_par": -12,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -244,
-      "season_pts": 7788,
-      "week_strokes": 1140,
-      "prev_pts": 6648,
-      "prev_to_par": -232,
-      "weekly_rank": 43,
-      "season_rank": 2
-    },
-    {
-      "owner": "Gabe Palen",
-      "alias": "",
-      "players": [
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 1,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 2,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Jacob Bridgeman",
-          "dg_name": "Bridgeman, Jacob",
-          "slot": 3,
-          "r1": 71,
-          "r2": 74,
-          "r3": 69,
-          "r4": 76,
-          "penalty": 0,
-          "total": 290,
-          "status": "active",
-          "replacement": null,
-          "position": "T41",
-          "fin_text": "",
-          "today": 4,
-          "thru": 18,
-          "current_score": 2,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Cameron Young",
-          "dg_name": "Young, Cameron",
-          "slot": 4,
-          "r1": 73,
-          "r2": 67,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "T2",
-          "fin_text": "",
-          "today": 1,
-          "thru": 11,
-          "current_score": -10,
-          "make_cut": 1.0,
-          "top_10": 0.97932
-        }
-      ],
-      "team_total": -12,
-      "team_par": 1152,
-      "team_to_par": -12,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -206,
-      "season_pts": 7826,
-      "week_strokes": 1140,
-      "prev_pts": 6686,
-      "prev_to_par": -194,
-      "weekly_rank": 44,
-      "season_rank": 24
-    },
-    {
-      "owner": "Bill Wood",
-      "alias": "",
-      "players": [
-        {
-          "name": "Xander Schauffele",
-          "dg_name": "Schauffele, Xander",
-          "slot": 1,
-          "r1": 70,
-          "r2": 72,
-          "r3": 70,
-          "r4": 68,
-          "penalty": 0,
-          "total": 280,
-          "status": "active",
-          "replacement": null,
-          "position": "T8",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": -8,
-          "make_cut": 1.0,
-          "top_10": 0.99996
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 2,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 3,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 4,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -11,
-      "team_par": 1152,
-      "team_to_par": -11,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -241,
-      "season_pts": 7791,
-      "week_strokes": 1141,
-      "prev_pts": 6650,
-      "prev_to_par": -230,
       "weekly_rank": 45,
-      "season_rank": 4
+      "season_rank": 15
     },
     {
       "owner": "Dino",
@@ -4467,7 +4467,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -4541,7 +4541,7 @@
       "prev_pts": 6683,
       "prev_to_par": -197,
       "weekly_rank": 46,
-      "season_rank": 21
+      "season_rank": 22
     },
     {
       "owner": "Big Mac",
@@ -4582,10 +4582,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Chris Gotterup",
@@ -4622,10 +4622,10 @@
           "position": "T13",
           "fin_text": "",
           "today": 3,
-          "thru": 12,
+          "thru": 13,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.20316
+          "top_10": 0.12728
         }
       ],
       "team_total": -11,
@@ -4683,7 +4683,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Bryson DeChambeau",
@@ -4720,10 +4720,10 @@
           "position": "T6",
           "fin_text": "",
           "today": -4,
-          "thru": 16,
+          "thru": 17,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.96836
+          "top_10": 0.9996
         }
       ],
       "team_total": -11,
@@ -4737,7 +4737,7 @@
       "prev_pts": 6765,
       "prev_to_par": -115,
       "weekly_rank": 48,
-      "season_rank": 88
+      "season_rank": 89
     },
     {
       "owner": "Jason Goss",
@@ -4798,10 +4798,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Collin Morikawa",
@@ -4818,10 +4818,10 @@
           "position": "T6",
           "fin_text": "",
           "today": -4,
-          "thru": 16,
+          "thru": 17,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.96836
+          "top_10": 0.9996
         }
       ],
       "team_total": -11,
@@ -4879,7 +4879,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Brooks Koepka",
@@ -4954,10 +4954,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Jon Rahm",
@@ -5017,7 +5017,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -10,
@@ -5095,7 +5095,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Xander Schauffele",
@@ -5115,7 +5115,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -10,
@@ -5153,7 +5153,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Ludvig Aberg",
@@ -5193,7 +5193,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -5268,10 +5268,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Matt Fitzpatrick",
@@ -5349,7 +5349,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Justin Rose",
@@ -5366,10 +5366,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Bryson DeChambeau",
@@ -5423,7 +5423,7 @@
       "prev_pts": 6732,
       "prev_to_par": -148,
       "weekly_rank": 55,
-      "season_rank": 65
+      "season_rank": 67
     },
     {
       "owner": "Dennis Loftus",
@@ -5444,10 +5444,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Jon Rahm",
@@ -5487,7 +5487,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Bryson DeChambeau",
@@ -5521,7 +5521,7 @@
       "prev_pts": 6708,
       "prev_to_par": -172,
       "weekly_rank": 56,
-      "season_rank": 44
+      "season_rank": 45
     },
     {
       "owner": "Vince Montaldi",
@@ -5565,7 +5565,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Justin Rose",
@@ -5582,10 +5582,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Bryson DeChambeau",
@@ -5640,10 +5640,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         },
         {
           "name": "Bryson DeChambeau",
@@ -5703,7 +5703,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -9,
@@ -5758,10 +5758,10 @@
           "position": "T13",
           "fin_text": "",
           "today": 3,
-          "thru": 12,
+          "thru": 13,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.20316
+          "top_10": 0.12728
         },
         {
           "name": "J.J. Spaun",
@@ -5798,10 +5798,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         }
       ],
       "team_total": -9,
@@ -5839,7 +5839,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Scottie Scheffler",
@@ -5859,7 +5859,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -5957,7 +5957,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -5997,7 +5997,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -9,
@@ -6055,7 +6055,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Hideki Matsuyama",
@@ -6112,6 +6112,104 @@
       "season_rank": 99
     },
     {
+      "owner": "Quentin Bubb",
+      "alias": "",
+      "players": [
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 1,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 2,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Patrick Reed",
+          "dg_name": "Reed, Patrick",
+          "slot": 3,
+          "r1": 69,
+          "r2": 69,
+          "r3": 72,
+          "r4": null,
+          "penalty": 0,
+          "total": 210,
+          "status": "active",
+          "replacement": null,
+          "position": "T13",
+          "fin_text": "",
+          "today": 1,
+          "thru": 16,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.00788
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 4,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        }
+      ],
+      "team_total": -9,
+      "team_par": 1152,
+      "team_to_par": -9,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -199,
+      "season_pts": 7833,
+      "week_strokes": 1143,
+      "prev_pts": 6690,
+      "prev_to_par": -190,
+      "weekly_rank": 63,
+      "season_rank": 29
+    },
+    {
       "owner": "Chuck Allen",
       "alias": "",
       "players": [
@@ -6133,7 +6231,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Bryson DeChambeau",
@@ -6173,7 +6271,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -6206,7 +6304,7 @@
       "week_strokes": 1143,
       "prev_pts": 6679,
       "prev_to_par": -201,
-      "weekly_rank": 63,
+      "weekly_rank": 64,
       "season_rank": 18
     },
     {
@@ -6231,7 +6329,7 @@
           "thru": 12,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01188
+          "top_10": 0.01084
         },
         {
           "name": "Bryson DeChambeau",
@@ -6291,7 +6389,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -8,
@@ -6304,7 +6402,7 @@
       "week_strokes": 1144,
       "prev_pts": 6724,
       "prev_to_par": -156,
-      "weekly_rank": 64,
+      "weekly_rank": 65,
       "season_rank": 61
     },
     {
@@ -6369,7 +6467,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Hideki Matsuyama",
@@ -6402,7 +6500,7 @@
       "week_strokes": 1144,
       "prev_pts": 6761,
       "prev_to_par": -119,
-      "weekly_rank": 65,
+      "weekly_rank": 66,
       "season_rank": 86
     },
     {
@@ -6427,7 +6525,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Robert MacIntyre",
@@ -6467,7 +6565,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Matt Fitzpatrick",
@@ -6500,106 +6598,8 @@
       "week_strokes": 1144,
       "prev_pts": 6721,
       "prev_to_par": -159,
-      "weekly_rank": 66,
-      "season_rank": 60
-    },
-    {
-      "owner": "Quentin Bubb",
-      "alias": "",
-      "players": [
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 1,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 2,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Patrick Reed",
-          "dg_name": "Reed, Patrick",
-          "slot": 3,
-          "r1": 69,
-          "r2": 69,
-          "r3": 72,
-          "r4": null,
-          "penalty": 0,
-          "total": 210,
-          "status": "active",
-          "replacement": null,
-          "position": "T13",
-          "fin_text": "",
-          "today": 1,
-          "thru": 16,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.0116
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 4,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        }
-      ],
-      "team_total": -8,
-      "team_par": 1152,
-      "team_to_par": -8,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -198,
-      "season_pts": 7834,
-      "week_strokes": 1144,
-      "prev_pts": 6690,
-      "prev_to_par": -190,
       "weekly_rank": 67,
-      "season_rank": 29
+      "season_rank": 60
     },
     {
       "owner": "Nick Rizzo",
@@ -6741,7 +6741,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Justin Rose",
@@ -6758,10 +6758,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Bryson DeChambeau",
@@ -6856,10 +6856,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Matt Fitzpatrick",
@@ -6957,7 +6957,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Hideki Matsuyama",
@@ -7015,7 +7015,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Jon Rahm",
@@ -7055,7 +7055,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Corey Conners",
@@ -7153,7 +7153,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Matt Fitzpatrick",
@@ -7211,7 +7211,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Jon Rahm",
@@ -7251,7 +7251,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Bryson DeChambeau",
@@ -7326,10 +7326,10 @@
           "position": "T2",
           "fin_text": "",
           "today": -2,
-          "thru": 12,
+          "thru": 13,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.98788
+          "top_10": 0.98908
         },
         {
           "name": "Jon Rahm",
@@ -7407,7 +7407,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -7525,7 +7525,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Matt Fitzpatrick",
@@ -7603,7 +7603,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Matt Fitzpatrick",
@@ -7680,6 +7680,104 @@
       "season_rank": 12
     },
     {
+      "owner": "Dan Basciano",
+      "alias": "",
+      "players": [
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 1,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Scottie Scheffler",
+          "dg_name": "Scheffler, Scottie",
+          "slot": 2,
+          "r1": 70,
+          "r2": 74,
+          "r3": 65,
+          "r4": null,
+          "penalty": 0,
+          "total": 209,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -2,
+          "thru": 13,
+          "current_score": -9,
+          "make_cut": 1.0,
+          "top_10": 0.97796
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 3,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Robert MacIntyre",
+          "dg_name": "MacIntyre, Robert",
+          "slot": 4,
+          "r1": 80,
+          "r2": 71,
+          "r3": 67,
+          "r4": 73,
+          "penalty": 7,
+          "total": 298,
+          "status": "mc",
+          "replacement": "Harman, Brian",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 7,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -4,
+      "team_par": 1152,
+      "team_to_par": -4,
+      "overuse_penalty": 0,
+      "mc_count": 2,
+      "season_to_par": -172,
+      "season_pts": 7860,
+      "week_strokes": 1148,
+      "prev_pts": 6712,
+      "prev_to_par": -168,
+      "weekly_rank": 79,
+      "season_rank": 53
+    },
+    {
       "owner": "Jack Morgan",
       "alias": "",
       "players": [
@@ -7721,7 +7819,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -7774,8 +7872,8 @@
       "week_strokes": 1148,
       "prev_pts": 6710,
       "prev_to_par": -170,
-      "weekly_rank": 79,
-      "season_rank": 49
+      "weekly_rank": 80,
+      "season_rank": 50
     },
     {
       "owner": "Bob Franz",
@@ -7799,7 +7897,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Ludvig Aberg",
@@ -7872,8 +7970,204 @@
       "week_strokes": 1148,
       "prev_pts": 6688,
       "prev_to_par": -192,
-      "weekly_rank": 80,
+      "weekly_rank": 81,
       "season_rank": 30
+    },
+    {
+      "owner": "Jim Templeton",
+      "alias": "",
+      "players": [
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 1,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Tommy Fleetwood",
+          "dg_name": "Fleetwood, Tommy",
+          "slot": 2,
+          "r1": 71,
+          "r2": 68,
+          "r3": 73,
+          "r4": 76,
+          "penalty": 0,
+          "total": 288,
+          "status": "active",
+          "replacement": null,
+          "position": "T33",
+          "fin_text": "",
+          "today": 4,
+          "thru": 18,
+          "current_score": 0,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 3,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 4,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -4,
+      "team_par": 1152,
+      "team_to_par": -4,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -188,
+      "season_pts": 7844,
+      "week_strokes": 1148,
+      "prev_pts": 6696,
+      "prev_to_par": -184,
+      "weekly_rank": 82,
+      "season_rank": 38
+    },
+    {
+      "owner": "John Papa Smurf",
+      "alias": "",
+      "players": [
+        {
+          "name": "Bryson DeChambeau",
+          "dg_name": "DeChambeau, Bryson",
+          "slot": 1,
+          "r1": 76,
+          "r2": 74,
+          "r3": 69,
+          "r4": 70,
+          "penalty": 6,
+          "total": 295,
+          "status": "mc",
+          "replacement": "Noren, Alex",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 6,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Tommy Fleetwood",
+          "dg_name": "Fleetwood, Tommy",
+          "slot": 2,
+          "r1": 71,
+          "r2": 68,
+          "r3": 73,
+          "r4": 76,
+          "penalty": 0,
+          "total": 288,
+          "status": "active",
+          "replacement": null,
+          "position": "T33",
+          "fin_text": "",
+          "today": 4,
+          "thru": 18,
+          "current_score": 0,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Rory McIlroy",
+          "dg_name": "McIlroy, Rory",
+          "slot": 3,
+          "r1": 67,
+          "r2": 65,
+          "r3": 73,
+          "r4": null,
+          "penalty": 0,
+          "total": 205,
+          "status": "active",
+          "replacement": null,
+          "position": "1",
+          "fin_text": "",
+          "today": -1,
+          "thru": 12,
+          "current_score": -12,
+          "make_cut": 1.0,
+          "top_10": 0.99892
+        },
+        {
+          "name": "Jon Rahm",
+          "dg_name": "Rahm, Jon",
+          "slot": 4,
+          "r1": 78,
+          "r2": 70,
+          "r3": 73,
+          "r4": 68,
+          "penalty": 0,
+          "total": 289,
+          "status": "active",
+          "replacement": null,
+          "position": "T38",
+          "fin_text": "",
+          "today": -4,
+          "thru": 18,
+          "current_score": 1,
+          "make_cut": 1.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -4,
+      "team_par": 1152,
+      "team_to_par": -4,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -127,
+      "season_pts": 7905,
+      "week_strokes": 1148,
+      "prev_pts": 6757,
+      "prev_to_par": -123,
+      "weekly_rank": 83,
+      "season_rank": 87
     },
     {
       "owner": "Fran Snyder",
@@ -7917,7 +8211,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Jon Rahm",
@@ -7970,106 +8264,8 @@
       "week_strokes": 1148,
       "prev_pts": 6757,
       "prev_to_par": -123,
-      "weekly_rank": 81,
-      "season_rank": 87
-    },
-    {
-      "owner": "Dan Basciano",
-      "alias": "",
-      "players": [
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 1,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Scottie Scheffler",
-          "dg_name": "Scheffler, Scottie",
-          "slot": 2,
-          "r1": 70,
-          "r2": 74,
-          "r3": 65,
-          "r4": null,
-          "penalty": 0,
-          "total": 209,
-          "status": "active",
-          "replacement": null,
-          "position": "T6",
-          "fin_text": "",
-          "today": -2,
-          "thru": 13,
-          "current_score": -9,
-          "make_cut": 1.0,
-          "top_10": 0.9748
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 3,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Robert MacIntyre",
-          "dg_name": "MacIntyre, Robert",
-          "slot": 4,
-          "r1": 80,
-          "r2": 71,
-          "r3": 67,
-          "r4": 73,
-          "penalty": 7,
-          "total": 298,
-          "status": "mc",
-          "replacement": "Harman, Brian",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 7,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -3,
-      "team_par": 1152,
-      "team_to_par": -3,
-      "overuse_penalty": 0,
-      "mc_count": 2,
-      "season_to_par": -171,
-      "season_pts": 7861,
-      "week_strokes": 1149,
-      "prev_pts": 6712,
-      "prev_to_par": -168,
-      "weekly_rank": 82,
-      "season_rank": 54
+      "weekly_rank": 84,
+      "season_rank": 88
     },
     {
       "owner": "Joe Kapa",
@@ -8153,7 +8349,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         }
       ],
       "team_total": -3,
@@ -8166,204 +8362,8 @@
       "week_strokes": 1149,
       "prev_pts": 6713,
       "prev_to_par": -167,
-      "weekly_rank": 83,
-      "season_rank": 57
-    },
-    {
-      "owner": "Jim Templeton",
-      "alias": "",
-      "players": [
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 1,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Tommy Fleetwood",
-          "dg_name": "Fleetwood, Tommy",
-          "slot": 2,
-          "r1": 71,
-          "r2": 68,
-          "r3": 73,
-          "r4": 76,
-          "penalty": 0,
-          "total": 288,
-          "status": "active",
-          "replacement": null,
-          "position": "T33",
-          "fin_text": "",
-          "today": 4,
-          "thru": 18,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 3,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 4,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -3,
-      "team_par": 1152,
-      "team_to_par": -3,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -187,
-      "season_pts": 7845,
-      "week_strokes": 1149,
-      "prev_pts": 6696,
-      "prev_to_par": -184,
-      "weekly_rank": 84,
-      "season_rank": 40
-    },
-    {
-      "owner": "John Papa Smurf",
-      "alias": "",
-      "players": [
-        {
-          "name": "Bryson DeChambeau",
-          "dg_name": "DeChambeau, Bryson",
-          "slot": 1,
-          "r1": 76,
-          "r2": 74,
-          "r3": 69,
-          "r4": 70,
-          "penalty": 6,
-          "total": 295,
-          "status": "mc",
-          "replacement": "Noren, Alex",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 6,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Tommy Fleetwood",
-          "dg_name": "Fleetwood, Tommy",
-          "slot": 2,
-          "r1": 71,
-          "r2": 68,
-          "r3": 73,
-          "r4": 76,
-          "penalty": 0,
-          "total": 288,
-          "status": "active",
-          "replacement": null,
-          "position": "T33",
-          "fin_text": "",
-          "today": 4,
-          "thru": 18,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Rory McIlroy",
-          "dg_name": "McIlroy, Rory",
-          "slot": 3,
-          "r1": 67,
-          "r2": 65,
-          "r3": 73,
-          "r4": null,
-          "penalty": 0,
-          "total": 205,
-          "status": "active",
-          "replacement": null,
-          "position": "1",
-          "fin_text": "",
-          "today": 0,
-          "thru": 11,
-          "current_score": -11,
-          "make_cut": 1.0,
-          "top_10": 0.99312
-        },
-        {
-          "name": "Jon Rahm",
-          "dg_name": "Rahm, Jon",
-          "slot": 4,
-          "r1": 78,
-          "r2": 70,
-          "r3": 73,
-          "r4": 68,
-          "penalty": 0,
-          "total": 289,
-          "status": "active",
-          "replacement": null,
-          "position": "T38",
-          "fin_text": "",
-          "today": -4,
-          "thru": 18,
-          "current_score": 1,
-          "make_cut": 1.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -3,
-      "team_par": 1152,
-      "team_to_par": -3,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -126,
-      "season_pts": 7906,
-      "week_strokes": 1149,
-      "prev_pts": 6757,
-      "prev_to_par": -123,
       "weekly_rank": 85,
-      "season_rank": 89
+      "season_rank": 57
     },
     {
       "owner": "Kelly Murray",
@@ -8444,10 +8444,10 @@
           "position": "T2",
           "fin_text": "",
           "today": 1,
-          "thru": 11,
+          "thru": 12,
           "current_score": -10,
           "make_cut": 1.0,
-          "top_10": 0.97932
+          "top_10": 0.99092
         }
       ],
       "team_total": -2,
@@ -8502,10 +8502,10 @@
           "position": "T6",
           "fin_text": "",
           "today": -4,
-          "thru": 16,
+          "thru": 17,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.96836
+          "top_10": 0.9996
         },
         {
           "name": "Robert MacIntyre",
@@ -8721,7 +8721,7 @@
           "thru": 18,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.99996
+          "top_10": 1.0
         },
         {
           "name": "Tommy Fleetwood",
@@ -8819,7 +8819,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Ludvig Aberg",
@@ -9113,7 +9113,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Robert MacIntyre",
@@ -9245,7 +9245,7 @@
       "prev_pts": 6717,
       "prev_to_par": -163,
       "weekly_rank": 94,
-      "season_rank": 66
+      "season_rank": 68
     },
     {
       "owner": "Dr. J & Mr. T",
@@ -9289,7 +9289,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -9407,7 +9407,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Corey Conners",
@@ -9505,7 +9505,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Tommy Fleetwood",
@@ -9603,7 +9603,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Robert MacIntyre",
@@ -9681,7 +9681,7 @@
           "thru": 16,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0116
+          "top_10": 0.00788
         },
         {
           "name": "Ludvig Aberg",
@@ -9759,7 +9759,7 @@
           "thru": 13,
           "current_score": -9,
           "make_cut": 1.0,
-          "top_10": 0.9748
+          "top_10": 0.97796
         },
         {
           "name": "Bryson DeChambeau",
@@ -9841,9 +9841,9 @@
     {
       "name": "McIlroy, Rory",
       "position": "1",
-      "thru": 11,
-      "today": 0,
-      "current_score": -11,
+      "thru": 12,
+      "today": -1,
+      "current_score": -12,
       "total": 205,
       "r1": 67,
       "r2": 65,
@@ -9852,7 +9852,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.99312
+      "top_10": 0.99892
     },
     {
       "name": "Hatton, Tyrrell",
@@ -9873,7 +9873,7 @@
     {
       "name": "Henley, Russell",
       "position": "T2",
-      "thru": 14,
+      "thru": 16,
       "today": -4,
       "current_score": -10,
       "total": 210,
@@ -9884,12 +9884,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.99216
+      "top_10": 0.99684
     },
     {
       "name": "Rose, Justin",
       "position": "T2",
-      "thru": 12,
+      "thru": 13,
       "today": -2,
       "current_score": -10,
       "total": 208,
@@ -9900,12 +9900,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.98788
+      "top_10": 0.98908
     },
     {
       "name": "Young, Cameron",
       "position": "T2",
-      "thru": 11,
+      "thru": 12,
       "today": 1,
       "current_score": -10,
       "total": 205,
@@ -9916,12 +9916,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.97932
+      "top_10": 0.99092
     },
     {
       "name": "Morikawa, Collin",
       "position": "T6",
-      "thru": 16,
+      "thru": 17,
       "today": -4,
       "current_score": -9,
       "total": 211,
@@ -9932,7 +9932,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.96836
+      "top_10": 0.9996
     },
     {
       "name": "Scheffler, Scottie",
@@ -9948,7 +9948,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.9748
+      "top_10": 0.97796
     },
     {
       "name": "Homa, Max",
@@ -9964,7 +9964,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.99996
+      "top_10": 1.0
     },
     {
       "name": "Schauffele, Xander",
@@ -9980,23 +9980,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.99996
+      "top_10": 1.0
     },
     {
       "name": "Knapp, Jake",
       "position": "T10",
-      "thru": 17,
+      "thru": 18,
       "today": -2,
       "current_score": -7,
-      "total": 211,
+      "total": 281,
       "r1": 73,
       "r2": 69,
       "r3": 69,
-      "r4": null,
+      "r4": 70,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.56228
+      "top_10": 0.52952
     },
     {
       "name": "Burns, Sam",
@@ -10012,12 +10012,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.7226
+      "top_10": 0.74412
     },
     {
       "name": "Cantlay, Patrick",
       "position": "12",
-      "thru": 15,
+      "thru": 16,
       "today": 0,
       "current_score": -6,
       "total": 210,
@@ -10028,7 +10028,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.19
+      "top_10": 0.0966
     },
     {
       "name": "Koepka, Brooks",
@@ -10092,12 +10092,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0116
+      "top_10": 0.00788
     },
     {
       "name": "Day, Jason",
       "position": "T13",
-      "thru": 12,
+      "thru": 13,
       "today": 3,
       "current_score": -5,
       "total": 208,
@@ -10108,7 +10108,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.20316
+      "top_10": 0.12728
     },
     {
       "name": "Fitzpatrick, Matt",
@@ -10220,7 +10220,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.01188
+      "top_10": 0.01084
     },
     {
       "name": "Brennan, Michael",
@@ -10367,6 +10367,22 @@
       "top_10": 0.0
     },
     {
+      "name": "Griffin, Ben",
+      "position": "T33",
+      "thru": 18,
+      "today": 5,
+      "current_score": 0,
+      "total": 288,
+      "r1": 72,
+      "r2": 69,
+      "r3": 70,
+      "r4": 77,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.0
+    },
+    {
       "name": "Harman, Brian",
       "position": "T33",
       "thru": 18,
@@ -10409,22 +10425,6 @@
       "r2": 75,
       "r3": 76,
       "r4": 66,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.0
-    },
-    {
-      "name": "Griffin, Ben",
-      "position": "T33",
-      "thru": 17,
-      "today": 5,
-      "current_score": 0,
-      "total": 211,
-      "r1": 72,
-      "r2": 69,
-      "r3": 70,
-      "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
