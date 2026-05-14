@@ -586,6 +586,161 @@ const clubCSS = `
   color: var(--ink-faint);
   text-transform: uppercase;
 }
+
+/* Bottom Sheet */
+.dir-club .sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+.dir-club .sheet-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dir-club .sheet {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--paper);
+  border-radius: 16px 16px 0 0;
+  z-index: 101;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  max-height: 70vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.dir-club .sheet.open {
+  transform: translateY(0);
+}
+.dir-club .sheet-handle {
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.dir-club .sheet-handle::before {
+  content: '';
+  width: 36px;
+  height: 4px;
+  background: var(--paper-line);
+  border-radius: 2px;
+}
+.dir-club .sheet-header {
+  padding: 0 20px 14px;
+  border-bottom: 1px solid var(--paper-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.dir-club .sheet-header .sh-left {}
+.dir-club .sheet-header .sh-name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ink);
+}
+.dir-club .sheet-header .sh-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+.dir-club .sheet-header .sh-score {
+  text-align: right;
+}
+.dir-club .sheet-header .sh-score .big {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+.dir-club .sheet-header .sh-score .big.under { color: var(--green-good); }
+.dir-club .sheet-header .sh-score .big.over { color: var(--brick); }
+.dir-club .sheet-header .sh-score .big.even { color: var(--ink-soft); }
+.dir-club .sheet-header .sh-score .rank {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-faint);
+}
+.dir-club .sheet-body {
+  padding: 14px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+.dir-club .sheet-player {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--paper-line);
+}
+.dir-club .sheet-player:last-child { border-bottom: none; }
+.dir-club .sheet-player .sp-pos {
+  width: 40px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+.dir-club .sheet-player .sp-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.dir-club .sheet-player .sp-name .status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--brick);
+  margin-left: 6px;
+}
+.dir-club .sheet-player .sp-thru {
+  width: 36px;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-faint);
+}
+.dir-club .sheet-player .sp-score {
+  width: 44px;
+  text-align: right;
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.dir-club .sheet-player .sp-score.under { color: var(--green-good); }
+.dir-club .sheet-player .sp-score.over { color: var(--brick); }
+.dir-club .sheet-footer {
+  padding: 12px 20px 24px;
+  border-top: 1px solid var(--paper-line);
+  display: flex;
+  gap: 10px;
+}
+.dir-club .sheet-btn {
+  flex: 1;
+  padding: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid var(--paper-line);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.dir-club .sheet-btn:hover { border-color: var(--ink-soft); }
+.dir-club .sheet-btn.primary {
+  background: var(--forest-deep);
+  color: var(--paper);
+  border-color: var(--forest-deep);
+}
+.dir-club .sheet-btn.primary:hover { background: var(--forest); }
 `;
 
 // ═══════════════════════════════════════════════════════════════
@@ -1179,12 +1334,88 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// BOTTOM SHEET - Quick team preview
+// ═══════════════════════════════════════════════════════════════
+function BottomSheet({ data, team, onClose, onViewFull }) {
+  const D = data;
+  const [fav, setFav] = useFavoriteTeam();
+  const isFav = team && fav === team.owner;
+  
+  // Close on escape key
+  React.useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [onClose]);
+  
+  if (!team) return null;
+  
+  const players = team.players || [];
+  const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
+  
+  return (
+    <>
+      <div className={`sheet-overlay ${team ? 'open' : ''}`} onClick={onClose} />
+      <div className={`sheet ${team ? 'open' : ''}`}>
+        <div className="sheet-handle" onClick={onClose} />
+        <div className="sheet-header">
+          <div className="sh-left">
+            <div className="sh-name">{team.owner}</div>
+            <div className="sh-sub">
+              #{team.rank} of 100 · {team.mc > 0 ? `${team.mc} MC · ` : ''}Season #{team.seasonRank}
+            </div>
+          </div>
+          <div className="sh-score">
+            <div className={`big ${cls}`}>{D.fmt(team.toPar)}</div>
+            <div className="rank">Week {D.event?.week || 9}</div>
+          </div>
+        </div>
+        <div className="sheet-body">
+          {players.map(p => {
+            const toPar = p.current_score ?? 0;
+            const scoreCls = toPar < 0 ? 'under' : toPar > 0 ? 'over' : '';
+            const thru = p.thru === 18 || p.thru === 'F' ? 'F' : p.thru || '-';
+            const isMC = p.status === 'mc';
+            const isWD = p.status === 'wd';
+            
+            return (
+              <div key={p.name} className="sheet-player">
+                <div className="sp-pos">{p.position || p.fin_text || '-'}</div>
+                <div className="sp-name">
+                  {p.name}
+                  {isMC && <span className="status">MC{p.penalty > 0 ? ` +${p.penalty}` : ''}</span>}
+                  {isWD && <span className="status">WD</span>}
+                </div>
+                <div className="sp-thru">{isMC || isWD ? '-' : thru}</div>
+                <div className={`sp-score ${scoreCls}`}>{D.fmt(toPar)}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="sheet-footer">
+          <div 
+            className="sheet-btn"
+            onClick={() => setFav(isFav ? null : team.owner)}
+          >
+            {isFav ? '★ Your Team' : '☆ Favorite'}
+          </div>
+          <div className="sheet-btn primary" onClick={onViewFull}>
+            View Full Details →
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
 // MAIN APP
 // ═══════════════════════════════════════════════════════════════
 function App() {
   const [theme, toggleTheme] = useTheme();
   const [view, setView] = React.useState('live'); // 'live' | 'weekly' | 'season' | 'team'
   const [selectedTeam, setSelectedTeam] = React.useState(null);
+  const [sheetTeam, setSheetTeam] = React.useState(null); // For bottom sheet preview
   const [rawData, setRawData] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -1218,13 +1449,21 @@ function App() {
   // Build LP_DATA from raw leaderboard
   const data = React.useMemo(() => buildLPData(rawData), [rawData]);
   
-  // Handle team selection
+  // Handle team selection - now opens bottom sheet instead of full page
   const handleSelectTeam = (team, newView) => {
     if (newView) {
       setView(newView);
-      setSelectedTeam(null);
+      setSheetTeam(null);
     } else if (team) {
-      setSelectedTeam(team);
+      setSheetTeam(team); // Open bottom sheet
+    }
+  };
+  
+  // Go to full team detail from sheet
+  const handleViewFull = () => {
+    if (sheetTeam) {
+      setSelectedTeam(sheetTeam);
+      setSheetTeam(null);
       setView('team');
     }
   };
@@ -1232,6 +1471,10 @@ function App() {
   const handleBack = () => {
     setView('weekly');
     setSelectedTeam(null);
+  };
+  
+  const handleCloseSheet = () => {
+    setSheetTeam(null);
   };
   
   if (loading) {
@@ -1283,6 +1526,13 @@ function App() {
             <ClubhouseTeam data={data} theme={theme} team={selectedTeam} onBack={handleBack} />
           )}
         </div>
+        
+        <BottomSheet 
+          data={data} 
+          team={sheetTeam} 
+          onClose={handleCloseSheet}
+          onViewFull={handleViewFull}
+        />
       </div>
     </>
   );
