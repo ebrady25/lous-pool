@@ -685,6 +685,10 @@ const clubCSS = `
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   color: var(--ink-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .dir-club .sheet-player .sp-name {
   flex: 1;
@@ -1287,7 +1291,7 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
               <div>
                 <div className="pc-nm">{p.name}</div>
                 <div className="pc-pos">
-                  {p.position || p.fin_text || ''} · {D.event?.course || 'Course'}
+                  {(p.position && p.position !== 'WAITING' ? p.position : p.fin_text || '') || ''}{(p.position && p.position !== 'WAITING') || p.fin_text ? ' · ' : ''}{D.event?.course || 'Course'}
                   {p.status === 'mc' && ' · MC'}
                   {p.penalty > 0 && ` · +${p.penalty}`}
                 </div>
@@ -1384,9 +1388,12 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
             const isMC = p.status === 'mc';
             const isWD = p.status === 'wd';
             
+            const posDisplay = (p.position === 'WAITING' || !p.position) 
+              ? (p.fin_text || '-') 
+              : p.position;
             return (
               <div key={p.name} className="sheet-player">
-                <div className="sp-pos">{p.position || p.fin_text || '-'}</div>
+                <div className="sp-pos">{posDisplay}</div>
                 <div className="sp-name">
                   {p.name}
                   {isMC && <span className="status">MC{p.penalty > 0 ? ` +${p.penalty}` : ''}</span>}
