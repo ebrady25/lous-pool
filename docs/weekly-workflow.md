@@ -95,6 +95,48 @@ COURSE_PAR = {
 ### 5. Verify Your Lineup
 Check that your team is correct in rosters.json.
 
+### 6. ⚠️ Re-enable the cron-job.org backup trigger
+
+**This is the #1 reason the leaderboard goes stale on tournament days.**
+
+GitHub Actions' built-in `schedule:` cron is unreliable — it routinely skips runs or delays them by 10–30+ minutes under platform load. The cron-job.org service pings the `workflow_dispatch` endpoint every 10 minutes on tournament days as a guaranteed backup. It gets disabled during off-weeks to avoid noise, so it must be re-enabled every Thursday morning of a tournament week.
+
+**Check status:**
+```bash
+curl -s -H "Authorization: Bearer $CRON_JOB_KEY" \
+  "https://api.cron-job.org/jobs/7234663" | \
+  python3 -c "import json,sys; d=json.load(sys.stdin); print('Enabled:', d['jobDetails']['enabled'])"
+```
+
+**Enable:**
+```bash
+curl -X PATCH -H "Authorization: Bearer $CRON_JOB_KEY" \
+  -H "Content-Type: application/json" \
+  "https://api.cron-job.org/jobs/7234663" \
+  -d '{"job": {"enabled": true}}'
+```
+
+**Disable (Sunday night after final round):**
+```bash
+curl -X PATCH -H "Authorization: Bearer $CRON_JOB_KEY" \
+  -H "Content-Type: application/json" \
+  "https://api.cron-job.org/jobs/7234663" \
+  -d '{"job": {"enabled": false}}'
+```
+
+Always follow up with a GET to confirm the new state — the PATCH returns `{}` regardless.
+
+## Tournament Morning Pre-Flight Check (Thursday)
+
+Before R1 tees off, verify all four conditions:
+
+- [ ] **rosters.json** has 100 teams with this week's lineups (and full alternate lists for majors)
+- [ ] **score_engine.py** has correct `FORCE_EVENT_NAME` and `FORCE_COURSE_PAR` for the venue (Aronimink = 70, not the 72 default)
+- [ ] **GitHub Actions workflow** is enabled (`https://github.com/ebrady25/lous-pool/actions/workflows/update-leaderboard.yml` → state: active)
+- [ ] **cron-job.org job 7234663** is enabled (see section above)
+
+If the leaderboard ever goes >15 min stale during tournament hours, the cron-job.org state is the first thing to check.
+
 ## During Tournament (Thu-Sun)
 
 The leaderboard auto-updates every 5 minutes. To manually trigger:
@@ -184,9 +226,16 @@ sorted_own = sorted(ownership.items(), key=lambda x: -x[1])
 ## Troubleshooting
 
 ### Leaderboard Not Updating
-1. Check workflow runs: https://github.com/ebrady25/lous-pool/actions
-2. Manually trigger workflow
-3. Check for errors in workflow logs
+1. **Check cron-job.org first** — most common cause is the backup trigger being disabled from the previous off-week:
+   ```bash
+   curl -s -H "Authorization: Bearer $CRON_JOB_KEY" \
+     "https://api.cron-job.org/jobs/7234663" | \
+     python3 -c "import json,sys; d=json.load(sys.stdin); print('Enabled:', d['jobDetails']['enabled'])"
+   ```
+   If `False`, re-enable per the pre-flight section above.
+2. Check workflow runs: https://github.com/ebrady25/lous-pool/actions — look for gaps >10 min between scheduled runs
+3. Manually trigger workflow (POST to `/actions/workflows/update-leaderboard.yml/dispatches`)
+4. Check `leaderboard.json` `updated_at` timestamp against current UTC time
 
 ### Stale Data in Browser
 1. Hard refresh: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
