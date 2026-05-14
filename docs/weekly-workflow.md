@@ -105,7 +105,16 @@ GitHub Actions' built-in `schedule:` cron is unreliable — it routinely skips r
 ```bash
 curl -s -H "Authorization: Bearer $CRON_JOB_KEY" \
   "https://api.cron-job.org/jobs/7234663" | \
-  python3 -c "import json,sys; d=json.load(sys.stdin); print('Enabled:', d['jobDetails']['enabled'])"
+  python3 -c "import json,sys; d=json.load(sys.stdin); j=d['jobDetails']; print('Enabled:', j['enabled']); print('Last status:', j['lastStatus'], '(1=OK, 4=failure)'); print('Auth ends in:', j['extendedData']['headers']['Authorization'][-12:])"
+```
+
+`lastStatus: 4` with HTTP 401 means **the GitHub PAT inside the cron-job config is expired/wrong**. The cron-job's auth header is a separate copy of the PAT — rotating the PAT in memory does NOT update it. After any PAT rotation, update the cron-job header too:
+
+```bash
+curl -X PATCH -H "Authorization: Bearer $CRON_JOB_KEY" \
+  -H "Content-Type: application/json" \
+  "https://api.cron-job.org/jobs/7234663" \
+  -d '{"job":{"extendedData":{"headers":{"Accept":"application/vnd.github.v3+json","Authorization":"token <NEW_PAT>","Content-Type":"application/json"},"body":"{\"ref\":\"main\"}"}}}'
 ```
 
 **Enable:**
@@ -133,7 +142,7 @@ Before R1 tees off, verify all four conditions:
 - [ ] **rosters.json** has 100 teams with this week's lineups (and full alternate lists for majors)
 - [ ] **score_engine.py** has correct `FORCE_EVENT_NAME` and `FORCE_COURSE_PAR` for the venue (Aronimink = 70, not the 72 default)
 - [ ] **GitHub Actions workflow** is enabled (`https://github.com/ebrady25/lous-pool/actions/workflows/update-leaderboard.yml` → state: active)
-- [ ] **cron-job.org job 7234663** is enabled (see section above)
+- [ ] **cron-job.org job 7234663** is enabled AND `lastStatus: 1` (not 4) AND auth header uses the current PAT (see section above)
 
 If the leaderboard ever goes >15 min stale during tournament hours, the cron-job.org state is the first thing to check.
 
