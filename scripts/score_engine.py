@@ -353,6 +353,7 @@ def process_tournament(live_data, inplay_data=None):
                 "WM Phoenix Open": ["Kim, S.H.", "Poston, J.T.", "Morikawa, Collin"],
                 "Genesis Invitational": ["Stevens, Sam", "Hisatsune, Ryo", "Harman, Brian", "Cantlay, Patrick", "MacIntyre, Robert"],
                 "Arnold Palmer Invitational": ["Glover, Lucas", "Pendrith, Taylor"],
+                "PGA Championship": ["Parry, John", "Donald, Luke", "Smylie, Elvis", "Neergaard-Petersen, Rasmus"],
             }
             
             
