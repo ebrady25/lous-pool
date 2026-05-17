@@ -32,11 +32,12 @@ const CONFIG = {
     "Aaron White", "Connor White", "Malcolm White",
     "Great White!", "Joe Jurkiewicz"
   ],
-  // Pulse view: only show these owners on bubble + chart (Ethan + tracked friends)
-  // Note: Connor White (The Blackout) temporarily excluded this week — score outlier (+34 w/ 3 MCs)
+  // Friends tab: show these owners on bubble + chart
+  // Note: Connor White (The Blackout) temporarily excluded — score outlier (+34 w/ 3 MCs)
+  // Will pull him back in when his score normalizes
   PULSE_OWNERS: [
     "Ethan Brady", "Eric Southard", "Great White!",
-    "John Hughes", "Matt White", "Aaron White"
+    "John Hughes", "Matt White", "Aaron White", "Joe Jurkiewicz"
   ],
   // Mini leaderboard at the bottom of Friends tab — full friends list including Connor + Joe
   FRIENDS_LB: [
@@ -50,6 +51,7 @@ const CONFIG = {
     "John Hughes": "Filmmaker",
     "Matt White": "Papa",
     "Aaron White": "Aaron",
+    "Joe Jurkiewicz": "Joe J",
   },
 };
 
@@ -1944,6 +1946,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     "John Hughes": "#a07814",
     "Matt White": "#5a4282",
     "Aaron White": "#7d5a3a",
+    "Joe Jurkiewicz": "#2f7d7a",   // teal
   };
   
   return (
@@ -2004,6 +2007,50 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
             </div>
           );
         })}
+      </div>
+      
+      {/* ── FRIENDS MINI LEADERBOARD (between stage and chart) ── */}
+      <div className="section-title" style={{marginTop: 4}}>
+        <h2>Friends · Standings</h2>
+      </div>
+      <div className="lb">
+        {(() => {
+          const rows = CONFIG.FRIENDS_LB
+            .map(owner => D.week.find(t => t.owner === owner))
+            .filter(Boolean)
+            .sort((a, b) => (a.toPar ?? 999) - (b.toPar ?? 999));
+          
+          return rows.map(team => {
+            const isFav = team.owner === fav;
+            const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
+            const subText = isFav 
+              ? 'Your Team' 
+              : 'Tracked';
+            return (
+              <div 
+                key={team.owner}
+                className={`lb-row ${isFav ? 'is-fav' : ''}`}
+                onClick={() => onSelectTeam(team)}
+              >
+                <div className="pos">{team.rank}</div>
+                <div className="who" style={{display: 'flex', alignItems: 'center', gap: 6}}>
+                  <span 
+                    className={`fav-btn ${isFav ? 'on' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); setFav(isFav ? null : team.owner); }}
+                  >
+                    {isFav ? '★' : '☆'}
+                  </span>
+                  <div>
+                    <div className="nm">{team.owner}</div>
+                    <div className="sub">{subText}</div>
+                  </div>
+                </div>
+                <div className="delta"></div>
+                <div className={`score ${cls}`}>{D.fmt(team.toPar)}</div>
+              </div>
+            );
+          });
+        })()}
       </div>
       
       {/* Stock chart */}
@@ -2094,49 +2141,6 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
         </div>
       </div>
       
-      {/* ── FRIENDS MINI LEADERBOARD ── */}
-      <div className="section-title" style={{marginTop: 4}}>
-        <h2>Friends · Standings</h2>
-      </div>
-      <div className="lb">
-        {(() => {
-          const rows = CONFIG.FRIENDS_LB
-            .map(owner => D.week.find(t => t.owner === owner))
-            .filter(Boolean)
-            .sort((a, b) => (a.toPar ?? 999) - (b.toPar ?? 999));
-          
-          return rows.map(team => {
-            const isFav = team.owner === fav;
-            const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
-            const subText = isFav 
-              ? 'Your Team' 
-              : 'Tracked';
-            return (
-              <div 
-                key={team.owner}
-                className={`lb-row ${isFav ? 'is-fav' : ''}`}
-                onClick={() => onSelectTeam(team)}
-              >
-                <div className="pos">{team.rank}</div>
-                <div className="who" style={{display: 'flex', alignItems: 'center', gap: 6}}>
-                  <span 
-                    className={`fav-btn ${isFav ? 'on' : ''}`}
-                    onClick={(e) => { e.stopPropagation(); setFav(isFav ? null : team.owner); }}
-                  >
-                    {isFav ? '★' : '☆'}
-                  </span>
-                  <div>
-                    <div className="nm">{team.owner}</div>
-                    <div className="sub">{subText}</div>
-                  </div>
-                </div>
-                <div className="delta"></div>
-                <div className={`score ${cls}`}>{D.fmt(team.toPar)}</div>
-              </div>
-            );
-          });
-        })()}
-      </div>
       <div style={{height: 24}}></div>
       </div>
     </div>
