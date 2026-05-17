@@ -718,6 +718,50 @@ const clubCSS = `
 }
 .dir-club .sheet-player .sp-score.under { color: var(--green-good); }
 .dir-club .sheet-player .sp-score.over { color: var(--brick); }
+
+/* Tappable player row */
+.dir-club .sheet-player.tappable { cursor: pointer; transition: background 0.15s; }
+.dir-club .sheet-player.tappable:active { background: var(--paper-line); }
+
+/* Round-by-round expansion (same height as player row) */
+.dir-club .sp-rounds {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 40px;
+  border-bottom: 1px solid var(--paper-line);
+  gap: 8px;
+  background: rgba(0,0,0,0.02);
+}
+.dir-club .sp-rounds .rd {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.dir-club .sp-rounds .rd-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--ink-faint);
+  letter-spacing: 0.5px;
+}
+.dir-club .sp-rounds .rd-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.dir-club .sp-rounds .rd-val.r4-rep { color: var(--brick); font-style: italic; }
+.dir-club .sp-rounds .rd-val.empty { color: var(--ink-faint); }
+.dir-club .sp-rounds .rd-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--ink-faint);
+  padding: 0 8px 0 4px;
+  max-width: 90px;
+  text-align: right;
+  line-height: 1.2;
+}
 .dir-club .sheet-footer {
   padding: 12px 20px 24px;
   border-top: 1px solid var(--paper-line);
@@ -1349,6 +1393,7 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
 function BottomSheet({ data, team, onClose, onViewFull }) {
   const D = data;
   const [fav, setFav] = useFavoriteTeam();
+  const [expandedPlayer, setExpandedPlayer] = React.useState(null);
   const isFav = team && fav === team.owner;
   
   // Close on escape key
@@ -1358,7 +1403,16 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
     return () => window.removeEventListener('keydown', handleKey);
   }, [onClose]);
   
+  // Reset expansion when team changes
+  React.useEffect(() => { setExpandedPlayer(null); }, [team?.owner]);
+  
   if (!team) return null;
+  
+  // Build replacement-player lookup so MC players can show their Rule 4's R3/R4
+  const repLookup = {};
+  (D.raw?.replacement_players || []).forEach(rp => {
+    if (rp?.name) repLookup[rp.name] = rp;
+  });
   
   const players = team.players || [];
   const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
@@ -1386,22 +1440,58 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
             const scoreCls = toPar < 0 ? 'under' : toPar > 0 ? 'over' : '';
             const thru = p.thru === 18 || p.thru === 'F' ? 'F' : p.thru || '-';
             const isMC = p.status === 'mc';
-            const isWD = p.status === 'wd';
+            const isWD = p.status === 'wd' || p.status === 'wd_alt' || p.status === 'wd_rule4' || p.status === 'wd_alt_mc';
             
             const posDisplay = (p.position === 'WAITING' || !p.position) 
               ? (p.fin_text || '-') 
               : p.position;
+            
+            const isExpanded = expandedPlayer === p.name;
+            
+            // Round-by-round source: if MC, pull R3/R4 from replacement
+            const rep = isMC && p.replacement ? repLookup[p.replacement] : null;
+            const r1 = p.r1;
+            const r2 = p.r2;
+            const r3 = isMC ? (rep?.r3 ?? null) : p.r3;
+            const r4 = isMC ? (rep?.r4 ?? null) : p.r4;
+            const repShort = p.replacement ? p.replacement.split(', ').reverse().join(' ') : null;
+            
             return (
-              <div key={p.name} className="sheet-player">
-                <div className="sp-pos">{posDisplay}</div>
-                <div className="sp-name">
-                  {p.name}
-                  {isMC && <span className="status">MC{p.penalty > 0 ? ` +${p.penalty}` : ''}</span>}
-                  {isWD && <span className="status">WD</span>}
+              <React.Fragment key={p.name}>
+                <div 
+                  className="sheet-player tappable" 
+                  onClick={() => setExpandedPlayer(isExpanded ? null : p.name)}
+                >
+                  <div className="sp-pos">{posDisplay}</div>
+                  <div className="sp-name">
+                    {p.name}
+                    {isMC && <span className="status">MC{p.penalty > 0 ? ` +${p.penalty}` : ''}</span>}
+                    {isWD && <span className="status">WD</span>}
+                  </div>
+                  <div className="sp-thru">{isMC || isWD ? '-' : thru}</div>
+                  <div className={`sp-score ${scoreCls}`}>{D.fmt(toPar)}</div>
                 </div>
-                <div className="sp-thru">{isMC || isWD ? '-' : thru}</div>
-                <div className={`sp-score ${scoreCls}`}>{D.fmt(toPar)}</div>
-              </div>
+                {isExpanded && (
+                  <div className="sp-rounds">
+                    {[
+                      { label: 'R1', val: r1, rep: false },
+                      { label: 'R2', val: r2, rep: false },
+                      { label: 'R3', val: r3, rep: isMC },
+                      { label: 'R4', val: r4, rep: isMC },
+                    ].map(rd => (
+                      <div key={rd.label} className="rd">
+                        <div className="rd-label">{rd.label}</div>
+                        <div className={`rd-val ${rd.val == null ? 'empty' : ''} ${rd.rep && rd.val != null ? 'r4-rep' : ''}`}>
+                          {rd.val ?? '–'}
+                        </div>
+                      </div>
+                    ))}
+                    {isMC && repShort && (
+                      <div className="rd-note">R3/R4 by<br/>{repShort}</div>
+                    )}
+                  </div>
+                )}
+              </React.Fragment>
             );
           })}
         </div>
