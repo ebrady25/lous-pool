@@ -395,6 +395,7 @@ const clubCSS = `
   font-family: 'Fraunces', serif;
   font-size: 18px;
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 .dir-club .lb-row .score.under { color: var(--green-good); }
 .dir-club .lb-row .score.over { color: var(--brick); }
@@ -929,26 +930,6 @@ const clubCSS = `
   pointer-events: none;
   z-index: 1;
 }
-/* Faint horizontal score-grid lines for chart-paper texture */
-.dir-club .pulse-stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: 
-    repeating-linear-gradient(0deg,
-      transparent 0px,
-      transparent 39px,
-      rgba(20, 53, 42, 0.03) 40px,
-      rgba(20, 53, 42, 0.03) 41px),
-    repeating-linear-gradient(90deg,
-      transparent 0px,
-      transparent 59px,
-      rgba(20, 53, 42, 0.02) 60px,
-      rgba(20, 53, 42, 0.02) 61px);
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* Slow-drifting ambient orbs — depth + life */
 .dir-club .pulse-orb {
   position: absolute;
@@ -1019,19 +1000,6 @@ const clubCSS = `
 .dir-club.dark .pulse-stage::before {
   background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.35) 100%);
 }
-.dir-club.dark .pulse-stage::after {
-  background-image: 
-    repeating-linear-gradient(0deg,
-      transparent 0px,
-      transparent 39px,
-      rgba(201, 168, 94, 0.04) 40px,
-      rgba(201, 168, 94, 0.04) 41px),
-    repeating-linear-gradient(90deg,
-      transparent 0px,
-      transparent 59px,
-      rgba(201, 168, 94, 0.025) 60px,
-      rgba(201, 168, 94, 0.025) 61px);
-}
 @media (prefers-reduced-motion: reduce) {
   .dir-club .pulse-orb { animation: none; }
 }
@@ -1071,11 +1039,14 @@ const clubCSS = `
 }
 .dir-club .pulse-tick-label {
   position: absolute;
-  right: 8px;
+  right: 6px;
+  width: 28px;
+  text-align: right;
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   color: var(--ink-soft);
   transform: translateY(-50%);
+  font-variant-numeric: tabular-nums;
 }
 .dir-club .pulse-tick.zero { background: var(--ink-soft); height: 1px; opacity: 0.5; }
 .dir-club .pulse-tick.zero .pulse-tick-label { color: var(--ink); font-weight: 600; }
@@ -2010,10 +1981,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       </div>
       
       {/* ── FRIENDS MINI LEADERBOARD (between stage and chart) ── */}
-      <div className="section-title" style={{marginTop: 4}}>
-        <h2>Friends · Standings</h2>
-      </div>
-      <div className="lb">
+      <div className="lb" style={{marginTop: 12}}>
         {(() => {
           const rows = CONFIG.FRIENDS_LB
             .map(owner => D.week.find(t => t.owner === owner))
@@ -2111,16 +2079,18 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               </g>
             );
           })}
-          {/* Right-edge gridline labels — same scores as stage axis */}
+          {/* Right-edge gridline labels — same scores as stage axis, right-justified */}
           {gridScores.map(s => (
             <text 
               key={`lbl-${s}`}
-              x={chartW - chartPadR + 4} 
+              x={chartW - 4} 
               y={yAt(s) + 3}
+              textAnchor="end"
               fontSize="9"
               fontFamily="DM Mono, monospace"
               fill="var(--ink-soft)"
               opacity={s === 0 ? 1 : 0.7}
+              style={{fontVariantNumeric: 'tabular-nums'}}
             >
               {s === 0 ? 'E' : s > 0 ? `+${s}` : s}
             </text>
