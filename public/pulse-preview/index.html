@@ -979,16 +979,32 @@ const clubCSS = `
 @media (prefers-reduced-motion: reduce) {
   .dir-club .pulse-orb { animation: none; }
 }
-/* Score axis ticks (right side) */
+/* Score axis ticks (right side) — translucent so orbs drift behind */
 .dir-club .pulse-axis {
   position: absolute;
   top: 0;
   right: 0;
   width: 56px;
   height: 100%;
-  border-left: 1px solid var(--paper-line);
-  background: var(--paper-deep);
-  z-index: 2;
+  border-left: 1px solid rgba(213, 205, 180, 0.4);
+  background: linear-gradient(
+    90deg,
+    rgba(237, 229, 207, 0) 0%,
+    rgba(237, 229, 207, 0.45) 30%,
+    rgba(237, 229, 207, 0.55) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 3;
+}
+.dir-club.dark .pulse-axis {
+  border-left-color: rgba(255,255,255,0.08);
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.25) 30%,
+    rgba(0,0,0,0.4) 100%
+  );
 }
 .dir-club .pulse-tick {
   position: absolute;
@@ -1095,7 +1111,7 @@ const clubCSS = `
 }
 .dir-club .pulse-chart svg {
   width: 100%;
-  height: 140px;
+  height: 240px;
   display: block;
 }
 .dir-club .pulse-chart-legend {
@@ -1843,30 +1859,26 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   // history snapshots filtered + last 24 max
   const snaps = (history?.snapshots || []).slice(-24);
   const chartW = 360;
-  const chartH = 140;
+  const chartH = 240;          // was 140 — taller per your request
   const chartPadL = 8;
   const chartPadR = 30;
-  const chartPadT = 8;
+  const chartPadT = 12;
   const chartPadB = 18;
   
-  // Score range across history
-  let hMin = 999, hMax = -999;
-  snaps.forEach(snap => {
-    CONFIG.PULSE_OWNERS.forEach(o => {
-      const v = snap.scores?.[o];
-      if (typeof v === 'number') {
-        if (v < hMin) hMin = v;
-        if (v > hMax) hMax = v;
-      }
-    });
-  });
-  if (hMin === 999) { hMin = -5; hMax = 5; }
-  if (hMin === hMax) { hMin -= 2; hMax += 2; }
-  hMin -= 1; hMax += 1;
+  // Use the SAME score range as the bubble stage so the two visually align
+  const hMin = minS;
+  const hMax = maxS;
   
   const xAt = (i) => chartPadL + (i / Math.max(1, snaps.length - 1)) * (chartW - chartPadL - chartPadR);
   // lower score (better) at top
   const yAt = (s) => chartPadT + ((s - hMin) / (hMax - hMin)) * (chartH - chartPadT - chartPadB);
+  
+  // Gridline scores (every 2 strokes within range)
+  const gridScores = [];
+  const gridStep = Math.max(1, Math.ceil((hMax - hMin) / 10));
+  for (let s = Math.ceil(hMin); s <= Math.floor(hMax); s += gridStep) {
+    gridScores.push(s);
+  }
   
   // Color palette per friend (distinct, readable)
   const palette = {
@@ -1944,15 +1956,20 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
           Last {snaps.length} updates · score trail
         </div>
         <svg viewBox={`0 0 ${chartW} ${chartH}`} preserveAspectRatio="none">
-          {/* Zero line */}
-          {hMin <= 0 && hMax >= 0 && (
-            <line 
-              x1={chartPadL} 
-              x2={chartW - chartPadR}
-              y1={yAt(0)} y2={yAt(0)}
-              stroke="var(--ink-soft)" strokeWidth="0.5" strokeDasharray="2,3" opacity="0.4"
-            />
-          )}
+          {/* Gridlines at each integer score — matches stage axis ticks */}
+          {gridScores.map(s => (
+            <g key={`grid-${s}`}>
+              <line
+                x1={chartPadL}
+                x2={chartW - chartPadR}
+                y1={yAt(s)} y2={yAt(s)}
+                stroke={s === 0 ? 'var(--ink-soft)' : 'var(--paper-line)'}
+                strokeWidth={s === 0 ? 0.6 : 0.4}
+                strokeDasharray={s === 0 ? '2,3' : 'none'}
+                opacity={s === 0 ? 0.5 : 0.35}
+              />
+            </g>
+          ))}
           {/* Per-friend score line */}
           {CONFIG.PULSE_OWNERS.map(owner => {
             const pts = snaps
@@ -1991,15 +2008,16 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               </g>
             );
           })}
-          {/* Right-edge score labels */}
-          {[hMin, 0, hMax].filter(s => s >= hMin && s <= hMax).map(s => (
+          {/* Right-edge gridline labels — same scores as stage axis */}
+          {gridScores.map(s => (
             <text 
-              key={s}
+              key={`lbl-${s}`}
               x={chartW - chartPadR + 4} 
               y={yAt(s) + 3}
               fontSize="9"
               fontFamily="DM Mono, monospace"
               fill="var(--ink-soft)"
+              opacity={s === 0 ? 1 : 0.7}
             >
               {s === 0 ? 'E' : s > 0 ? `+${s}` : s}
             </text>
