@@ -334,6 +334,13 @@ const clubCSS = `
 .dir-club .lb {
   padding: 0 22px 0;
 }
+/* Friends mini-leaderboard: scores flush to right edge of screen */
+.dir-club .lb.lb-friends {
+  padding-right: 0;
+}
+.dir-club .lb.lb-friends .lb-row .score {
+  padding-right: 12px;
+}
 .dir-club .lb-row {
   display: flex;
   align-items: center;
@@ -2103,7 +2110,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       </div>
       
       {/* ── FRIENDS MINI LEADERBOARD (between stage and chart) ── */}
-      <div className="lb" style={{marginTop: 12}}>
+      <div className="lb lb-friends" style={{marginTop: 12}}>
         {(() => {
           const rows = CONFIG.FRIENDS_LB
             .map(owner => D.week.find(t => t.owner === owner))
