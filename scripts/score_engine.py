@@ -1128,6 +1128,37 @@ def main():
     with open(args.output, "w") as f:
         json.dump(leaderboard, f, indent=2)
     
+    # Append a snapshot of FRIENDS' scores to history.json for the Pulse view
+    FRIENDS = ["Ethan Brady", "Eric Southard", "Connor White", "Great White!",
+               "John Hughes", "Matt White", "Aaron White"]
+    history_path = os.path.join(os.path.dirname(args.output) or ".", "history.json")
+    history = {"snapshots": []}
+    if os.path.exists(history_path):
+        try:
+            with open(history_path) as f:
+                history = json.load(f)
+        except Exception:
+            history = {"snapshots": []}
+    
+    snapshot = {
+        "t": leaderboard.get("updated_at"),
+        "round": leaderboard.get("current_round"),
+        "scores": {}
+    }
+    for tm in leaderboard.get("teams", []):
+        if tm.get("owner") in FRIENDS:
+            snapshot["scores"][tm["owner"]] = tm.get("team_to_par", 0)
+    
+    # Only append if scores changed since last snapshot (avoids identical-row spam during off-hours)
+    last = history["snapshots"][-1] if history["snapshots"] else None
+    if not last or last.get("scores") != snapshot["scores"] or last.get("round") != snapshot["round"]:
+        history["snapshots"].append(snapshot)
+        # Cap history at last 500 snapshots (~83 hours at 10-min cadence)
+        history["snapshots"] = history["snapshots"][-500:]
+        with open(history_path, "w") as f:
+            json.dump(history, f, separators=(",", ":"))
+        print(f"History: appended snapshot ({len(history['snapshots'])} total)")
+    
     print(f"\nLeaderboard: {leaderboard['total_teams']} teams")
     leader = leaderboard['teams'][0]
     leader_score = leader.get('team_to_par')
