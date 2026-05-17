@@ -24,11 +24,27 @@ body { font-family: 'Inter', system-ui, sans-serif; }
 // ═══════════════════════════════════════════════════════════════
 const CONFIG = {
   LEADERBOARD_URL: "data/leaderboard.json",
+  HISTORY_URL: "data/history.json",
+  OWNER: "Ethan Brady",
   FRIENDS: [
     "Eric Southard", "John Hughes", "Matt White",
     "Aaron White", "Connor White", "Malcolm White",
     "Great White!", "Joe Jurkiewicz"
   ],
+  // Pulse view: only show these owners (Ethan + tracked friends)
+  PULSE_OWNERS: [
+    "Ethan Brady", "Eric Southard", "Connor White", "Great White!",
+    "John Hughes", "Matt White", "Aaron White"
+  ],
+  PULSE_NICKNAMES: {
+    "Ethan Brady": "Brady Bunch",
+    "Eric Southard": "Southpaw",
+    "Connor White": "The Blackout",
+    "Great White!": "Great White!",
+    "John Hughes": "Filmmaker",
+    "Matt White": "Papa",
+    "Aaron White": "Aaron",
+  },
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -804,6 +820,222 @@ const clubCSS = `
   border-color: var(--brass);
 }
 .dir-club.dark .sheet-btn.primary:hover { background: #c9a85e; }
+
+/* ═══════════════════ PULSE VIEW ═══════════════════ */
+.dir-club .pulse-wrap {
+  position: relative;
+  background: var(--paper);
+  border-top: 1px solid var(--paper-line);
+  border-bottom: 1px solid var(--paper-line);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.dir-club .pulse-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 14px 22px 8px;
+}
+.dir-club .pulse-title .live-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--brick);
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse-blink 1.6s ease-in-out infinite;
+}
+@keyframes pulse-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.dir-club .pulse-stage {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: 
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  overflow: hidden;
+}
+/* Score axis ticks (right side) */
+.dir-club .pulse-axis {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 100%;
+  border-left: 1px solid var(--paper-line);
+  background: var(--paper-deep);
+  z-index: 2;
+}
+.dir-club .pulse-tick {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--paper-line);
+}
+.dir-club .pulse-tick-label {
+  position: absolute;
+  right: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink-soft);
+  transform: translateY(-50%);
+}
+.dir-club .pulse-tick.zero { background: var(--ink-soft); height: 1px; opacity: 0.5; }
+.dir-club .pulse-tick.zero .pulse-tick-label { color: var(--ink); font-weight: 600; }
+
+/* Bubble */
+.dir-club .pulse-bubble {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.05;
+  color: #fff;
+  cursor: pointer;
+  /* SMOOTH MOTION - the addictive part */
+  transition: 
+    left 1400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    top 1400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 600ms ease,
+    box-shadow 300ms ease,
+    transform 200ms ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18), inset 0 -3px 6px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255,255,255,0.25);
+  z-index: 5;
+  padding: 4px;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.dir-club .pulse-bubble:active { transform: scale(0.92); }
+.dir-club .pulse-bubble.green {
+  background: radial-gradient(circle at 30% 25%, #5fa872 0%, #2d6e3e 80%);
+}
+.dir-club .pulse-bubble.yellow {
+  background: radial-gradient(circle at 30% 25%, #e0b34a 0%, #a07814 80%);
+  color: #2a1f00;
+}
+.dir-club .pulse-bubble.red {
+  background: radial-gradient(circle at 30% 25%, #d56c5a 0%, #8a2a1e 80%);
+}
+/* "Your team" — Ethan — pulsing ring */
+.dir-club .pulse-bubble.me {
+  box-shadow: 
+    0 4px 14px rgba(0,0,0,0.18), 
+    inset 0 -3px 6px rgba(0,0,0,0.15), 
+    inset 0 2px 4px rgba(255,255,255,0.25),
+    0 0 0 3px var(--paper),
+    0 0 0 5px var(--brass);
+  animation: me-pulse 2.2s ease-in-out infinite;
+}
+@keyframes me-pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 4px 14px rgba(0,0,0,0.18), 
+      inset 0 -3px 6px rgba(0,0,0,0.15), 
+      inset 0 2px 4px rgba(255,255,255,0.25),
+      0 0 0 3px var(--paper),
+      0 0 0 5px var(--brass);
+  }
+  50% { 
+    box-shadow: 
+      0 4px 14px rgba(0,0,0,0.18), 
+      inset 0 -3px 6px rgba(0,0,0,0.15), 
+      inset 0 2px 4px rgba(255,255,255,0.25),
+      0 0 0 3px var(--paper),
+      0 0 0 8px var(--brass);
+  }
+}
+.dir-club .pulse-bubble .b-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  margin-top: 1px;
+  letter-spacing: -0.5px;
+}
+
+/* Subtle horizontal flight trail behind bubble showing recent direction */
+.dir-club .pulse-trail {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--ink-soft) 100%);
+  opacity: 0.25;
+  z-index: 1;
+  pointer-events: none;
+  transition: all 1400ms ease;
+}
+
+/* Stock chart strip */
+.dir-club .pulse-chart {
+  background: var(--paper);
+  padding: 16px 22px 22px;
+  border-top: 1px solid var(--paper-line);
+}
+.dir-club .pulse-chart svg {
+  width: 100%;
+  height: 140px;
+  display: block;
+}
+.dir-club .pulse-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+.dir-club .pulse-chart-legend .lg {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-soft);
+}
+.dir-club .pulse-chart-legend .lg .sw {
+  width: 12px; height: 2px;
+  border-radius: 1px;
+}
+.dir-club .pulse-legend-row {
+  display: flex;
+  gap: 14px;
+  padding: 8px 22px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.dir-club .pulse-legend-row .lg {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.dir-club .pulse-legend-row .lg .dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+}
+.dir-club .pulse-legend-row .lg.green .dot { background: #2d6e3e; }
+.dir-club .pulse-legend-row .lg.yellow .dot { background: #a07814; }
+.dir-club .pulse-legend-row .lg.red .dot { background: #8a2a1e; }
+
+/* Dark mode tweaks */
+.dir-club.dark .pulse-stage {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+}
+.dir-club.dark .pulse-bubble {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5), inset 0 -3px 6px rgba(0,0,0,0.25), inset 0 2px 4px rgba(255,255,255,0.18);
+}
 `;
 
 // ═══════════════════════════════════════════════════════════════
@@ -1008,6 +1240,7 @@ function ClubTabs({ active, onChange }) {
   const tabs = [
     { k: 'live', l: 'Live PGA', dot: true },
     { k: 'weekly', l: 'Weekly' },
+    { k: 'pulse', l: 'Pulse' },
     { k: 'season', l: 'Season' },
   ];
   return (
@@ -1397,6 +1630,287 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
 }
 
 // ═══════════════════════════════════════════════════════════════
+// PULSE - live bubble chart of friends + stock chart history
+// ═══════════════════════════════════════════════════════════════
+function ClubhousePulse({ data, theme, onSelectTeam, history }) {
+  const D = data;
+  if (!D) return null;
+  
+  // Filter to PULSE_OWNERS only (Ethan + friends), in fixed order
+  const teams = CONFIG.PULSE_OWNERS
+    .map(owner => D.week.find(t => t.owner === owner))
+    .filter(Boolean);
+  
+  if (teams.length === 0) {
+    return (
+      <div className="scroll">
+        <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
+        <div className="pulse-wrap">
+          <div className="pulse-title"><span className="live-dot"></span>Pulse · Friends Live</div>
+          <div style={{padding: '40px 22px', textAlign: 'center', color: 'var(--ink-faint)', fontFamily: 'DM Mono', fontSize: 12}}>
+            No friend teams loaded yet.
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
+  // Compute the score range across friends, with a little headroom
+  const scores = teams.map(t => t.toPar);
+  const minS = Math.min(...scores) - 3;
+  const maxS = Math.max(...scores) + 3;
+  
+  // Stage layout: vertical = score, horizontal = stable per-team column slots so bubbles don't overlap at same score
+  const STAGE_HEIGHT = 520;
+  const STAGE_TOP_PAD = 30;
+  const STAGE_BOT_PAD = 30;
+  const AXIS_WIDTH = 56;
+  const BUBBLE_SIZE = 56;
+  const usableHeight = STAGE_HEIGHT - STAGE_TOP_PAD - STAGE_BOT_PAD;
+  
+  // Score → Y position (best at top → lower Y)
+  const scoreToY = (s) => {
+    const t = (s - minS) / (maxS - minS); // 0 at minS (best), 1 at maxS (worst)
+    return STAGE_TOP_PAD + t * usableHeight;
+  };
+  
+  // Build axis ticks (every 2 strokes)
+  const axisTicks = [];
+  const tickStep = Math.max(1, Math.ceil((maxS - minS) / 8));
+  for (let s = Math.ceil(minS); s <= Math.floor(maxS); s += tickStep) {
+    axisTicks.push(s);
+  }
+  
+  // Bubble color logic from MC count
+  const colorFor = (mc) => mc === 0 ? 'green' : mc === 1 ? 'yellow' : 'red';
+  
+  // Determine bubble color per team
+  const teamMC = (team) => {
+    return (team.players || []).filter(p => p.status === 'mc').length;
+  };
+  
+  // Spread bubbles horizontally — each team gets a stable column slot
+  // but if two teams have same score, they offset slightly
+  const positioned = (() => {
+    const stageW = Math.max(280, (window.innerWidth || 380) - AXIS_WIDTH - 16);
+    // Group by score (rounded) so co-located teams get spread
+    const byScore = {};
+    teams.forEach((t, i) => {
+      const key = t.toPar;
+      if (!byScore[key]) byScore[key] = [];
+      byScore[key].push({ team: t, idx: i });
+    });
+    
+    const result = [];
+    teams.forEach((t, i) => {
+      const cluster = byScore[t.toPar];
+      const clusterIdx = cluster.findIndex(x => x.idx === i);
+      const clusterSize = cluster.length;
+      
+      // Even spread inside the stage
+      const stageCenterX = (stageW - BUBBLE_SIZE) / 2;
+      const spreadX = clusterSize === 1 
+        ? stageCenterX
+        : (stageW - BUBBLE_SIZE) * (0.18 + (clusterIdx / Math.max(1, clusterSize - 1)) * 0.64);
+      
+      // Add a tiny per-team stable offset so colocated bubbles don't perfectly stack
+      const teamHash = t.owner.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+      const stableOffset = ((teamHash % 7) - 3) * 6;
+      
+      result.push({
+        team: t,
+        x: spreadX + stableOffset,
+        y: scoreToY(t.toPar) - BUBBLE_SIZE / 2,
+        mc: teamMC(t),
+        isMe: t.owner === CONFIG.OWNER,
+      });
+    });
+    return result;
+  })();
+  
+  // ── STOCK CHART ──
+  // history snapshots filtered + last 24 max
+  const snaps = (history?.snapshots || []).slice(-24);
+  const chartW = 360;
+  const chartH = 140;
+  const chartPadL = 8;
+  const chartPadR = 30;
+  const chartPadT = 8;
+  const chartPadB = 18;
+  
+  // Score range across history
+  let hMin = 999, hMax = -999;
+  snaps.forEach(snap => {
+    CONFIG.PULSE_OWNERS.forEach(o => {
+      const v = snap.scores?.[o];
+      if (typeof v === 'number') {
+        if (v < hMin) hMin = v;
+        if (v > hMax) hMax = v;
+      }
+    });
+  });
+  if (hMin === 999) { hMin = -5; hMax = 5; }
+  if (hMin === hMax) { hMin -= 2; hMax += 2; }
+  hMin -= 1; hMax += 1;
+  
+  const xAt = (i) => chartPadL + (i / Math.max(1, snaps.length - 1)) * (chartW - chartPadL - chartPadR);
+  // lower score (better) at top
+  const yAt = (s) => chartPadT + ((s - hMin) / (hMax - hMin)) * (chartH - chartPadT - chartPadB);
+  
+  // Color palette per friend (distinct, readable)
+  const palette = {
+    "Ethan Brady": "#c9a85e",       // brass (you)
+    "Eric Southard": "#2d6e3e",
+    "Connor White": "#8a2a1e",
+    "Great White!": "#3d6b8a",
+    "John Hughes": "#a07814",
+    "Matt White": "#5a4282",
+    "Aaron White": "#7d5a3a",
+  };
+  
+  return (
+    <div className="scroll">
+      <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
+      
+      <div className="pulse-wrap">
+      <div className="pulse-title">
+        <span className="live-dot"></span>
+        Pulse · Friends Live · {teams.length} teams
+      </div>
+      
+      <div className="pulse-legend-row">
+        <div className="lg green"><span className="dot"></span>Clean</div>
+        <div className="lg yellow"><span className="dot"></span>1 MC</div>
+        <div className="lg red"><span className="dot"></span>2+ MCs</div>
+      </div>
+      
+      <div className="pulse-stage">
+        {/* Axis on right */}
+        <div className="pulse-axis">
+          {axisTicks.map(s => (
+            <React.Fragment key={s}>
+              <div 
+                className={`pulse-tick ${s === 0 ? 'zero' : ''}`}
+                style={{top: `${scoreToY(s)}px`}}
+              />
+              <div 
+                className="pulse-tick-label"
+                style={{top: `${scoreToY(s)}px`}}
+              >
+                {s === 0 ? 'E' : s > 0 ? `+${s}` : s}
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
+        
+        {/* Bubbles */}
+        {positioned.map(({ team, x, y, mc, isMe }) => {
+          const cls = colorFor(mc);
+          const label = CONFIG.PULSE_NICKNAMES[team.owner] || team.owner.split(' ')[0];
+          const score = team.toPar === 0 ? 'E' : team.toPar > 0 ? `+${team.toPar}` : `${team.toPar}`;
+          return (
+            <div
+              key={team.owner}
+              className={`pulse-bubble ${cls} ${isMe ? 'me' : ''}`}
+              style={{ left: `${x}px`, top: `${y}px` }}
+              onClick={() => onSelectTeam(team)}
+              title={`${team.owner} · ${score}`}
+            >
+              <div>{label}</div>
+              <span className="b-score">{score}</span>
+            </div>
+          );
+        })}
+      </div>
+      
+      {/* Stock chart */}
+      <div className="pulse-chart">
+        <div style={{fontFamily: 'DM Mono', fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--ink-soft)', marginBottom: 8}}>
+          Last {snaps.length} updates · score trail
+        </div>
+        <svg viewBox={`0 0 ${chartW} ${chartH}`} preserveAspectRatio="none">
+          {/* Zero line */}
+          {hMin <= 0 && hMax >= 0 && (
+            <line 
+              x1={chartPadL} 
+              x2={chartW - chartPadR}
+              y1={yAt(0)} y2={yAt(0)}
+              stroke="var(--ink-soft)" strokeWidth="0.5" strokeDasharray="2,3" opacity="0.4"
+            />
+          )}
+          {/* Per-friend score line */}
+          {CONFIG.PULSE_OWNERS.map(owner => {
+            const pts = snaps
+              .map((s, i) => {
+                const v = s.scores?.[owner];
+                return typeof v === 'number' ? `${xAt(i)},${yAt(v)}` : null;
+              })
+              .filter(Boolean);
+            if (pts.length < 2) return null;
+            const color = palette[owner] || '#5b5b50';
+            const isMe = owner === CONFIG.OWNER;
+            return (
+              <g key={owner}>
+                <polyline
+                  points={pts.join(' ')}
+                  fill="none"
+                  stroke={color}
+                  strokeWidth={isMe ? 2.2 : 1.4}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity={isMe ? 1 : 0.75}
+                />
+                {/* End dot */}
+                {pts.length > 0 && (() => {
+                  const [lx, ly] = pts[pts.length - 1].split(',').map(parseFloat);
+                  return (
+                    <circle 
+                      cx={lx} cy={ly} 
+                      r={isMe ? 3.2 : 2.4} 
+                      fill={color}
+                      stroke="var(--paper)"
+                      strokeWidth={isMe ? 1 : 0.5}
+                    />
+                  );
+                })()}
+              </g>
+            );
+          })}
+          {/* Right-edge score labels */}
+          {[hMin, 0, hMax].filter(s => s >= hMin && s <= hMax).map(s => (
+            <text 
+              key={s}
+              x={chartW - chartPadR + 4} 
+              y={yAt(s) + 3}
+              fontSize="9"
+              fontFamily="DM Mono, monospace"
+              fill="var(--ink-soft)"
+            >
+              {s === 0 ? 'E' : s > 0 ? `+${s}` : s}
+            </text>
+          ))}
+        </svg>
+        <div className="pulse-chart-legend">
+          {CONFIG.PULSE_OWNERS.map(o => {
+            const t = D.week.find(x => x.owner === o);
+            if (!t) return null;
+            const nick = CONFIG.PULSE_NICKNAMES[o] || o.split(' ')[0];
+            return (
+              <div key={o} className="lg" style={{color: o === CONFIG.OWNER ? 'var(--ink)' : 'var(--ink-soft)'}}>
+                <span className="sw" style={{background: palette[o] || '#5b5b50'}}></span>
+                {nick} {D.fmt(t.toPar)}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      </div>
+    </div>
+  );
+}
+
+
+// ═══════════════════════════════════════════════════════════════
 // BOTTOM SHEET - Quick team preview
 // ═══════════════════════════════════════════════════════════════
 function BottomSheet({ data, team, onClose, onViewFull }) {
@@ -1532,17 +2046,22 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
 // ═══════════════════════════════════════════════════════════════
 function App() {
   const [theme, toggleTheme] = useTheme();
-  const [view, setView] = React.useState('live'); // 'live' | 'weekly' | 'season' | 'team'
+  const [view, setView] = React.useState('live'); // 'live' | 'weekly' | 'pulse' | 'season' | 'team'
   const [selectedTeam, setSelectedTeam] = React.useState(null);
   const [sheetTeam, setSheetTeam] = React.useState(null); // For bottom sheet preview
   const [rawData, setRawData] = React.useState(null);
+  const [history, setHistory] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
   
   // Load leaderboard data
   React.useEffect(() => {
     loadLeaderboard();
-    const interval = setInterval(loadLeaderboard, 2 * 60 * 1000);
+    loadHistory();
+    const interval = setInterval(() => {
+      loadLeaderboard();
+      loadHistory();
+    }, 2 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
   
@@ -1562,6 +2081,22 @@ function App() {
       setError("Failed to load data");
     } finally {
       setLoading(false);
+    }
+  }
+  
+  async function loadHistory() {
+    try {
+      const resp = await fetch(CONFIG.HISTORY_URL + "?t=" + Date.now(), {
+        cache: 'no-store',
+        headers: { 'Pragma': 'no-cache' }
+      });
+      if (resp.ok) {
+        const h = await resp.json();
+        setHistory(h);
+      }
+    } catch (err) {
+      // History is optional, fail silently
+      console.log("No history available:", err);
     }
   }
   
@@ -1635,6 +2170,10 @@ function App() {
           
           {view === 'weekly' && (
             <ClubhouseWeekly data={data} theme={theme} onSelectTeam={handleSelectTeam} />
+          )}
+          
+          {view === 'pulse' && (
+            <ClubhousePulse data={data} theme={theme} onSelectTeam={handleSelectTeam} history={history} />
           )}
           
           {view === 'season' && (
