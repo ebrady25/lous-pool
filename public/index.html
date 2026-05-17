@@ -104,10 +104,10 @@ const clubCSS = `
   font-weight: 600;
   font-size: 22px;
   letter-spacing: -0.02em;
-  color: var(--forest-deep);
+  color: var(--ink-faint);
   font-style: italic;
 }
-.dir-club.dark .brand .mark { color: var(--brass); }
+.dir-club.dark .brand .mark { color: var(--ink-faint); }
 .dir-club .brand .est {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
@@ -929,7 +929,7 @@ function buildLPData(raw) {
   // Event info
   const event = {
     name: raw.event || "Tournament",
-    course: raw.course || "TPC",
+    course: raw.course || "Aronimink",
     par: raw.course_par || 72,
     cut: raw.cut_line ? (raw.cut_line - (raw.course_par || 72) * 2) : null,
     round: raw.current_round || 1,
@@ -974,7 +974,7 @@ function ClubMasthead({ data, theme, onToggleTheme }) {
       <div className="top-row">
         <div className="brand">
           <span className="mark">Lou's Pool</span>
-          <span className="est">Wk {event.week || 9} · '26</span>
+          <span className="est">Wk {event.week || 9} · 2026</span>
         </div>
         <div className="top-actions">
           {isLive && <span className="pill"><span className="dot"></span>R{roundNum} · Live</span>}
@@ -984,7 +984,7 @@ function ClubMasthead({ data, theme, onToggleTheme }) {
         </div>
       </div>
       <div className="masthead">
-        <h1>{firstWords}<br/><em>{lastWord}.</em></h1>
+        <h1>{firstWords}<br/><em>{lastWord}</em></h1>
         <div className="meta">
           {event.course || "Golf Course"}<br/>
           Par <b>{event.par || 72}</b>{event.cut !== null && <> · Cut <b>{event.cut >= 0 ? '+' : ''}{event.cut}</b></>}<br/>
