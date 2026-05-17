@@ -1090,6 +1090,25 @@ const clubCSS = `
 .dir-club .pulse-bubble.red {
   background: radial-gradient(circle at 30% 25%, #d56c5a 0%, #8a2a1e 80%);
 }
+/* Outlier bubbles — pinned to bottom, off-scale */
+.dir-club .pulse-bubble.outlier {
+  opacity: 0.85;
+}
+.dir-club .pulse-bubble.outlier::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0,0,0,0.35) 0px, rgba(0,0,0,0.35) 2px,
+    transparent 2px, transparent 4px
+  );
+  border-radius: 2px;
+}
 /* "Your team" — Ethan — pulsing ring */
 .dir-club .pulse-bubble.me {
   box-shadow: 
@@ -1844,6 +1863,14 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     return (team.players || []).filter(p => p.status === 'mc').length;
   };
   
+  // Outlier teams: rendered as bubbles pinned to the bottom edge rather than
+  // mapped to the score axis (so a +38 doesn't squash the rest of the scale).
+  // Their bubble color still reflects MC count (Connor will be red w/ 3 MCs).
+  const OUTLIER_OWNERS = ["Connor White"];
+  const outliers = OUTLIER_OWNERS
+    .map(owner => D.week.find(t => t.owner === owner))
+    .filter(Boolean);
+  
   // Spread bubbles horizontally — each team gets a stable column slot
   // but if two teams have same score, they offset slightly
   const positioned = (() => {
@@ -1973,6 +2000,29 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               style={{ left: `${x}px`, top: `${y}px` }}
               onClick={() => onSelectTeam(team)}
               title={`${team.owner} · ${score}`}
+            >
+              {score}
+            </div>
+          );
+        })}
+        
+        {/* Outlier bubbles — pinned to bottom of stage (off-scale) */}
+        {outliers.map((team, i) => {
+          const mc = teamMC(team);
+          const cls = colorFor(mc);
+          const isFav = team.owner === fav;
+          const score = team.toPar === 0 ? 'E' : team.toPar > 0 ? `+${team.toPar}` : `${team.toPar}`;
+          // Center horizontally with small per-team offset; pin to bottom edge
+          const stageW = Math.max(280, (window.innerWidth || 380) - AXIS_WIDTH - 16);
+          const x = (stageW - BUBBLE_SIZE) / 2 + (i * 44) - ((outliers.length - 1) * 22);
+          const y = STAGE_HEIGHT - BUBBLE_SIZE - 8;
+          return (
+            <div
+              key={team.owner}
+              className={`pulse-bubble ${cls} ${isFav ? 'me' : ''} outlier`}
+              style={{ left: `${x}px`, top: `${y}px` }}
+              onClick={() => onSelectTeam(team)}
+              title={`${team.owner} · ${score} (off-scale)`}
             >
               {score}
             </div>
