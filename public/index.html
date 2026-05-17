@@ -26,16 +26,23 @@ const CONFIG = {
   LEADERBOARD_URL: "data/leaderboard.json",
   HISTORY_URL: "data/history.json",
   OWNER: "Ethan Brady",
+  IS_PREVIEW: false,
   FRIENDS: [
     "Eric Southard", "John Hughes", "Matt White",
     "Aaron White", "Connor White", "Malcolm White",
     "Great White!", "Joe Jurkiewicz"
   ],
-  // Pulse view: only show these owners (Ethan + tracked friends)
-  // Note: Connor White (The Blackout) temporarily excluded this week — score outlier (+34 w/ 3 MCs)
+  // Friends tab: show these owners on bubble + chart
+  // Note: Connor White (The Blackout) temporarily excluded — score outlier (+34 w/ 3 MCs)
+  // Will pull him back in when his score normalizes
   PULSE_OWNERS: [
     "Ethan Brady", "Eric Southard", "Great White!",
-    "John Hughes", "Matt White", "Aaron White"
+    "John Hughes", "Matt White", "Aaron White", "Joe Jurkiewicz"
+  ],
+  // Mini leaderboard at the bottom of Friends tab — full friends list including Connor + Joe
+  FRIENDS_LB: [
+    "Ethan Brady", "Matt White", "Joe Jurkiewicz", "Great White!",
+    "Eric Southard", "John Hughes", "Aaron White", "Connor White"
   ],
   PULSE_NICKNAMES: {
     "Ethan Brady": "Brady Bunch",
@@ -44,6 +51,7 @@ const CONFIG = {
     "John Hughes": "Filmmaker",
     "Matt White": "Papa",
     "Aaron White": "Aaron",
+    "Joe Jurkiewicz": "Joe J",
   },
 };
 
@@ -326,6 +334,13 @@ const clubCSS = `
 .dir-club .lb {
   padding: 0 22px 0;
 }
+/* Friends mini-leaderboard: scores flush to right edge of screen */
+.dir-club .lb.lb-friends {
+  padding-right: 0;
+}
+.dir-club .lb.lb-friends .lb-row .score {
+  padding-right: 12px;
+}
 .dir-club .lb-row {
   display: flex;
   align-items: center;
@@ -387,6 +402,7 @@ const clubCSS = `
   font-family: 'Fraunces', serif;
   font-size: 18px;
   font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 .dir-club .lb-row .score.under { color: var(--green-good); }
 .dir-club .lb-row .score.over { color: var(--brick); }
@@ -847,6 +863,55 @@ const clubCSS = `
   margin-right: 6px;
   animation: pulse-blink 1.6s ease-in-out infinite;
 }
+/* Combined header row: title + legend on one line */
+.dir-club .pulse-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 22px 8px;
+  flex-wrap: wrap;
+}
+.dir-club .pulse-title-inline {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+}
+.dir-club .pulse-title-inline .live-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--brick);
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse-blink 1.6s ease-in-out infinite;
+}
+.dir-club .pulse-legend-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dir-club .pulse-legend-inline .lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.dir-club .pulse-legend-inline .lg .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dir-club .pulse-legend-inline .lg.green .dot { background: #2d6e3e; }
+.dir-club .pulse-legend-inline .lg.yellow .dot { background: #a07814; }
+.dir-club .pulse-legend-inline .lg.red .dot { background: #8a2a1e; }
 @keyframes pulse-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -856,19 +921,121 @@ const clubCSS = `
   width: 100%;
   height: 520px;
   background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 250, 235, 0.7) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(20, 53, 42, 0.06) 0%, transparent 60%),
     linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
   overflow: hidden;
+  isolation: isolate;
 }
-/* Score axis ticks (right side) */
+/* Edge vignette — adds spatial depth at boundaries */
+.dir-club .pulse-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+/* Slow-drifting ambient orbs — depth + life */
+.dir-club .pulse-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform;
+}
+.dir-club .pulse-orb.o1 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(95, 168, 114, 0.45) 0%, transparent 70%);
+  top: 15%;
+  left: 10%;
+  animation: orb-drift-1 28s ease-in-out infinite;
+}
+.dir-club .pulse-orb.o2 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(201, 168, 94, 0.35) 0%, transparent 70%);
+  top: 55%;
+  left: 55%;
+  animation: orb-drift-2 36s ease-in-out infinite;
+}
+.dir-club .pulse-orb.o3 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(61, 107, 138, 0.28) 0%, transparent 70%);
+  top: 40%;
+  left: 20%;
+  animation: orb-drift-3 42s ease-in-out infinite;
+}
+.dir-club .pulse-orb.o4 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(213, 108, 90, 0.22) 0%, transparent 70%);
+  top: 75%;
+  left: 70%;
+  animation: orb-drift-4 32s ease-in-out infinite;
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(60px, 40px) scale(1.15); }
+  66%      { transform: translate(-30px, 70px) scale(0.9); }
+}
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%      { transform: translate(-80px, -50px) scale(1.2); }
+  75%      { transform: translate(40px, -30px) scale(0.85); }
+}
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(90px, -40px) scale(1.1); }
+}
+@keyframes orb-drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35%      { transform: translate(-50px, 60px) scale(1.25); }
+  70%      { transform: translate(50px, 30px) scale(0.9); }
+}
+
+/* Bubbles need to sit above the orbs (z-index already 5) */
+
+/* Dark-mode orb tweaks — keep them visible but moodier */
+.dir-club.dark .pulse-orb { opacity: 0.35; }
+.dir-club.dark .pulse-stage::before {
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.35) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dir-club .pulse-orb { animation: none; }
+}
+/* Score axis ticks (right side) — translucent so orbs drift behind */
 .dir-club .pulse-axis {
   position: absolute;
   top: 0;
   right: 0;
-  width: 56px;
+  width: 36px;
   height: 100%;
-  border-left: 1px solid var(--paper-line);
-  background: var(--paper-deep);
-  z-index: 2;
+  border-left: 1px solid rgba(213, 205, 180, 0.4);
+  background: linear-gradient(
+    90deg,
+    rgba(237, 229, 207, 0) 0%,
+    rgba(237, 229, 207, 0.45) 30%,
+    rgba(237, 229, 207, 0.55) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 3;
+}
+.dir-club.dark .pulse-axis {
+  border-left-color: rgba(255,255,255,0.08);
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.25) 30%,
+    rgba(0,0,0,0.4) 100%
+  );
 }
 .dir-club .pulse-tick {
   position: absolute;
@@ -879,11 +1046,14 @@ const clubCSS = `
 }
 .dir-club .pulse-tick-label {
   position: absolute;
-  right: 8px;
+  right: 12px;
+  width: 28px;
+  text-align: right;
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   color: var(--ink-soft);
   transform: translateY(-50%);
+  font-variant-numeric: tabular-nums;
 }
 .dir-club .pulse-tick.zero { background: var(--ink-soft); height: 1px; opacity: 0.5; }
 .dir-club .pulse-tick.zero .pulse-tick-label { color: var(--ink); font-weight: 600; }
@@ -926,6 +1096,25 @@ const clubCSS = `
 }
 .dir-club .pulse-bubble.red {
   background: radial-gradient(circle at 30% 25%, #d56c5a 0%, #8a2a1e 80%);
+}
+/* Outlier bubbles — pinned to bottom, off-scale */
+.dir-club .pulse-bubble.outlier {
+  opacity: 0.85;
+}
+.dir-club .pulse-bubble.outlier::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0,0,0,0.35) 0px, rgba(0,0,0,0.35) 2px,
+    transparent 2px, transparent 4px
+  );
+  border-radius: 2px;
 }
 /* "Your team" — Ethan — pulsing ring */
 .dir-club .pulse-bubble.me {
@@ -970,12 +1159,12 @@ const clubCSS = `
 /* Stock chart strip */
 .dir-club .pulse-chart {
   background: var(--paper);
-  padding: 16px 22px 22px;
+  padding: 16px 12px 22px 22px;
   border-top: 1px solid var(--paper-line);
 }
 .dir-club .pulse-chart svg {
   width: 100%;
-  height: 140px;
+  height: 240px;
   display: block;
 }
 .dir-club .pulse-chart-legend {
@@ -1231,6 +1420,7 @@ function ClubTabs({ active, onChange }) {
     { k: 'live', l: 'Live PGA', dot: true },
     { k: 'weekly', l: 'Weekly' },
     { k: 'season', l: 'Season' },
+    { k: 'pulse', l: 'Friends' },
   ];
   return (
     <div className="tabs-row">
@@ -1619,23 +1809,30 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// PULSE - live bubble chart of friends + stock chart history
+// FRIENDS - live bubble chart + history line chart + mini leaderboard
 // ═══════════════════════════════════════════════════════════════
 function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   const D = data;
+  const [fav, setFav] = useFavoriteTeam();
+  // Within-round scale persistence (one-way expansion until round changes)
+  const scaleRef = React.useRef({ round: null, minS: null, maxS: null });
   if (!D) return null;
   
-  // Filter to PULSE_OWNERS only (Ethan + friends), in fixed order
-  const teams = CONFIG.PULSE_OWNERS
+  // ═════════════ FRIENDS POOL (PULSE_OWNERS + Connor) ═════════════
+  // PULSE_OWNERS already includes Ethan + 6 tracked friends.
+  // We add Connor here to evaluate as a potential outlier, then filter
+  // outliers OUT of the bubble stage and pin them to the bottom edge instead.
+  const ALL_FRIENDS = [...CONFIG.PULSE_OWNERS, "Connor White"];
+  const allFriendTeams = ALL_FRIENDS
     .map(owner => D.week.find(t => t.owner === owner))
     .filter(Boolean);
   
-  if (teams.length === 0) {
+  if (allFriendTeams.length === 0) {
     return (
       <div className="scroll">
         <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
         <div className="pulse-wrap">
-          <div className="pulse-title"><span className="live-dot"></span>Pulse · Friends Live</div>
+          <div className="pulse-title"><span className="live-dot"></span>Friends · Live</div>
           <div style={{padding: '40px 22px', textAlign: 'center', color: 'var(--ink-faint)', fontFamily: 'DM Mono', fontSize: 12}}>
             No friend teams loaded yet.
           </div>
@@ -1644,17 +1841,72 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     );
   }
   
-  // Compute the score range across friends, with a little headroom
-  // Hard cap at +10 max so an outlier (e.g. 3-MC team) doesn't compress everyone else
-  const scores = teams.map(t => t.toPar);
-  const minS = Math.max(-15, Math.min(...scores) - 3);
-  const maxS = Math.min(10, Math.max(...scores) + 3);
+  // ═════════════ AUTO-DETECT OUTLIERS ═════════════
+  // Asymmetric on purpose: only pin teams that are way WORSE than the pack,
+  // never teams that are way BETTER. (A friend on a heater should fill the
+  // stage, not get pushed off-scale.) Walks from the worst score upward;
+  // each team is an outlier if the gap to the next-worst exceeds the
+  // threshold; the walk stops at the first non-outlier.
+  const OUTLIER_GAP = 10;
+  const sortedDesc = [...allFriendTeams].sort((a, b) => (b.toPar ?? 0) - (a.toPar ?? 0));
+  const outlierSet = new Set();
+  for (let i = 0; i < sortedDesc.length - 1; i++) {
+    const gap = (sortedDesc[i].toPar ?? 0) - (sortedDesc[i + 1].toPar ?? 0);
+    if (gap > OUTLIER_GAP) {
+      outlierSet.add(sortedDesc[i].owner);
+    } else {
+      break; // once a non-outlier is found, stop the walk
+    }
+  }
+  
+  // teams (on-stage) and outliers (pinned)
+  const teams = allFriendTeams.filter(t => !outlierSet.has(t.owner));
+  const outliers = allFriendTeams.filter(t => outlierSet.has(t.owner));
+  
+  // ═════════════ STAGE SCALE ═════════════
+  // Rules:
+  //   1. Snap min/max to nearest 5 strokes (round outward)
+  //   2. Minimum range = 20 strokes (small clusters don't get cramped)
+  //   3. One-way expansion *within the current round* (no whiplash from
+  //      single shots; resets when current_round changes)
+  const SNAP = 5;
+  const MIN_RANGE = 20;
+  
+  const onStageScores = teams.map(t => t.toPar ?? 0);
+  let rawMin = onStageScores.length ? Math.min(...onStageScores) : -5;
+  let rawMax = onStageScores.length ? Math.max(...onStageScores) : 5;
+  
+  // Step 1: snap outward to nearest 5
+  let snapMin = Math.floor(rawMin / SNAP) * SNAP;
+  let snapMax = Math.ceil(rawMax / SNAP) * SNAP;
+  
+  // Step 2: enforce minimum range, centered
+  if (snapMax - snapMin < MIN_RANGE) {
+    const center = (snapMin + snapMax) / 2;
+    // Re-snap an expanded window to the grid
+    snapMin = Math.floor((center - MIN_RANGE / 2) / SNAP) * SNAP;
+    snapMax = Math.ceil((center + MIN_RANGE / 2) / SNAP) * SNAP;
+  }
+  
+  // Step 3: one-way expansion within current round (held in a ref keyed by round)
+  const currentRound = D.event?.round ?? 0;
+  if (scaleRef.current.round !== currentRound || scaleRef.current.minS === null) {
+    // New round (or first render) → reset to fresh-computed snap
+    scaleRef.current = { round: currentRound, minS: snapMin, maxS: snapMax };
+  } else {
+    // Same round → only allow expansion, never contraction
+    scaleRef.current.minS = Math.min(scaleRef.current.minS, snapMin);
+    scaleRef.current.maxS = Math.max(scaleRef.current.maxS, snapMax);
+  }
+  
+  const minS = scaleRef.current.minS;
+  const maxS = scaleRef.current.maxS;
   
   // Stage layout: vertical = score, horizontal = stable per-team column slots so bubbles don't overlap at same score
   const STAGE_HEIGHT = 520;
   const STAGE_TOP_PAD = 30;
   const STAGE_BOT_PAD = 30;
-  const AXIS_WIDTH = 56;
+  const AXIS_WIDTH = 36;
   const BUBBLE_SIZE = 36;
   const usableHeight = STAGE_HEIGHT - STAGE_TOP_PAD - STAGE_BOT_PAD;
   
@@ -1664,10 +1916,9 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     return STAGE_TOP_PAD + t * usableHeight;
   };
   
-  // Build axis ticks (every 2 strokes)
+  // Build axis ticks (snapped to multiples of 5 to match the scale grid)
   const axisTicks = [];
-  const tickStep = Math.max(1, Math.ceil((maxS - minS) / 8));
-  for (let s = Math.ceil(minS); s <= Math.floor(maxS); s += tickStep) {
+  for (let s = minS; s <= maxS; s += SNAP) {
     axisTicks.push(s);
   }
   
@@ -1712,40 +1963,56 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
         x: spreadX + stableOffset,
         y: scoreToY(t.toPar) - BUBBLE_SIZE / 2,
         mc: teamMC(t),
-        isMe: t.owner === CONFIG.OWNER,
+        isFav: t.owner === fav,
       });
     });
     return result;
   })();
   
   // ── STOCK CHART ──
-  // history snapshots filtered + last 24 max
-  const snaps = (history?.snapshots || []).slice(-24);
+  // Show only the LAST 4 updates so the chart stays focused on the recent trail.
+  const snaps = (history?.snapshots || []).slice(-4);
   const chartW = 360;
-  const chartH = 140;
+  const chartH = 240;
   const chartPadL = 8;
   const chartPadR = 30;
-  const chartPadT = 8;
+  const chartPadT = 12;
   const chartPadB = 18;
   
-  // Score range across history
-  let hMin = 999, hMax = -999;
+  // Chart scale: own rules, based only on on-stage friends across the 4 snapshots.
+  // Same shape as stage rules (snap-to-5) but tighter min range since only
+  // 4 points need to fit and we want the trail to feel readable.
+  const CHART_MIN_RANGE = 10;
+  const onStageOwners = new Set(teams.map(t => t.owner));
+  let chartRawMin = Infinity, chartRawMax = -Infinity;
   snaps.forEach(snap => {
-    CONFIG.PULSE_OWNERS.forEach(o => {
-      const v = snap.scores?.[o];
-      if (typeof v === 'number') {
-        if (v < hMin) hMin = v;
-        if (v > hMax) hMax = v;
-      }
+    Object.entries(snap.scores || {}).forEach(([owner, v]) => {
+      if (!onStageOwners.has(owner)) return; // exclude outliers from scale calc
+      if (typeof v !== 'number') return;
+      if (v < chartRawMin) chartRawMin = v;
+      if (v > chartRawMax) chartRawMax = v;
     });
   });
-  if (hMin === 999) { hMin = -5; hMax = 5; }
-  if (hMin === hMax) { hMin -= 2; hMax += 2; }
-  hMin -= 1; hMax += 1;
+  // Sensible defaults if we have no data
+  if (!isFinite(chartRawMin)) { chartRawMin = -5; chartRawMax = 5; }
+  
+  let hMin = Math.floor(chartRawMin / SNAP) * SNAP;
+  let hMax = Math.ceil(chartRawMax / SNAP) * SNAP;
+  if (hMax - hMin < CHART_MIN_RANGE) {
+    const center = (hMin + hMax) / 2;
+    hMin = Math.floor((center - CHART_MIN_RANGE / 2) / SNAP) * SNAP;
+    hMax = Math.ceil((center + CHART_MIN_RANGE / 2) / SNAP) * SNAP;
+  }
   
   const xAt = (i) => chartPadL + (i / Math.max(1, snaps.length - 1)) * (chartW - chartPadL - chartPadR);
   // lower score (better) at top
   const yAt = (s) => chartPadT + ((s - hMin) / (hMax - hMin)) * (chartH - chartPadT - chartPadB);
+  
+  // Gridline scores at the same 5-stroke snap as the chart bounds
+  const gridScores = [];
+  for (let s = hMin; s <= hMax; s += SNAP) {
+    gridScores.push(s);
+  }
   
   // Color palette per friend (distinct, readable)
   const palette = {
@@ -1756,6 +2023,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     "John Hughes": "#a07814",
     "Matt White": "#5a4282",
     "Aaron White": "#7d5a3a",
+    "Joe Jurkiewicz": "#2f7d7a",   // teal
   };
   
   return (
@@ -1763,18 +2031,25 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
       
       <div className="pulse-wrap">
-      <div className="pulse-title">
-        <span className="live-dot"></span>
-        Pulse · Friends Live · {teams.length} teams
-      </div>
-      
-      <div className="pulse-legend-row">
-        <div className="lg green"><span className="dot"></span>Clean</div>
-        <div className="lg yellow"><span className="dot"></span>1 MC</div>
-        <div className="lg red"><span className="dot"></span>2+ MCs</div>
+      <div className="pulse-header">
+        <div className="pulse-title-inline">
+          <span className="live-dot"></span>
+          Friends · Live · {teams.length} teams
+        </div>
+        <div className="pulse-legend-inline">
+          <span className="lg green"><span className="dot"></span>4/4</span>
+          <span className="lg yellow"><span className="dot"></span>MC</span>
+          <span className="lg red"><span className="dot"></span>2+</span>
+        </div>
       </div>
       
       <div className="pulse-stage">
+        {/* Ambient depth — drifting orbs */}
+        <div className="pulse-orb o1"></div>
+        <div className="pulse-orb o2"></div>
+        <div className="pulse-orb o3"></div>
+        <div className="pulse-orb o4"></div>
+        
         {/* Axis on right */}
         <div className="pulse-axis">
           {axisTicks.map(s => (
@@ -1794,13 +2069,13 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
         </div>
         
         {/* Bubbles */}
-        {positioned.map(({ team, x, y, mc, isMe }) => {
+        {positioned.map(({ team, x, y, mc, isFav }) => {
           const cls = colorFor(mc);
           const score = team.toPar === 0 ? 'E' : team.toPar > 0 ? `+${team.toPar}` : `${team.toPar}`;
           return (
             <div
               key={team.owner}
-              className={`pulse-bubble ${cls} ${isMe ? 'me' : ''}`}
+              className={`pulse-bubble ${cls} ${isFav ? 'me' : ''}`}
               style={{ left: `${x}px`, top: `${y}px` }}
               onClick={() => onSelectTeam(team)}
               title={`${team.owner} · ${score}`}
@@ -1809,6 +2084,70 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
             </div>
           );
         })}
+        
+        {/* Outlier bubbles — pinned to bottom of stage (off-scale) */}
+        {outliers.map((team, i) => {
+          const mc = teamMC(team);
+          const cls = colorFor(mc);
+          const isFav = team.owner === fav;
+          const score = team.toPar === 0 ? 'E' : team.toPar > 0 ? `+${team.toPar}` : `${team.toPar}`;
+          // Center horizontally with small per-team offset; pin to bottom edge
+          const stageW = Math.max(280, (window.innerWidth || 380) - AXIS_WIDTH - 16);
+          const x = (stageW - BUBBLE_SIZE) / 2 + (i * 44) - ((outliers.length - 1) * 22);
+          const y = STAGE_HEIGHT - BUBBLE_SIZE - 8;
+          return (
+            <div
+              key={team.owner}
+              className={`pulse-bubble ${cls} ${isFav ? 'me' : ''} outlier`}
+              style={{ left: `${x}px`, top: `${y}px` }}
+              onClick={() => onSelectTeam(team)}
+              title={`${team.owner} · ${score} (off-scale)`}
+            >
+              {score}
+            </div>
+          );
+        })}
+      </div>
+      
+      {/* ── FRIENDS MINI LEADERBOARD (between stage and chart) ── */}
+      <div className="lb lb-friends" style={{marginTop: 12}}>
+        {(() => {
+          const rows = CONFIG.FRIENDS_LB
+            .map(owner => D.week.find(t => t.owner === owner))
+            .filter(Boolean)
+            .sort((a, b) => (a.toPar ?? 999) - (b.toPar ?? 999));
+          
+          return rows.map(team => {
+            const isFav = team.owner === fav;
+            const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
+            const subText = isFav 
+              ? 'Your Team' 
+              : 'Tracked';
+            return (
+              <div 
+                key={team.owner}
+                className={`lb-row ${isFav ? 'is-fav' : ''}`}
+                onClick={() => onSelectTeam(team)}
+              >
+                <div className="pos">{team.rank}</div>
+                <div className="who" style={{display: 'flex', alignItems: 'center', gap: 6}}>
+                  <span 
+                    className={`fav-btn ${isFav ? 'on' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); setFav(isFav ? null : team.owner); }}
+                  >
+                    {isFav ? '★' : '☆'}
+                  </span>
+                  <div>
+                    <div className="nm">{team.owner}</div>
+                    <div className="sub">{subText}</div>
+                  </div>
+                </div>
+                <div className="delta"></div>
+                <div className={`score ${cls}`}>{D.fmt(team.toPar)}</div>
+              </div>
+            );
+          });
+        })()}
       </div>
       
       {/* Stock chart */}
@@ -1817,15 +2156,20 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
           Last {snaps.length} updates · score trail
         </div>
         <svg viewBox={`0 0 ${chartW} ${chartH}`} preserveAspectRatio="none">
-          {/* Zero line */}
-          {hMin <= 0 && hMax >= 0 && (
-            <line 
-              x1={chartPadL} 
-              x2={chartW - chartPadR}
-              y1={yAt(0)} y2={yAt(0)}
-              stroke="var(--ink-soft)" strokeWidth="0.5" strokeDasharray="2,3" opacity="0.4"
-            />
-          )}
+          {/* Gridlines at each integer score — matches stage axis ticks */}
+          {gridScores.map(s => (
+            <g key={`grid-${s}`}>
+              <line
+                x1={chartPadL}
+                x2={chartW - chartPadR}
+                y1={yAt(s)} y2={yAt(s)}
+                stroke={s === 0 ? 'var(--ink-soft)' : 'var(--paper-line)'}
+                strokeWidth={s === 0 ? 0.6 : 0.4}
+                strokeDasharray={s === 0 ? '2,3' : 'none'}
+                opacity={s === 0 ? 0.5 : 0.35}
+              />
+            </g>
+          ))}
           {/* Per-friend score line */}
           {CONFIG.PULSE_OWNERS.map(owner => {
             const pts = snaps
@@ -1836,7 +2180,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               .filter(Boolean);
             if (pts.length < 2) return null;
             const color = palette[owner] || '#5b5b50';
-            const isMe = owner === CONFIG.OWNER;
+            const isMe = owner === fav;
             return (
               <g key={owner}>
                 <polyline
@@ -1864,15 +2208,18 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               </g>
             );
           })}
-          {/* Right-edge score labels */}
-          {[hMin, 0, hMax].filter(s => s >= hMin && s <= hMax).map(s => (
+          {/* Right-edge gridline labels — same scores as stage axis, right-justified */}
+          {gridScores.map(s => (
             <text 
-              key={s}
-              x={chartW - chartPadR + 4} 
+              key={`lbl-${s}`}
+              x={chartW} 
               y={yAt(s) + 3}
+              textAnchor="end"
               fontSize="9"
               fontFamily="DM Mono, monospace"
               fill="var(--ink-soft)"
+              opacity={s === 0 ? 1 : 0.7}
+              style={{fontVariantNumeric: 'tabular-nums'}}
             >
               {s === 0 ? 'E' : s > 0 ? `+${s}` : s}
             </text>
@@ -1884,7 +2231,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
             if (!t) return null;
             const nick = CONFIG.PULSE_NICKNAMES[o] || o.split(' ')[0];
             return (
-              <div key={o} className="lg" style={{color: o === CONFIG.OWNER ? 'var(--ink)' : 'var(--ink-soft)'}}>
+              <div key={o} className="lg" style={{color: o === fav ? 'var(--ink)' : 'var(--ink-soft)'}}>
                 <span className="sw" style={{background: palette[o] || '#5b5b50'}}></span>
                 {nick} {D.fmt(t.toPar)}
               </div>
@@ -1892,6 +2239,8 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
           })}
         </div>
       </div>
+      
+      <div style={{height: 24}}></div>
       </div>
     </div>
   );
@@ -2034,7 +2383,7 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
 // ═══════════════════════════════════════════════════════════════
 function App() {
   const [theme, toggleTheme] = useTheme();
-  const [view, setView] = React.useState('live'); // 'live' | 'weekly' | 'pulse' | 'season' | 'team'
+  const [view, setView] = React.useState('live'); // 'live' | 'weekly' | 'season' | 'pulse' | 'team'
   const [selectedTeam, setSelectedTeam] = React.useState(null);
   const [sheetTeam, setSheetTeam] = React.useState(null); // For bottom sheet preview
   const [rawData, setRawData] = React.useState(null);
@@ -2158,6 +2507,10 @@ function App() {
           
           {view === 'weekly' && (
             <ClubhouseWeekly data={data} theme={theme} onSelectTeam={handleSelectTeam} />
+          )}
+          
+          {view === 'pulse' && (
+            <ClubhousePulse data={data} theme={theme} onSelectTeam={handleSelectTeam} history={history} />
           )}
           
           {view === 'season' && (
