@@ -1240,7 +1240,6 @@ function ClubTabs({ active, onChange }) {
   const tabs = [
     { k: 'live', l: 'Live PGA', dot: true },
     { k: 'weekly', l: 'Weekly' },
-    { k: 'pulse', l: 'Pulse' },
     { k: 'season', l: 'Season' },
   ];
   return (
@@ -2170,10 +2169,6 @@ function App() {
           
           {view === 'weekly' && (
             <ClubhouseWeekly data={data} theme={theme} onSelectTeam={handleSelectTeam} />
-          )}
-          
-          {view === 'pulse' && (
-            <ClubhousePulse data={data} theme={theme} onSelectTeam={handleSelectTeam} history={history} />
           )}
           
           {view === 'season' && (
