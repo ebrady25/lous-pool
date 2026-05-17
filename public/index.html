@@ -32,14 +32,14 @@ const CONFIG = {
     "Great White!", "Joe Jurkiewicz"
   ],
   // Pulse view: only show these owners (Ethan + tracked friends)
+  // Note: Connor White (The Blackout) temporarily excluded this week — score outlier (+34 w/ 3 MCs)
   PULSE_OWNERS: [
-    "Ethan Brady", "Eric Southard", "Connor White", "Great White!",
+    "Ethan Brady", "Eric Southard", "Great White!",
     "John Hughes", "Matt White", "Aaron White"
   ],
   PULSE_NICKNAMES: {
     "Ethan Brady": "Brady Bunch",
     "Eric Southard": "Southpaw",
-    "Connor White": "The Blackout",
     "Great White!": "Great White!",
     "John Hughes": "Filmmaker",
     "Matt White": "Papa",
@@ -891,17 +891,17 @@ const clubCSS = `
 /* Bubble */
 .dir-club .pulse-bubble {
   position: absolute;
-  width: 56px;
-  height: 56px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Fraunces', serif;
-  font-size: 11px;
-  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   text-align: center;
-  line-height: 1.05;
   color: #fff;
   cursor: pointer;
   /* SMOOTH MOTION - the addictive part */
@@ -911,10 +911,8 @@ const clubCSS = `
     background 600ms ease,
     box-shadow 300ms ease,
     transform 200ms ease;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.18), inset 0 -3px 6px rgba(0,0,0,0.15), inset 0 2px 4px rgba(255,255,255,0.25);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18), inset 0 -2px 4px rgba(0,0,0,0.15), inset 0 1px 3px rgba(255,255,255,0.25);
   z-index: 5;
-  padding: 4px;
-  box-sizing: border-box;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -932,38 +930,30 @@ const clubCSS = `
 /* "Your team" — Ethan — pulsing ring */
 .dir-club .pulse-bubble.me {
   box-shadow: 
-    0 4px 14px rgba(0,0,0,0.18), 
-    inset 0 -3px 6px rgba(0,0,0,0.15), 
-    inset 0 2px 4px rgba(255,255,255,0.25),
-    0 0 0 3px var(--paper),
-    0 0 0 5px var(--brass);
+    0 3px 10px rgba(0,0,0,0.18), 
+    inset 0 -2px 4px rgba(0,0,0,0.15), 
+    inset 0 1px 3px rgba(255,255,255,0.25),
+    0 0 0 2px var(--paper),
+    0 0 0 4px var(--brass);
   animation: me-pulse 2.2s ease-in-out infinite;
 }
 @keyframes me-pulse {
   0%, 100% { 
     box-shadow: 
-      0 4px 14px rgba(0,0,0,0.18), 
-      inset 0 -3px 6px rgba(0,0,0,0.15), 
-      inset 0 2px 4px rgba(255,255,255,0.25),
-      0 0 0 3px var(--paper),
-      0 0 0 5px var(--brass);
+      0 3px 10px rgba(0,0,0,0.18), 
+      inset 0 -2px 4px rgba(0,0,0,0.15), 
+      inset 0 1px 3px rgba(255,255,255,0.25),
+      0 0 0 2px var(--paper),
+      0 0 0 4px var(--brass);
   }
   50% { 
     box-shadow: 
-      0 4px 14px rgba(0,0,0,0.18), 
-      inset 0 -3px 6px rgba(0,0,0,0.15), 
-      inset 0 2px 4px rgba(255,255,255,0.25),
-      0 0 0 3px var(--paper),
-      0 0 0 8px var(--brass);
+      0 3px 10px rgba(0,0,0,0.18), 
+      inset 0 -2px 4px rgba(0,0,0,0.15), 
+      inset 0 1px 3px rgba(255,255,255,0.25),
+      0 0 0 2px var(--paper),
+      0 0 0 6px var(--brass);
   }
-}
-.dir-club .pulse-bubble .b-score {
-  font-family: 'DM Mono', monospace;
-  font-size: 14px;
-  font-weight: 700;
-  display: block;
-  margin-top: 1px;
-  letter-spacing: -0.5px;
 }
 
 /* Subtle horizontal flight trail behind bubble showing recent direction */
@@ -1655,16 +1645,17 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   }
   
   // Compute the score range across friends, with a little headroom
+  // Hard cap at +10 max so an outlier (e.g. 3-MC team) doesn't compress everyone else
   const scores = teams.map(t => t.toPar);
-  const minS = Math.min(...scores) - 3;
-  const maxS = Math.max(...scores) + 3;
+  const minS = Math.max(-15, Math.min(...scores) - 3);
+  const maxS = Math.min(10, Math.max(...scores) + 3);
   
   // Stage layout: vertical = score, horizontal = stable per-team column slots so bubbles don't overlap at same score
   const STAGE_HEIGHT = 520;
   const STAGE_TOP_PAD = 30;
   const STAGE_BOT_PAD = 30;
   const AXIS_WIDTH = 56;
-  const BUBBLE_SIZE = 56;
+  const BUBBLE_SIZE = 36;
   const usableHeight = STAGE_HEIGHT - STAGE_TOP_PAD - STAGE_BOT_PAD;
   
   // Score → Y position (best at top → lower Y)
@@ -1805,7 +1796,6 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
         {/* Bubbles */}
         {positioned.map(({ team, x, y, mc, isMe }) => {
           const cls = colorFor(mc);
-          const label = CONFIG.PULSE_NICKNAMES[team.owner] || team.owner.split(' ')[0];
           const score = team.toPar === 0 ? 'E' : team.toPar > 0 ? `+${team.toPar}` : `${team.toPar}`;
           return (
             <div
@@ -1815,8 +1805,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               onClick={() => onSelectTeam(team)}
               title={`${team.owner} · ${score}`}
             >
-              <div>{label}</div>
-              <span className="b-score">{score}</span>
+              {score}
             </div>
           );
         })}
