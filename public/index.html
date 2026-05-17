@@ -753,6 +753,15 @@ const clubCSS = `
 }
 .dir-club .sp-rounds .rd-val.r4-rep { color: var(--brick); font-style: italic; }
 .dir-club .sp-rounds .rd-val.empty { color: var(--ink-faint); }
+.dir-club .sp-rounds .rd-tp {
+  font-size: 10px;
+  font-weight: 500;
+  margin-left: 4px;
+  vertical-align: baseline;
+}
+.dir-club .sp-rounds .rd-tp.tp-under { color: var(--green-good); }
+.dir-club .sp-rounds .rd-tp.tp-over { color: var(--brick); }
+.dir-club .sp-rounds .rd-tp.tp-even { color: var(--ink-faint); }
 .dir-club .sp-rounds .rd-note {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
@@ -1478,14 +1487,21 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
                       { label: 'R2', val: r2, rep: false },
                       { label: 'R3', val: r3, rep: isMC },
                       { label: 'R4', val: r4, rep: isMC },
-                    ].map(rd => (
-                      <div key={rd.label} className="rd">
-                        <div className="rd-label">{rd.label}</div>
-                        <div className={`rd-val ${rd.val == null ? 'empty' : ''} ${rd.rep && rd.val != null ? 'r4-rep' : ''}`}>
-                          {rd.val ?? '–'}
+                    ].map(rd => {
+                      const par = D.event?.par || 70;
+                      const tp = rd.val != null ? rd.val - par : null;
+                      const tpCls = tp == null ? '' : tp < 0 ? 'tp-under' : tp > 0 ? 'tp-over' : 'tp-even';
+                      const tpStr = tp == null ? '' : tp === 0 ? 'E' : tp > 0 ? `+${tp}` : `${tp}`;
+                      return (
+                        <div key={rd.label} className="rd">
+                          <div className="rd-label">{rd.label}</div>
+                          <div className={`rd-val ${rd.val == null ? 'empty' : ''} ${rd.rep && rd.val != null ? 'r4-rep' : ''}`}>
+                            {rd.val ?? '–'}
+                            {tpStr && <span className={`rd-tp ${tpCls}`}>{tpStr}</span>}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                     {isMC && repShort && (
                       <div className="rd-note">R3/R4 by<br/>{repShort}</div>
                     )}
