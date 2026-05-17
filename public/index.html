@@ -206,7 +206,26 @@ const clubCSS = `
 .dir-club .tabs-row {
   display: flex;
   border-bottom: 1px solid var(--paper-line);
-  background: var(--paper);
+  background: 
+    linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.35) 0%, 
+      transparent 35%,
+      rgba(0, 0, 0, 0.04) 100%),
+    var(--paper);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+}
+.dir-club.dark .tabs-row {
+  background: 
+    linear-gradient(180deg, 
+      rgba(255, 255, 255, 0.03) 0%, 
+      transparent 40%,
+      rgba(0, 0, 0, 0.25) 100%),
+    var(--paper);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 .dir-club .tab {
   flex: 1;
@@ -921,11 +940,19 @@ const clubCSS = `
   width: 100%;
   height: 520px;
   background: 
-    radial-gradient(ellipse at 30% 20%, rgba(255, 250, 235, 0.7) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(20, 53, 42, 0.06) 0%, transparent 60%),
-    linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+    radial-gradient(ellipse at 30% 15%, rgba(255, 248, 224, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 85%, rgba(20, 53, 42, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse at 50% 50%, rgba(184, 155, 94, 0.05) 0%, transparent 70%),
+    linear-gradient(180deg, #e9e1c8 0%, #d8cdaf 100%);
   overflow: hidden;
   isolation: isolate;
+}
+/* Dark-mode override: use dark-paper vars, gentler overlays */
+.dir-club.dark .pulse-stage {
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 250, 235, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(184, 155, 94, 0.04) 0%, transparent 60%),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
 }
 /* Edge vignette — adds spatial depth at boundaries */
 .dir-club .pulse-stage::before {
@@ -1209,9 +1236,6 @@ const clubCSS = `
 .dir-club .pulse-legend-row .lg.red .dot { background: #8a2a1e; }
 
 /* Dark mode tweaks */
-.dir-club.dark .pulse-stage {
-  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
-}
 .dir-club.dark .pulse-bubble {
   box-shadow: 0 4px 14px rgba(0,0,0,0.5), inset 0 -3px 6px rgba(0,0,0,0.25), inset 0 2px 4px rgba(255,255,255,0.18);
 }
