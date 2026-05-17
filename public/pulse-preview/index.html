@@ -1015,7 +1015,7 @@ const clubCSS = `
   position: absolute;
   top: 0;
   right: 0;
-  width: 56px;
+  width: 36px;
   height: 100%;
   border-left: 1px solid rgba(213, 205, 180, 0.4);
   background: linear-gradient(
@@ -1906,7 +1906,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   const STAGE_HEIGHT = 520;
   const STAGE_TOP_PAD = 30;
   const STAGE_BOT_PAD = 30;
-  const AXIS_WIDTH = 56;
+  const AXIS_WIDTH = 36;
   const BUBBLE_SIZE = 36;
   const usableHeight = STAGE_HEIGHT - STAGE_TOP_PAD - STAGE_BOT_PAD;
   
@@ -2037,8 +2037,8 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
           Friends · Live · {teams.length} teams
         </div>
         <div className="pulse-legend-inline">
-          <span className="lg green"><span className="dot"></span>Clean</span>
-          <span className="lg yellow"><span className="dot"></span>1 MC</span>
+          <span className="lg green"><span className="dot"></span>4/4</span>
+          <span className="lg yellow"><span className="dot"></span>MC</span>
           <span className="lg red"><span className="dot"></span>2+</span>
         </div>
       </div>
