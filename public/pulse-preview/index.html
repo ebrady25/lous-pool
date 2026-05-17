@@ -857,8 +857,127 @@ const clubCSS = `
   width: 100%;
   height: 520px;
   background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 250, 235, 0.7) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(20, 53, 42, 0.06) 0%, transparent 60%),
     linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
   overflow: hidden;
+  isolation: isolate;
+}
+/* Edge vignette — adds spatial depth at boundaries */
+.dir-club .pulse-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+/* Faint horizontal score-grid lines for chart-paper texture */
+.dir-club .pulse-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg,
+      transparent 0px,
+      transparent 39px,
+      rgba(20, 53, 42, 0.03) 40px,
+      rgba(20, 53, 42, 0.03) 41px),
+    repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 59px,
+      rgba(20, 53, 42, 0.02) 60px,
+      rgba(20, 53, 42, 0.02) 61px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Slow-drifting ambient orbs — depth + life */
+.dir-club .pulse-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 2;
+  will-change: transform;
+}
+.dir-club .pulse-orb.o1 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(95, 168, 114, 0.45) 0%, transparent 70%);
+  top: 15%;
+  left: 10%;
+  animation: orb-drift-1 28s ease-in-out infinite;
+}
+.dir-club .pulse-orb.o2 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(201, 168, 94, 0.35) 0%, transparent 70%);
+  top: 55%;
+  left: 55%;
+  animation: orb-drift-2 36s ease-in-out infinite;
+}
+.dir-club .pulse-orb.o3 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(61, 107, 138, 0.28) 0%, transparent 70%);
+  top: 40%;
+  left: 20%;
+  animation: orb-drift-3 42s ease-in-out infinite;
+}
+.dir-club .pulse-orb.o4 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(213, 108, 90, 0.22) 0%, transparent 70%);
+  top: 75%;
+  left: 70%;
+  animation: orb-drift-4 32s ease-in-out infinite;
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(60px, 40px) scale(1.15); }
+  66%      { transform: translate(-30px, 70px) scale(0.9); }
+}
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%      { transform: translate(-80px, -50px) scale(1.2); }
+  75%      { transform: translate(40px, -30px) scale(0.85); }
+}
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(90px, -40px) scale(1.1); }
+}
+@keyframes orb-drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35%      { transform: translate(-50px, 60px) scale(1.25); }
+  70%      { transform: translate(50px, 30px) scale(0.9); }
+}
+
+/* Bubbles need to sit above the orbs (z-index already 5) */
+
+/* Dark-mode orb tweaks — keep them visible but moodier */
+.dir-club.dark .pulse-orb { opacity: 0.35; }
+.dir-club.dark .pulse-stage::before {
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.35) 100%);
+}
+.dir-club.dark .pulse-stage::after {
+  background-image: 
+    repeating-linear-gradient(0deg,
+      transparent 0px,
+      transparent 39px,
+      rgba(201, 168, 94, 0.04) 40px,
+      rgba(201, 168, 94, 0.04) 41px),
+    repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 59px,
+      rgba(201, 168, 94, 0.025) 60px,
+      rgba(201, 168, 94, 0.025) 61px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .dir-club .pulse-orb { animation: none; }
 }
 /* Score axis ticks (right side) */
 .dir-club .pulse-axis {
@@ -1777,6 +1896,12 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       </div>
       
       <div className="pulse-stage">
+        {/* Ambient depth — drifting orbs */}
+        <div className="pulse-orb o1"></div>
+        <div className="pulse-orb o2"></div>
+        <div className="pulse-orb o3"></div>
+        <div className="pulse-orb o4"></div>
+        
         {/* Axis on right */}
         <div className="pulse-axis">
           {axisTicks.map(s => (
