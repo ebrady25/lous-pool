@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Lou's Pool — Pulse Preview</title>
+<title>Lou's Pool — Friends Preview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -32,11 +32,16 @@ const CONFIG = {
     "Aaron White", "Connor White", "Malcolm White",
     "Great White!", "Joe Jurkiewicz"
   ],
-  // Pulse view: only show these owners (Ethan + tracked friends)
+  // Pulse view: only show these owners on bubble + chart (Ethan + tracked friends)
   // Note: Connor White (The Blackout) temporarily excluded this week — score outlier (+34 w/ 3 MCs)
   PULSE_OWNERS: [
     "Ethan Brady", "Eric Southard", "Great White!",
     "John Hughes", "Matt White", "Aaron White"
+  ],
+  // Mini leaderboard at the bottom of Friends tab — full friends list including Connor + Joe
+  FRIENDS_LB: [
+    "Ethan Brady", "Matt White", "Joe Jurkiewicz", "Great White!",
+    "Eric Southard", "John Hughes", "Aaron White", "Connor White"
   ],
   PULSE_NICKNAMES: {
     "Ethan Brady": "Brady Bunch",
@@ -1366,8 +1371,8 @@ function ClubTabs({ active, onChange }) {
   const tabs = [
     { k: 'live', l: 'Live PGA', dot: true },
     { k: 'weekly', l: 'Weekly' },
-    { k: 'pulse', l: 'Pulse' },
     { k: 'season', l: 'Season' },
+    { k: 'pulse', l: 'Friends' },
   ];
   return (
     <div className="tabs-row">
@@ -1756,10 +1761,11 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// PULSE - live bubble chart of friends + stock chart history
+// FRIENDS - live bubble chart + history line chart + mini leaderboard
 // ═══════════════════════════════════════════════════════════════
 function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   const D = data;
+  const [fav, setFav] = useFavoriteTeam();
   if (!D) return null;
   
   // Filter to PULSE_OWNERS only (Ethan + friends), in fixed order
@@ -1772,7 +1778,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       <div className="scroll">
         <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
         <div className="pulse-wrap">
-          <div className="pulse-title"><span className="live-dot"></span>Pulse · Friends Live</div>
+          <div className="pulse-title"><span className="live-dot"></span>Friends · Live</div>
           <div style={{padding: '40px 22px', textAlign: 'center', color: 'var(--ink-faint)', fontFamily: 'DM Mono', fontSize: 12}}>
             No friend teams loaded yet.
           </div>
@@ -1849,7 +1855,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
         x: spreadX + stableOffset,
         y: scoreToY(t.toPar) - BUBBLE_SIZE / 2,
         mc: teamMC(t),
-        isMe: t.owner === CONFIG.OWNER,
+        isFav: t.owner === fav,
       });
     });
     return result;
@@ -1898,7 +1904,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       <div className="pulse-wrap">
       <div className="pulse-title">
         <span className="live-dot"></span>
-        Pulse · Friends Live · {teams.length} teams
+        Friends · Live · {teams.length} teams
       </div>
       
       <div className="pulse-legend-row">
@@ -1933,13 +1939,13 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
         </div>
         
         {/* Bubbles */}
-        {positioned.map(({ team, x, y, mc, isMe }) => {
+        {positioned.map(({ team, x, y, mc, isFav }) => {
           const cls = colorFor(mc);
           const score = team.toPar === 0 ? 'E' : team.toPar > 0 ? `+${team.toPar}` : `${team.toPar}`;
           return (
             <div
               key={team.owner}
-              className={`pulse-bubble ${cls} ${isMe ? 'me' : ''}`}
+              className={`pulse-bubble ${cls} ${isFav ? 'me' : ''}`}
               style={{ left: `${x}px`, top: `${y}px` }}
               onClick={() => onSelectTeam(team)}
               title={`${team.owner} · ${score}`}
@@ -1980,7 +1986,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
               .filter(Boolean);
             if (pts.length < 2) return null;
             const color = palette[owner] || '#5b5b50';
-            const isMe = owner === CONFIG.OWNER;
+            const isMe = owner === fav;
             return (
               <g key={owner}>
                 <polyline
@@ -2029,7 +2035,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
             if (!t) return null;
             const nick = CONFIG.PULSE_NICKNAMES[o] || o.split(' ')[0];
             return (
-              <div key={o} className="lg" style={{color: o === CONFIG.OWNER ? 'var(--ink)' : 'var(--ink-soft)'}}>
+              <div key={o} className="lg" style={{color: o === fav ? 'var(--ink)' : 'var(--ink-soft)'}}>
                 <span className="sw" style={{background: palette[o] || '#5b5b50'}}></span>
                 {nick} {D.fmt(t.toPar)}
               </div>
@@ -2037,6 +2043,51 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
           })}
         </div>
       </div>
+      
+      {/* ── FRIENDS MINI LEADERBOARD ── */}
+      <div className="section-title" style={{marginTop: 4}}>
+        <h2>Friends · Standings</h2>
+      </div>
+      <div className="lb">
+        {(() => {
+          const rows = CONFIG.FRIENDS_LB
+            .map(owner => D.week.find(t => t.owner === owner))
+            .filter(Boolean)
+            .sort((a, b) => (a.toPar ?? 999) - (b.toPar ?? 999));
+          
+          return rows.map(team => {
+            const isFav = team.owner === fav;
+            const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
+            const subText = isFav 
+              ? 'Your Team' 
+              : 'Tracked';
+            return (
+              <div 
+                key={team.owner}
+                className={`lb-row ${isFav ? 'is-fav' : ''}`}
+                onClick={() => onSelectTeam(team)}
+              >
+                <div className="pos">{team.rank}</div>
+                <div className="who" style={{display: 'flex', alignItems: 'center', gap: 6}}>
+                  <span 
+                    className={`fav-btn ${isFav ? 'on' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); setFav(isFav ? null : team.owner); }}
+                  >
+                    {isFav ? '★' : '☆'}
+                  </span>
+                  <div>
+                    <div className="nm">{team.owner}</div>
+                    <div className="sub">{subText}</div>
+                  </div>
+                </div>
+                <div className="delta"></div>
+                <div className={`score ${cls}`}>{D.fmt(team.toPar)}</div>
+              </div>
+            );
+          });
+        })()}
+      </div>
+      <div style={{height: 24}}></div>
       </div>
     </div>
   );
