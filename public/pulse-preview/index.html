@@ -853,6 +853,55 @@ const clubCSS = `
   margin-right: 6px;
   animation: pulse-blink 1.6s ease-in-out infinite;
 }
+/* Combined header row: title + legend on one line */
+.dir-club .pulse-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 22px 8px;
+  flex-wrap: wrap;
+}
+.dir-club .pulse-title-inline {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+}
+.dir-club .pulse-title-inline .live-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--brick);
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse-blink 1.6s ease-in-out infinite;
+}
+.dir-club .pulse-legend-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dir-club .pulse-legend-inline .lg {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.dir-club .pulse-legend-inline .lg .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dir-club .pulse-legend-inline .lg.green .dot { background: #2d6e3e; }
+.dir-club .pulse-legend-inline .lg.yellow .dot { background: #a07814; }
+.dir-club .pulse-legend-inline .lg.red .dot { background: #8a2a1e; }
 @keyframes pulse-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -1902,15 +1951,16 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
       <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
       
       <div className="pulse-wrap">
-      <div className="pulse-title">
-        <span className="live-dot"></span>
-        Friends · Live · {teams.length} teams
-      </div>
-      
-      <div className="pulse-legend-row">
-        <div className="lg green"><span className="dot"></span>Clean</div>
-        <div className="lg yellow"><span className="dot"></span>1 MC</div>
-        <div className="lg red"><span className="dot"></span>2+ MCs</div>
+      <div className="pulse-header">
+        <div className="pulse-title-inline">
+          <span className="live-dot"></span>
+          Friends · Live · {teams.length} teams
+        </div>
+        <div className="pulse-legend-inline">
+          <span className="lg green"><span className="dot"></span>Clean</span>
+          <span className="lg yellow"><span className="dot"></span>1 MC</span>
+          <span className="lg red"><span className="dot"></span>2+</span>
+        </div>
       </div>
       
       <div className="pulse-stage">
