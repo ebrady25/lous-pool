@@ -1130,7 +1130,7 @@ def main():
     
     # Append a snapshot of FRIENDS' scores to history.json for the Pulse view
     # DISABLED: Pulse view is parked. Re-enable by flipping ENABLE_HISTORY to True.
-    ENABLE_HISTORY = False
+    ENABLE_HISTORY = True
     FRIENDS = ["Ethan Brady", "Eric Southard", "Connor White", "Great White!",
                "John Hughes", "Matt White", "Aaron White"]
     history_path = os.path.join(os.path.dirname(args.output) or ".", "history.json")
