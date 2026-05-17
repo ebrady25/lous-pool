@@ -1046,7 +1046,7 @@ const clubCSS = `
 }
 .dir-club .pulse-tick-label {
   position: absolute;
-  right: 6px;
+  right: 12px;
   width: 28px;
   text-align: right;
   font-family: 'DM Mono', monospace;
@@ -1159,7 +1159,7 @@ const clubCSS = `
 /* Stock chart strip */
 .dir-club .pulse-chart {
   background: var(--paper);
-  padding: 16px 22px 22px;
+  padding: 16px 12px 22px 22px;
   border-top: 1px solid var(--paper-line);
 }
 .dir-club .pulse-chart svg {
@@ -2212,7 +2212,7 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
           {gridScores.map(s => (
             <text 
               key={`lbl-${s}`}
-              x={chartW - 4} 
+              x={chartW} 
               y={yAt(s) + 3}
               textAnchor="end"
               fontSize="9"
