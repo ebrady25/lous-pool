@@ -1807,14 +1807,20 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
 function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   const D = data;
   const [fav, setFav] = useFavoriteTeam();
+  // Within-round scale persistence (one-way expansion until round changes)
+  const scaleRef = React.useRef({ round: null, minS: null, maxS: null });
   if (!D) return null;
   
-  // Filter to PULSE_OWNERS only (Ethan + friends), in fixed order
-  const teams = CONFIG.PULSE_OWNERS
+  // ═════════════ FRIENDS POOL (PULSE_OWNERS + Connor) ═════════════
+  // PULSE_OWNERS already includes Ethan + 6 tracked friends.
+  // We add Connor here to evaluate as a potential outlier, then filter
+  // outliers OUT of the bubble stage and pin them to the bottom edge instead.
+  const ALL_FRIENDS = [...CONFIG.PULSE_OWNERS, "Connor White"];
+  const allFriendTeams = ALL_FRIENDS
     .map(owner => D.week.find(t => t.owner === owner))
     .filter(Boolean);
   
-  if (teams.length === 0) {
+  if (allFriendTeams.length === 0) {
     return (
       <div className="scroll">
         <ClubTabs active="pulse" onChange={(v) => onSelectTeam(null, v)} />
@@ -1828,11 +1834,66 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     );
   }
   
-  // Compute the score range across friends, with a little headroom
-  // Hard cap at +10 max so an outlier (e.g. 3-MC team) doesn't compress everyone else
-  const scores = teams.map(t => t.toPar);
-  const minS = Math.max(-15, Math.min(...scores) - 3);
-  const maxS = Math.min(10, Math.max(...scores) + 3);
+  // ═════════════ AUTO-DETECT OUTLIERS ═════════════
+  // Asymmetric on purpose: only pin teams that are way WORSE than the pack,
+  // never teams that are way BETTER. (A friend on a heater should fill the
+  // stage, not get pushed off-scale.) Walks from the worst score upward;
+  // each team is an outlier if the gap to the next-worst exceeds the
+  // threshold; the walk stops at the first non-outlier.
+  const OUTLIER_GAP = 10;
+  const sortedDesc = [...allFriendTeams].sort((a, b) => (b.toPar ?? 0) - (a.toPar ?? 0));
+  const outlierSet = new Set();
+  for (let i = 0; i < sortedDesc.length - 1; i++) {
+    const gap = (sortedDesc[i].toPar ?? 0) - (sortedDesc[i + 1].toPar ?? 0);
+    if (gap > OUTLIER_GAP) {
+      outlierSet.add(sortedDesc[i].owner);
+    } else {
+      break; // once a non-outlier is found, stop the walk
+    }
+  }
+  
+  // teams (on-stage) and outliers (pinned)
+  const teams = allFriendTeams.filter(t => !outlierSet.has(t.owner));
+  const outliers = allFriendTeams.filter(t => outlierSet.has(t.owner));
+  
+  // ═════════════ STAGE SCALE ═════════════
+  // Rules:
+  //   1. Snap min/max to nearest 5 strokes (round outward)
+  //   2. Minimum range = 20 strokes (small clusters don't get cramped)
+  //   3. One-way expansion *within the current round* (no whiplash from
+  //      single shots; resets when current_round changes)
+  const SNAP = 5;
+  const MIN_RANGE = 20;
+  
+  const onStageScores = teams.map(t => t.toPar ?? 0);
+  let rawMin = onStageScores.length ? Math.min(...onStageScores) : -5;
+  let rawMax = onStageScores.length ? Math.max(...onStageScores) : 5;
+  
+  // Step 1: snap outward to nearest 5
+  let snapMin = Math.floor(rawMin / SNAP) * SNAP;
+  let snapMax = Math.ceil(rawMax / SNAP) * SNAP;
+  
+  // Step 2: enforce minimum range, centered
+  if (snapMax - snapMin < MIN_RANGE) {
+    const center = (snapMin + snapMax) / 2;
+    // Re-snap an expanded window to the grid
+    snapMin = Math.floor((center - MIN_RANGE / 2) / SNAP) * SNAP;
+    snapMax = Math.ceil((center + MIN_RANGE / 2) / SNAP) * SNAP;
+  }
+  
+  // Step 3: one-way expansion within current round (held in a ref keyed by round)
+  const currentRound = D.event?.round ?? 0;
+  if (scaleRef.current.round !== currentRound || scaleRef.current.minS === null) {
+    // New round (or first render) → reset to fresh-computed snap
+    scaleRef.current = { round: currentRound, minS: snapMin, maxS: snapMax };
+  } else {
+    // Same round → only allow expansion, never contraction
+    scaleRef.current.minS = Math.min(scaleRef.current.minS, snapMin);
+    scaleRef.current.maxS = Math.max(scaleRef.current.maxS, snapMax);
+  }
+  
+  const minS = scaleRef.current.minS;
+  const maxS = scaleRef.current.maxS;
   
   // Stage layout: vertical = score, horizontal = stable per-team column slots so bubbles don't overlap at same score
   const STAGE_HEIGHT = 520;
@@ -1848,10 +1909,9 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
     return STAGE_TOP_PAD + t * usableHeight;
   };
   
-  // Build axis ticks (every 2 strokes)
+  // Build axis ticks (snapped to multiples of 5 to match the scale grid)
   const axisTicks = [];
-  const tickStep = Math.max(1, Math.ceil((maxS - minS) / 8));
-  for (let s = Math.ceil(minS); s <= Math.floor(maxS); s += tickStep) {
+  for (let s = minS; s <= maxS; s += SNAP) {
     axisTicks.push(s);
   }
   
@@ -1862,14 +1922,6 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   const teamMC = (team) => {
     return (team.players || []).filter(p => p.status === 'mc').length;
   };
-  
-  // Outlier teams: rendered as bubbles pinned to the bottom edge rather than
-  // mapped to the score axis (so a +38 doesn't squash the rest of the scale).
-  // Their bubble color still reflects MC count (Connor will be red w/ 3 MCs).
-  const OUTLIER_OWNERS = ["Connor White"];
-  const outliers = OUTLIER_OWNERS
-    .map(owner => D.week.find(t => t.owner === owner))
-    .filter(Boolean);
   
   // Spread bubbles horizontally — each team gets a stable column slot
   // but if two teams have same score, they offset slightly
@@ -1911,27 +1963,47 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
   })();
   
   // ── STOCK CHART ──
-  // history snapshots filtered + last 24 max
-  const snaps = (history?.snapshots || []).slice(-24);
+  // Show only the LAST 4 updates so the chart stays focused on the recent trail.
+  const snaps = (history?.snapshots || []).slice(-4);
   const chartW = 360;
-  const chartH = 240;          // was 140 — taller per your request
+  const chartH = 240;
   const chartPadL = 8;
   const chartPadR = 30;
   const chartPadT = 12;
   const chartPadB = 18;
   
-  // Use the SAME score range as the bubble stage so the two visually align
-  const hMin = minS;
-  const hMax = maxS;
+  // Chart scale: own rules, based only on on-stage friends across the 4 snapshots.
+  // Same shape as stage rules (snap-to-5) but tighter min range since only
+  // 4 points need to fit and we want the trail to feel readable.
+  const CHART_MIN_RANGE = 10;
+  const onStageOwners = new Set(teams.map(t => t.owner));
+  let chartRawMin = Infinity, chartRawMax = -Infinity;
+  snaps.forEach(snap => {
+    Object.entries(snap.scores || {}).forEach(([owner, v]) => {
+      if (!onStageOwners.has(owner)) return; // exclude outliers from scale calc
+      if (typeof v !== 'number') return;
+      if (v < chartRawMin) chartRawMin = v;
+      if (v > chartRawMax) chartRawMax = v;
+    });
+  });
+  // Sensible defaults if we have no data
+  if (!isFinite(chartRawMin)) { chartRawMin = -5; chartRawMax = 5; }
+  
+  let hMin = Math.floor(chartRawMin / SNAP) * SNAP;
+  let hMax = Math.ceil(chartRawMax / SNAP) * SNAP;
+  if (hMax - hMin < CHART_MIN_RANGE) {
+    const center = (hMin + hMax) / 2;
+    hMin = Math.floor((center - CHART_MIN_RANGE / 2) / SNAP) * SNAP;
+    hMax = Math.ceil((center + CHART_MIN_RANGE / 2) / SNAP) * SNAP;
+  }
   
   const xAt = (i) => chartPadL + (i / Math.max(1, snaps.length - 1)) * (chartW - chartPadL - chartPadR);
   // lower score (better) at top
   const yAt = (s) => chartPadT + ((s - hMin) / (hMax - hMin)) * (chartH - chartPadT - chartPadB);
   
-  // Gridline scores (every 2 strokes within range)
+  // Gridline scores at the same 5-stroke snap as the chart bounds
   const gridScores = [];
-  const gridStep = Math.max(1, Math.ceil((hMax - hMin) / 10));
-  for (let s = Math.ceil(hMin); s <= Math.floor(hMax); s += gridStep) {
+  for (let s = hMin; s <= hMax; s += SNAP) {
     gridScores.push(s);
   }
   
