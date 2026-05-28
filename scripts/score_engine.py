@@ -32,6 +32,7 @@ from urllib.error import URLError
 # Update this when DataGolf is slow to switch events
 FORCE_EVENT_NAME = "Charles Schwab Challenge"
 FORCE_COURSE_PAR = 70  # Colonial Country Club, Fort Worth (par 70, 7289 yds)
+FORCE_COURSE_NAME = "Colonial"  # shown top-right on leaderboard
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -1018,6 +1019,7 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
     
     return {
         "event": tournament_data["event_name"],
+        "course": FORCE_COURSE_NAME or tournament_data.get("course", ""),
         "status": tournament_data["status"],
         "current_round": tournament_data["current_round"],
         "course_par": tournament_data["course_par"],
