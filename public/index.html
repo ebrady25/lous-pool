@@ -1373,7 +1373,7 @@ function buildLPData(raw) {
   // Event info
   const event = {
     name: raw.event || "Tournament",
-    course: raw.course || "Aronimink",
+    course: raw.course || raw.event || "Course",
     par: raw.course_par || 72,
     cut: raw.cut_line ? (raw.cut_line - (raw.course_par || 72) * 2) : null,
     round: raw.current_round || 1,
