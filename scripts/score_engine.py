@@ -36,6 +36,18 @@ FORCE_COURSE_NAME = "Colonial"  # shown top-right on leaderboard
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
+def display_name(name):
+    """Convert DataGolf 'Last, First' to 'First Last' for display.
+    Leaves names without a comma untouched. Handles empty first names safely."""
+    if not name or "," not in name:
+        return name
+    parts = name.split(",", 1)
+    last = parts[0].strip()
+    first = parts[1].strip()
+    if not first:
+        return last
+    return f"{first} {last}"
+
 # Course par lookup by event name (DataGolf doesn't always provide this)
 COURSE_PAR = {
     "WM Phoenix Open": 71,  # TPC Scottsdale
@@ -989,7 +1001,7 @@ def build_leaderboard(rosters, tournament_data, season_data=None):
     live_players = []
     for name, p in tournament_data["players"].items():
         live_players.append({
-            "name": name,
+            "name": display_name(name),
             "position": p.get("position", ""),
             "thru": p.get("thru", 0),
             "today": p.get("today", 0),
