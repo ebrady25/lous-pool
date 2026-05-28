@@ -30,8 +30,8 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
 # Update this when DataGolf is slow to switch events
-FORCE_EVENT_NAME = "PGA Championship"
-FORCE_COURSE_PAR = 70  # Aronimink Golf Club
+FORCE_EVENT_NAME = "Charles Schwab Challenge"
+FORCE_COURSE_PAR = 70  # Colonial Country Club, Fort Worth (par 70, 7289 yds)
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -300,7 +300,7 @@ def process_tournament(live_data, inplay_data=None):
     # - r1, r2: The WD player's completed round scores (None if WD before starting)
     # - replacement: The alternate who fills remaining rounds
     WD_OVERRIDES = {
-        # Week 9 - PGA Championship: No WDs yet
+        # Week 9 - Charles Schwab Challenge: No WDs yet
     }
     
     # Store WD overrides for use in score_team
