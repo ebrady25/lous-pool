@@ -82,15 +82,14 @@ SEASON: {
 }
 ```
 
-### 4. Update COURSE_PAR in score_engine.py (if new course)
+### 4. Set the three event constants in score_engine.py
+At the top of `score_engine.py`, update all three together for the new event:
 ```python
-COURSE_PAR = {
-    "WM Phoenix Open": 71,
-    "Farmers Insurance Open": 72,
-    "Genesis Invitational": 71,  # Add new course
-    # ...
-}
+FORCE_EVENT_NAME = "Charles Schwab Challenge"  # must match DataGolf field-updates exactly
+FORCE_COURSE_PAR = 70    # VERIFY — varies by course (Colonial 70, Augusta 72, Riviera 71)
+FORCE_COURSE_NAME = "Colonial"  # short name shown top-right on the leaderboard UI
 ```
+Also clear `WD_OVERRIDES` for the new event. Old `RULE4_OVERRIDES` entries are keyed by event name so they stay dormant — no need to remove them.
 
 ### 5. Verify Your Lineup
 Check that your team is correct in rosters.json.
@@ -137,14 +136,32 @@ Always follow up with a GET to confirm the new state — the PATCH returns `{}` 
 
 ## Tournament Morning Pre-Flight Check (Thursday)
 
-Before R1 tees off, verify all four conditions:
+Before R1 tees off, verify all conditions:
 
 - [ ] **rosters.json** has 100 teams with this week's lineups (and full alternate lists for majors)
-- [ ] **score_engine.py** has correct `FORCE_EVENT_NAME` and `FORCE_COURSE_PAR` for the venue (Aronimink = 70, not the 72 default)
+- [ ] **score_engine.py** has all THREE event constants set together (top of file):
+  - `FORCE_EVENT_NAME` — must exactly match DataGolf's `event_name` (check `field-updates`)
+  - `FORCE_COURSE_PAR` — **verify the par, it varies** (Colonial = 70, Augusta = 72, Riviera = 71; never assume the 72 default)
+  - `FORCE_COURSE_NAME` — short name shown top-right on the leaderboard (e.g. "Colonial", "Augusta"). If skipped, the UI shows a stale/wrong course name.
+- [ ] **WD_OVERRIDES** cleared for the new event (old entries are keyed by event name so they're dormant, but tidy them up)
+- [ ] **DataGolf transition has cleared** — on a new event, `field-updates` flips first but `preds/in-play` and `live-tournament-stats` can lag 15-30 min still showing LAST week's event. Confirm ALL THREE show the new event before scoring, or the engine stitches stale scores onto new rosters (produces scrambled/duplicate round scores). If lagging, wait — do NOT force a run.
 - [ ] **GitHub Actions workflow** is enabled (`https://github.com/ebrady25/lous-pool/actions/workflows/update-leaderboard.yml` → state: active)
 - [ ] **cron-job.org job 7234663** is enabled AND `lastStatus: 1` (not 4) AND auth header uses the current PAT (see section above)
 
 If the leaderboard ever goes >15 min stale during tournament hours, the cron-job.org state is the first thing to check.
+
+### Quick DataGolf transition check
+```bash
+for ep in "field-updates" "preds/in-play" "preds/live-tournament-stats"; do
+  echo -n "$ep: "
+  curl -s "https://feeds.datagolf.com/$ep?tour=pga&file_format=json&key=$DG_KEY" \
+    | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('event_name') or d.get('info',{}).get('event_name'))" 2>/dev/null
+done
+# All three must print the SAME (new) event name before scoring.
+```
+
+### season.json rollover
+The entries/roster file's **Prev. Total column is the authoritative season total** — rebuild season.json from it each week rather than trusting the live leaderboard (which can be corrupted if the engine ran against stale feeds). `season_to_par = season_total - cumulative_par`, where `cumulative_par` is the same constant for every team (= 16 × sum of completed-week pars). Getting the absolute `cumulative_par` slightly wrong only shifts the displayed to-par; relative standings stay correct.
 
 ## During Tournament (Thu-Sun)
 
