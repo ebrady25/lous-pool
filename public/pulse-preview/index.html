@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Lou's Pool — Friends Preview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -45,14 +48,26 @@ const CONFIG = {
     "Ethan Brady", "Matt White", "Joe Jurkiewicz", "Great White!",
     "Eric Southard", "John Hughes", "Aaron White", "Connor White"
   ],
-  PULSE_NICKNAMES: {
-    "Ethan Brady": "Brady Bunch",
+  // Friend nicknames — used across Friends tab, Weekly/Season leaderboards,
+  // You Pin, and Team detail page. Keyed by exact owner string in rosters.json.
+  NICKNAMES: {
+    "Ethan Brady": "The Brady Bunch",
+    "John Hughes": "The Film Maker",
+    "Connor White": "The Blackout",
+    // "Malcolm White" enters the pool as owner "Great White!" — nickname matches owner
     "Eric Southard": "Southpaw",
-    "Great White!": "Great White!",
+    "Matt White": "Papa aka Blizzard",
+  },
+  // Short form for the bubble chart (max ~10 chars to fit inside a 36px circle)
+  PULSE_NICKNAMES: {
+    "Ethan Brady": "Brady",
+    "Eric Southard": "Southpaw",
+    "Great White!": "G. White",
     "John Hughes": "Filmmaker",
     "Matt White": "Papa",
     "Aaron White": "Aaron",
     "Joe Jurkiewicz": "Joe J",
+    "Connor White": "Blackout",
   },
 };
 
@@ -393,6 +408,23 @@ const clubCSS = `
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.dir-club .lb-row .nm.has-nick {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+.dir-club .lb-row .full-name {
+  font-size: 10px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .dir-club .lb-row .sub {
   font-family: 'DM Mono', monospace;
   font-size: 9px;
@@ -518,6 +550,14 @@ const clubCSS = `
   font-weight: 500;
   font-style: italic;
   margin-bottom: 4px;
+}
+.dir-club .hero .real-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--hero-sub);
+  margin-bottom: 2px;
 }
 .dir-club .hero .alias {
   font-family: 'DM Mono', monospace;
@@ -696,6 +736,14 @@ const clubCSS = `
   font-weight: 500;
   font-style: italic;
   color: var(--ink);
+}
+.dir-club .sheet-header .sh-real {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
 }
 .dir-club .sheet-header .sh-sub {
   font-family: 'DM Mono', monospace;
@@ -1309,6 +1357,11 @@ function useCountUp(target, duration = 900) {
   return v;
 }
 
+// Look up a friend's nickname. Returns null if no nickname (non-friend or not assigned).
+function nickFor(owner) {
+  return (CONFIG.NICKNAMES && CONFIG.NICKNAMES[owner]) || null;
+}
+
 // ═══════════════════════════════════════════════════════════════
 // DATA ADAPTER - Maps leaderboard.json to LP_DATA format
 // ═══════════════════════════════════════════════════════════════
@@ -1470,11 +1523,13 @@ function YouPin({ team, view, data }) {
   if (view === 'season') {
     const leader = D.season[0]?.pts || team.pts;
     const back = team.pts - leader;
+    const nick = nickFor(team.owner);
     return (
       <div className="you-pin">
         <div>
           <div className="you-tag">★ Your Team</div>
-          <div className="you-name">{team.owner}</div>
+          <div className="you-name">{nick || team.owner}</div>
+          {nick && <div className="full-name" style={{marginTop:0}}>{team.owner}</div>}
           <div className="you-back">Season · #{team.rank} of 100</div>
         </div>
         <div style={{textAlign:'right'}}>
@@ -1489,12 +1544,14 @@ function YouPin({ team, view, data }) {
   const cls = team.toPar < 0 ? 'under' : team.toPar > 0 ? 'over' : 'even';
   const leader = D.week[0]?.toPar || 0;
   const back = team.toPar - leader;
+  const nick = nickFor(team.owner);
   
   return (
     <div className="you-pin">
       <div>
         <div className="you-tag">★ Your Team</div>
-        <div className="you-name">{team.owner}</div>
+        <div className="you-name">{nick || team.owner}</div>
+        {nick && <div className="full-name" style={{marginTop:0}}>{team.owner}</div>}
         <div className="you-back">Week {D.event?.week || 9} · {team.rank === 1 ? 'Leader' : `#${team.rank} of 100`}</div>
       </div>
       <div style={{textAlign:'right'}}>
@@ -1610,10 +1667,25 @@ function ClubhouseWeekly({ data, theme, onSelectTeam }) {
                   {isFav ? '★' : '☆'}
                 </span>
                 <div>
-                  <div className="nm">{team.owner}</div>
-                  <div className="sub">
-                    {isFav ? 'Your Team' : team.isFriend ? 'Tracked' : `Season #${team.seasonRank}${team.mc ? ' · ' + team.mc + ' MC' : ''}`}
-                  </div>
+                  {(() => {
+                    const nick = nickFor(team.owner);
+                    if (nick) {
+                      return (
+                        <>
+                          <div className="nm has-nick">{nick}</div>
+                          <div className="full-name">{team.owner}{isFav ? ' · Your Team' : ''}</div>
+                        </>
+                      );
+                    }
+                    return (
+                      <>
+                        <div className="nm">{team.owner}</div>
+                        <div className="sub">
+                          {isFav ? 'Your Team' : team.isFriend ? 'Tracked' : `Season #${team.seasonRank}${team.mc ? ' · ' + team.mc + ' MC' : ''}`}
+                        </div>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
               <div className="delta"></div>
@@ -1686,10 +1758,25 @@ function ClubhouseSeason({ data, theme, onSelectTeam }) {
                   {isFav ? '★' : '☆'}
                 </span>
                 <div>
-                  <div className="nm">{team.owner}</div>
-                  <div className="sub">
-                    {isFav ? 'Your Team · ' : ''}Wk {D.event?.week || 9} #{team.weekRank} · {D.fmt(team.weekToPar)}
-                  </div>
+                  {(() => {
+                    const nick = nickFor(team.owner);
+                    if (nick) {
+                      return (
+                        <>
+                          <div className="nm has-nick">{nick}</div>
+                          <div className="full-name">{team.owner} · Wk {D.event?.week || 9} #{team.weekRank} · {D.fmt(team.weekToPar)}</div>
+                        </>
+                      );
+                    }
+                    return (
+                      <>
+                        <div className="nm">{team.owner}</div>
+                        <div className="sub">
+                          {isFav ? 'Your Team · ' : ''}Wk {D.event?.week || 9} #{team.weekRank} · {D.fmt(team.weekToPar)}
+                        </div>
+                      </>
+                    );
+                  })()}
                 </div>
               </div>
               <div>
@@ -1737,7 +1824,18 @@ function ClubhouseTeam({ data, theme, team, onBack }) {
     <div className="scroll">
       <div className="hero">
         <div className="back" onClick={onBack}>← Pool Standings</div>
-        <h1>{team.owner}</h1>
+        {(() => {
+          const nick = nickFor(team.owner);
+          if (nick) {
+            return (
+              <>
+                <div className="real-name">{team.owner}</div>
+                <h1>{nick}</h1>
+              </>
+            );
+          }
+          return <h1>{team.owner}</h1>;
+        })()}
         <div className="alias">
           {team.rank === 1 ? `Week ${D.event?.week || 9} Leader · ${D.event?.name || 'Tournament'}` : `Wk ${D.event?.week || 9} · #${team.rank} of 100`}
         </div>
@@ -2163,8 +2261,23 @@ function ClubhousePulse({ data, theme, onSelectTeam, history }) {
                     {isFav ? '★' : '☆'}
                   </span>
                   <div>
-                    <div className="nm">{team.owner}</div>
-                    <div className="sub">{subText}</div>
+                    {(() => {
+                      const nick = nickFor(team.owner);
+                      if (nick) {
+                        return (
+                          <>
+                            <div className="nm has-nick">{nick}</div>
+                            <div className="full-name">{team.owner}{isFav ? ' · Your Team' : ''}</div>
+                          </>
+                        );
+                      }
+                      return (
+                        <>
+                          <div className="nm">{team.owner}</div>
+                          <div className="sub">{subText}</div>
+                        </>
+                      );
+                    })()}
                   </div>
                 </div>
                 <div className="delta"></div>
@@ -2309,10 +2422,28 @@ function BottomSheet({ data, team, onClose, onViewFull }) {
         <div className="sheet-handle" onClick={onClose} />
         <div className="sheet-header">
           <div className="sh-left">
-            <div className="sh-name">{team.owner}</div>
-            <div className="sh-sub">
-              #{team.rank} of 100 · {team.mc > 0 ? `${team.mc} MC · ` : ''}Season #{team.seasonRank}
-            </div>
+            {(() => {
+              const nick = nickFor(team.owner);
+              if (nick) {
+                return (
+                  <>
+                    <div className="sh-name">{nick}</div>
+                    <div className="sh-real">{team.owner}</div>
+                    <div className="sh-sub">
+                      #{team.rank} of 100 · {team.mc > 0 ? `${team.mc} MC · ` : ''}Season #{team.seasonRank}
+                    </div>
+                  </>
+                );
+              }
+              return (
+                <>
+                  <div className="sh-name">{team.owner}</div>
+                  <div className="sh-sub">
+                    #{team.rank} of 100 · {team.mc > 0 ? `${team.mc} MC · ` : ''}Season #{team.seasonRank}
+                  </div>
+                </>
+              );
+            })()}
           </div>
           <div className="sh-score">
             <div className={`big ${cls}`}>{D.fmt(team.toPar)}</div>
