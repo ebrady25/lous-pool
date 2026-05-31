@@ -33,8 +33,8 @@
     }
   ],
   "team_par": 1120,
-  "last_updated": "2026-05-31 21:58:33 UTC",
-  "updated_at": "2026-05-31T22:00:19.319659+00:00",
+  "last_updated": "2026-05-31 22:03:47 UTC",
+  "updated_at": "2026-05-31T22:10:14.661306+00:00",
   "teams": [
     {
       "owner": "John Cleary",
@@ -3869,18 +3869,18 @@
           "r1": 66,
           "r2": 67,
           "r3": 67,
-          "r4": null,
+          "r4": 69,
           "penalty": 0,
-          "total": 200,
+          "total": 269,
           "status": "active",
           "replacement": null,
           "position": "T3",
           "fin_text": "",
           "today": -1,
-          "thru": 17,
+          "thru": 18,
           "current_score": -11,
           "make_cut": 1.0,
-          "top_10": 0.99976
+          "top_10": 1.0
         },
         {
           "name": "Justin Thomas",
@@ -9516,6 +9516,22 @@
   "total_teams": 100,
   "live_players": [
     {
+      "name": "Eric Cole",
+      "position": "T1",
+      "thru": 18,
+      "today": 0,
+      "current_score": -12,
+      "total": 268,
+      "r1": 67,
+      "r2": 68,
+      "r3": 63,
+      "r4": 70,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 1.0
+    },
+    {
       "name": "Russell Henley",
       "position": "T1",
       "thru": 18,
@@ -9526,22 +9542,6 @@
       "r2": 66,
       "r3": 69,
       "r4": 67,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 1.0
-    },
-    {
-      "name": "Eric Cole",
-      "position": "T1",
-      "thru": 17,
-      "today": 0,
-      "current_score": -12,
-      "total": 198,
-      "r1": 67,
-      "r2": 68,
-      "r3": 63,
-      "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
@@ -9582,18 +9582,18 @@
     {
       "name": "Mac Meissner",
       "position": "T3",
-      "thru": 17,
+      "thru": 18,
       "today": -1,
       "current_score": -11,
-      "total": 200,
+      "total": 269,
       "r1": 66,
       "r2": 67,
       "r3": 67,
-      "r4": null,
+      "r4": 69,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.99976
+      "top_10": 1.0
     },
     {
       "name": "Gary Woodland",
@@ -9673,7 +9673,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.77376
+      "top_10": 1.0
+    },
+    {
+      "name": "Ryan Gerard",
+      "position": "T10",
+      "thru": 18,
+      "today": 2,
+      "current_score": -9,
+      "total": 271,
+      "r1": 64,
+      "r2": 67,
+      "r3": 68,
+      "r4": 72,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 1.0
     },
     {
       "name": "Steven Fisk",
@@ -9689,23 +9705,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.77376
-    },
-    {
-      "name": "Ryan Gerard",
-      "position": "T10",
-      "thru": 17,
-      "today": 2,
-      "current_score": -9,
-      "total": 199,
-      "r1": 64,
-      "r2": 67,
-      "r3": 68,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.88468
+      "top_10": 1.0
     },
     {
       "name": "Hideki Matsuyama",
