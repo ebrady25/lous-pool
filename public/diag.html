@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Diag</title></head>
+<body style="font-family:monospace;padding:20px;font-size:14px">
+<div id="out">Starting…</div>
+<script>
+const log = (s) => {
+  const d = document.getElementById('out');
+  d.innerHTML += '<br>' + s;
+};
+log('1. Page loaded ✓');
+log('2. UA: ' + navigator.userAgent.slice(0,60));
+log('3. Fetching leaderboard.json…');
+fetch('./data/leaderboard.json?t=' + Date.now())
+  .then(r => { log('4. HTTP ' + r.status); return r.json(); })
+  .then(d => {
+    log('5. JSON parsed. Event: ' + d.event);
+    log('6. Teams: ' + d.teams.length);
+    log('7. Live players: ' + d.live_players.length);
+    log('<br><b>JSON OK — issue is in React app.</b>');
+  })
+  .catch(e => log('5. FETCH ERROR: ' + e.message));
+log('8. React CDN test starting...');
+const s = document.createElement('script');
+s.src = 'https://unpkg.com/react@18/umd/react.production.min.js';
+s.onload = () => log('9. React loaded ✓');
+s.onerror = () => log('9. React FAILED to load - CDN issue');
+document.head.appendChild(s);
+</script>
+</body>
+</html>
