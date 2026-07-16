@@ -30,9 +30,9 @@ from urllib.error import URLError
 # ---------------------------------------------------------------------------
 # FORCED EVENT OVERRIDE - Set to None to use DataGolf's event detection
 # Update this when DataGolf is slow to switch events
-FORCE_EVENT_NAME = "Genesis Scottish Open"
-FORCE_COURSE_PAR = 71  # The Renaissance Club, East Lothian (par 71, 7293 yds)
-FORCE_COURSE_NAME = "Renaissance"  # shown top-right on leaderboard
+FORCE_EVENT_NAME = "The Open Championship"
+FORCE_COURSE_PAR = 70  # Royal Birkdale, Southport England (par 70, 7223 yds)
+FORCE_COURSE_NAME = "Royal Birkdale"  # shown top-right on leaderboard
 API_KEY = os.environ.get("DATAGOLF_API_KEY", "576a75cc2c5275542b9b9d98419b")
 BASE_URL = "https://feeds.datagolf.com"
 
@@ -313,7 +313,7 @@ def process_tournament(live_data, inplay_data=None):
     # - r1, r2: The WD player's completed round scores (None if WD before starting)
     # - replacement: The alternate who fills remaining rounds
     WD_OVERRIDES = {
-        # Week 12 - Genesis Scottish Open: No WDs yet
+        # Week 13 - The Open Championship: No WDs yet
     }
     
     # Store WD overrides for use in score_team
