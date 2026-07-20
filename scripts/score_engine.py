@@ -368,6 +368,7 @@ def process_tournament(live_data, inplay_data=None):
                 "Arnold Palmer Invitational": ["Glover, Lucas", "Pendrith, Taylor"],
                 "PGA Championship": ["Parry, John", "Donald, Luke", "Smylie, Elvis", "Neergaard-Petersen, Rasmus"],
                 "Charles Schwab Challenge": ["Kanaya, Takumi", "Power, Seamus", "Glover, Lucas", "Snedeker, Brandt"],
+                "The Open Championship": ["Bradley, Keegan", "Potgieter, Aldrich", "Koepka, Brooks", "Uihlein, Peter"],
             }
             
             
