@@ -462,7 +462,11 @@ def normalize_name(name):
     return name.lower()
 
 def build_name_lookup(players_dict):
-    """Build flexible name lookup from DataGolf player dict."""
+    """Build flexible name lookup from DataGolf player dict.
+    
+    NOTE: bare-last-name entries only added when last name is 4+ chars, to
+    avoid catastrophic ghost-matching from 2-char surnames like Yu/Im/Li/Wu
+    when queried names contain those letters as substrings."""
     lookup = {}
     for key, pdata in players_dict.items():
         norm = normalize_name(key)
@@ -472,36 +476,40 @@ def build_name_lookup(players_dict):
             last = parts[0].strip().lower()
             first = parts[1].strip().lower()
             lookup[f"{first} {last}"] = pdata
-            lookup[last] = pdata
-            if "." not in first:
-                lookup[f"{first[0]}. {last}"] = pdata
+            if len(last) >= 4:
+                lookup[last] = pdata
+                if "." not in first:
+                    lookup[f"{first[0]}. {last}"] = pdata
     return lookup
 
 def find_player(name, lookup):
-    """Find a player in the lookup by name, trying various normalizations."""
+    """Find a player in the lookup by name, trying various normalizations.
+    
+    Returns None if no confident match. IMPORTANT: does NOT do fuzzy substring
+    fallback matching — that historically caused ghost-matching where a starter
+    not in the field would get scored as some random player with a short last
+    name (Yu, Im, Li, Wu) due to the `all(part in query for ...)` producing
+    True on empty sequences after the len>2 filter."""
     if "/" in name:
         name = name.split("/")[0].strip()
     
     n = normalize_name(name)
     
+    # Exact match
     if n in lookup:
         return lookup[n]
     
+    # Punctuation-stripped match
     clean = n.replace(".", "").replace("  ", " ").strip()
     if clean in lookup:
         return lookup[clean]
     
+    # Bare-last-name match — only if last name is 4+ chars (avoid Yu/Im/Li/Wu ghost hits)
     parts = n.split()
     if len(parts) >= 2:
         last = parts[-1]
-        if last in lookup:
+        if len(last) >= 4 and last in lookup:
             return lookup[last]
-    
-    for key, val in lookup.items():
-        if all(part in key for part in n.split()):
-            return val
-        if all(part in n for part in key.split() if len(part) > 2):
-            return val
     
     return None
 
