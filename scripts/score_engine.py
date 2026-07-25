@@ -369,6 +369,7 @@ def process_tournament(live_data, inplay_data=None):
                 "PGA Championship": ["Parry, John", "Donald, Luke", "Smylie, Elvis", "Neergaard-Petersen, Rasmus"],
                 "Charles Schwab Challenge": ["Kanaya, Takumi", "Power, Seamus", "Glover, Lucas", "Snedeker, Brandt"],
                 "The Open Championship": ["Bradley, Keegan", "Potgieter, Aldrich", "Koepka, Brooks", "Uihlein, Peter"],
+                "3M Open": ["Schmid, Matti", "Castillo, Ricky", "Dahmen, Joel", "Stanger, Jimmy"],
             }
             
             
