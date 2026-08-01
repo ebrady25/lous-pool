@@ -7,12 +7,12 @@
   "cut_line": 137,
   "replacement_players": [
     {
-      "name": "Meissner, Mac",
+      "name": "Smith, Jordan",
       "r3": null,
       "r4": null
     },
     {
-      "name": "Smith, Jordan",
+      "name": "Meissner, Mac",
       "r3": null,
       "r4": null
     },
@@ -22,20 +22,118 @@
       "r4": null
     },
     {
-      "name": "Blanchet, Chandler",
+      "name": "Suber, Jackson",
       "r3": null,
       "r4": null
     },
     {
-      "name": "Suber, Jackson",
+      "name": "Blanchet, Chandler",
       "r3": null,
       "r4": null
     }
   ],
   "team_par": 1136,
   "last_updated": "N/A",
-  "updated_at": "2026-08-01T13:30:17.191851+00:00",
+  "updated_at": "2026-08-01T13:40:18.973277+00:00",
   "teams": [
+    {
+      "owner": "Jason Goss",
+      "alias": "",
+      "players": [
+        {
+          "name": "Johnny Keefer",
+          "dg_name": "Keefer, Johnny",
+          "slot": 1,
+          "r1": 66,
+          "r2": 70,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 136,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": -1,
+          "thru": 5,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.05444
+        },
+        {
+          "name": "Jackson Suber",
+          "dg_name": "Suber, Jackson",
+          "slot": 2,
+          "r1": 66,
+          "r2": 71,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 137,
+          "status": "active",
+          "replacement": null,
+          "position": "T68",
+          "fin_text": "",
+          "today": 0,
+          "thru": 7,
+          "current_score": -3,
+          "make_cut": 1.0,
+          "top_10": 0.01888
+        },
+        {
+          "name": "Jackson Koivun",
+          "dg_name": "Koivun, Jackson",
+          "slot": 3,
+          "r1": 69,
+          "r2": 67,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 136,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": -1,
+          "thru": 3,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.168
+        },
+        {
+          "name": "Jordan Smith",
+          "dg_name": "Smith, Jordan",
+          "slot": 4,
+          "r1": 66,
+          "r2": 71,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 137,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": -3,
+          "thru": 6,
+          "current_score": -6,
+          "make_cut": 1.0,
+          "top_10": 0.12036
+        }
+      ],
+      "team_total": -19,
+      "team_par": 1136,
+      "team_to_par": -19,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -192,
+      "season_pts": 15728,
+      "week_strokes": 1117,
+      "prev_pts": 14611,
+      "prev_to_par": -173,
+      "weekly_rank": 1,
+      "season_rank": 67
+    },
     {
       "owner": "Bob Fabian",
       "alias": "",
@@ -58,7 +156,7 @@
           "thru": 0,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.31284
+          "top_10": 0.31268
         },
         {
           "name": "Hideki Matsuyama",
@@ -78,7 +176,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Kurt Kitayama",
@@ -111,10 +209,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         }
       ],
       "team_total": -18,
@@ -127,106 +225,8 @@
       "week_strokes": 1118,
       "prev_pts": 14456,
       "prev_to_par": -328,
-      "weekly_rank": 1,
-      "season_rank": 1
-    },
-    {
-      "owner": "Jason Goss",
-      "alias": "",
-      "players": [
-        {
-          "name": "Johnny Keefer",
-          "dg_name": "Keefer, Johnny",
-          "slot": 1,
-          "r1": 66,
-          "r2": 70,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 136,
-          "status": "active",
-          "replacement": null,
-          "position": "T57",
-          "fin_text": "",
-          "today": 0,
-          "thru": 4,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.03576
-        },
-        {
-          "name": "Jackson Suber",
-          "dg_name": "Suber, Jackson",
-          "slot": 2,
-          "r1": 66,
-          "r2": 71,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 137,
-          "status": "active",
-          "replacement": null,
-          "position": "T68",
-          "fin_text": "",
-          "today": 0,
-          "thru": 6,
-          "current_score": -3,
-          "make_cut": 1.0,
-          "top_10": 0.01564
-        },
-        {
-          "name": "Jackson Koivun",
-          "dg_name": "Koivun, Jackson",
-          "slot": 3,
-          "r1": 69,
-          "r2": 67,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 136,
-          "status": "active",
-          "replacement": null,
-          "position": "T36",
-          "fin_text": "",
-          "today": -1,
-          "thru": 2,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.18988
-        },
-        {
-          "name": "Jordan Smith",
-          "dg_name": "Smith, Jordan",
-          "slot": 4,
-          "r1": 66,
-          "r2": 71,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 137,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": -3,
-          "thru": 5,
-          "current_score": -6,
-          "make_cut": 1.0,
-          "top_10": 0.11284
-        }
-      ],
-      "team_total": -18,
-      "team_par": 1136,
-      "team_to_par": -18,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -191,
-      "season_pts": 15729,
-      "week_strokes": 1118,
-      "prev_pts": 14611,
-      "prev_to_par": -173,
       "weekly_rank": 2,
-      "season_rank": 67
+      "season_rank": 1
     },
     {
       "owner": "Greg Witter",
@@ -250,7 +250,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Corey Conners",
@@ -270,7 +270,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Jordan Smith",
@@ -287,10 +287,10 @@
           "position": "T21",
           "fin_text": "",
           "today": -3,
-          "thru": 5,
+          "thru": 6,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.11284
+          "top_10": 0.12036
         },
         {
           "name": "Maverick McNealy",
@@ -323,6 +323,202 @@
       "season_rank": 21
     },
     {
+      "owner": "Eric Swartzmeyer",
+      "alias": "",
+      "players": [
+        {
+          "name": "Jackson Koivun",
+          "dg_name": "Koivun, Jackson",
+          "slot": 1,
+          "r1": 69,
+          "r2": 67,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 136,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": -1,
+          "thru": 3,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.168
+        },
+        {
+          "name": "Johnny Keefer",
+          "dg_name": "Keefer, Johnny",
+          "slot": 2,
+          "r1": 66,
+          "r2": 70,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 136,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": -1,
+          "thru": 5,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.05444
+        },
+        {
+          "name": "Ben James",
+          "dg_name": "James, Ben",
+          "slot": 3,
+          "r1": 67,
+          "r2": 68,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 135,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.12048
+        },
+        {
+          "name": "Sudarshan Yellamaraju",
+          "dg_name": "Yellamaraju, Sudarshan",
+          "slot": 4,
+          "r1": 69,
+          "r2": 69,
+          "r3": null,
+          "r4": null,
+          "penalty": 5,
+          "total": 143,
+          "status": "mc",
+          "replacement": "Smith, Jordan",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": -4,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        }
+      ],
+      "team_total": -17,
+      "team_par": 1136,
+      "team_to_par": -17,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -145,
+      "season_pts": 15775,
+      "week_strokes": 1119,
+      "prev_pts": 14656,
+      "prev_to_par": -128,
+      "weekly_rank": 4,
+      "season_rank": 93
+    },
+    {
+      "owner": "Ethan Brady",
+      "alias": "",
+      "players": [
+        {
+          "name": "Jackson Koivun",
+          "dg_name": "Koivun, Jackson",
+          "slot": 1,
+          "r1": 69,
+          "r2": 67,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 136,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": -1,
+          "thru": 3,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.168
+        },
+        {
+          "name": "Jordan Smith",
+          "dg_name": "Smith, Jordan",
+          "slot": 2,
+          "r1": 66,
+          "r2": 71,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 137,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": -3,
+          "thru": 6,
+          "current_score": -6,
+          "make_cut": 1.0,
+          "top_10": 0.12036
+        },
+        {
+          "name": "William Mouw",
+          "dg_name": "Mouw, William",
+          "slot": 3,
+          "r1": 71,
+          "r2": 66,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 137,
+          "status": "active",
+          "replacement": null,
+          "position": "71",
+          "fin_text": "",
+          "today": 2,
+          "thru": 10,
+          "current_score": -1,
+          "make_cut": 1.0,
+          "top_10": 0.00108
+        },
+        {
+          "name": "Ben Kohles",
+          "dg_name": "Kohles, Ben",
+          "slot": 4,
+          "r1": 70,
+          "r2": 65,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 135,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.08288
+        }
+      ],
+      "team_total": -17,
+      "team_par": 1136,
+      "team_to_par": -17,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -262,
+      "season_pts": 15658,
+      "week_strokes": 1119,
+      "prev_pts": 14539,
+      "prev_to_par": -245,
+      "weekly_rank": 5,
+      "season_rank": 33
+    },
+    {
       "owner": "Jaime Witter",
       "alias": "",
       "players": [
@@ -344,7 +540,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Ben James",
@@ -364,7 +560,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11988
+          "top_10": 0.12048
         },
         {
           "name": "Max Homa",
@@ -400,7 +596,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -16,
@@ -413,57 +609,17 @@
       "week_strokes": 1120,
       "prev_pts": 14520,
       "prev_to_par": -264,
-      "weekly_rank": 4,
+      "weekly_rank": 6,
       "season_rank": 19
     },
     {
-      "owner": "Eric Swartzmeyer",
+      "owner": "Matt Donohue",
       "alias": "",
       "players": [
         {
-          "name": "Jackson Koivun",
-          "dg_name": "Koivun, Jackson",
-          "slot": 1,
-          "r1": 69,
-          "r2": 67,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 136,
-          "status": "active",
-          "replacement": null,
-          "position": "T36",
-          "fin_text": "",
-          "today": -1,
-          "thru": 2,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.18988
-        },
-        {
-          "name": "Johnny Keefer",
-          "dg_name": "Keefer, Johnny",
-          "slot": 2,
-          "r1": 66,
-          "r2": 70,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 136,
-          "status": "active",
-          "replacement": null,
-          "position": "T57",
-          "fin_text": "",
-          "today": 0,
-          "thru": 4,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.03576
-        },
-        {
           "name": "Ben James",
           "dg_name": "James, Ben",
-          "slot": 3,
+          "slot": 1,
           "r1": 67,
           "r2": 68,
           "r3": null,
@@ -478,52 +634,14 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11988
+          "top_10": 0.12048
         },
         {
-          "name": "Sudarshan Yellamaraju",
-          "dg_name": "Yellamaraju, Sudarshan",
-          "slot": 4,
-          "r1": 69,
-          "r2": 69,
-          "r3": null,
-          "r4": null,
-          "penalty": 5,
-          "total": 143,
-          "status": "mc",
-          "replacement": "Meissner, Mac",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": -4,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        }
-      ],
-      "team_total": -16,
-      "team_par": 1136,
-      "team_to_par": -16,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -144,
-      "season_pts": 15776,
-      "week_strokes": 1120,
-      "prev_pts": 14656,
-      "prev_to_par": -128,
-      "weekly_rank": 5,
-      "season_rank": 93
-    },
-    {
-      "owner": "Ethan Brady",
-      "alias": "",
-      "players": [
-        {
-          "name": "Jackson Koivun",
-          "dg_name": "Koivun, Jackson",
-          "slot": 1,
-          "r1": 69,
-          "r2": 67,
+          "name": "Johnny Keefer",
+          "dg_name": "Keefer, Johnny",
+          "slot": 2,
+          "r1": 66,
+          "r2": 70,
           "r3": null,
           "r4": null,
           "penalty": 0,
@@ -533,57 +651,17 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 5,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.05444
         },
         {
-          "name": "Jordan Smith",
-          "dg_name": "Smith, Jordan",
-          "slot": 2,
-          "r1": 66,
-          "r2": 71,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 137,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": -3,
-          "thru": 5,
-          "current_score": -6,
-          "make_cut": 1.0,
-          "top_10": 0.11284
-        },
-        {
-          "name": "William Mouw",
-          "dg_name": "Mouw, William",
+          "name": "Rico Hoey",
+          "dg_name": "Hoey, Rico",
           "slot": 3,
-          "r1": 71,
-          "r2": 66,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 137,
-          "status": "active",
-          "replacement": null,
-          "position": "72",
-          "fin_text": "",
-          "today": 3,
-          "thru": 9,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.00044
-        },
-        {
-          "name": "Ben Kohles",
-          "dg_name": "Kohles, Ben",
-          "slot": 4,
-          "r1": 70,
-          "r2": 65,
+          "r1": 66,
+          "r2": 69,
           "r3": null,
           "r4": null,
           "penalty": 0,
@@ -596,7 +674,27 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0826
+          "top_10": 0.07764
+        },
+        {
+          "name": "William Mouw",
+          "dg_name": "Mouw, William",
+          "slot": 4,
+          "r1": 71,
+          "r2": 66,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 137,
+          "status": "active",
+          "replacement": null,
+          "position": "71",
+          "fin_text": "",
+          "today": 2,
+          "thru": 10,
+          "current_score": -1,
+          "make_cut": 1.0,
+          "top_10": 0.00108
         }
       ],
       "team_total": -16,
@@ -604,13 +702,111 @@
       "team_to_par": -16,
       "overuse_penalty": 0,
       "mc_count": 0,
-      "season_to_par": -261,
-      "season_pts": 15659,
+      "season_to_par": -193,
+      "season_pts": 15727,
       "week_strokes": 1120,
-      "prev_pts": 14539,
-      "prev_to_par": -245,
-      "weekly_rank": 6,
-      "season_rank": 33
+      "prev_pts": 14607,
+      "prev_to_par": -177,
+      "weekly_rank": 7,
+      "season_rank": 66
+    },
+    {
+      "owner": "Bill Moore",
+      "alias": "",
+      "players": [
+        {
+          "name": "Hideki Matsuyama",
+          "dg_name": "Matsuyama, Hideki",
+          "slot": 1,
+          "r1": 67,
+          "r2": 68,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 135,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.2174
+        },
+        {
+          "name": "Corey Conners",
+          "dg_name": "Conners, Corey",
+          "slot": 2,
+          "r1": 67,
+          "r2": 67,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 134,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -6,
+          "make_cut": 1.0,
+          "top_10": 0.21056
+        },
+        {
+          "name": "Billy Horschel",
+          "dg_name": "Horschel, Billy",
+          "slot": 3,
+          "r1": 68,
+          "r2": 71,
+          "r3": null,
+          "r4": null,
+          "penalty": 6,
+          "total": 145,
+          "status": "mc",
+          "replacement": "Smith, Jordan",
+          "position": "CUT",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": -3,
+          "make_cut": 0.0,
+          "top_10": 0.0
+        },
+        {
+          "name": "Brian Campbell",
+          "dg_name": "Campbell, Brian",
+          "slot": 4,
+          "r1": 68,
+          "r2": 68,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 136,
+          "status": "active",
+          "replacement": null,
+          "position": "T36",
+          "fin_text": "",
+          "today": -1,
+          "thru": 1,
+          "current_score": -5,
+          "make_cut": 1.0,
+          "top_10": 0.02988
+        }
+      ],
+      "team_total": -16,
+      "team_par": 1136,
+      "team_to_par": -16,
+      "overuse_penalty": 0,
+      "mc_count": 1,
+      "season_to_par": -130,
+      "season_pts": 15790,
+      "week_strokes": 1120,
+      "prev_pts": 14670,
+      "prev_to_par": -114,
+      "weekly_rank": 8,
+      "season_rank": 96
     },
     {
       "owner": "Major Ryan",
@@ -634,7 +830,7 @@
           "thru": 0,
           "current_score": -7,
           "make_cut": 1.0,
-          "top_10": 0.20276
+          "top_10": 0.20216
         },
         {
           "name": "Michael Brennan",
@@ -654,7 +850,7 @@
           "thru": 0,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.31284
+          "top_10": 0.31268
         },
         {
           "name": "Gary Woodland",
@@ -699,7 +895,7 @@
       "week_strokes": 1121,
       "prev_pts": 14644,
       "prev_to_par": -140,
-      "weekly_rank": 7,
+      "weekly_rank": 9,
       "season_rank": 90
     },
     {
@@ -718,13 +914,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Corey Conners",
@@ -744,7 +940,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Tony Finau",
@@ -764,7 +960,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11832
+          "top_10": 0.11768
         },
         {
           "name": "Maverick McNealy",
@@ -793,106 +989,8 @@
       "week_strokes": 1121,
       "prev_pts": 14591,
       "prev_to_par": -193,
-      "weekly_rank": 8,
+      "weekly_rank": 10,
       "season_rank": 56
-    },
-    {
-      "owner": "Bill Moore",
-      "alias": "",
-      "players": [
-        {
-          "name": "Hideki Matsuyama",
-          "dg_name": "Matsuyama, Hideki",
-          "slot": 1,
-          "r1": 67,
-          "r2": 68,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 135,
-          "status": "active",
-          "replacement": null,
-          "position": "T36",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.2132
-        },
-        {
-          "name": "Corey Conners",
-          "dg_name": "Conners, Corey",
-          "slot": 2,
-          "r1": 67,
-          "r2": 67,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 134,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -6,
-          "make_cut": 1.0,
-          "top_10": 0.21152
-        },
-        {
-          "name": "Billy Horschel",
-          "dg_name": "Horschel, Billy",
-          "slot": 3,
-          "r1": 68,
-          "r2": 71,
-          "r3": null,
-          "r4": null,
-          "penalty": 6,
-          "total": 145,
-          "status": "mc",
-          "replacement": "Meissner, Mac",
-          "position": "CUT",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": -3,
-          "make_cut": 0.0,
-          "top_10": 0.0
-        },
-        {
-          "name": "Brian Campbell",
-          "dg_name": "Campbell, Brian",
-          "slot": 4,
-          "r1": 68,
-          "r2": 68,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 136,
-          "status": "active",
-          "replacement": null,
-          "position": "T57",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.0174
-        }
-      ],
-      "team_total": -15,
-      "team_par": 1136,
-      "team_to_par": -15,
-      "overuse_penalty": 0,
-      "mc_count": 1,
-      "season_to_par": -129,
-      "season_pts": 15791,
-      "week_strokes": 1121,
-      "prev_pts": 14670,
-      "prev_to_par": -114,
-      "weekly_rank": 9,
-      "season_rank": 96
     },
     {
       "owner": "Brian Belcer",
@@ -932,7 +1030,7 @@
           "thru": 0,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.43936
+          "top_10": 0.44072
         },
         {
           "name": "Maverick McNealy",
@@ -968,7 +1066,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         }
       ],
       "team_total": -14,
@@ -981,7 +1079,7 @@
       "week_strokes": 1122,
       "prev_pts": 14546,
       "prev_to_par": -238,
-      "weekly_rank": 10,
+      "weekly_rank": 11,
       "season_rank": 38
     },
     {
@@ -1022,7 +1120,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Corey Conners",
@@ -1042,7 +1140,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Jackson Suber",
@@ -1059,10 +1157,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": -14,
@@ -1075,7 +1173,7 @@
       "week_strokes": 1122,
       "prev_pts": 14594,
       "prev_to_par": -190,
-      "weekly_rank": 11,
+      "weekly_rank": 12,
       "season_rank": 61
     },
     {
@@ -1113,10 +1211,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         },
         {
           "name": "Jackson Suber",
@@ -1133,10 +1231,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Jordan Smith",
@@ -1153,10 +1251,10 @@
           "position": "T21",
           "fin_text": "",
           "today": -3,
-          "thru": 5,
+          "thru": 6,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.11284
+          "top_10": 0.12036
         }
       ],
       "team_total": -14,
@@ -1169,106 +1267,8 @@
       "week_strokes": 1122,
       "prev_pts": 14528,
       "prev_to_par": -256,
-      "weekly_rank": 12,
-      "season_rank": 28
-    },
-    {
-      "owner": "Matt Donohue",
-      "alias": "",
-      "players": [
-        {
-          "name": "Ben James",
-          "dg_name": "James, Ben",
-          "slot": 1,
-          "r1": 67,
-          "r2": 68,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 135,
-          "status": "active",
-          "replacement": null,
-          "position": "T36",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.11988
-        },
-        {
-          "name": "Johnny Keefer",
-          "dg_name": "Keefer, Johnny",
-          "slot": 2,
-          "r1": 66,
-          "r2": 70,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 136,
-          "status": "active",
-          "replacement": null,
-          "position": "T57",
-          "fin_text": "",
-          "today": 0,
-          "thru": 4,
-          "current_score": -4,
-          "make_cut": 1.0,
-          "top_10": 0.03576
-        },
-        {
-          "name": "Rico Hoey",
-          "dg_name": "Hoey, Rico",
-          "slot": 3,
-          "r1": 66,
-          "r2": 69,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 135,
-          "status": "active",
-          "replacement": null,
-          "position": "T36",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -5,
-          "make_cut": 1.0,
-          "top_10": 0.07532
-        },
-        {
-          "name": "William Mouw",
-          "dg_name": "Mouw, William",
-          "slot": 4,
-          "r1": 71,
-          "r2": 66,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 137,
-          "status": "active",
-          "replacement": null,
-          "position": "72",
-          "fin_text": "",
-          "today": 3,
-          "thru": 9,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.00044
-        }
-      ],
-      "team_total": -14,
-      "team_par": 1136,
-      "team_to_par": -14,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -191,
-      "season_pts": 15729,
-      "week_strokes": 1122,
-      "prev_pts": 14607,
-      "prev_to_par": -177,
       "weekly_rank": 13,
-      "season_rank": 68
+      "season_rank": 28
     },
     {
       "owner": "Penny & Big Al",
@@ -1285,7 +1285,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -1312,7 +1312,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Ben James",
@@ -1332,7 +1332,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11988
+          "top_10": 0.12048
         },
         {
           "name": "Max Homa",
@@ -1395,7 +1395,7 @@
           "penalty": 6,
           "total": 145,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -1422,7 +1422,7 @@
           "thru": 0,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.35132
+          "top_10": 0.34948
         },
         {
           "name": "Tony Finau",
@@ -1442,7 +1442,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11832
+          "top_10": 0.11768
         }
       ],
       "team_total": -13,
@@ -1490,13 +1490,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 1,
+          "thru": 2,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.053
+          "top_10": 0.05276
         },
         {
           "name": "Sungjae Im",
@@ -1510,13 +1510,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Hideki Matsuyama",
@@ -1536,7 +1536,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -13,
@@ -1590,7 +1590,7 @@
           "thru": 0,
           "current_score": -7,
           "make_cut": 1.0,
-          "top_10": 0.20276
+          "top_10": 0.20216
         },
         {
           "name": "Hideki Matsuyama",
@@ -1610,7 +1610,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Kurt Kitayama",
@@ -1661,10 +1661,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Corey Conners",
@@ -1684,7 +1684,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Sungjae Im",
@@ -1698,13 +1698,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Sam Stevens",
@@ -1717,7 +1717,7 @@
           "penalty": 7,
           "total": 147,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -1794,7 +1794,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Sungjae Im",
@@ -1808,13 +1808,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -10,
@@ -1884,7 +1884,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11988
+          "top_10": 0.12048
         },
         {
           "name": "Jackson Koivun",
@@ -1901,10 +1901,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         }
       ],
       "team_total": -10,
@@ -1974,7 +1974,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Sungjae Im",
@@ -1988,13 +1988,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -10,
@@ -2048,7 +2048,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11832
+          "top_10": 0.11768
         },
         {
           "name": "Tom Kim",
@@ -2084,7 +2084,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -10,
@@ -2122,7 +2122,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Tom Kim",
@@ -2168,13 +2168,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -10,
@@ -2228,7 +2228,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tony Finau",
@@ -2248,7 +2248,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11832
+          "top_10": 0.11768
         },
         {
           "name": "Gary Woodland",
@@ -2334,7 +2334,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Sungjae Im",
@@ -2348,13 +2348,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -10,
@@ -2392,7 +2392,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Tom Kim",
@@ -2422,13 +2422,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Gary Woodland",
@@ -2491,7 +2491,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -2515,10 +2515,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         },
         {
           "name": "Jackson Suber",
@@ -2535,10 +2535,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": -10,
@@ -2592,7 +2592,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Max Homa",
@@ -2628,7 +2628,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11832
+          "top_10": 0.11768
         }
       ],
       "team_total": -10,
@@ -2666,7 +2666,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11988
+          "top_10": 0.12048
         },
         {
           "name": "Sungjae Im",
@@ -2680,13 +2680,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Kurt Kitayama",
@@ -2756,7 +2756,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Kurt Kitayama",
@@ -2802,13 +2802,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -9,
@@ -2856,13 +2856,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Hideki Matsuyama",
@@ -2882,7 +2882,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Kurt Kitayama",
@@ -2946,13 +2946,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Maverick McNealy",
@@ -2988,7 +2988,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -9,
@@ -3020,13 +3020,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Kurt Kitayama",
@@ -3062,7 +3062,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Maverick McNealy",
@@ -3145,10 +3145,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Corey Conners",
@@ -3168,7 +3168,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         }
       ],
       "team_total": -9,
@@ -3222,7 +3222,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Max Homa",
@@ -3255,10 +3255,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": -8,
@@ -3325,10 +3325,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Hideki Matsuyama",
@@ -3348,7 +3348,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -8,
@@ -3402,7 +3402,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Jackson Suber",
@@ -3419,10 +3419,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Tom Kim",
@@ -3473,10 +3473,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Tom Kim",
@@ -3528,7 +3528,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -8,
@@ -3563,10 +3563,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Tom Kim",
@@ -3618,7 +3618,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -8,
@@ -3672,7 +3672,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.23988
+          "top_10": 0.23944
         },
         {
           "name": "Jackson Suber",
@@ -3689,10 +3689,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Max Homa",
@@ -3746,7 +3746,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Jake Knapp",
@@ -3759,7 +3759,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -3815,6 +3815,96 @@
       "season_rank": 75
     },
     {
+      "owner": "Jack Gawronski",
+      "alias": "",
+      "players": [
+        {
+          "name": "William Mouw",
+          "dg_name": "Mouw, William",
+          "slot": 1,
+          "r1": 71,
+          "r2": 66,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 137,
+          "status": "active",
+          "replacement": null,
+          "position": "71",
+          "fin_text": "",
+          "today": 2,
+          "thru": 10,
+          "current_score": -1,
+          "make_cut": 1.0,
+          "top_10": 0.00108
+        },
+        {
+          "name": "Kurt Kitayama",
+          "slot": 2,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        },
+        {
+          "name": "Corey Conners",
+          "dg_name": "Conners, Corey",
+          "slot": 3,
+          "r1": 67,
+          "r2": 67,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 134,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": 0,
+          "thru": 0,
+          "current_score": -6,
+          "make_cut": 1.0,
+          "top_10": 0.21056
+        },
+        {
+          "name": "Tom Kim",
+          "slot": 4,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        }
+      ],
+      "team_total": -7,
+      "team_par": 1136,
+      "team_to_par": -7,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -203,
+      "season_pts": 15717,
+      "week_strokes": 1129,
+      "prev_pts": 14588,
+      "prev_to_par": -196,
+      "weekly_rank": 42,
+      "season_rank": 62
+    },
+    {
       "owner": "Tom \"TV\" Vanner",
       "alias": "",
       "players": [
@@ -3829,7 +3919,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -3888,7 +3978,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -7,
@@ -3901,7 +3991,7 @@
       "week_strokes": 1129,
       "prev_pts": 14603,
       "prev_to_par": -181,
-      "weekly_rank": 42,
+      "weekly_rank": 43,
       "season_rank": 71
     },
     {
@@ -3920,13 +4010,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Tom Kim",
@@ -3975,10 +4065,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": -7,
@@ -3991,7 +4081,7 @@
       "week_strokes": 1129,
       "prev_pts": 14476,
       "prev_to_par": -308,
-      "weekly_rank": 43,
+      "weekly_rank": 44,
       "season_rank": 11
     },
     {
@@ -4016,7 +4106,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Hideki Matsuyama",
@@ -4036,7 +4126,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -4065,7 +4155,7 @@
           "penalty": 8,
           "total": 149,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4085,7 +4175,7 @@
       "week_strokes": 1129,
       "prev_pts": 14542,
       "prev_to_par": -242,
-      "weekly_rank": 44,
+      "weekly_rank": 45,
       "season_rank": 40
     },
     {
@@ -4110,7 +4200,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Haotong Li",
@@ -4123,7 +4213,7 @@
           "penalty": 7,
           "total": 147,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4160,13 +4250,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -7,
@@ -4179,7 +4269,7 @@
       "week_strokes": 1129,
       "prev_pts": 14593,
       "prev_to_par": -191,
-      "weekly_rank": 45,
+      "weekly_rank": 46,
       "season_rank": 65
     },
     {
@@ -4217,10 +4307,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Sungjae Im",
@@ -4234,13 +4324,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Gary Woodland",
@@ -4269,7 +4359,7 @@
       "week_strokes": 1129,
       "prev_pts": 14559,
       "prev_to_par": -225,
-      "weekly_rank": 46,
+      "weekly_rank": 47,
       "season_rank": 48
     },
     {
@@ -4287,7 +4377,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4346,7 +4436,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -7,
@@ -4359,7 +4449,7 @@
       "week_strokes": 1129,
       "prev_pts": 14562,
       "prev_to_par": -222,
-      "weekly_rank": 47,
+      "weekly_rank": 48,
       "season_rank": 50
     },
     {
@@ -4384,7 +4474,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Brian Harman",
@@ -4429,7 +4519,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4449,7 +4539,7 @@
       "week_strokes": 1129,
       "prev_pts": 14470,
       "prev_to_par": -314,
-      "weekly_rank": 48,
+      "weekly_rank": 49,
       "season_rank": 9
     },
     {
@@ -4467,7 +4557,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4494,7 +4584,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Jake Knapp",
@@ -4507,7 +4597,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4531,10 +4621,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": -6,
@@ -4547,7 +4637,7 @@
       "week_strokes": 1130,
       "prev_pts": 14604,
       "prev_to_par": -180,
-      "weekly_rank": 49,
+      "weekly_rank": 50,
       "season_rank": 76
     },
     {
@@ -4588,7 +4678,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Maverick McNealy",
@@ -4633,7 +4723,7 @@
       "week_strokes": 1130,
       "prev_pts": 14560,
       "prev_to_par": -224,
-      "weekly_rank": 50,
+      "weekly_rank": 51,
       "season_rank": 49
     },
     {
@@ -4706,7 +4796,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         }
       ],
       "team_total": -6,
@@ -4719,98 +4809,8 @@
       "week_strokes": 1130,
       "prev_pts": 14582,
       "prev_to_par": -202,
-      "weekly_rank": 51,
-      "season_rank": 57
-    },
-    {
-      "owner": "Jack Gawronski",
-      "alias": "",
-      "players": [
-        {
-          "name": "William Mouw",
-          "dg_name": "Mouw, William",
-          "slot": 1,
-          "r1": 71,
-          "r2": 66,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 137,
-          "status": "active",
-          "replacement": null,
-          "position": "72",
-          "fin_text": "",
-          "today": 3,
-          "thru": 9,
-          "current_score": 0,
-          "make_cut": 1.0,
-          "top_10": 0.00044
-        },
-        {
-          "name": "Kurt Kitayama",
-          "slot": 2,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        },
-        {
-          "name": "Corey Conners",
-          "dg_name": "Conners, Corey",
-          "slot": 3,
-          "r1": 67,
-          "r2": 67,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 134,
-          "status": "active",
-          "replacement": null,
-          "position": "T21",
-          "fin_text": "",
-          "today": 0,
-          "thru": 0,
-          "current_score": -6,
-          "make_cut": 1.0,
-          "top_10": 0.21152
-        },
-        {
-          "name": "Tom Kim",
-          "slot": 4,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        }
-      ],
-      "team_total": -6,
-      "team_par": 1136,
-      "team_to_par": -6,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -202,
-      "season_pts": 15718,
-      "week_strokes": 1130,
-      "prev_pts": 14588,
-      "prev_to_par": -196,
       "weekly_rank": 52,
-      "season_rank": 62
+      "season_rank": 57
     },
     {
       "owner": "Brandon Ambrose",
@@ -4850,7 +4850,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Corey Conners",
@@ -4870,7 +4870,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Pierceson Coody",
@@ -4883,7 +4883,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -4944,7 +4944,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Gary Woodland",
@@ -5027,10 +5027,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Doug Ghim",
@@ -5050,7 +5050,7 @@
           "thru": 0,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.43936
+          "top_10": 0.44072
         },
         {
           "name": "Pierceson Coody",
@@ -5063,7 +5063,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -5108,7 +5108,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Maverick McNealy",
@@ -5226,7 +5226,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -5328,7 +5328,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         }
       ],
       "team_total": -5,
@@ -5411,10 +5411,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         }
       ],
       "team_total": -5,
@@ -5484,7 +5484,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Kurt Kitayama",
@@ -5570,7 +5570,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -5656,7 +5656,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -5726,7 +5726,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Keith Mitchell",
@@ -5796,7 +5796,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Lucas Glover",
@@ -5809,7 +5809,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -5829,7 +5829,7 @@
           "penalty": 6,
           "total": 145,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -5856,7 +5856,7 @@
           "thru": 6,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.07396
+          "top_10": 0.0736
         }
       ],
       "team_total": -5,
@@ -5910,7 +5910,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -6025,10 +6025,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         }
       ],
       "team_total": -5,
@@ -6082,7 +6082,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -6161,7 +6161,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -6201,10 +6201,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": -5,
@@ -6274,7 +6274,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -6344,7 +6344,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Max Homa",
@@ -6424,13 +6424,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
           "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.065
+          "top_10": 0.06348
         },
         {
           "name": "Tyrrell Hatton",
@@ -6542,13 +6542,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         }
       ],
       "team_total": -4,
@@ -6599,10 +6599,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Kurt Kitayama",
@@ -6685,10 +6685,10 @@
           "position": "T36",
           "fin_text": "",
           "today": -1,
-          "thru": 2,
+          "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.18988
+          "top_10": 0.168
         },
         {
           "name": "Sam Stevens",
@@ -6701,7 +6701,7 @@
           "penalty": 7,
           "total": 147,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -6762,7 +6762,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -6798,7 +6798,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.14332
+          "top_10": 0.14356
         },
         {
           "name": "Lucas Glover",
@@ -6811,7 +6811,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -6849,7 +6849,7 @@
           "penalty": 8,
           "total": 151,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -6889,10 +6889,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Ben Kohles",
@@ -6912,7 +6912,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0826
+          "top_10": 0.08288
         }
       ],
       "team_total": -2,
@@ -6991,7 +6991,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7036,7 +7036,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Pierceson Coody",
@@ -7049,7 +7049,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7120,13 +7120,13 @@
           "total": 136,
           "status": "active",
           "replacement": null,
-          "position": "T57",
+          "position": "T59",
           "fin_text": "",
           "today": 0,
-          "thru": 0,
+          "thru": 1,
           "current_score": -4,
           "make_cut": 1.0,
-          "top_10": 0.07776
+          "top_10": 0.06484
         },
         {
           "name": "Kurt Kitayama",
@@ -7155,7 +7155,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7175,7 +7175,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7346,7 +7346,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7366,7 +7366,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7393,7 +7393,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Sam Stevens",
@@ -7526,7 +7526,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7546,7 +7546,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7570,10 +7570,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Tom Kim",
@@ -7669,7 +7669,7 @@
           "penalty": 8,
           "total": 151,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7696,7 +7696,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.11988
+          "top_10": 0.12048
         }
       ],
       "team_total": 1,
@@ -7750,7 +7750,7 @@
           "thru": 0,
           "current_score": -6,
           "make_cut": 1.0,
-          "top_10": 0.21152
+          "top_10": 0.21056
         },
         {
           "name": "Keith Mitchell",
@@ -7779,7 +7779,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7800,7 +7800,7 @@
       "prev_pts": 14591,
       "prev_to_par": -193,
       "weekly_rank": 89,
-      "season_rank": 66
+      "season_rank": 68
     },
     {
       "owner": "The Wolf Pack",
@@ -7817,7 +7817,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -7873,10 +7873,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         }
       ],
       "team_total": 2,
@@ -7930,7 +7930,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Tom Kim",
@@ -7959,7 +7959,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8013,7 +8013,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8040,7 +8040,7 @@
           "thru": 0,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.2132
+          "top_10": 0.2174
         },
         {
           "name": "Maverick McNealy",
@@ -8119,7 +8119,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8146,7 +8146,7 @@
           "thru": 3,
           "current_score": -5,
           "make_cut": 1.0,
-          "top_10": 0.0334
+          "top_10": 0.0358
         }
       ],
       "team_total": 2,
@@ -8177,7 +8177,7 @@
           "penalty": 8,
           "total": 149,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8197,7 +8197,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8224,7 +8224,7 @@
           "thru": 0,
           "current_score": -8,
           "make_cut": 1.0,
-          "top_10": 0.31284
+          "top_10": 0.31268
         },
         {
           "name": "Andrew Novak",
@@ -8275,7 +8275,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8327,7 +8327,7 @@
           "penalty": 5,
           "total": 143,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8365,7 +8365,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8405,10 +8405,10 @@
           "position": "T68",
           "fin_text": "",
           "today": 0,
-          "thru": 6,
+          "thru": 7,
           "current_score": -3,
           "make_cut": 1.0,
-          "top_10": 0.01564
+          "top_10": 0.01888
         },
         {
           "name": "Gary Woodland",
@@ -8471,7 +8471,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8541,7 +8541,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8675,7 +8675,7 @@
           "penalty": 8,
           "total": 152,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8713,7 +8713,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Meissner, Mac",
+          "replacement": "Smith, Jordan",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8749,7 +8749,7 @@
           "penalty": 8,
           "total": 150,
           "status": "mc",
-          "replacement": "Smith, Jordan",
+          "replacement": "Meissner, Mac",
           "position": "CUT",
           "fin_text": "",
           "today": 0,
@@ -8805,7 +8805,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.78296
+      "top_10": 0.7826
     },
     {
       "name": "Patrick Cantlay",
@@ -8821,7 +8821,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.7034
+      "top_10": 0.70152
     },
     {
       "name": "Patrick Fishburn",
@@ -8837,7 +8837,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.44116
+      "top_10": 0.44
     },
     {
       "name": "Matt Wallace",
@@ -8853,7 +8853,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.44916
+      "top_10": 0.44968
     },
     {
       "name": "Rickie Fowler",
@@ -8869,7 +8869,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.51684
+      "top_10": 0.51432
     },
     {
       "name": "Chris Kirk",
@@ -8885,7 +8885,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.35132
+      "top_10": 0.34948
     },
     {
       "name": "Davis Riley",
@@ -8901,7 +8901,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.16972
+      "top_10": 0.17056
     },
     {
       "name": "Doug Ghim",
@@ -8917,7 +8917,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.43936
+      "top_10": 0.44072
     },
     {
       "name": "Michael Brennan",
@@ -8933,7 +8933,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.31284
+      "top_10": 0.31268
     },
     {
       "name": "Michael Kim",
@@ -8949,7 +8949,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.3506
+      "top_10": 0.35608
     },
     {
       "name": "Peter Malnati",
@@ -8965,7 +8965,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.1818
+      "top_10": 0.17892
     },
     {
       "name": "Ryan Gerard",
@@ -8981,7 +8981,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.413
+      "top_10": 0.40804
     },
     {
       "name": "Xander Schauffele",
@@ -8997,7 +8997,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.52056
+      "top_10": 0.5116
     },
     {
       "name": "Emiliano Grillo",
@@ -9013,7 +9013,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.20276
+      "top_10": 0.20216
     },
     {
       "name": "Jacob Bridgeman",
@@ -9029,7 +9029,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.30548
+      "top_10": 0.3028
     },
     {
       "name": "Justin Lower",
@@ -9045,7 +9045,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.1014
+      "top_10": 0.10104
     },
     {
       "name": "Keegan Bradley",
@@ -9061,7 +9061,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.31952
+      "top_10": 0.3164
     },
     {
       "name": "Luke Clanton",
@@ -9077,7 +9077,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.13268
+      "top_10": 0.13064
     },
     {
       "name": "Michael Thorbjornsen",
@@ -9093,7 +9093,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.33532
+      "top_10": 0.33424
     },
     {
       "name": "Stephan Jaeger",
@@ -9109,7 +9109,39 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.1886
+      "top_10": 0.19248
+    },
+    {
+      "name": "Jordan Smith",
+      "position": "T21",
+      "thru": 6,
+      "today": -3,
+      "current_score": -6,
+      "total": 137,
+      "r1": 66,
+      "r2": 71,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.12036
+    },
+    {
+      "name": "Mac Meissner",
+      "position": "T21",
+      "thru": 6,
+      "today": -3,
+      "current_score": -6,
+      "total": 137,
+      "r1": 69,
+      "r2": 68,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.13668
     },
     {
       "name": "Rasmus Hojgaard",
@@ -9125,44 +9157,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07396
-    },
-    {
-      "name": "Jordan Smith",
-      "position": "T21",
-      "thru": 5,
-      "today": -3,
-      "current_score": -6,
-      "total": 137,
-      "r1": 66,
-      "r2": 71,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.11284
-    },
-    {
-      "name": "Mac Meissner",
-      "position": "T21",
-      "thru": 5,
-      "today": -3,
-      "current_score": -6,
-      "total": 137,
-      "r1": 69,
-      "r2": 68,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.1294
+      "top_10": 0.0736
     },
     {
       "name": "Karl Vilips",
       "position": "T21",
-      "thru": 3,
+      "thru": 4,
       "today": -2,
       "current_score": -6,
       "total": 136,
@@ -9173,7 +9173,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07896
+      "top_10": 0.05964
     },
     {
       "name": "Adrien Saddier",
@@ -9189,7 +9189,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07336
+      "top_10": 0.07464
     },
     {
       "name": "Brandt Snedeker",
@@ -9205,7 +9205,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07892
+      "top_10": 0.0774
     },
     {
       "name": "Corey Conners",
@@ -9221,7 +9221,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.21152
+      "top_10": 0.21056
     },
     {
       "name": "David Lipsky",
@@ -9237,7 +9237,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.08608
+      "top_10": 0.08868
     },
     {
       "name": "J.J. Spaun",
@@ -9253,7 +9253,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.28816
+      "top_10": 0.2886
     },
     {
       "name": "Jordan Spieth",
@@ -9269,7 +9269,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.15424
+      "top_10": 0.15748
     },
     {
       "name": "Kristoffer Ventura",
@@ -9285,7 +9285,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.1442
+      "top_10": 0.14888
     },
     {
       "name": "Marco Penge",
@@ -9301,7 +9301,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.18936
+      "top_10": 0.18904
     },
     {
       "name": "Mark Hubbard",
@@ -9317,7 +9317,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.11324
+      "top_10": 0.1144
     },
     {
       "name": "Ricky Castillo",
@@ -9333,7 +9333,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.15944
+      "top_10": 0.15908
     },
     {
       "name": "Russell Henley",
@@ -9349,23 +9349,55 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.26824
+      "top_10": 0.26888
     },
     {
-      "name": "Chandler Blanchet",
+      "name": "Johnny Keefer",
       "position": "T36",
-      "thru": 6,
-      "today": -2,
+      "thru": 5,
+      "today": -1,
       "current_score": -5,
-      "total": 137,
-      "r1": 72,
-      "r2": 65,
+      "total": 136,
+      "r1": 66,
+      "r2": 70,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.02504
+      "top_10": 0.05444
+    },
+    {
+      "name": "Gordon Sargent",
+      "position": "T36",
+      "thru": 4,
+      "today": -1,
+      "current_score": -5,
+      "total": 136,
+      "r1": 67,
+      "r2": 69,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.02352
+    },
+    {
+      "name": "Jackson Koivun",
+      "position": "T36",
+      "thru": 3,
+      "today": -1,
+      "current_score": -5,
+      "total": 136,
+      "r1": 69,
+      "r2": 67,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.168
     },
     {
       "name": "Kevin Yu",
@@ -9381,7 +9413,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.08256
+      "top_10": 0.08312
     },
     {
       "name": "Matt Kuchar",
@@ -9397,28 +9429,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0334
-    },
-    {
-      "name": "Jackson Koivun",
-      "position": "T36",
-      "thru": 2,
-      "today": -1,
-      "current_score": -5,
-      "total": 136,
-      "r1": 69,
-      "r2": 67,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.18988
+      "top_10": 0.0358
     },
     {
       "name": "Zecheng Dou",
       "position": "T36",
-      "thru": 2,
+      "thru": 3,
       "today": -1,
       "current_score": -5,
       "total": 136,
@@ -9429,7 +9445,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07724
+      "top_10": 0.07256
+    },
+    {
+      "name": "Brian Campbell",
+      "position": "T36",
+      "thru": 1,
+      "today": -1,
+      "current_score": -5,
+      "total": 136,
+      "r1": 68,
+      "r2": 68,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.02988
     },
     {
       "name": "Adam Schenk",
@@ -9445,7 +9477,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0346
+      "top_10": 0.03516
     },
     {
       "name": "Austin Eckroat",
@@ -9461,7 +9493,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0566
+      "top_10": 0.05624
     },
     {
       "name": "Ben James",
@@ -9477,7 +9509,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.11988
+      "top_10": 0.12048
     },
     {
       "name": "Ben Kohles",
@@ -9493,7 +9525,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0826
+      "top_10": 0.08288
     },
     {
       "name": "Davis Thompson",
@@ -9509,7 +9541,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.14332
+      "top_10": 0.14356
     },
     {
       "name": "Hank Lebioda",
@@ -9525,7 +9557,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0634
+      "top_10": 0.06608
     },
     {
       "name": "Hideki Matsuyama",
@@ -9541,7 +9573,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.2132
+      "top_10": 0.2174
     },
     {
       "name": "Joe Highsmith",
@@ -9557,7 +9589,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.04496
+      "top_10": 0.04668
     },
     {
       "name": "Kevin Roy",
@@ -9573,7 +9605,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0764
+      "top_10": 0.07968
     },
     {
       "name": "Nick Taylor",
@@ -9589,7 +9621,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0972
+      "top_10": 0.1016
     },
     {
       "name": "Nicolai Hojgaard",
@@ -9605,7 +9637,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.143
+      "top_10": 0.14632
     },
     {
       "name": "Rico Hoey",
@@ -9621,7 +9653,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07532
+      "top_10": 0.07764
     },
     {
       "name": "Si Woo Kim",
@@ -9637,7 +9669,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.23988
+      "top_10": 0.23944
     },
     {
       "name": "Thorbjorn Olesen",
@@ -9653,7 +9685,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.06108
+      "top_10": 0.06036
     },
     {
       "name": "Tony Finau",
@@ -9669,7 +9701,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.11832
+      "top_10": 0.11768
     },
     {
       "name": "Zac Blair",
@@ -9685,7 +9717,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0778
+      "top_10": 0.07924
     },
     {
       "name": "Eric Cole",
@@ -9737,8 +9769,8 @@
     },
     {
       "name": "Neal Shipley",
-      "position": "T57",
-      "thru": 12,
+      "position": "T59",
+      "thru": 13,
       "today": -1,
       "current_score": -4,
       "total": 137,
@@ -9749,28 +9781,28 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.01032
+      "top_10": 0.00916
     },
     {
-      "name": "Johnny Keefer",
-      "position": "T57",
-      "thru": 4,
-      "today": 0,
+      "name": "Chandler Blanchet",
+      "position": "T59",
+      "thru": 7,
+      "today": -1,
       "current_score": -4,
-      "total": 136,
-      "r1": 66,
-      "r2": 70,
+      "total": 137,
+      "r1": 72,
+      "r2": 65,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.03576
+      "top_10": 0.0132
     },
     {
       "name": "Keita Nakajima",
-      "position": "T57",
-      "thru": 4,
+      "position": "T59",
+      "thru": 5,
       "today": 0,
       "current_score": -4,
       "total": 136,
@@ -9781,44 +9813,12 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.02548
-    },
-    {
-      "name": "Gordon Sargent",
-      "position": "T57",
-      "thru": 3,
-      "today": 0,
-      "current_score": -4,
-      "total": 136,
-      "r1": 67,
-      "r2": 69,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.01548
-    },
-    {
-      "name": "Harris English",
-      "position": "T57",
-      "thru": 1,
-      "today": 0,
-      "current_score": -4,
-      "total": 136,
-      "r1": 67,
-      "r2": 69,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.065
+      "top_10": 0.02064
     },
     {
       "name": "Max Greyserman",
-      "position": "T57",
-      "thru": 1,
+      "position": "T59",
+      "thru": 2,
       "today": 0,
       "current_score": -4,
       "total": 136,
@@ -9829,11 +9829,43 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.053
+      "top_10": 0.05276
+    },
+    {
+      "name": "Harris English",
+      "position": "T59",
+      "thru": 1,
+      "today": 0,
+      "current_score": -4,
+      "total": 136,
+      "r1": 67,
+      "r2": 69,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.06348
+    },
+    {
+      "name": "Sungjae Im",
+      "position": "T59",
+      "thru": 1,
+      "today": 0,
+      "current_score": -4,
+      "total": 136,
+      "r1": 67,
+      "r2": 69,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.06484
     },
     {
       "name": "Beau Hossler",
-      "position": "T57",
+      "position": "T59",
       "thru": 0,
       "today": 0,
       "current_score": -4,
@@ -9845,27 +9877,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.06476
-    },
-    {
-      "name": "Brian Campbell",
-      "position": "T57",
-      "thru": 0,
-      "today": 0,
-      "current_score": -4,
-      "total": 136,
-      "r1": 68,
-      "r2": 68,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.0174
+      "top_10": 0.06724
     },
     {
       "name": "Matt McCarty",
-      "position": "T57",
+      "position": "T59",
       "thru": 0,
       "today": 0,
       "current_score": -4,
@@ -9877,11 +9893,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.0528
+      "top_10": 0.0504
     },
     {
       "name": "Ryo Hisatsune",
-      "position": "T57",
+      "position": "T59",
       "thru": 0,
       "today": 0,
       "current_score": -4,
@@ -9893,23 +9909,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.07928
-    },
-    {
-      "name": "Sungjae Im",
-      "position": "T57",
-      "thru": 0,
-      "today": 0,
-      "current_score": -4,
-      "total": 136,
-      "r1": 67,
-      "r2": 69,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.07776
+      "top_10": 0.07968
     },
     {
       "name": "Billy Horschel",
@@ -9946,7 +9946,7 @@
     {
       "name": "Christiaan Bezuidenhout",
       "position": "T68",
-      "thru": 8,
+      "thru": 9,
       "today": 0,
       "current_score": -3,
       "total": 137,
@@ -9957,7 +9957,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00744
+      "top_10": 0.00672
+    },
+    {
+      "name": "Jackson Suber",
+      "position": "T68",
+      "thru": 7,
+      "today": 0,
+      "current_score": -3,
+      "total": 137,
+      "r1": 66,
+      "r2": 71,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 0.01888
     },
     {
       "name": "Dylan Wu",
@@ -9973,23 +9989,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00256
-    },
-    {
-      "name": "Jackson Suber",
-      "position": "T68",
-      "thru": 6,
-      "today": 0,
-      "current_score": -3,
-      "total": 137,
-      "r1": 66,
-      "r2": 71,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.01564
+      "top_10": 0.00252
     },
     {
       "name": "Haotong Li",
@@ -10184,20 +10184,20 @@
       "top_10": 0.0
     },
     {
-      "name": "Marcelo Rozo",
+      "name": "William Mouw",
       "position": "71",
-      "thru": 7,
+      "thru": 10,
       "today": 2,
       "current_score": -1,
       "total": 137,
-      "r1": 69,
-      "r2": 68,
+      "r1": 71,
+      "r2": 66,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 8e-05
+      "top_10": 0.00108
     },
     {
       "name": "Akshay Bhatia",
@@ -10312,20 +10312,20 @@
       "top_10": 0.0
     },
     {
-      "name": "William Mouw",
+      "name": "Marcelo Rozo",
       "position": "72",
       "thru": 9,
       "today": 3,
       "current_score": 0,
       "total": 137,
-      "r1": 71,
-      "r2": 66,
+      "r1": 69,
+      "r2": 68,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.00044
+      "top_10": 0.0
     },
     {
       "name": "A.J. Ewart",
@@ -10522,7 +10522,7 @@
     {
       "name": "Adam Svensson",
       "position": "73",
-      "thru": 9,
+      "thru": 10,
       "today": 4,
       "current_score": 1,
       "total": 137,
