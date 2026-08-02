@@ -34,7 +34,7 @@
   ],
   "team_par": 1136,
   "last_updated": "N/A",
-  "updated_at": "2026-08-02T21:50:17.608924+00:00",
+  "updated_at": "2026-08-02T22:00:21.373945+00:00",
   "teams": [
     {
       "owner": "Bill Moore",
@@ -254,7 +254,7 @@
           "thru": 17,
           "current_score": -11,
           "make_cut": 1.0,
-          "top_10": 0.05676
+          "top_10": 0.0576
         },
         {
           "name": "Hideki Matsuyama",
@@ -408,7 +408,7 @@
           "thru": 17,
           "current_score": -15,
           "make_cut": 1.0,
-          "top_10": 1.0
+          "top_10": 0.99992
         }
       ],
       "team_total": -32,
@@ -3443,18 +3443,18 @@
           "r1": 65,
           "r2": 67,
           "r3": 66,
-          "r4": null,
+          "r4": 70,
           "penalty": 0,
-          "total": 198,
+          "total": 268,
           "status": "active",
           "replacement": null,
           "position": "T8",
           "fin_text": "",
           "today": 0,
-          "thru": 17,
+          "thru": 18,
           "current_score": -12,
           "make_cut": 1.0,
-          "top_10": 0.62564
+          "top_10": 1.0
         },
         {
           "name": "Tony Finau",
@@ -3740,7 +3740,7 @@
           "thru": 17,
           "current_score": -11,
           "make_cut": 1.0,
-          "top_10": 0.05676
+          "top_10": 0.0576
         },
         {
           "name": "Andrew Novak",
@@ -3818,7 +3818,7 @@
           "thru": 17,
           "current_score": -11,
           "make_cut": 1.0,
-          "top_10": 0.05676
+          "top_10": 0.0576
         },
         {
           "name": "Gary Woodland",
@@ -8837,7 +8837,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.99992
+      "top_10": 0.9998
     },
     {
       "name": "Rasmus Hojgaard",
@@ -8853,7 +8853,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 1.0
+      "top_10": 0.99992
     },
     {
       "name": "Hideki Matsuyama",
@@ -8913,6 +8913,22 @@
       "r1": 69,
       "r2": 61,
       "r3": 68,
+      "r4": 70,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1.0,
+      "top_10": 1.0
+    },
+    {
+      "name": "Chris Kirk",
+      "position": "T8",
+      "thru": 18,
+      "today": 0,
+      "current_score": -12,
+      "total": 268,
+      "r1": 65,
+      "r2": 67,
+      "r3": 66,
       "r4": 70,
       "fin_text": "",
       "made_cut": true,
@@ -9000,22 +9016,6 @@
       "top_10": 1.0
     },
     {
-      "name": "Chris Kirk",
-      "position": "T8",
-      "thru": 17,
-      "today": 0,
-      "current_score": -12,
-      "total": 198,
-      "r1": 65,
-      "r2": 67,
-      "r3": 66,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1.0,
-      "top_10": 0.62564
-    },
-    {
       "name": "Doug Ghim",
       "position": "T15",
       "thru": 18,
@@ -9093,7 +9093,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1.0,
-      "top_10": 0.05676
+      "top_10": 0.0576
     },
     {
       "name": "Chandler Blanchet",
