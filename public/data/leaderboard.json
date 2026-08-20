@@ -7,8 +7,8 @@
   "cut_line": null,
   "replacement_players": [],
   "team_par": 1120,
-  "last_updated": "2026-08-20 22:33:33 UTC",
-  "updated_at": "2026-08-20T22:38:22.626891+00:00",
+  "last_updated": "2026-08-20 22:58:32 UTC",
+  "updated_at": "2026-08-20T22:59:34.175149+00:00",
   "teams": [
     {
       "owner": "Jason Goss",
@@ -26,13 +26,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Ryo Hisatsune",
@@ -46,13 +46,13 @@
           "total": 65,
           "status": "active",
           "replacement": null,
-          "position": "6",
+          "position": "T6",
           "fin_text": "",
           "today": -5,
           "thru": 18,
           "current_score": -5,
           "make_cut": 1,
-          "top_10": 0.34304
+          "top_10": 0.33932
         },
         {
           "name": "Ben James",
@@ -82,13 +82,13 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T25",
+          "position": "T26",
           "fin_text": "",
           "today": -1,
           "thru": 18,
           "current_score": -1,
           "make_cut": 1,
-          "top_10": 0.13832
+          "top_10": 0.137
         }
       ],
       "team_total": -10,
@@ -126,7 +126,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Harris English",
@@ -156,13 +156,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Justin Thomas",
@@ -182,7 +182,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": -8,
@@ -236,7 +236,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -250,13 +250,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Aaron Rai",
@@ -270,13 +270,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": -7,
@@ -291,6 +291,96 @@
       "prev_to_par": -320,
       "weekly_rank": 3,
       "season_rank": 17
+    },
+    {
+      "owner": "Jaime Witter",
+      "alias": "",
+      "players": [
+        {
+          "name": "Ryo Hisatsune",
+          "dg_name": "Hisatsune, Ryo",
+          "slot": 1,
+          "r1": 65,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 65,
+          "status": "active",
+          "replacement": null,
+          "position": "T6",
+          "fin_text": "",
+          "today": -5,
+          "thru": 18,
+          "current_score": -5,
+          "make_cut": 1,
+          "top_10": 0.33932
+        },
+        {
+          "name": "Maverick McNealy",
+          "dg_name": "McNealy, Maverick",
+          "slot": 2,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": -2,
+          "status": "active",
+          "replacement": null,
+          "position": "T12",
+          "fin_text": "",
+          "today": -2,
+          "thru": 17,
+          "current_score": -2,
+          "make_cut": 1,
+          "top_10": 0.19084
+        },
+        {
+          "name": "Daniel Berger",
+          "slot": 3,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        },
+        {
+          "name": "Pierceson Coody",
+          "slot": 4,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        }
+      ],
+      "team_total": -7,
+      "team_par": 1120,
+      "team_to_par": -7,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -296,
+      "season_pts": 16744,
+      "week_strokes": 1113,
+      "prev_pts": 15631,
+      "prev_to_par": -289,
+      "weekly_rank": 4,
+      "season_rank": 36
     },
     {
       "owner": "Rob Motrynczuk",
@@ -308,13 +398,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Jackson Koivun",
@@ -350,7 +440,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -364,13 +454,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -7,
@@ -383,7 +473,7 @@
       "week_strokes": 1113,
       "prev_pts": 15654,
       "prev_to_par": -266,
-      "weekly_rank": 4,
+      "weekly_rank": 5,
       "season_rank": 46
     },
     {
@@ -402,13 +492,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Patrick Cantlay",
@@ -428,7 +518,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.4128
+          "top_10": 0.4036
         },
         {
           "name": "Justin Thomas",
@@ -448,7 +538,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -462,13 +552,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -7,
@@ -481,7 +571,7 @@
       "week_strokes": 1113,
       "prev_pts": 15733,
       "prev_to_par": -187,
-      "weekly_rank": 5,
+      "weekly_rank": 6,
       "season_rank": 87
     },
     {
@@ -506,7 +596,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Aaron Rai",
@@ -520,13 +610,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Alex Fitzpatrick",
@@ -540,13 +630,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Doug Ghim",
@@ -575,98 +665,8 @@
       "week_strokes": 1114,
       "prev_pts": 15789,
       "prev_to_par": -131,
-      "weekly_rank": 6,
-      "season_rank": 98
-    },
-    {
-      "owner": "Jaime Witter",
-      "alias": "",
-      "players": [
-        {
-          "name": "Ryo Hisatsune",
-          "dg_name": "Hisatsune, Ryo",
-          "slot": 1,
-          "r1": 65,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 65,
-          "status": "active",
-          "replacement": null,
-          "position": "6",
-          "fin_text": "",
-          "today": -5,
-          "thru": 18,
-          "current_score": -5,
-          "make_cut": 1,
-          "top_10": 0.34304
-        },
-        {
-          "name": "Maverick McNealy",
-          "dg_name": "McNealy, Maverick",
-          "slot": 2,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": -1,
-          "status": "active",
-          "replacement": null,
-          "position": "T25",
-          "fin_text": "",
-          "today": -1,
-          "thru": 16,
-          "current_score": -1,
-          "make_cut": 1,
-          "top_10": 0.15828
-        },
-        {
-          "name": "Daniel Berger",
-          "slot": 3,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        },
-        {
-          "name": "Pierceson Coody",
-          "slot": 4,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        }
-      ],
-      "team_total": -6,
-      "team_par": 1120,
-      "team_to_par": -6,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -295,
-      "season_pts": 16745,
-      "week_strokes": 1114,
-      "prev_pts": 15631,
-      "prev_to_par": -289,
       "weekly_rank": 7,
-      "season_rank": 36
+      "season_rank": 98
     },
     {
       "owner": "Fran Snyder",
@@ -684,13 +684,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Justin Thomas",
@@ -710,7 +710,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Keegan Bradley",
@@ -740,13 +740,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         }
       ],
       "team_total": -6,
@@ -778,13 +778,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Michael Kim",
@@ -820,7 +820,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Justin Thomas",
@@ -840,7 +840,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": -5,
@@ -894,7 +894,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Justin Thomas",
@@ -914,7 +914,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -928,13 +928,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -5,
@@ -982,13 +982,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Justin Thomas",
@@ -1008,7 +1008,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Jackson Koivun",
@@ -1056,13 +1056,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Aaron Rai",
@@ -1076,13 +1076,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "J.T. Poston",
@@ -1102,7 +1102,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         },
         {
           "name": "Nico Echavarria",
@@ -1116,13 +1116,13 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T25",
+          "position": "T26",
           "fin_text": "",
           "today": -1,
           "thru": 18,
           "current_score": -1,
           "make_cut": 1,
-          "top_10": 0.07552
+          "top_10": 0.07468
         }
       ],
       "team_total": -5,
@@ -1154,13 +1154,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Sungjae Im",
@@ -1180,7 +1180,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Aaron Rai",
@@ -1194,13 +1194,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Hideki Matsuyama",
@@ -1220,7 +1220,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         }
       ],
       "team_total": -5,
@@ -1274,7 +1274,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Justin Thomas",
@@ -1294,7 +1294,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -1308,13 +1308,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -5,
@@ -1346,13 +1346,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -1382,13 +1382,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Justin Thomas",
@@ -1408,7 +1408,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": -4,
@@ -1440,13 +1440,13 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T25",
+          "position": "T26",
           "fin_text": "",
           "today": -1,
           "thru": 18,
           "current_score": -1,
           "make_cut": 1,
-          "top_10": 0.1198
+          "top_10": 0.11748
         },
         {
           "name": "Ryan Gerard",
@@ -1466,7 +1466,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Alex Smalley",
@@ -1480,13 +1480,13 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T25",
+          "position": "T26",
           "fin_text": "",
           "today": -1,
           "thru": 18,
           "current_score": -1,
           "make_cut": 1,
-          "top_10": 0.13832
+          "top_10": 0.137
         },
         {
           "name": "Ben Griffin",
@@ -1500,13 +1500,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -4,
@@ -1538,13 +1538,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -1580,7 +1580,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -1594,13 +1594,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -4,
@@ -1632,13 +1632,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Ben Griffin",
@@ -1652,13 +1652,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "J.T. Poston",
@@ -1678,7 +1678,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         },
         {
           "name": "Ryan Gerard",
@@ -1698,7 +1698,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": -4,
@@ -1736,7 +1736,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Jackson Koivun",
@@ -1766,13 +1766,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Aaron Rai",
@@ -1786,13 +1786,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": -4,
@@ -1824,13 +1824,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Ben Griffin",
@@ -1844,13 +1844,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Jackson Koivun",
@@ -1886,7 +1886,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         }
       ],
       "team_total": -4,
@@ -1918,13 +1918,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Brian Harman",
@@ -1960,7 +1960,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.20744
+          "top_10": 0.19976
         },
         {
           "name": "Bud Cauley",
@@ -2028,13 +2028,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Emiliano Grillo",
@@ -2064,13 +2064,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": -4,
@@ -2102,13 +2102,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Aaron Rai",
@@ -2122,13 +2122,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "J.T. Poston",
@@ -2148,7 +2148,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         },
         {
           "name": "Davis Thompson",
@@ -2212,13 +2212,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Blades Brown",
@@ -2304,7 +2304,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Matt Wallace",
@@ -2334,13 +2334,13 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T25",
+          "position": "T26",
           "fin_text": "",
           "today": -1,
           "thru": 18,
           "current_score": -1,
           "make_cut": 1,
-          "top_10": 0.1198
+          "top_10": 0.11748
         }
       ],
       "team_total": -4,
@@ -2355,6 +2355,100 @@
       "prev_to_par": -298,
       "weekly_rank": 25,
       "season_rank": 32
+    },
+    {
+      "owner": "John Papa Smurf",
+      "alias": "",
+      "players": [
+        {
+          "name": "Jackson Koivun",
+          "slot": 1,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        },
+        {
+          "name": "Ben Griffin",
+          "dg_name": "Griffin, Ben",
+          "slot": 2,
+          "r1": 68,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 68,
+          "status": "active",
+          "replacement": null,
+          "position": "T21",
+          "fin_text": "",
+          "today": -2,
+          "thru": 18,
+          "current_score": -2,
+          "make_cut": 1,
+          "top_10": 0.22472
+        },
+        {
+          "name": "Maverick McNealy",
+          "dg_name": "McNealy, Maverick",
+          "slot": 3,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": -2,
+          "status": "active",
+          "replacement": null,
+          "position": "T12",
+          "fin_text": "",
+          "today": -2,
+          "thru": 17,
+          "current_score": -2,
+          "make_cut": 1,
+          "top_10": 0.19084
+        },
+        {
+          "name": "Ryan Gerard",
+          "dg_name": "Gerard, Ryan",
+          "slot": 4,
+          "r1": 70,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": 70,
+          "status": "active",
+          "replacement": null,
+          "position": "T32",
+          "fin_text": "",
+          "today": 0,
+          "thru": 18,
+          "current_score": 0,
+          "make_cut": 1,
+          "top_10": 0.12924
+        }
+      ],
+      "team_total": -4,
+      "team_par": 1120,
+      "team_to_par": -4,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -231,
+      "season_pts": 16809,
+      "week_strokes": 1116,
+      "prev_pts": 15693,
+      "prev_to_par": -227,
+      "weekly_rank": 26,
+      "season_rank": 65
     },
     {
       "owner": "Bill Moore",
@@ -2378,7 +2472,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Justin Thomas",
@@ -2398,7 +2492,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Sungjae Im",
@@ -2418,7 +2512,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Keegan Bradley",
@@ -2447,7 +2541,7 @@
       "week_strokes": 1116,
       "prev_pts": 15757,
       "prev_to_par": -163,
-      "weekly_rank": 26,
+      "weekly_rank": 27,
       "season_rank": 92
     },
     {
@@ -2482,13 +2576,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Ryan Gerard",
@@ -2508,7 +2602,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -2522,13 +2616,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -4,
@@ -2541,7 +2635,7 @@
       "week_strokes": 1116,
       "prev_pts": 15667,
       "prev_to_par": -253,
-      "weekly_rank": 27,
+      "weekly_rank": 28,
       "season_rank": 57
     },
     {
@@ -2560,13 +2654,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Aaron Rai",
@@ -2580,13 +2674,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "J.T. Poston",
@@ -2606,7 +2700,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         },
         {
           "name": "Justin Thomas",
@@ -2626,7 +2720,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": -4,
@@ -2639,7 +2733,7 @@
       "week_strokes": 1116,
       "prev_pts": 15704,
       "prev_to_par": -216,
-      "weekly_rank": 28,
+      "weekly_rank": 29,
       "season_rank": 73
     },
     {
@@ -2658,13 +2752,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Keegan Bradley",
@@ -2694,13 +2788,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Justin Thomas",
@@ -2720,7 +2814,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": -4,
@@ -2733,7 +2827,7 @@
       "week_strokes": 1116,
       "prev_pts": 15690,
       "prev_to_par": -230,
-      "weekly_rank": 29,
+      "weekly_rank": 30,
       "season_rank": 63
     },
     {
@@ -2758,7 +2852,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Aaron Rai",
@@ -2772,13 +2866,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Justin Thomas",
@@ -2798,7 +2892,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Tom Kim",
@@ -2818,7 +2912,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": -3,
@@ -2831,7 +2925,7 @@
       "week_strokes": 1117,
       "prev_pts": 15647,
       "prev_to_par": -273,
-      "weekly_rank": 30,
+      "weekly_rank": 31,
       "season_rank": 45
     },
     {
@@ -2856,7 +2950,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Haotong Li",
@@ -2917,7 +3011,7 @@
       "week_strokes": 1117,
       "prev_pts": 15750,
       "prev_to_par": -170,
-      "weekly_rank": 31,
+      "weekly_rank": 32,
       "season_rank": 90
     },
     {
@@ -2936,13 +3030,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Aaron Rai",
@@ -2956,13 +3050,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Ben Griffin",
@@ -2976,13 +3070,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "J.T. Poston",
@@ -3002,7 +3096,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         }
       ],
       "team_total": -3,
@@ -3015,7 +3109,7 @@
       "week_strokes": 1117,
       "prev_pts": 15753,
       "prev_to_par": -167,
-      "weekly_rank": 32,
+      "weekly_rank": 33,
       "season_rank": 91
     },
     {
@@ -3056,7 +3150,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "J.T. Poston",
@@ -3076,7 +3170,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         },
         {
           "name": "Jackson Koivun",
@@ -3105,7 +3199,7 @@
       "week_strokes": 1117,
       "prev_pts": 15695,
       "prev_to_par": -225,
-      "weekly_rank": 33,
+      "weekly_rank": 34,
       "season_rank": 66
     },
     {
@@ -3124,13 +3218,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Jackson Koivun",
@@ -3160,13 +3254,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Aaron Rai",
@@ -3180,13 +3274,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": -3,
@@ -3199,7 +3293,7 @@
       "week_strokes": 1117,
       "prev_pts": 15539,
       "prev_to_par": -381,
-      "weekly_rank": 34,
+      "weekly_rank": 35,
       "season_rank": 2
     },
     {
@@ -3218,13 +3312,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -3254,13 +3348,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Aaron Rai",
@@ -3274,13 +3368,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": -3,
@@ -3293,102 +3387,8 @@
       "week_strokes": 1117,
       "prev_pts": 15706,
       "prev_to_par": -214,
-      "weekly_rank": 35,
-      "season_rank": 75
-    },
-    {
-      "owner": "John Papa Smurf",
-      "alias": "",
-      "players": [
-        {
-          "name": "Jackson Koivun",
-          "slot": 1,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        },
-        {
-          "name": "Ben Griffin",
-          "dg_name": "Griffin, Ben",
-          "slot": 2,
-          "r1": 68,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 68,
-          "status": "active",
-          "replacement": null,
-          "position": "T20",
-          "fin_text": "",
-          "today": -2,
-          "thru": 18,
-          "current_score": -2,
-          "make_cut": 1,
-          "top_10": 0.23164
-        },
-        {
-          "name": "Maverick McNealy",
-          "dg_name": "McNealy, Maverick",
-          "slot": 3,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": -1,
-          "status": "active",
-          "replacement": null,
-          "position": "T25",
-          "fin_text": "",
-          "today": -1,
-          "thru": 16,
-          "current_score": -1,
-          "make_cut": 1,
-          "top_10": 0.15828
-        },
-        {
-          "name": "Ryan Gerard",
-          "dg_name": "Gerard, Ryan",
-          "slot": 4,
-          "r1": 70,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": 70,
-          "status": "active",
-          "replacement": null,
-          "position": "T32",
-          "fin_text": "",
-          "today": 0,
-          "thru": 18,
-          "current_score": 0,
-          "make_cut": 1,
-          "top_10": 0.13224
-        }
-      ],
-      "team_total": -3,
-      "team_par": 1120,
-      "team_to_par": -3,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -230,
-      "season_pts": 16810,
-      "week_strokes": 1117,
-      "prev_pts": 15693,
-      "prev_to_par": -227,
       "weekly_rank": 36,
-      "season_rank": 65
+      "season_rank": 75
     },
     {
       "owner": "JP Morgan",
@@ -3412,7 +3412,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Aaron Rai",
@@ -3426,13 +3426,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Justin Thomas",
@@ -3452,7 +3452,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Doug Ghim",
@@ -3506,7 +3506,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Alex Fitzpatrick",
@@ -3520,13 +3520,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Ben Kohles",
@@ -3575,6 +3575,92 @@
       "season_rank": 74
     },
     {
+      "owner": "The B-Team",
+      "alias": "",
+      "players": [
+        {
+          "name": "Keith Mitchell",
+          "slot": 1,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        },
+        {
+          "name": "Jackson Koivun",
+          "slot": 2,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        },
+        {
+          "name": "Maverick McNealy",
+          "dg_name": "McNealy, Maverick",
+          "slot": 3,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": -2,
+          "status": "active",
+          "replacement": null,
+          "position": "T12",
+          "fin_text": "",
+          "today": -2,
+          "thru": 17,
+          "current_score": -2,
+          "make_cut": 1,
+          "top_10": 0.19084
+        },
+        {
+          "name": "Jordan Spieth",
+          "slot": 4,
+          "r1": null,
+          "r2": null,
+          "r3": null,
+          "r4": null,
+          "penalty": 0,
+          "total": null,
+          "status": "not_found",
+          "replacement": null,
+          "position": "",
+          "thru": 0,
+          "today": 0,
+          "current_score": 0
+        }
+      ],
+      "team_total": -2,
+      "team_par": 1120,
+      "team_to_par": -2,
+      "overuse_penalty": 0,
+      "mc_count": 0,
+      "season_to_par": -204,
+      "season_pts": 16836,
+      "week_strokes": 1118,
+      "prev_pts": 15718,
+      "prev_to_par": -202,
+      "weekly_rank": 39,
+      "season_rank": 84
+    },
+    {
       "owner": "The Wolf Pack",
       "alias": "",
       "players": [
@@ -3590,13 +3676,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "J.T. Poston",
@@ -3616,7 +3702,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.05604
+          "top_10": 0.05564
         },
         {
           "name": "Sungjae Im",
@@ -3636,7 +3722,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Michael Kim",
@@ -3665,7 +3751,7 @@
       "week_strokes": 1118,
       "prev_pts": 15697,
       "prev_to_par": -223,
-      "weekly_rank": 39,
+      "weekly_rank": 40,
       "season_rank": 69
     },
     {
@@ -3706,7 +3792,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -3720,13 +3806,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Blades Brown",
@@ -3755,7 +3841,7 @@
       "week_strokes": 1118,
       "prev_pts": 15653,
       "prev_to_par": -267,
-      "weekly_rank": 40,
+      "weekly_rank": 41,
       "season_rank": 53
     },
     {
@@ -3796,7 +3882,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -3810,13 +3896,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Blades Brown",
@@ -3845,7 +3931,7 @@
       "week_strokes": 1118,
       "prev_pts": 15651,
       "prev_to_par": -269,
-      "weekly_rank": 41,
+      "weekly_rank": 42,
       "season_rank": 49
     },
     {
@@ -3870,7 +3956,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Sahith Theegala",
@@ -3884,13 +3970,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.02344
+          "top_10": 0.02268
         },
         {
           "name": "Justin Thomas",
@@ -3910,7 +3996,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -3924,13 +4010,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -2,
@@ -3943,7 +4029,7 @@
       "week_strokes": 1118,
       "prev_pts": 15655,
       "prev_to_par": -265,
-      "weekly_rank": 42,
+      "weekly_rank": 43,
       "season_rank": 55
     },
     {
@@ -3962,13 +4048,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Hideki Matsuyama",
@@ -3988,7 +4074,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Sungjae Im",
@@ -4008,7 +4094,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Ben Griffin",
@@ -4022,13 +4108,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": -2,
@@ -4041,7 +4127,7 @@
       "week_strokes": 1118,
       "prev_pts": 15612,
       "prev_to_par": -308,
-      "weekly_rank": 43,
+      "weekly_rank": 44,
       "season_rank": 26
     },
     {
@@ -4082,7 +4168,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -4096,13 +4182,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Doug Ghim",
@@ -4131,7 +4217,7 @@
       "week_strokes": 1118,
       "prev_pts": 15708,
       "prev_to_par": -212,
-      "weekly_rank": 44,
+      "weekly_rank": 45,
       "season_rank": 78
     },
     {
@@ -4150,13 +4236,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Ben Kohles",
@@ -4217,7 +4303,7 @@
       "week_strokes": 1118,
       "prev_pts": 15618,
       "prev_to_par": -302,
-      "weekly_rank": 45,
+      "weekly_rank": 46,
       "season_rank": 31
     },
     {
@@ -4242,7 +4328,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Justin Thomas",
@@ -4262,7 +4348,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -4276,13 +4362,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Tom Kim",
@@ -4302,7 +4388,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": -1,
@@ -4315,7 +4401,7 @@
       "week_strokes": 1119,
       "prev_pts": 15545,
       "prev_to_par": -375,
-      "weekly_rank": 46,
+      "weekly_rank": 47,
       "season_rank": 5
     },
     {
@@ -4340,7 +4426,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Justin Thomas",
@@ -4360,7 +4446,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ben Griffin",
@@ -4374,13 +4460,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Tom Kim",
@@ -4400,7 +4486,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": -1,
@@ -4413,94 +4499,8 @@
       "week_strokes": 1119,
       "prev_pts": 15725,
       "prev_to_par": -195,
-      "weekly_rank": 47,
-      "season_rank": 86
-    },
-    {
-      "owner": "The B-Team",
-      "alias": "",
-      "players": [
-        {
-          "name": "Keith Mitchell",
-          "slot": 1,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        },
-        {
-          "name": "Jackson Koivun",
-          "slot": 2,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        },
-        {
-          "name": "Maverick McNealy",
-          "dg_name": "McNealy, Maverick",
-          "slot": 3,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": -1,
-          "status": "active",
-          "replacement": null,
-          "position": "T25",
-          "fin_text": "",
-          "today": -1,
-          "thru": 16,
-          "current_score": -1,
-          "make_cut": 1,
-          "top_10": 0.15828
-        },
-        {
-          "name": "Jordan Spieth",
-          "slot": 4,
-          "r1": null,
-          "r2": null,
-          "r3": null,
-          "r4": null,
-          "penalty": 0,
-          "total": null,
-          "status": "not_found",
-          "replacement": null,
-          "position": "",
-          "thru": 0,
-          "today": 0,
-          "current_score": 0
-        }
-      ],
-      "team_total": -1,
-      "team_par": 1120,
-      "team_to_par": -1,
-      "overuse_penalty": 0,
-      "mc_count": 0,
-      "season_to_par": -203,
-      "season_pts": 16837,
-      "week_strokes": 1119,
-      "prev_pts": 15718,
-      "prev_to_par": -202,
       "weekly_rank": 48,
-      "season_rank": 84
+      "season_rank": 86
     },
     {
       "owner": "Nick Prybella",
@@ -4518,13 +4518,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Cameron Young",
@@ -4538,13 +4538,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Tom Kim",
@@ -4564,7 +4564,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Aaron Rai",
@@ -4578,13 +4578,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": -1,
@@ -4622,7 +4622,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Tom Kim",
@@ -4642,7 +4642,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Emiliano Grillo",
@@ -4728,7 +4728,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Justin Thomas",
@@ -4748,7 +4748,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Ryan Gerard",
@@ -4768,7 +4768,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": -1,
@@ -4806,7 +4806,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Aaron Rai",
@@ -4820,13 +4820,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Hideki Matsuyama",
@@ -4846,7 +4846,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Justin Thomas",
@@ -4866,7 +4866,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": -1,
@@ -4918,13 +4918,13 @@
           "total": 66,
           "status": "active",
           "replacement": null,
-          "position": "T7",
+          "position": "T8",
           "fin_text": "",
           "today": -4,
           "thru": 18,
           "current_score": -4,
           "make_cut": 1,
-          "top_10": 0.30088
+          "top_10": 0.30212
         },
         {
           "name": "Ryan Gerard",
@@ -4944,7 +4944,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Denny McCarthy",
@@ -4992,13 +4992,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Cameron Young",
@@ -5012,13 +5012,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Davis Thompson",
@@ -5082,13 +5082,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jordan Spieth",
@@ -5118,13 +5118,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Brooks Koepka",
@@ -5172,13 +5172,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Ben Griffin",
@@ -5192,13 +5192,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Ryan Gerard",
@@ -5218,7 +5218,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Jackson Koivun",
@@ -5272,7 +5272,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Tom Kim",
@@ -5292,7 +5292,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Cameron Young",
@@ -5306,13 +5306,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -5377,13 +5377,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -5419,7 +5419,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.24604
+          "top_10": 0.24144
         },
         {
           "name": "Tom Kim",
@@ -5439,7 +5439,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": 0,
@@ -5471,13 +5471,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Hideki Matsuyama",
@@ -5497,7 +5497,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Justin Thomas",
@@ -5517,7 +5517,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Jackson Koivun",
@@ -5571,7 +5571,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Michael Kim",
@@ -5607,7 +5607,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -5621,13 +5621,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 0,
@@ -5659,13 +5659,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Hideki Matsuyama",
@@ -5685,7 +5685,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Jackson Koivun",
@@ -5721,7 +5721,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": 0,
@@ -5890,7 +5890,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Davis Thompson",
@@ -5955,13 +5955,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Jackson Koivun",
@@ -5997,7 +5997,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Tom Kim",
@@ -6017,7 +6017,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": 0,
@@ -6089,7 +6089,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Jordan Spieth",
@@ -6119,13 +6119,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Justin Thomas",
@@ -6145,7 +6145,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         }
       ],
       "team_total": 0,
@@ -6215,7 +6215,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Aaron Rai",
@@ -6229,13 +6229,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": 0,
@@ -6267,13 +6267,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Jackson Koivun",
@@ -6309,7 +6309,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Ryan Gerard",
@@ -6329,7 +6329,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": 0,
@@ -6378,13 +6378,13 @@
           "total": 69,
           "status": "active",
           "replacement": null,
-          "position": "T25",
+          "position": "T26",
           "fin_text": "",
           "today": -1,
           "thru": 18,
           "current_score": -1,
           "make_cut": 1,
-          "top_10": 0.1198
+          "top_10": 0.11748
         },
         {
           "name": "Jackson Koivun",
@@ -6414,13 +6414,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Ryan Gerard",
@@ -6440,7 +6440,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": 0,
@@ -6527,7 +6527,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Aaron Rai",
@@ -6541,13 +6541,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         }
       ],
       "team_total": 0,
@@ -6585,7 +6585,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Jackson Koivun",
@@ -6615,13 +6615,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Cameron Young",
@@ -6635,13 +6635,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         }
       ],
       "team_total": 1,
@@ -6673,13 +6673,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Davis Thompson",
@@ -6715,7 +6715,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Ben Griffin",
@@ -6729,13 +6729,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 1,
@@ -6767,13 +6767,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Hideki Matsuyama",
@@ -6793,7 +6793,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Ryan Gerard",
@@ -6813,7 +6813,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -6827,13 +6827,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 1,
@@ -6865,13 +6865,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Tom Kim",
@@ -6891,7 +6891,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Ryan Gerard",
@@ -6911,7 +6911,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Ben Griffin",
@@ -6925,13 +6925,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 1,
@@ -6963,13 +6963,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Tom Kim",
@@ -6989,7 +6989,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Aaron Rai",
@@ -7003,13 +7003,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Jackson Koivun",
@@ -7073,13 +7073,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.02344
+          "top_10": 0.02268
         },
         {
           "name": "Luke Clanton",
@@ -7191,13 +7191,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         }
       ],
       "team_total": 1,
@@ -7229,13 +7229,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Ryan Gerard",
@@ -7255,7 +7255,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Tom Kim",
@@ -7275,7 +7275,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Ben Griffin",
@@ -7289,13 +7289,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 1,
@@ -7327,13 +7327,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -7363,13 +7363,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         },
         {
           "name": "Tom Kim",
@@ -7389,7 +7389,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": 1,
@@ -7427,7 +7427,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Cameron Young",
@@ -7441,13 +7441,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Aaron Rai",
@@ -7461,13 +7461,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.12436
+          "top_10": 0.12052
         },
         {
           "name": "Jackson Koivun",
@@ -7515,13 +7515,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -7557,7 +7557,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Ben Griffin",
@@ -7571,13 +7571,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 1,
@@ -7615,7 +7615,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Mac Meissner",
@@ -7651,7 +7651,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Davis Thompson",
@@ -7721,7 +7721,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Tom Kim",
@@ -7741,7 +7741,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Ben Griffin",
@@ -7755,13 +7755,13 @@
           "total": 68,
           "status": "active",
           "replacement": null,
-          "position": "T20",
+          "position": "T21",
           "fin_text": "",
           "today": -2,
           "thru": 18,
           "current_score": -2,
           "make_cut": 1,
-          "top_10": 0.23164
+          "top_10": 0.22472
         }
       ],
       "team_total": 2,
@@ -7815,7 +7815,7 @@
           "thru": 18,
           "current_score": -3,
           "make_cut": 1,
-          "top_10": 0.34984
+          "top_10": 0.34044
         },
         {
           "name": "Tom Kim",
@@ -7835,7 +7835,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Bud Cauley",
@@ -7887,13 +7887,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Mac Meissner",
@@ -7929,7 +7929,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Davis Thompson",
@@ -7983,7 +7983,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Cameron Young",
@@ -7997,13 +7997,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -8039,7 +8039,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": 3,
@@ -8093,7 +8093,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Michael Kim",
@@ -8123,13 +8123,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.0402
+          "top_10": 0.04272
         }
       ],
       "team_total": 3,
@@ -8161,13 +8161,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -8203,7 +8203,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Ryan Gerard",
@@ -8223,7 +8223,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": 3,
@@ -8261,7 +8261,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Cameron Young",
@@ -8275,13 +8275,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Jackson Koivun",
@@ -8399,7 +8399,7 @@
           "thru": 18,
           "current_score": 3,
           "make_cut": 1,
-          "top_10": 0.0058
+          "top_10": 0.00576
         }
       ],
       "team_total": 3,
@@ -8431,13 +8431,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Tom Kim",
@@ -8457,7 +8457,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Jackson Koivun",
@@ -8493,7 +8493,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": 3,
@@ -8531,7 +8531,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Ryan Gerard",
@@ -8551,7 +8551,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         },
         {
           "name": "Jackson Koivun",
@@ -8587,7 +8587,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         }
       ],
       "team_total": 4,
@@ -8635,13 +8635,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Blades Brown",
@@ -8709,13 +8709,13 @@
           "total": 71,
           "status": "active",
           "replacement": null,
-          "position": "T36",
+          "position": "T37",
           "fin_text": "",
           "today": 1,
           "thru": 18,
           "current_score": 1,
           "make_cut": 1,
-          "top_10": 0.14356
+          "top_10": 0.14076
         },
         {
           "name": "Hideki Matsuyama",
@@ -8735,7 +8735,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.06352
+          "top_10": 0.06288
         },
         {
           "name": "Tom Kim",
@@ -8755,7 +8755,7 @@
           "thru": 18,
           "current_score": 2,
           "make_cut": 1,
-          "top_10": 0.039
+          "top_10": 0.03912
         },
         {
           "name": "Ryan Gerard",
@@ -8775,7 +8775,7 @@
           "thru": 18,
           "current_score": 0,
           "make_cut": 1,
-          "top_10": 0.13224
+          "top_10": 0.12924
         }
       ],
       "team_total": 5,
@@ -8808,7 +8808,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.64388
+      "top_10": 0.63976
     },
     {
       "name": "Gary Woodland",
@@ -8824,7 +8824,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.44892
+      "top_10": 0.44416
     },
     {
       "name": "J.J. Spaun",
@@ -8840,7 +8840,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.54344
+      "top_10": 0.53804
     },
     {
       "name": "Rory McIlroy",
@@ -8856,7 +8856,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.72928
+      "top_10": 0.73044
     },
     {
       "name": "Wyndham Clark",
@@ -8872,11 +8872,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.60608
+      "top_10": 0.6056
     },
     {
-      "name": "Ryo Hisatsune",
-      "position": "6",
+      "name": "Matt Fitzpatrick",
+      "position": "T6",
       "thru": 18,
       "today": -5,
       "current_score": -5,
@@ -8888,11 +8888,27 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.34304
+      "top_10": 0.62916
+    },
+    {
+      "name": "Ryo Hisatsune",
+      "position": "T6",
+      "thru": 18,
+      "today": -5,
+      "current_score": -5,
+      "total": 65,
+      "r1": 65,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.33932
     },
     {
       "name": "Alex Fitzpatrick",
-      "position": "T7",
+      "position": "T8",
       "thru": 18,
       "today": -4,
       "current_score": -4,
@@ -8904,71 +8920,55 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.30088
-    },
-    {
-      "name": "Ludvig Aberg",
-      "position": "T7",
-      "thru": 18,
-      "today": -4,
-      "current_score": -4,
-      "total": 66,
-      "r1": 66,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.53556
-    },
-    {
-      "name": "Michael Thorbjornsen",
-      "position": "T7",
-      "thru": 18,
-      "today": -4,
-      "current_score": -4,
-      "total": 66,
-      "r1": 66,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.42332
+      "top_10": 0.30212
     },
     {
       "name": "Jacob Bridgeman",
-      "position": "T7",
-      "thru": 17,
+      "position": "T8",
+      "thru": 18,
       "today": -4,
       "current_score": -4,
-      "total": 62,
-      "r1": null,
+      "total": 66,
+      "r1": 66,
       "r2": null,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.28324
+      "top_10": 0.29644
     },
     {
-      "name": "Matt Fitzpatrick",
-      "position": "T7",
-      "thru": 17,
+      "name": "Ludvig Aberg",
+      "position": "T8",
+      "thru": 18,
       "today": -4,
       "current_score": -4,
-      "total": 62,
-      "r1": null,
+      "total": 66,
+      "r1": 66,
       "r2": null,
       "r3": null,
       "r4": null,
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.5316
+      "top_10": 0.53312
+    },
+    {
+      "name": "Michael Thorbjornsen",
+      "position": "T8",
+      "thru": 18,
+      "today": -4,
+      "current_score": -4,
+      "total": 66,
+      "r1": 66,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.41464
     },
     {
       "name": "Akshay Bhatia",
@@ -8984,7 +8984,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.15528
+      "top_10": 0.15288
     },
     {
       "name": "Eric Cole",
@@ -9000,7 +9000,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.20744
+      "top_10": 0.19976
     },
     {
       "name": "Jake Knapp",
@@ -9016,7 +9016,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.33256
+      "top_10": 0.32608
     },
     {
       "name": "Justin Thomas",
@@ -9032,7 +9032,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.34984
+      "top_10": 0.34044
     },
     {
       "name": "Kristoffer Reitan",
@@ -9048,7 +9048,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.23288
+      "top_10": 0.23116
     },
     {
       "name": "Patrick Cantlay",
@@ -9064,7 +9064,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.4128
+      "top_10": 0.4036
+    },
+    {
+      "name": "Russell Henley",
+      "position": "T12",
+      "thru": 18,
+      "today": -3,
+      "current_score": -3,
+      "total": 67,
+      "r1": 67,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.29084
     },
     {
       "name": "Sungjae Im",
@@ -9080,27 +9096,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.24604
-    },
-    {
-      "name": "Russell Henley",
-      "position": "T12",
-      "thru": 16,
-      "today": -3,
-      "current_score": -3,
-      "total": 59,
-      "r1": null,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.31356
+      "top_10": 0.24144
     },
     {
       "name": "Aaron Rai",
-      "position": "T20",
+      "position": "T21",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -9112,11 +9112,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.12436
+      "top_10": 0.12052
     },
     {
       "name": "Adam Scott",
-      "position": "T20",
+      "position": "T21",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -9128,11 +9128,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.19816
+      "top_10": 0.1924
     },
     {
       "name": "Ben Griffin",
-      "position": "T20",
+      "position": "T21",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -9144,11 +9144,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.23164
+      "top_10": 0.22472
     },
     {
       "name": "Collin Morikawa",
-      "position": "T20",
+      "position": "T21",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -9160,11 +9160,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.25612
+      "top_10": 0.25068
     },
     {
       "name": "Robert MacIntyre",
-      "position": "T20",
+      "position": "T21",
       "thru": 18,
       "today": -2,
       "current_score": -2,
@@ -9176,111 +9176,15 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.18352
-    },
-    {
-      "name": "Alex Smalley",
-      "position": "T25",
-      "thru": 18,
-      "today": -1,
-      "current_score": -1,
-      "total": 69,
-      "r1": 69,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.13832
-    },
-    {
-      "name": "Justin Rose",
-      "position": "T25",
-      "thru": 18,
-      "today": -1,
-      "current_score": -1,
-      "total": 69,
-      "r1": 69,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.11828
-    },
-    {
-      "name": "Michael Brennan",
-      "position": "T25",
-      "thru": 18,
-      "today": -1,
-      "current_score": -1,
-      "total": 69,
-      "r1": 69,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.1198
-    },
-    {
-      "name": "Min Woo Lee",
-      "position": "T25",
-      "thru": 18,
-      "today": -1,
-      "current_score": -1,
-      "total": 69,
-      "r1": 69,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.18436
-    },
-    {
-      "name": "Nico Echavarria",
-      "position": "T25",
-      "thru": 18,
-      "today": -1,
-      "current_score": -1,
-      "total": 69,
-      "r1": 69,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.07552
-    },
-    {
-      "name": "Tommy Fleetwood",
-      "position": "T25",
-      "thru": 18,
-      "today": -1,
-      "current_score": -1,
-      "total": 69,
-      "r1": 69,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.26072
+      "top_10": 0.18104
     },
     {
       "name": "Maverick McNealy",
-      "position": "T25",
-      "thru": 16,
-      "today": -1,
-      "current_score": -1,
-      "total": 61,
+      "position": "T12",
+      "thru": 17,
+      "today": -2,
+      "current_score": -2,
+      "total": 64,
       "r1": null,
       "r2": null,
       "r3": null,
@@ -9288,7 +9192,103 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.15828
+      "top_10": 0.19084
+    },
+    {
+      "name": "Alex Smalley",
+      "position": "T26",
+      "thru": 18,
+      "today": -1,
+      "current_score": -1,
+      "total": 69,
+      "r1": 69,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.137
+    },
+    {
+      "name": "Justin Rose",
+      "position": "T26",
+      "thru": 18,
+      "today": -1,
+      "current_score": -1,
+      "total": 69,
+      "r1": 69,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.11732
+    },
+    {
+      "name": "Michael Brennan",
+      "position": "T26",
+      "thru": 18,
+      "today": -1,
+      "current_score": -1,
+      "total": 69,
+      "r1": 69,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.11748
+    },
+    {
+      "name": "Min Woo Lee",
+      "position": "T26",
+      "thru": 18,
+      "today": -1,
+      "current_score": -1,
+      "total": 69,
+      "r1": 69,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.17936
+    },
+    {
+      "name": "Nico Echavarria",
+      "position": "T26",
+      "thru": 18,
+      "today": -1,
+      "current_score": -1,
+      "total": 69,
+      "r1": 69,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.07468
+    },
+    {
+      "name": "Tommy Fleetwood",
+      "position": "T26",
+      "thru": 18,
+      "today": -1,
+      "current_score": -1,
+      "total": 69,
+      "r1": 69,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.2582
     },
     {
       "name": "J.T. Poston",
@@ -9304,7 +9304,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.05604
+      "top_10": 0.05564
     },
     {
       "name": "Ryan Gerard",
@@ -9320,7 +9320,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.13224
+      "top_10": 0.12924
     },
     {
       "name": "Si Woo Kim",
@@ -9336,7 +9336,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.179
+      "top_10": 0.17824
     },
     {
       "name": "Xander Schauffele",
@@ -9352,11 +9352,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.2254
+      "top_10": 0.22548
     },
     {
       "name": "Alex Noren",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9368,11 +9368,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.0402
+      "top_10": 0.04272
     },
     {
       "name": "Cameron Young",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9384,11 +9384,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.14356
+      "top_10": 0.14076
     },
     {
       "name": "Rickie Fowler",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9400,11 +9400,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.06532
+      "top_10": 0.06272
     },
     {
       "name": "Ryan Fox",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9416,11 +9416,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.03764
+      "top_10": 0.03592
     },
     {
       "name": "Sahith Theegala",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9432,11 +9432,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.02344
+      "top_10": 0.02268
     },
     {
       "name": "Sam Burns",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9448,11 +9448,11 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.1294
+      "top_10": 0.13288
     },
     {
       "name": "Viktor Hovland",
-      "position": "T36",
+      "position": "T37",
       "thru": 18,
       "today": 1,
       "current_score": 1,
@@ -9464,15 +9464,15 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.11132
+      "top_10": 0.10944
     },
     {
       "name": "Matt McCarty",
-      "position": "T36",
-      "thru": 16,
+      "position": "T32",
+      "thru": 17,
       "today": 1,
       "current_score": 1,
-      "total": 63,
+      "total": 67,
       "r1": null,
       "r2": null,
       "r3": null,
@@ -9480,7 +9480,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.01844
+      "top_10": 0.0156
     },
     {
       "name": "Hideki Matsuyama",
@@ -9496,7 +9496,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.06352
+      "top_10": 0.06288
     },
     {
       "name": "Kurt Kitayama",
@@ -9512,7 +9512,23 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.0468
+      "top_10": 0.04492
+    },
+    {
+      "name": "Scottie Scheffler",
+      "position": "T44",
+      "thru": 18,
+      "today": 2,
+      "current_score": 2,
+      "total": 72,
+      "r1": 72,
+      "r2": null,
+      "r3": null,
+      "r4": null,
+      "fin_text": "",
+      "made_cut": true,
+      "make_cut": 1,
+      "top_10": 0.269
     },
     {
       "name": "Tom Kim",
@@ -9528,23 +9544,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.039
-    },
-    {
-      "name": "Scottie Scheffler",
-      "position": "T44",
-      "thru": 17,
-      "today": 2,
-      "current_score": 2,
-      "total": 68,
-      "r1": null,
-      "r2": null,
-      "r3": null,
-      "r4": null,
-      "fin_text": "",
-      "made_cut": true,
-      "make_cut": 1,
-      "top_10": 0.26612
+      "top_10": 0.03912
     },
     {
       "name": "Bud Cauley",
@@ -9576,7 +9576,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.02032
+      "top_10": 0.02064
     },
     {
       "name": "Sepp Straka",
@@ -9592,7 +9592,7 @@
       "fin_text": "",
       "made_cut": true,
       "make_cut": 1,
-      "top_10": 0.0058
+      "top_10": 0.00576
     }
   ]
 }
